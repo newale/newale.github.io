@@ -1,5 +1,5 @@
 ---
 title: "Ensayos"
-
+category: essays
 ---
 
