@@ -108,9 +108,9 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
-    - identifier: acerca de
-      name: "acerca de"
-      url: /acerca-de/
+    - identifier: acerca de mi
+      name: "acerca de mi"
+      url: /acerca-de-mi/
       weight: 10
     - identifier: Ensayos
       name: ensayos
@@ -118,12 +118,12 @@ menu:
       weight: 20
     - identifier: blog
       name: blog
-      url: /blog/
+      url: /posts/
       weight: 30
     - identifier: CV
       name: CV
       url: /experience/
-      weight: 30
+      weight: 40
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
 markup:
