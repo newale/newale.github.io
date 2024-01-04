@@ -109,7 +109,7 @@ params:
 menu:
   main:
     - identifier: acerca de
-      name: acerca de
+      name: "acerca de"
       url: /acerca-de/
       weight: 10
     - identifier: Ensayos
