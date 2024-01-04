@@ -1,5 +1,4 @@
 ---
-draft: false
-disableThemeToggle: false
+title: Acerca de mi
 ---
 
