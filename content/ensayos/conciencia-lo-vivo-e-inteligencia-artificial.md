@@ -1,8 +1,18 @@
 ---
-title: "Raíces de la Conciencia: De la Vida Biológica a la Inteligencia Artificial"
+title: "IA y Conciencia, una perspectiva sobre lo vivo y la experiencia subjetiva"
 date: 2023-11-04T00:00:00-03:00
 draft: false
+author: alejandro
+tags: ["Filosofía", "Conciencia", "Inteligencia Artificial"]
+cover:
+    image: "ensayos/ia-conciencia.png"
+    alt: imagen post
+    caption: imagen ilustrativa sobre inteligencia artificial y conciencia
 ---
+![imagen ilustrativa sobre inteligencia artificial y conciencia](/ensayos/ia-conciencia.png)
+
+
+# Introducción
 
 Desde muy temprano el ser humano se ha visto enfrentado al problema mente-cuerpo. Incluso hoy, donde los avances en neurociencia nos permiten un acercamiento científico al cerebro, no existe un consenso de qué es la conciencia (y ni siquiera si ésta tiene su origen en el cerebro); y sin embargo esta es una experiencia común para todos los seres humanos. Para una criatura consciente, algo se siente ser tal criatura, reflejando que algo hay en la experiencia de ser una persona, un delfín o un murciélago, tal cómo lo expusiera Thomas Nagel en 1974 en su célebre artículo “What is like to be a bat?”.
 
@@ -14,7 +24,7 @@ Se siente de alguna forma estar vivo, pero no podemos llevar la consciencia a to
 
 Entonces llegamos a la era de la Inteligencia Artificial y los “Grandes Modelos del Lenguaje” que nos traen a debate: Si la consciencia pudiera prescindir de la vida, ¿Es posible pensar en que logremos agentes inteligentes y conscientes en el hardware computacional actual? ¿Es la consciencia algo que podamos simular? Incluso, ¿Es ético pensar siquiera en el estudio de agentes conscientes artificiales tan solo con fines prácticos?
 
-## De la Sensibilidad a la Consciencia: El Espectro de la Cognición en IA
+# De la Sensibilidad a la Consciencia: El Espectro de la Cognición en IA
 
 Dos corrientes de pensamiento se pueden diferenciar en el intento de explicar la conciencia: uno no reduccionista, donde podemos encontrar al Dualismo, Panpsiquismo y el Idealismo, y uno reduccionista, como el Funcionalismo Computacional o la Mente Cuántica como Penrose (entre otros) propone.
 
@@ -34,7 +44,7 @@ Por supuesto que esta cognición está arraigada en esta transición suave que e
 
 Para que surja esta experiencia subjetiva consideremos que el “yo está arraigado en el cuerpo” y como Damasio define “el primer nivel de Identidad, la Proto-Identidad (proto-self), se representa como el monitoreo inconsciente del momento a momento del estado de un organismo(...) Cuando objetos alrededor interactúan con esta Proto-Identidad, el estado interno del organismo cambia, por ende se modifica esta Proto-Identidad. Estos nuevos mapas pueden originar la conciencia y generar la Identidad-Central (core-self)” (Tsakiris & Preester, 2019, p.46). Luego continúa argumentando que todos estos cambios en el tiempo generan la Identidad-Autobiográfica (autobiographical-self). Es entonces que este sentir, esta afectividad en términos básicos, dan origen a la conciencia. Algo se siente ser el organismo que se es, algo se siente estar en peligro, algo se siente cómodo. Aparece el saber qué (know-that), más allá del saber cómo (know-how).
 
-## Reflexiones Finales: La Distancia Insuperable Entre Inteligencia Artificial y Conciencia Verdadera
+# Reflexiones Finales: La distancia insuperable entre Inteligencia Artificial y Conciencia Verdadera
 
 La conciencia tal y como la conocemos, surge a raíz de la vida y viceversa, la cognición es necesaria para la vida. Esta regulación homeostática que requieren las máquinas vivientes para poder mantener su status de unidad y de vida, genera según Damasio la Proto-Identidad, considerable como el primer paso sensitivo hacia la conciencia de alto orden como la humana.
 
@@ -43,13 +53,13 @@ Sobre todo debemos considerar que estos modelos de Aprendizaje Profundo, no inte
 
 Sin embargo, existen campos nacientes de estudio respecto a la implementación de Conciencia Débil para sistemas de Aprendizaje de Máquina, los que podrían arrojar nuevas luces respecto al fenómeno de la conciencia, y también potenciar aún más esta área tan interesante de la tecnología actual. Aún así no constituyen en sí sistemas sintientes.
 
-### Ética
+## Ética
 
 Si en principio podemos construir Conciencia Artificial a través de Vida Artificial, nos depara un desafío importante multidisciplinar y lo más probable es que esa máquina termine pareciéndose bastante al Cerebro y al Sistema Nervioso. Lo que alza otras preguntas: ¿Deberíamos siquiera intentarlo? No parece ético generar vida consciente tan solo con fines científicos o prácticos, dada la naturaleza interna de la experiencia subjetiva, y nuestra incapacidad para detectarla desde fuera, estaríamos en un dilema moral al crear vida consciente, sin saber si su vida interna pudiera tener un dolor inconmensurable, o simplemente apagar y encender otra y otra; o esclavizarla, encender vida consciente para realizar tareas sin considerar su vida interna.
 
 ---
 
-##  Referencias
+#  Referencias
 
 Chalmers, D. J. (1999). La mente consciente: En busca de una teoría fundamental. Gedisa Editorial 1999 il..
 
