@@ -120,10 +120,10 @@ menu:
       name: blog
       url: /posts/
       weight: 30
-    - identifier: CV
-      name: CV
-      url: /experience/
-      weight: 40
+    # - identifier: CV
+    #   name: CV
+    #   url: /experience/
+    #   weight: 40
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
 markup:

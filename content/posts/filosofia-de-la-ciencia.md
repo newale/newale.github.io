@@ -1,7 +1,7 @@
 ---
 title: "Filosofía de la Ciencia"
 date: 2023-12-22T00:00:00-03:00
-draft: false
+draft: true
 ---
 
 # Introducción
