@@ -116,10 +116,10 @@ menu:
       name: ensayos
       url: /ensayos/
       weight: 20
-    - identifier: blog
-      name: blog
-      url: /posts/
-      weight: 30
+    # - identifier: blog
+    #   name: blog
+    #   url: /posts/
+    #   weight: 30
     # - identifier: CV
     #   name: CV
     #   url: /experience/
