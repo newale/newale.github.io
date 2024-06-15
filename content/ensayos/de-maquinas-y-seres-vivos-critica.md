@@ -2,7 +2,8 @@
 title: "Crítica a De Máquinas y Seres Vivos"
 date: 2023-11-04T00:00:00-03:00
 draft: false
-author: alejandro
+author: _
+
 cover:
     image: "ensayos/autopoiesis-2.png"
     alt: imagen post
@@ -14,66 +15,36 @@ cover:
 
 Un ser vivo es aquel que nace, crece, se reproduce y muere.
 
-En algún momento de nuestra experiencia educativa, probablemente nos vimos
-enfrentados a esta explicación tradicional de la vida: Nacer, crecer, reproducirse y
-morir.
+En algún momento de nuestra experiencia educativa, probablemente nos vimos enfrentados a esta explicación tradicional de la vida: Nacer, crecer, reproducirse y morir.
 
-La vida es diversa, y así nos mostró Darwin, abriendo un programa de investigación
-muy fructífero para entender esta característica de la vida. Su teoría sobre la
-evolución cómo el efecto del ambiente en el desarrollo de una especie, asentada en
-la cultura actual de la humanidad, sentó las bases para el desarrollo de ciencia muy
-interesante.
+La vida es diversa, y así nos mostró Darwin, abriendo un programa de investigación muy fructífero para entender esta característica de la vida. Su teoría sobre la evolución cómo el efecto del ambiente en el desarrollo de una especie, asentada en la cultura actual de la humanidad, sentó las bases para el desarrollo de ciencia muy interesante.
 
-Publicado originalmente en 1972 por los doctores Francisco Varela y Humberto
-Maturana, el libro “De máquinas y seres vivos” trata sobre una nueva perspectiva
-sobre la organización de lo vivo a través de la autopoiesis. Esta obra no sólo ha
-influenciado la biología, sino que también ha extendido su alcance hacia la filosofía
-y la teoría de sistemas, ofreciendo perspectivas revolucionarias sobre cómo
-entendemos la organización y la dinámica de los seres vivos.
+Publicado originalmente en 1972 por los doctores Francisco Varela y Humberto Maturana, el libro “De máquinas y seres vivos” trata sobre una nueva perspectiva sobre la organización de lo vivo a través de la autopoiesis. Esta obra no sólo ha influenciado la biología, sino que también ha extendido su alcance hacia la filosofía y la teoría de sistemas, ofreciendo perspectivas revolucionarias sobre cómo entendemos la organización y la dinámica de los seres vivos.
 
-Con esta nueva perspectiva de la esencia de lo vivo, en conjunto a nuevas
-explicaciones de los fenómenos biológicos basados en la auto-generación, crean el
-núcleo central del programa de investigación autopoiética, la que incluso trascendió
-su área de origen la Biología y permeó disciplinas como la Neurociencia, la
-Sociología y la Bio-Semiótica, por nombrar algunas.
+Con esta nueva perspectiva de la esencia de lo vivo, en conjunto a nuevas explicaciones de los fenómenos biológicos basados en la auto-generación, crean el núcleo central del programa de investigación autopoiética, la que incluso trascendió su área de origen la Biología y permeó disciplinas como la Neurociencia, la Sociología y la Bio-Semiótica, por nombrar algunas.
 
-La siguiente crítica aborda los aspectos centrales del argumento, resaltando sus
-fortalezas e indicando puntos interesantes para debatir.
+La siguiente crítica aborda los aspectos centrales del argumento, resaltando sus fortalezas e indicando puntos interesantes para debatir.
 
-# La autopoiesis, unna nueva perspectiva a la vida
+# La autopoiesis, una nueva perspectiva a la vida
 
-El libro nos introduce a un nuevo concepto de la vida que debe sortear varios
-desafíos que los autores detallan, “Autonomía y diversidad, conservación de la
-identidad y origen de la variación en el modo como se conserva dicha identidad”
-(Maturana & Varela, 2004, p.63).
+El libro nos introduce a un nuevo concepto de la vida que debe sortear varios desafíos que los autores detallan, “Autonomía y diversidad, conservación de la identidad y origen de la variación en el modo como se conserva dicha identidad” _(Maturana & Varela, 2004, p.63)_.
 
-En términos sencillos, cómo un organismo es capaz de diferenciarse en el tiempo en
-su ambiente, y mantenerse como tal. Tal es esta explicación, que el libro detalla a las
-máquinas autopoiéticas como “un sistema homeostático que tiene a su propia
-organización como la variable que mantiene constante” (Maturana & Varela, 2004,
-p.69).
+En términos sencillos, cómo un organismo es capaz de diferenciarse en el tiempo en su ambiente, y mantenerse como tal. Tal es esta explicación, que el libro detalla a las máquinas autopoiéticas como “un sistema homeostático que tiene a su propia organización como la variable que mantiene constante” _(Maturana & Varela, 2004, p.69)_.
 
-Para los autores, hay máquinas vivientes y no vivientes, autopoiética y alopoiética.
-Toda máquina viviente es una máquina autopoiética, ergo “la noción de autopoiesis
-es necesaria y suficiente para caracterizar la organización de los sistemas vivos”
-(Maturana & Varela, 2004, p.73).
+Para los autores, hay máquinas vivientes y no vivientes, autopoiética y alopoiética. Toda máquina viviente es una máquina autopoiética, ergo “la noción de autopoiesis es necesaria y suficiente para caracterizar la organización de los sistemas vivos” _(Maturana & Varela, 2004, p.73)_.
 
 Así entonces, los autores nos dicen que:
 
-Una máquina autopoiética (viviente) es una máquina organizada como un
-sistema de procesos de producción de componentes concatenados de tal
-manera que producen componentes que:
+Una máquina autopoiética (viviente) es una máquina organizada como un sistema de procesos de producción de componentes concatenados de tal manera que producen componentes que:
 
-1. generan los procesos (relaciones) de producción que los producen a través
-de sus continuas interacciones y transformaciones, y
+1. generan los procesos (relaciones) de producción que los producen a través de sus continuas interacciones y transformaciones, y
+1. constituyen a la máquina como una unidad en el espacio físico. 
 
-2. constituyen a la máquina como una unidad en el espacio físico.
-(Maturana & Varela, 2004, p.69)
+-- _(Maturana & Varela, 2004, p.69)_
 
 Con esta sencilla idea, los autores vuelcan la perspectiva hacia “eso que está vivo”.
 
-El alcance de su argumento tiene varias implicaciones y declaran que una
-organización viviente es:
+El alcance de su argumento tiene varias implicaciones y declaran que una organización viviente es:
 1. **Autónoma**: Todos los cambios y transformaciones por las que pueden pasar,
 son dictadas por la propia unidad, y no están acopladas a lo externo.
 1. **Individuales**: Los sistemas autopoiéticos tienen una identidad que no puede
@@ -120,13 +91,12 @@ que el sistema nervioso es una intrincada red auto-generada para cambiar y sufri
 modificaciones respecto a su entorno. Nos propone que el conocimiento, es corporizar una modificación del sistema nervioso como aprendizaje, poniéndolo en
 los siguientes términos:
 
-“El aprendizaje como un fenómeno de transformación del sistema nervioso
+>“El aprendizaje como un fenómeno de transformación del sistema nervioso
 asociado a un cambio conductual que tiene lugar bajo mantención de la autopoiesis,
 ocurre debido al continuo acoplamiento entre la fenomenología
 estado-determinada del sistema nervioso y la fenomenología estado-determinada
 del ambiente.”
-
-(Maturana & Varela, 2004, p.130)
+> -- _(Maturana & Varela, 2004, p.130)_
 
 Esta propuesta es muy interesante, en campos como Filosofía del Conocimiento,
 Filosofía de la Afectividad y muchas más, disciplinas donde el acercamiento a la
@@ -137,9 +107,7 @@ experiencia consciente, y ciertas implicancias entre vida y mente.
 
 # Sobre Máquinas y Seres Vivos
 
-Este libro nos propone un concepto unificador para la Biología. Tal como lo dice en
-su introducción: “La descripción, la invención y la manipulación de unidades está
-en la base de toda indagación científica.” (Maturana & Varela, 2004, p.63).
+Este libro nos propone un concepto unificador para la Biología. Tal como lo dice en su introducción: “La descripción, la invención y la manipulación de unidades está en la base de toda indagación científica.” _(Maturana & Varela, 2004, p.63)_.
 Bajo la idea de la autopoiesis, se ha formado un programa de investigación vigente
 hasta, pero que no logra asentarse del todo en su rama materna, la Biología.
 Por un lado, la autopoiesis parece proponer una suerte de ley universal, más que

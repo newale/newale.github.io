@@ -2,7 +2,6 @@
 title: "IA y Conciencia, una perspectiva sobre lo vivo y la experiencia subjetiva"
 date: 2023-11-04T00:00:00-03:00
 draft: false
-author: alejandro
 tags: ["Filosofía", "Conciencia", "Inteligencia Artificial"]
 cover:
     image: "ensayos/ia-conciencia.png"

@@ -20,13 +20,10 @@ params:
   description: "Alejandro Bustos Nuñez sitio personal"
   keywords: [Blog, Portfolio, PaperMod]
   author: Me
-  # author: ["Me", "You"] # multiple authors
-  images: ["<link or path of image for opengraph, twitter-cards>"]
+  # images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: "January 2, 2006"
-  defaultTheme: dark # dark, light
+  defaultTheme: light
   disableThemeToggle: true
-  defaultTheme: dark
-
   ShowReadingTime: true
   ShowShareButtons: false
   ShowPostNavLinks: true
@@ -38,9 +35,9 @@ params:
   disableSpecial1stPost: false
   disableScrollToTop: false
   comments: false
-  hidemeta: false
+  hidemeta: true
   hideSummary: false
-  showtoc: true
+  showtoc: false
   tocopen: false
 
   # assets:
@@ -108,22 +105,18 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
-    - identifier: acerca de mi
-      name: "acerca de mi"
-      url: /acerca-de-mi/
-      weight: 10
     - identifier: Ensayos
       name: ensayos
       url: /ensayos/
       weight: 20
-    # - identifier: blog
-    #   name: blog
-    #   url: /posts/
-    #   weight: 30
-    # - identifier: CV
-    #   name: CV
-    #   url: /experience/
-    #   weight: 40
+    - identifier: blog
+      name: blog
+      url: /posts/
+      weight: 30
+    - identifier: CV
+      name: CV
+      url: /experience/
+      weight: 40
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
 markup:
