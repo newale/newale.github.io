@@ -36,7 +36,3 @@
 .dark.list {
     background: var(--theme);
 }
-
-.toc {
-    background-color: black !important;
-}
