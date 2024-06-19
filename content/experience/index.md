@@ -6,7 +6,7 @@ draft: false
 
 Ingeniero en Informática (2012), Diplomado en Filosofía y Ciencia(2023), e Inteligencia Artificial (2024).
 
-Mis intereses actuales se centran en experiencia de usuario, el uso de la IA en el quehacer diario. Tengo experiencia liderango equipos, alineando la visión del negocio con tecnología, siempre considerando la Experiencia de Usuario como eje central. Mi carrera se ha enfocado en la creación de producto y de escalamiento de la interfaz.
+Mis intereses actuales se centran en experiencia de usuario, el uso de la IA en el quehacer diario. Tengo experiencia liderando equipos, alineando la visión del negocio con tecnología, siempre considerando la Experiencia de Usuario como eje central. Mi carrera se ha enfocado en la creación de producto y de escalamiento de la interfaz.
 
 ## Formación
 
