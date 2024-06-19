@@ -19,9 +19,9 @@ params:
   title: Sitio personal
   description: "Alejandro Bustos Nuñez sitio personal"
   keywords: [Blog, Portfolio, PaperMod]
-  author: Me
+  author: ["Alejandro Bustos Nuñez"]
   # images: ["<link or path of image for opengraph, twitter-cards>"]
-  DateFormat: "January 2, 2006"
+  DateFormat: "January, 2006"
   defaultTheme: light
   disableThemeToggle: true
   ShowReadingTime: true
@@ -35,7 +35,7 @@ params:
   disableSpecial1stPost: false
   disableScrollToTop: false
   comments: false
-  hidemeta: true
+  hidemeta: false
   hideSummary: false
   showtoc: false
   tocopen: false
@@ -105,10 +105,6 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
-    - identifier: Ensayos
-      name: ensayos
-      url: /ensayos/
-      weight: 20
     - identifier: blog
       name: blog
       url: /posts/

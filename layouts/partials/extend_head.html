@@ -86,5 +86,41 @@
     border-radius: 6px;
     font-size: 20px;
     transition: transform .1s;
-  }  
+  }
+
+  .article-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: left;
+  }
+
+  .article-list .post-entry {
+    max-width: calc(50% - 16px);
+  }
+
+  @media (max-width: 768px) {
+    .article-list .post-entry {
+      max-width: 100%;
+    }
+    main.main {
+      max-width: 100%;
+    }
+  }
+  
+  /* Reset styles */
+  main.main {
+    max-width: calc(var(--nav-width) + var(--gap)* 2);
+  }
+
+  .max-width--nav {
+    max-width: calc(var(--nav-width) + var(--gap)* 2);
+  }
+
+  .max-width--body {
+    max-width: calc(var(--main-width) + var(--gap)* 2);
+    margin-left: auto;
+    margin-right: auto
+  }
+
 </style>
