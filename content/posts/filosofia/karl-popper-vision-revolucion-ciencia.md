@@ -2,7 +2,7 @@
 title: "Karl Popper y su Visión Revolucionaria de la Ciencia"
 date: 2023-12-22T00:00:00-03:00
 draft: false
-categories: ["Filosofia"]
+categories: ["filosofia"]
 ---
 
 Karl Popper es una de las figuras más influyentes en la filosofía de la ciencia del siglo XX. Su obra ha dejado una marca indeleble en cómo entendemos la ciencia, la demarcación entre ciencia y pseudociencia, y el progreso del conocimiento científico. Este artículo explora las contribuciones clave de Popper y su visión revolucionaria de la ciencia.

@@ -2,7 +2,7 @@
 title: "Conexiones Colectivas: Tejiendo la Red de Colaboración Social"
 date: 2023-11-04T00:00:00-03:00
 draft: false
-category: ["Sociedad"]
+categories: ["sociedad"]
 ---
 
 En un mundo cada vez más interconectado, la colaboración se ha convertido en una piedra angular de todas las facetas de la sociedad. Este artículo profundiza en la importancia de la colaboración y cómo esta influye y mejora diversos sectores sociales.

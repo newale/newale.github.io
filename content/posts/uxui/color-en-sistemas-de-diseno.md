@@ -1,8 +1,8 @@
 ---
 title: "Colores en un Sistema de Diseño: Fundamentos y Mejores Prácticas"
-date: 2023-11-04T00:00:00-03:00
+date: 2024-02-14T00:00:00-03:00
 draft: false
-categories: ["UX/UI"]
+categories: ["ux/ui"]
 tags: ["Sistemas de diseño", "Primitivas de diseño", "Design Tokens"]
 # cover:
 #   image: "posts/uxui/portada-designsystem.png"

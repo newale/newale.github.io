@@ -2,7 +2,7 @@
 title: "La Importancia de los Sistemas de Diseño en el Desarrollo de Productos"
 date: 2024-06-19T01:14:52-04:00
 draft: false
-categories: ["UX/UI",]
+categories: ["ux/ui",]
 ---
 
 Los sistemas de diseño son una herramienta esencial para cualquier equipo que busque crear productos digitales de alta calidad de manera eficiente y consistente. Aunque su implementación puede parecer costosa y compleja, los beneficios a largo plazo superan ampliamente estos desafíos iniciales. Este artículo tiene como objetivo convencer a los líderes empresariales de la importancia de invertir en un sistema de diseño, subrayando tanto sus ventajas como las complejidades que implica su desarrollo.

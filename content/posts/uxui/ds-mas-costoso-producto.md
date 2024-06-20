@@ -2,7 +2,7 @@
 title: "Flujo de trabajo en un sistema de diseño"
 date: 2023-11-04T00:00:00-03:00
 draft: false
-categories: ["UX/UI"]
+categories: ["ux/ui"]
 tags: ["Sistemas de diseño"]
 cover:
   image: "posts/uxui/portada-designsystem.png"
