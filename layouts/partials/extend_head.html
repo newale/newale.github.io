@@ -5,7 +5,7 @@
 <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
 <style>
-  body, * {
+  body {
     font-family: 'Inter', sans-serif;
   }
 
@@ -78,13 +78,99 @@
   }
 
   .entry-link--custom {
-    margin-top: 24px;
-    display: inline-block;
     padding: 4px 24px;
     background: var(--primary);
     color: white;
     border-radius: 6px;
     font-size: 20px;
     transition: transform .1s;
-  }  
+    text-align: center;
+    min-width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .article-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: left;
+    align-items: baseline;
+  }
+
+  .post-entry {
+    max-width: calc(50% - 24px);
+  }
+
+  @media (max-width: 768px) {
+    .article-list .post-entry {
+      max-width: 100%;
+    }
+    main.main {
+      max-width: 100%;
+    }
+    .post-list--home {
+      flex-direction: column;
+    }
+    
+  }
+  
+  /* Reset styles */
+  main.main {
+    max-width: calc(var(--nav-width) + var(--gap)* 2);
+  }
+
+  .max-width--nav {
+    max-width: calc(var(--nav-width) + var(--gap)* 2);
+  }
+
+  .max-width--body {
+    max-width: calc(var(--main-width) + var(--gap)* 2);
+    margin-left: auto;
+    margin-right: auto
+  }
+
+  .post-list--home {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .home-title--h2 {
+    margin-bottom: 24px;
+  }
+  h3.home-title--h3 {
+    margin-bottom: 16px;
+    text-transform: capitalize;
+  }
+
+  .post-list--home > .post-entry {
+    max-width: 45%;
+    margin-bottom: 0;
+  }
+
+  .post-list--home .entry-header h2 {
+    font-size: 21px;
+  }
+  .post-list--home .entry-content p {
+    font-size: 16px;
+  }
+  @media (max-width: 768px) {
+    .post-list--home {
+      flex-direction: column;
+    }
+    
+    .post-list--home > .post-entry {
+      max-width: 100%;
+      margin-bottom: 0;
+    }
+  }
+
+  code > * {
+    font-family: monospace;
+  }
+
 </style>
