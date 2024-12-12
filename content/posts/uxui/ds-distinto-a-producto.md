@@ -1,7 +1,7 @@
 ---
 title: "La Importancia de los Sistemas de Diseño en el Desarrollo de Productos"
 date: 2024-06-19T01:14:52-04:00
-draft: false
+draft: true
 categories: ["ux/ui",]
 ---
 

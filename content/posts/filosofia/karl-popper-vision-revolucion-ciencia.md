@@ -1,7 +1,7 @@
 ---
-title: "Karl Popper y su Visión Revolucionaria de la Ciencia"
+title: "Karl Popper y su visión revolucionaria de la ciencia"
 date: 2023-12-22T00:00:00-03:00
-draft: false
+draft: true
 categories: ["filosofia"]
 ---
 

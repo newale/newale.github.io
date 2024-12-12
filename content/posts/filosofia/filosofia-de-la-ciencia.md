@@ -1,12 +1,37 @@
 ---
-title: "La Filosofía de la Ciencia: Explorando los Fundamentos del Conocimiento Científico"
+title: "Explorando los Fundamentos del Conocimiento Científico"
 date: 2023-12-22T00:00:00-03:00
-draft: false
+draft: true
 categories: ["filosofia"]
 ---
 
-La filosofía de la ciencia es una rama de la filosofía que se centra en los fundamentos, métodos y consecuencias de la ciencia. Examina la naturaleza del conocimiento científico, su capacidad para describir la realidad y la validez de sus teorías. A lo largo de los siglos, los filósofos han debatido sobre la demarcación entre ciencia y pseudociencia, la estructura de las teorías científicas y el progreso de la ciencia. Este artículo explorará estos temas clave y cómo influyen en nuestra comprensión de la ciencia.
+El lugar de la ciencia en el mundo moderno es un caso bastante interesante de analizar. Las cosas que se mencionan como cientificas o basadas en ciencia, tienen un valor distinto a aquellas que no. Incluso, el "método científico" es algo que se estudia y también solemos por ejemplo confiar en sus resultados. Hace poco me topé con el libro "Hacia una sociedad cientificamente construida" por BF Skinner, Walden Dos
 
+Pero ¿De donde nace tal confianza? Como podemos confiarle tanto a la ciencia. Como podemos saber qué no es ciencia, donde está ese límite
+
+
+A lo largo de la historia, esta demarcación, de, aquello que es científico y aquello que no, ha ido cambiando
+
+
+Este articulo explorará este problema de demarcación entre ciencia y pseudociencia, como se estructuran las teorías cientificas y que se entiende por progreso, entendiendo esto podemos llevar esto a nuestro trabajo diario, y entender como podemos construir mejores fundamentos
+
+
+## Que es ciencia
+
+La ciencia como conocimiento derivado de los hechos de la experiencia
+Porque los hechos deben preceder a la teoría?
+
+## El experimento
+
+No solo hechos, si no los hechos pertinentes
+
+
+## La inducción, teoría a partir de los hechos
+- Lógica para bebes
+
+
+
+## La Estructura de las Teorías Científicas
 ## La Demarcación de la Ciencia
 
 Uno de los problemas más antiguos y debatidos en la filosofía de la ciencia es el problema de la demarcación: ¿qué distingue a la ciencia de la pseudociencia? Este problema es fundamental porque establece los límites de lo que consideramos conocimiento legítimo y confiable.
@@ -16,6 +41,8 @@ Uno de los problemas más antiguos y debatidos en la filosofía de la ciencia es
 El filósofo Karl Popper propuso un criterio de demarcación basado en la falsabilidad. Según Popper, una teoría es científica si y solo si es falsable, es decir, si puede ser refutada por observaciones o experimentos. Este criterio excluye a las teorías que no pueden ser sometidas a prueba, como las doctrinas religiosas o ciertas teorías psicológicas.
 
 Popper argumentaba que la ciencia avanza mediante un proceso de conjeturas y refutaciones. Las teorías científicas deben hacer predicciones claras que puedan ser sometidas a prueba. Si una predicción resulta falsa, la teoría debe ser revisada o abandonada. Este enfoque enfatiza la importancia del riesgo en la ciencia: una teoría que no se arriesga a ser refutada no puede considerarse científica.
+
+Si quieres ahondar más, te invito a leer [Karl Popper y su visión revolucionaria de la ciencia]({{< ref "karl-popper-vision-revolucion-ciencia.md" >}}) 
 
 ### La Crítica de Kuhn
 
