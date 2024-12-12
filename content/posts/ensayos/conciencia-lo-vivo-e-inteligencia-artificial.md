@@ -4,7 +4,7 @@ date: 2023-11-04T00:00:00-03:00
 draft: false
 categories: ["filosofia"]
 cover:
-    image: "ensayos/ia-conciencia.png"
+    image: "posts/ensayos/ia-conciencia.png"
     alt: imagen post
     caption: imagen ilustrativa sobre inteligencia artificial y conciencia
 ---
