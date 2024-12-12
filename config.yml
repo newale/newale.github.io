@@ -17,16 +17,16 @@ minify:
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: Sitio personal
-  description: "Alejandro Bustos Nuñez sitio personal"
+  description: "Alejandro Bustos Nuñez Sitio Web Personal"
   keywords: [Blog, Portfolio, PaperMod]
-  author: Me
+  author: ["alejandro"]
   # images: ["<link or path of image for opengraph, twitter-cards>"]
-  DateFormat: "January 2, 2006"
+  DateFormat: "January, 2006"
   defaultTheme: light
   disableThemeToggle: true
   ShowReadingTime: true
   ShowShareButtons: false
-  ShowPostNavLinks: true
+  ShowPostNavLinks: false
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: false
   ShowWordCount: true
@@ -35,10 +35,15 @@ params:
   disableSpecial1stPost: false
   disableScrollToTop: false
   comments: false
-  hidemeta: true
+  hidemeta: false
   hideSummary: false
   showtoc: false
   tocopen: false
+  params:
+  mainSections:
+    - posts
+    - cv
+
 
   # assets:
   #   # disableHLJS: true # to disable highlight.js
@@ -57,17 +62,13 @@ params:
   # profile-mode
   profileMode:
     enabled: false # needs to be explicitly set
-    title: ExampleSite
-    subtitle: "This is subtitle"
-    imageUrl: "<img location>"
-    imageWidth: 120
-    imageHeight: 120
-    imageTitle: my image
+    title: Alejandro Bustos Nuñez
+    subtitle: "Ingeniero en Informática, diplomado en Filosofía y Ciencias (2023), e Inteligencia Artificial (2024)"
     buttons:
-      - name: Posts
+      - name: Blog
         url: posts
-      - name: Tags
-        url: tags
+      - name: Curriculum
+        url: cv
 
   # home-info mode
   homeInfoParams:
@@ -105,18 +106,14 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
-    - identifier: Ensayos
-      name: ensayos
-      url: /ensayos/
-      weight: 20
     - identifier: blog
       name: blog
       url: /posts/
-      weight: 30
+      weight: 10
     - identifier: CV
       name: CV
       url: /experience/
-      weight: 40
+      weight: 20
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
 markup:
