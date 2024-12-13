@@ -1,7 +1,7 @@
 ---
 title: "Desarrollando montos accesibles para la web"
 date: 2024-12-12T00:00:00-03:00
-draft: false
+draft: true
 categories: ["accesibilidad"]
 # cover:
 #     image: "posts/ensayos/autopoiesis-2.png"
