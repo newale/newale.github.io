@@ -8,7 +8,7 @@ cover:
     alt: imagen post
     caption: imagen ilustrativa sobre inteligencia artificial y conciencia
 ---
-![imagen ilustrativa sobre inteligencia artificial y conciencia](/ensayos/ia-conciencia.png)
+![imagen ilustrativa sobre inteligencia artificial y conciencia](/posts/ensayos/ia-conciencia.png)
 
 # Introducción
 
