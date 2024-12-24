@@ -8,7 +8,7 @@ cover:
     alt: imagen post
     caption: imagen ilustrativa abstracta
 ---
-![Imagen abstracta](/ensayos/autopoiesis-2.png)
+![Imagen abstracta](/posts/ensayos/autopoiesis-2.png)
 
 # Introducción
 
