@@ -3,8 +3,32 @@ title: "Tomás de Aquino sobre la ley: Explorando las Cuestiones 91 y 94 de la S
 date: 2024-12-22T00:00:00-03:00
 draft: false
 categories: ["filosofia"]
+cover:
+    image: "/posts/filosofia/aquinas.png"
+    alt: imagen post
+    caption: imagen ilustrativa abstracta
 ---
+![Imagen abstracta](/posts/filosofia/aquinas.png)
 
+
+
+Tomás de Aquino dejó un legado intelectual interesante, siendo _Summa Theologica_ su obra más completa y reconocida. En esta obra maestra, Aquino explora sistemáticamente las doctrinas cristianas y sus fundamentos racionales, adentrándose en una amplia gama de temas teológicos y filosóficos. Su análisis de la ley, particularmente en las Cuestiones 91 y 94, es fundamental para comprender su filosofía legal y moral.
+
+# Sobre la estructura de Summa Theologica
+
+Antes de sumergirnos en estas cuestiones específicas, es esencial comprender la estructura de la _Summa Theologica_. La obra se organiza en tres Partes, cada una dividida en cuestiones, que a su vez se subdividen en artículos. Cada artículo aborda un problema específico y sigue un formato de disputa escolástica. Este formato, común en las universidades medievales, implica plantear una pregunta, resumir objeciones, proporcionar una respuesta y luego responder a las objeciones. Además, cada artículo se divide en cinco secciones: la pregunta planteada, las objeciones, una autoridad citada en contra, la determinación de Aquino sobre la cuestión y sus respuestas a las objeciones. La _Summa Theologica_ de Aquino fue concebida como una guía de instrucción para estudiantes de teología, incluyendo seminaristas y laicos alfabetizados.
+
+También es importante destacar la influencia de Aristóteles y Agustín en la obra de Aquino, particularmente en sus discusiones sobre el alma y la embriología . Un ejemplo paradigmático del estilo argumentativo de Aquino son sus "Cinco Vías", cinco argumentos para la existencia de Dios. Estos incluyen argumentos del movimiento, la causalidad, la contingencia, el grado y la causa final o fines (argumento teleológico) .   
+
+# Interpretaciones y Aplicaciones Históricas
+
+Las ideas de Aquino sobre la ley, especialmente su concepto de ley natural, han tenido un impacto profundo y duradero en el pensamiento occidental y las tradiciones legales . Su obra ha sido interpretada y aplicada de diversas maneras a lo largo de la historia, influyendo en discusiones teológicas, teorías legales y debates éticos.   
+
+Una interpretación significativa de la teoría de la ley natural de Aquino es su uso para justificar y fundamentar los derechos humanos. La idea de que ciertos derechos fundamentales son inherentes a la naturaleza humana y no simplemente otorgados por las autoridades humanas tiene sus raíces en el concepto de ley natural de Aquino .   
+
+Otra aplicación importante de la teoría de la ley natural de Aquino se encuentra en el ámbito de la teoría de la guerra justa. Aquino argumenta que la guerra solo puede justificarse si cumple con ciertos criterios, que incluyen la causa justa, la intención correcta y la proporcionalidad. Estos criterios se basan en los principios de la ley natural y tienen como objetivo garantizar que la guerra se lleve a cabo de manera moralmente responsable .   
+
+Curiosamente, la historia de las teorías de la ley natural ha sido compleja y paradójica. Algunos pensadores niegan la idea de la sindéresis (una capacidad innata para el juicio moral) mientras siguen confiando en sus conceptos . Esto resalta el debate continuo y la evolución de la teoría de la ley natural a lo largo de la historia.   
 
 # Cuestión 91: Las Diversas Formas de Ley
 
@@ -36,14 +60,6 @@ Aquino identifica algunos de los preceptos primarios de la ley natural, que incl
 - **Búsqueda del conocimiento y la verdad:** Este precepto surge de la naturaleza racional de los humanos y su deseo de comprender el mundo que los rodea .   
     
 - **Vivir en sociedad:** Este precepto reconoce la naturaleza social de los humanos y la necesidad de cooperación y comunidad .   
-
-Inclinaciones Naturales y Preceptos de la Ley Natural
-
-| Inclinación Natural | Descripción | Ejemplos | Preceptos de la Ley Natural |
-|---------------------|-------------|----------|-----------------------------|
-| Inclinación a la autoconservación | Común a todas las sustancias, lleva al hombre a buscar la preservación de su propia vida. | Comer, beber, dormir, buscar refugio. | Proteger la vida propia y la de los demás. No matar, no hacer daño. |
-| Inclinación a la procreación y la educación de los hijos | Común a los animales, impulsa al hombre a la unión con el sexo opuesto y al cuidado de la descendencia. | Buscar pareja, tener hijos, criarlos y educarlos. | Respetar la unión entre hombre y mujer. Cuidar de los hijos. |
-| Inclinación al conocimiento de la verdad y a la vida social | Propia del hombre como ser racional, lo lleva a buscar la verdad, especialmente sobre Dios, y a vivir en sociedad. | Estudiar, investigar, aprender, relacionarse con otros. | Buscar la verdad y el conocimiento. Vivir en armonía con los demás. No mentir, no robar. |
     
 
 Aquino sostiene que la ley natural es inmutable y universal, y se aplica a todas las criaturas racionales. Sin embargo, reconoce que la aplicación de estos principios generales puede variar según las circunstancias específicas y los contextos culturales. Por ejemplo, la ley humana puede resultar en "leyes diferentes y contrarias" a través del tiempo y la cultura para facilitar diferentes modos de ser en el mundo . Esta variabilidad en la aplicación no contradice la universalidad de la ley natural, sino que demuestra su adaptabilidad a diversas situaciones humanas.   

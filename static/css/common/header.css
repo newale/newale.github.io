@@ -1,8 +1,8 @@
 :root {
-  --bard-color-brand-text-gradient-stop-3: #0b32cfe5;
-  --bard-color-brand-text-gradient-stop-1: hsl(261, 100%, 57%);
-  --bard-color-brand-text-gradient-stop-2: hsl(234, 94%, 39%);
-  --gem-sys-color--surface: #1e1f20;
+  --color-stop-1: #7024ff;
+  --color-stop-2: #0619c1;
+  --color-stop-3: #0b32d0;
+  --color-stop-4: #1e1f20;
 }
 .nav {
   display: flex;
@@ -32,16 +32,16 @@
   font-size: 24px;
   font-weight: 700;
   background: linear-gradient(
-      74deg, var(--bard-color-brand-text-gradient-stop-1) 0,
-      var(--bard-color-brand-text-gradient-stop-2) 9%,
-      var(--bard-color-brand-text-gradient-stop-3) 20%,
-      var(--bard-color-brand-text-gradient-stop-3) 24%,
-      var(--bard-color-brand-text-gradient-stop-2) 35%,
-      var(--bard-color-brand-text-gradient-stop-1) 44%,
-      var(--bard-color-brand-text-gradient-stop-2) 50%,
-      var(--bard-color-brand-text-gradient-stop-3) 56%,
-      var(--gem-sys-color--surface) 75%,
-      var(--gem-sys-color--surface) 100%
+      74deg, var(--color-stop-1) 0,
+      var(--color-stop-2) 9%,
+      var(--color-stop-3) 20%,
+      var(--color-stop-3) 24%,
+      var(--color-stop-2) 35%,
+      var(--color-stop-1) 44%,
+      var(--color-stop-2) 50%,
+      var(--color-stop-3) 56%,
+      var(--color-stop-4) 75%,
+      var(--color-stop-4) 100%
   );
   background-size: 400% 100%;
   -webkit-background-clip: text;

@@ -2,8 +2,15 @@
 title: "Hacia un consenso sobre la Inteligencia Artificial"
 date: 2024-06-24T20:40:03-04:00
 categories: ["inteligencia-artificial"]
-draft: true
+draft: false
+cover:
+    image: "/posts/ia/rostislav-uzunov-3G03lBTzjA8-unsplash.jpg"
+    alt: imagen post
+    caption: imagen ilustrativa abstracta
 ---
+
+![Imagen abstracta](/posts/ia/rostislav-uzunov-3G03lBTzjA8-unsplash.jpg)
+
 
 En nuestro país un debate creciente se está llevando sobre el fenómeno de la inteligencia artificial y como cómo país se abordará esta tecnología. Tanto el sector público como el privado tienen altos intereses en esto (aunque en la realidad pueda no reflejar un presupuesto en esa dirección). Chile anunció su Politica Nacional en Inteligencia Artificial, allá por el 2017.
 

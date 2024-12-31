@@ -4,11 +4,11 @@ date: 2023-11-04T00:00:00-03:00
 draft: false
 categories: ["filosofia"]
 cover:
-    image: "posts/ensayos/ia-conciencia.png"
+    image: "posts/ia/rostislav-uzunov-3G03lBTzjA8-unsplash.jpg"
     alt: imagen post
     caption: imagen ilustrativa sobre inteligencia artificial y conciencia
 ---
-![imagen ilustrativa sobre inteligencia artificial y conciencia](/posts/ensayos/ia-conciencia.png)
+![imagen ilustrativa sobre inteligencia artificial y conciencia](/posts/ia/rostislav-uzunov-3G03lBTzjA8-unsplash.jpg)
 
 Desde muy temprano el ser humano se ha visto enfrentado al problema mente-cuerpo. Incluso hoy, donde los avances en neurociencia nos permiten un acercamiento científico al cerebro, no existe un consenso de qué es la conciencia (y ni siquiera si ésta tiene su origen en el cerebro); y sin embargo esta es una experiencia común para todos los seres humanos. Para una criatura consciente, algo se siente ser tal criatura, reflejando que algo hay en la experiencia de ser una persona, un delfín o un murciélago, tal cómo lo expusiera Thomas Nagel en 1974 en su célebre artículo “What is like to be a bat?”.
 
@@ -70,3 +70,7 @@ Thompson, E. (2010). Mind in Life: Biology, Phenomenology, and the Sciences of M
 Tsakiris, M., & Preester, H. d. (Eds.). (2019). The Interoceptive Mind: From Homeostasis to Awareness. Oxford University Press.
 
 Seth, Anil (2009). The strength of weak Artificial Consciousness. World Scientific Publishing Company
+
+---
+Foto de [Rostislav Uzunov](https://unsplash.com/es/@rostislavuznv?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) en [Unsplash](https://unsplash.com/es/fotos/un-objeto-de-vidrio-con-fondo-azul-3G03lBTzjA8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
+
