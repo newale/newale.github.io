@@ -1,8 +1,8 @@
 :root {
-  --color-stop-1: #7024ff;
-  --color-stop-2: #0619c1;
-  --color-stop-3: #0b32d0;
-  --color-stop-4: #1e1f20;
+  --color-stop-1: #e9deff;
+  --color-stop-2: #7cf1f7;
+  --color-stop-3: #889def;
+  --color-stop-4: #93a4f1;
 }
 .nav {
   display: flex;

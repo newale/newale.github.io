@@ -7,8 +7,9 @@ cover:
     image: "posts/ia/rostislav-uzunov-3G03lBTzjA8-unsplash.jpg"
     alt: imagen post
     caption: imagen ilustrativa sobre inteligencia artificial y conciencia
+    hidden: false
 ---
-![imagen ilustrativa sobre inteligencia artificial y conciencia](/posts/ia/rostislav-uzunov-3G03lBTzjA8-unsplash.jpg)
+
 
 Desde muy temprano el ser humano se ha visto enfrentado al problema mente-cuerpo. Incluso hoy, donde los avances en neurociencia nos permiten un acercamiento científico al cerebro, no existe un consenso de qué es la conciencia (y ni siquiera si ésta tiene su origen en el cerebro); y sin embargo esta es una experiencia común para todos los seres humanos. Para una criatura consciente, algo se siente ser tal criatura, reflejando que algo hay en la experiencia de ser una persona, un delfín o un murciélago, tal cómo lo expusiera Thomas Nagel en 1974 en su célebre artículo “What is like to be a bat?”.
 

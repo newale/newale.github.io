@@ -6,6 +6,14 @@
 <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
 <style>
+
+  /* --main-body-width: 720px; */
+  :root {
+    --color-background: black;
+    --stroke-width: 6px;
+    --letter-spacing: 6px;
+  }
+
   body {
     font-family: 'Inter', sans-serif;
   }
@@ -13,15 +21,7 @@
   p, li, ul, strong, em, cite {
     font-family: 'PT Serif', serif!important;
     font-size: 20px;
-  }
-
-  /* Card */
-
-
-  :root {
-    --color-background: black;
-    --stroke-width: 6px;
-    --letter-spacing: 6px;
+    color: #06081e;
   }
 
   .logo a {
@@ -29,9 +29,17 @@
     font-family: 'Inter', sans-serif!important;
   }
 
+  .header {
+    background-color: black;
+  }
+
   h1, h2, h3, h4, h5, h6, a {
     color: #191923;
     font-family: 'PT Serif', serif !important;
+  }
+
+  #menu a {
+    color: white !important;
   }
 
   .entry-header h1{
@@ -107,7 +115,20 @@
     max-width: 100%;
     display: flex;
     flex-direction: row;
+    background-color: #0d939c;
+    color: white;
   }
+  .featured .entry-header {
+    color: white;
+  }
+
+  .featured .entry-content > p {
+    color: rgb(228, 228, 228);
+  }
+
+  .featured .entry-footer {
+    color: rgb(228, 228, 228);
+  } 
 
   .featured-content {
     display: flex;
@@ -133,6 +154,7 @@
 
   .featured-text .entry-header h2 {
     font-size: 32px;
+    color: white;
   }
 
   .entry-footer {
@@ -208,6 +230,18 @@
     max-width: calc(var(--main-width) + var(--gap)* 2);
     margin-left: auto;
     margin-right: auto
+  }
+
+  .post-single .entry-cover {
+    align-items: center; 
+  }
+
+  .post-single .post-header, 
+  .post-single .post-footer,
+  .post-single .post-content {
+    max-width: var(--main-body-width);
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .post-list--home {

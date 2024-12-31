@@ -7,10 +7,9 @@ cover:
     image: "posts/ensayos/autopoiesis-2.png"
     alt: imagen post
     caption: imagen ilustrativa abstracta
----
-![Imagen abstracta](/posts/ensayos/autopoiesis-2.png)
+    hidden: false
 
-# Introducción
+---
 
 Un ser vivo es aquel que nace, crece, se reproduce y muere.
 

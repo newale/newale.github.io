@@ -2,17 +2,17 @@
 title: "Hacia un consenso sobre la Inteligencia Artificial"
 date: 2024-06-24T20:40:03-04:00
 categories: ["inteligencia-artificial"]
-draft: false
+draft: true
 cover:
     image: "/posts/ia/rostislav-uzunov-3G03lBTzjA8-unsplash.jpg"
     alt: imagen post
     caption: imagen ilustrativa abstracta
+    hidden: false
+# showToc: true
 ---
 
-![Imagen abstracta](/posts/ia/rostislav-uzunov-3G03lBTzjA8-unsplash.jpg)
 
 
-En nuestro país un debate creciente se está llevando sobre el fenómeno de la inteligencia artificial y como cómo país se abordará esta tecnología. Tanto el sector público como el privado tienen altos intereses en esto (aunque en la realidad pueda no reflejar un presupuesto en esa dirección). Chile anunció su Politica Nacional en Inteligencia Artificial, allá por el 2017.
 
 Lo primero que nos puede interesar ahondar es sobre el término mismo y su contexto, la llamada "revolución industrial 4.0". El término de inteligencia aparece y se usa sin llegar a un consenso sobre este, ¿Qué entiende la gente por inteligencia hoy por hoy? Tener un consenso
 es fundamental para equilibrar e informar el debate, y volverlo interesante.

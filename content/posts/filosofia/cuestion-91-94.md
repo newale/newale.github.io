@@ -7,10 +7,8 @@ cover:
     image: "/posts/filosofia/aquinas.png"
     alt: imagen post
     caption: imagen ilustrativa abstracta
+    hidden: false
 ---
-![Imagen abstracta](/posts/filosofia/aquinas.png)
-
-
 
 Tomás de Aquino dejó un legado intelectual interesante, siendo _Summa Theologica_ su obra más completa y reconocida. En esta obra maestra, Aquino explora sistemáticamente las doctrinas cristianas y sus fundamentos racionales, adentrándose en una amplia gama de temas teológicos y filosóficos. Su análisis de la ley, particularmente en las Cuestiones 91 y 94, es fundamental para comprender su filosofía legal y moral.
 

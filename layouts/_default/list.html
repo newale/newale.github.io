@@ -152,6 +152,7 @@
           </div>
         </div>
       {{- else }}
+        {{- partial "cover.html" (dict "cxt" . "IsHome" true "isHidden" $isHidden) }}
         <header class="entry-header">
           <h2>
             {{- .Title }}
