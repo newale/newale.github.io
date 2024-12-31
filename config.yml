@@ -19,7 +19,7 @@ params:
   title: Sitio personal
   description: "Alejandro Bustos Nuñez Sitio Web Personal"
   keywords: [Blog, Portfolio, PaperMod]
-  author: ["alejandro"]
+  author: [""]
   # images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: "January, 2006"
   defaultTheme: light
