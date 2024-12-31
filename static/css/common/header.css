@@ -1,7 +1,7 @@
 :root {
-  --bard-color-brand-text-gradient-stop-1: #195fd0e5;
-  --bard-color-brand-text-gradient-stop-2: hsl(226, 100%, 57%);
-  --bard-color-brand-text-gradient-stop-3: hsl(10, 82%, 45%);
+  --bard-color-brand-text-gradient-stop-3: #0b32cfe5;
+  --bard-color-brand-text-gradient-stop-1: hsl(261, 100%, 57%);
+  --bard-color-brand-text-gradient-stop-2: hsl(234, 94%, 39%);
   --gem-sys-color--surface: #1e1f20;
 }
 .nav {
