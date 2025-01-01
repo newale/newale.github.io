@@ -73,7 +73,7 @@ params:
   # home-info mode
   homeInfoParams:
     Title: "¡Hola \U0001F44B!"
-    Content: Sitio web personal, donde escribo sobre tecnología, desarrollo de software, y otras cosas que me interesan.
+    Content: "Sitio web personal, donde puedes encontrar mi CV y algunos articulos. Para ponerte en contacto, puedes hacerlo a través de linkedin"
 
   socialIcons:
     - name: linkedin
