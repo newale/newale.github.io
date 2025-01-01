@@ -4,11 +4,10 @@ date: 2023-11-04T00:00:00-03:00
 draft: false
 categories: ["filosofia"]
 cover:
-    image: "posts/ensayos/autopoiesis-2.png"
+    image: "posts/ensayos/gildardo-rh-q1-dAZuhs7I-unsplash.jpg"
     alt: imagen post
     caption: imagen ilustrativa abstracta
     hidden: false
-
 ---
 
 Un ser vivo es aquel que nace, crece, se reproduce y muere.
@@ -183,3 +182,7 @@ programa autopoiético y el programa darwiniano.
 Ramos Zincke, C. (2012). El ensamblaje de ciencia social y sociedad:
 Conocimiento científico , gobiernos de las conductas y producción de lo
 social. Ediciones Universidad Alberto Hurtado.
+
+---
+
+**Foto** de [Gildardo RH](https://unsplash.com/es/@gildardorh8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) en [Unsplash](https://unsplash.com/es/fotos/fotografia-macro-de-hoja-verde-q1-dAZuhs7I?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)

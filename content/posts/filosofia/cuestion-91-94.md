@@ -1,7 +1,7 @@
 ---
 title: "Tomás de Aquino sobre la ley: Explorando las Cuestiones 91 y 94 de la Summa Theologica"
 date: 2024-12-22T00:00:00-03:00
-draft: false
+draft: true
 categories: ["filosofia"]
 cover:
     image: "/posts/filosofia/aquinas.png"

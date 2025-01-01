@@ -73,5 +73,6 @@ Tsakiris, M., & Preester, H. d. (Eds.). (2019). The Interoceptive Mind: From Hom
 Seth, Anil (2009). The strength of weak Artificial Consciousness. World Scientific Publishing Company
 
 ---
+
 Foto de [Rostislav Uzunov](https://unsplash.com/es/@rostislavuznv?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) en [Unsplash](https://unsplash.com/es/fotos/un-objeto-de-vidrio-con-fondo-azul-3G03lBTzjA8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
 

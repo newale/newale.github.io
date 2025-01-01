@@ -1,7 +1,7 @@
 ---
 title: "Sobre En El Enjambre de Byung-Chul Han"
 date: 2024-12-30T00:00:00-03:00
-draft: false
+draft: true
 categories: ["filosofia"]
 feature: true
 cover:
