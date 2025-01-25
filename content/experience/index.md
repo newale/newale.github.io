@@ -1,7 +1,7 @@
 ---
 title: "Curriculum Vitae"
 date: 2023-11-04T00:00:00-03:00
-draft: false
+draft: true
 ---
 
 Ingeniero en Informática (2012), Diplomado en Filosofía y Ciencia(2023), e Inteligencia Artificial (2024).

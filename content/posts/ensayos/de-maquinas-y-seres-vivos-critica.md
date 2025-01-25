@@ -3,6 +3,7 @@ title: "Crítica a De Máquinas y Seres Vivos"
 date: 2023-11-04T00:00:00-03:00
 draft: false
 categories: ["filosofia"]
+feature: true
 cover:
     image: "posts/ensayos/gildardo-rh-q1-dAZuhs7I-unsplash.jpg"
     alt: imagen post
