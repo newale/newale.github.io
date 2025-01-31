@@ -45,7 +45,7 @@ params:
   profileMode:
     enabled: false
     title: Alejandro Bustos Nuñez
-    subtitle: "Ingeniero en Informática, diplomado en Filosofía y Ciencias (2023), e Inteligencia Artificial (2024)"
+    subtitle: "Ingeniero en Informática, estudiante Magister en Éticas Aplicadas"
     buttons:
       - name: Blog
         url: posts
