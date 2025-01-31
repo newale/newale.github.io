@@ -53,7 +53,7 @@ params:
         url: cv
   homeInfoParams: 
     Title: "¡Hola \U0001F44B!"
-    Content: "Sitio web personal, donde puedes encontrar mi CV y algunos articulos. Para ponerte en contacto, puedes hacerlo a través de linkedin"
+    Content: "Ingeniero en Informática, estudiante del Magister en Éticas Aplicadas (2025), diplomado en Filosofía y Ciencias (2023), e Inteligencia Artificial (2024)"
     socialIcons:
       - name: linkedin
         url: "https://www.linkedin.com/in/alejandrobustosn"
