@@ -9,7 +9,7 @@
 
   /* --main-body-width: 720px; */
   :root {
-    --color-background: black;
+    --color-background: white;
     --stroke-width: 6px;
     --letter-spacing: 6px;
   }
@@ -30,7 +30,7 @@
   }
 
   .header {
-    background-color: black;
+    background-color: var(--code-bg);
   }
 
   h1, h2, h3, h4, h5, h6, a {
@@ -38,8 +38,10 @@
     font-family: 'PT Serif', serif !important;
   }
 
-  #menu a {
-    color: white !important;
+  #menu a, #menu a:visited, #menu a:hover, #menu a:active {
+    font-weight: bold;
+    font-size: 18px;
+    color: blue;
   }
 
   .entry-header h1{
