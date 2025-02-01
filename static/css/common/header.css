@@ -28,7 +28,7 @@
   flex-wrap: inherit;
 }
 
-.logo a {
+/* .logo a {
   font-size: 24px;
   font-weight: 700;
   background: linear-gradient(
@@ -46,7 +46,7 @@
   background-size: 400% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
+} */
 
 .logo a img, .logo a svg {
   display: inline;
