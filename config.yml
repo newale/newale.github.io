@@ -37,7 +37,7 @@ params:
   tocopen: false
   params:
   mainSections:
-    - posts
+    - blog
   label:
     text: "alejandro"
     icon: /apple-touch-icon.png
@@ -49,8 +49,6 @@ params:
     buttons:
       - name: Blog
         url: posts
-      - name: Curriculum
-        url: cv
   homeInfoParams: 
     Title: "¡Hola \U0001F44B!"
     Content: "Ingeniero en Informática, estudiante del Magister en Éticas Aplicadas (2025), diplomado en Filosofía y Ciencias (2023), e Inteligencia Artificial (2024)"
@@ -59,6 +57,8 @@ params:
         url: "https://www.linkedin.com/in/alejandrobustosn"
       - name: github
         url: "https://github.com/newale"
+      - name: medium
+        url: "https://medium.com/@alejandro.bustos.n"
   cover:
     hidden: false # hide everywhere but not in structured data
     hiddenInList: true # hide on list pages and home
