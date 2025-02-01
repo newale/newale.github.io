@@ -8,6 +8,7 @@ cover:
     alt: imagen post
     caption: imagen ilustrativa sobre inteligencia artificial y conciencia
     hidden: false
+
 ---
 
 
