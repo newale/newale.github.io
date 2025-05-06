@@ -112,3 +112,13 @@ body:not(.dark) #sun {
 .logo-switches {
   flex-wrap: inherit;
 }
+
+.post-meta{margin-top: 16px;}
+.post-meta, .post-meta a {
+  font-family: PT Serif, serif;
+  color: var(--secondary);
+}
+
+.entry-footer a {
+  color: #e4e4e4;
+}

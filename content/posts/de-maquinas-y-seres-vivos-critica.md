@@ -9,6 +9,7 @@ cover:
     alt: imagen post
     caption: imagen ilustrativa abstracta
     hidden: false
+mediumLink: https://medium.com/@alejandro.bustos.n/crítica-al-libro-de-máquinas-y-seres-vivos-c65e73ed8487
 ---
 
 Un ser vivo es aquel que nace, crece, se reproduce y muere.
