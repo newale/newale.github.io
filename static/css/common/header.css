@@ -24,6 +24,10 @@
   margin: auto var(--gap);
 }
 
+#menu > li > a {
+  font-family: minecraft, sans-serif;
+}
+
 .logo {
   flex-wrap: inherit;
 }
