@@ -1,0 +1,9 @@
+---
+layout: "home.html"
+---
+
+<ul>
+  {% for post in collections.post %}
+    <li>{{ post.data.url }}</li>
+  {% endfor %}
+</ul>
