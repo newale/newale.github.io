@@ -1,9 +1,13 @@
 html, body {
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0rem;
   font-family: 'Times New Roman', Times, serif;
   background-color: #f4f4f4;
   max-width: 620px;
+}
+
+body {
+  padding: 1rem;
 }
 
 p, li {
