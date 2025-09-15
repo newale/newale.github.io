@@ -39,7 +39,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build with Eleventy
-        run: npx @11ty/eleventy
+        run: npm run build
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
