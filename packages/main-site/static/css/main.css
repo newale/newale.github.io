@@ -1,0 +1,69 @@
+:root {
+  color-scheme: light dark;
+
+  --primary-color: light-dark(#2b0ca6, #bf57e9);
+  --secondary-color: light-dark(#f4f4f4, #2c3e50);
+  --text-color: light-dark(#2f2f2f, #ecf0f1);
+  --background-color: light-dark(#ffffff, #091420);
+  --text-primary-color: light-dark(#2b0ca6, #d8aaeb);
+  --text-body-color: light-dark(#2f2f2f, #8edff3);
+  --text-icon-color: light-dark(#2f2f2f, #77bacb);
+  --text-link-color: light-dark(#2b0ca6, #8a86f7);
+}
+
+html, body {
+  margin: 0 auto;
+  padding: 0rem;
+  font-family: 'PT Serif', Times, serif;
+  background-color: var(--background-color);
+  max-width: 620px;
+  color: var(--text-body-color);
+}
+
+body {
+  padding: 1rem;
+}
+
+p, li {
+  line-height: 1.5;
+  color: var(--text-body-color);
+}
+
+.navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--text-link-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  margin: 1rem 0;
+  color: var(--text-primary-color);
+}
+
+.posts-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.posts-list li {
+  margin-bottom: 0.5rem;
+}
+
+.social-icons svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: var(--text-icon-color);
+}
+
+.social-icons a {
+  text-decoration: none;
+  margin-right: 10px;
+  color: var(--text-icon-color);
+}

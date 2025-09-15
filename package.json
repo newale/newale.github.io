@@ -3,14 +3,18 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "npx eleventy --serve",
-    "build": "eleventy"
+    "dev": "lerna run dev --scope main-site",
+    "build": "npm run build:main-site",
+    "build:main-site": "lerna run build --scope main-site"
   },
+  "workspaces": [
+    "packages/*"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
-  "dependencies": {
-    "@11ty/eleventy": "^3.1.2"
+  "devDependencies": {
+    "lerna": "^8.2.3"
   }
 }
