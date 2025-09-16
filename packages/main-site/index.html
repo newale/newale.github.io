@@ -7,15 +7,13 @@ title: "Página principal"
 <p>En este sitio personal, encontrarás algunas ideas en las que estoy trabajando en la actualidad, y mis redes sociales</p>
 {% include "components/social-icons.html" %}
 
-<h1>Artículos</h1>
-{% for categoria in collections.categorias %}
-  <h2>{{ categoria }}</h2>
-  <ul class="posts-list">
-    {% assign posts_filtrados = collections.post | where: "data.categoria", categoria %}
-    {% for post in posts_filtrados %}
-      <li>
-        <a href="{{ post.url }}">{{ post.data.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-{% endfor %}
+<hr>
+<ul class="posts-list">
+  {% assign posts_ordenados = collections.post | sort: "data.date" | reverse %}
+  {% for post in posts_ordenados %}
+    <li>
+      <span class="tag">{{ post.data.tag }}</span>
+      <span>{{ post.data.date | date: "%d %b %Y" }}</span>
+      <a href="{{ post.url }}">{{ post.data.title }}</a>
+  {% endfor %}
+</ul>

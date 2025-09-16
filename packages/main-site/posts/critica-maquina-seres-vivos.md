@@ -1,8 +1,7 @@
 ---
 title: "Crítica a De Máquinas y Seres Vivos"
 date: 2023-11-04
-tags:
- - post
+tag: ensayo
 categoria: "Filosofia"
 ---
 

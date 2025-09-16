@@ -1,5 +1,6 @@
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("static/css/main.css");
+
   eleventyConfig.addCollection("categorias", function(collectionApi) {
     const posts = collectionApi.getFilteredByTag("post").sort((a, b) => b.date - a.date);
     const categorias = [];
