@@ -9,11 +9,13 @@ title: "Página principal"
 
 <hr>
 <ul class="posts-list">
-  {% assign posts_ordenados = collections.post | sort: "data.date" | reverse %}
-  {% for post in posts_ordenados %}
+  {% assign order_content = collections.content | sort: "data.date" | reverse %}
+  {% for content in order_content %}
     <li>
-      <span class="tag">{{ post.data.tag }}</span>
-      <span>{{ post.data.date | date: "%d %b %Y" }}</span>
-      <a href="{{ post.url }}">{{ post.data.title }}</a>
+      <div>
+        <span class="tag">{{ content.data.tag }}</span>
+        <span class="tag">{{ content.data.date | date: "%d %b %Y" }}</span>
+      </div>
+      <a href="{{ content.url }}">{{ content.data.title }}</a>
   {% endfor %}
 </ul>

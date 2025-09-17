@@ -21,7 +21,6 @@ html, body {
   padding: 0rem;
   font-family: 'PT Serif', Times, serif;
   background-color: var(--background-color);
-  max-width: 720px;
   color: var(--text-body-color);
 }
 
