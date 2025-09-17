@@ -1,6 +1,7 @@
 :root {
   color-scheme: light dark;
 
+  /* colors */
   --primary-color: light-dark(#2b0ca6, #bf57e9);
   --secondary-color: light-dark(#f4f4f4, #F4F5DD);
   --text-base-color: light-dark(#2f2f2f, #ecf0f1);
@@ -11,9 +12,16 @@
   --text-icon-color: light-dark(#a16215, #77bacb);
   --text-link-color: light-dark(#a16215, #8a86f7);
 
+  /* borders */
   --border-color: light-dark(#ddd, #333);
 
-  --space-s: 1.5rem
+  /* spacing */
+  --space-s: 1.5rem;
+
+  /* tag */
+  --tag-bg-color: light-dark(#a16215, #F4F5DD);
+  --tag-text-color: light-dark(#fff, #1a1a1a);
+
 }
 
 html, body {
@@ -94,8 +102,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .tag {
   font-size: .75rem !important;
-  color: #1a1a1a;
-  background-color: var(--secondary-color);
+  color: var(--tag-text-color);
+  background-color: var(--tag-bg-color);
   width: fit-content;
   line-height: none;
   padding: .125rem .5rem;
