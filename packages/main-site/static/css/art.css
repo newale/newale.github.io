@@ -1,0 +1,18 @@
+html, body {
+  margin: 0;
+}
+
+header, footer {
+  max-width: none;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  margin: 2rem auto;
+}
+
+main {
+  text-align: center;
+}

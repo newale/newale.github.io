@@ -9,7 +9,7 @@ title: "Página principal"
 
 <hr>
 <ul class="posts-list">
-  {% assign order_content = collections.content | sort: "data.date" | reverse %}
+  {% assign order_content = collections.content | sort: "data.date" | reverse | reject: "data.journal", true %}
   {% for content in order_content %}
     <li>
       <div>

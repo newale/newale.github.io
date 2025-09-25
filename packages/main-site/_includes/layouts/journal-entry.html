@@ -3,14 +3,17 @@
 <head>
   {% include "head.html" %}
   <title>{{ title }}</title>
-
-  <link rel="stylesheet" href="/static/css/art.css">
+  <style>
+    html, body {
+      max-width: 45rem;
+    }
+  </style>
 </head>
 <body>
   <header>
-     <nav class="navigation">
+    <nav class="navigation">
       <ul>
-        <li><a href="/">Ir al inicio</a></li>
+        <li><a href="/diario">Volver al diario</a></li>
       </ul>
     </nav>
   </header>
