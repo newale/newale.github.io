@@ -23,7 +23,10 @@
   </header>
   <main>
     <h1>{{ title }}</h1>
-    <span>{{ date | formattedDate }}</span>
+    <div>
+        <span class="tag">{{ tag }}</span>
+        <span class="tag">{{ date | formattedDate }}</span>
+      </div>
     {{ content }}
   </main>
   {% include "components/footer.html" %}
