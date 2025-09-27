@@ -4,7 +4,7 @@ date: "2025-09-25"
 tag: "prueba"
 journal: true
 layout: "layouts/journal-entry.html"
-draft: false
+draft: true
 ---
 
 Llevo un tiempo reflexionando acerca de los espacios liminales, asíque me decidí a escribir sobre ello.
