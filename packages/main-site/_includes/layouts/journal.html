@@ -22,13 +22,16 @@
       <p>Esta sección de mi sitio, pretende ser un diario de contenido aleatorio. Desde cosas que voy leyendo durante el dia, a cosas que quizas me ha tomando un poco mas de tiempo escribir, cosas que me sorprenden, o cosas que me intrigan</p>
       <p>Pensé que escribir esto de forma diaria, y pública, puede ser una buena idea para entrenar mi escritura, y mostrar parte de lo que día a día encuentro</p>
 
-      <h2>Lista de entradas</h2>
+      <h2>Entradas</h2>
+      {% for date in collections.journalMonths %}
+        <h3>{{ date | capitalize }}</h3>
 
-      <ul>
-        {% for item in collections.journal %}
-          <li><a href="{{ item.url }}">{{ item.data.title }}</a></li>
-        {% endfor %}
-      </ul>
+        <ul>
+          {% for entry in collections.journalByMonth[date] %}
+            <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+          {% endfor %}
+        </ul>
+      {% endfor %}
     </main>
     {% include "components/footer.html" %}
   </body>
