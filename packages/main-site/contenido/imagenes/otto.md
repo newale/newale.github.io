@@ -5,8 +5,9 @@ tag: "arte digital"
 categoria: "arte"
 ---
 
+![arte digital, obra: otto, cuadro de un yorkshire terrier pequeño](/static/images/Untitled_Artwork_2.png)
 
-<img src="/static/images/Untitled_Artwork_2.png" alt="arte digital, obra: otto">
+[Abrir imagen tamaño completo](/static/images/Untitled_Artwork_2.png)
 
 Arte digital, creado en procreate
 
