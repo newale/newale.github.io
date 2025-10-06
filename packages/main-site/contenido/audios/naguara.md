@@ -12,5 +12,7 @@ categoria: "Arte"
 
 Cuando hice esta canción estaba probando con afinaciones folkloricas. Esta en particular está en "media música", que vendría siendo una afinación abierta en Sol (Open G).
 
+La canción más bonita que he hecho este año.
+
 
 [Afinación media música](https://www.youtube.com/watch?v=q2HG-avnDaE)
