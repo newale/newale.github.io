@@ -11,5 +11,7 @@ layout: "layouts/art.html"
   Your browser does not support the audio element.
 </audio>
 
-Cuando hice esta canción estaba aprendiendo una nueva afinación de guitarra, se usa en la músican folklorica y 
+Cuando hice esta canción estaba probando con afinaciones folkloricas. Esta en particular está en "media música", que vendría siendo una afinación abierta en Sol (Open G).
 
+
+[Afinación media música](https://www.youtube.com/watch?v=q2HG-avnDaE)
