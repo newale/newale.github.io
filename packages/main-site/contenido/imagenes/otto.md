@@ -3,7 +3,6 @@ title: "Otto"
 date: 2024-11-02
 tag: "arte digital"
 categoria: "arte"
-layout: "layouts/art.html"
 ---
 
 

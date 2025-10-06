@@ -2,8 +2,7 @@
 title: "naguará"
 date: 2025-10-05
 tag: "música"
-categoria: "arte"
-layout: "layouts/art.html"
+categoria: "Arte"
 ---
 
 <audio controls>
