@@ -63,6 +63,7 @@ hr {
 }
 
 p, li {
+  font-size: 1.15rem;
   line-height: 1.5;
   color: var(--text-body-color);
 }
