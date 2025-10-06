@@ -1,13 +1,18 @@
+const isJournalAndNotDraft = (item) => item.data.journal === true && item.data.draft == false;
+
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("static/css");
   eleventyConfig.addPassthroughCopy("static/images");
   eleventyConfig.addPassthroughCopy("static/audios");
 
   eleventyConfig.addCollection("journal", function(collectionApi) {
-    return collectionApi.getAll().filter(item => item.data.journal === true && item.data.draft == false);
+    return collectionApi.getAll().filter(isJournalAndNotDraft);
   });
+
   eleventyConfig.addCollection("journalMonths", function(collectionApi) {
-    const journalEntries = collectionApi.getAll().filter(item => (item.data.journal === true && item.data.draft == false));
+    const journalEntries = collectionApi
+      .getAll()
+      .filter(isJournalAndNotDraft);
 
     // Map monthYear to its latest date
     const monthMap = new Map();
@@ -29,7 +34,11 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addCollection("journalByMonth", function(collectionApi) {
-    const journalEntries = collectionApi.getAll().filter(item => item.data.journal === true  && item.data.draft == false);
+    const journalEntries = collectionApi
+      .getAll()
+      .filter(isJournalAndNotDraft)
+      .sort((a, b) => new Date(b.date) - new Date(a.date)); // Ordenar de más nuevo a más antiguo
+
     const grouped = {};
 
     journalEntries.forEach(entry => {
@@ -42,7 +51,6 @@ module.exports = function(eleventyConfig) {
 
       grouped[monthYear].push(entry);
     });
-
 
     return grouped;
   });

@@ -17,7 +17,7 @@ Y por cierto, buenos actores, hay un par de momentos que fueron brigidos de ver,
 
 Muy buena obra, me gustó un kilo.
 
-[M100: Lo que queda del fuego](https://www.m100.cl/programacion/teatro/lo-que-queda/)
+<a href="https://www.m100.cl/programacion/teatro/lo-que-queda/" target="_blank">M100: Lo que queda del fuego</a>
 
 <details>
     <summary>Ver escenario obra [Spoiler]</summary>
