@@ -14,6 +14,7 @@
 
   /* borders */
   --border-color: light-dark(#ddd, #333);
+  --border-color-dark: light-dark(#141414, #727272);
 
   /* spacing */
   --space-s: 1.5rem;
@@ -21,6 +22,9 @@
   /* tag */
   --tag-bg-color: light-dark(#a16215, #F4F5DD);
   --tag-text-color: light-dark(#fff, #1a1a1a);
+
+  /* components */
+  --profile-picture-background-color: var(--border-color);
 
 }
 
@@ -128,4 +132,15 @@ h1, h2, h3, h4, h5, h6 {
   line-height: none;
   padding: .125rem .5rem;
   border-radius: .5rem;
+}
+
+.bio-picture {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+  border: thick solid var(--border-color-dark);
+
+  /* Animación de fondo azulada */
+  background: var(--background-color)
 }
