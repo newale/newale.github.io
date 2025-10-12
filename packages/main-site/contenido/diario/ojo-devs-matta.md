@@ -7,7 +7,7 @@ layout: "layouts/journal-entry.html"
 draft: false
 ---
 
-![Pintura, "Ojo con los Desarrolladores de Mata"](/static/images/diario/ojo-devs-matta.png)
+![Pintura, "Ojo con los Desarrolladores de Mata"](/static/images/diario/ojo-devs-matta.jpg)
 
 En una vuelta al MNBA, me encontré con esta obra de Matta, creada en el 72'.
 
