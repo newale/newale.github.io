@@ -11,7 +11,5 @@ La postulación al [JIPSE](https://jipse2025.ufro.cl) de Pucón de este año, re
 
 Asique nos vamos a Pucón a finales de Octubre.
 
-Quiero pasar a la reserva biologica de Huilo Huilo, mucho tiempo quise ir, y esto representa una buena oportunidad para hacerlo.
-
 ¡Toca preparar el viaje!
 
