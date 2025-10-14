@@ -4,8 +4,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "lerna run dev --scope main-site",
-    "build": "npm run build:main-site",
-    "build:main-site": "lerna run build --scope main-site"
+    "build": "npm run build:por-hacer && npm run build:main-site && cp -r packages/por-hacer/build packages/main-site/_site/por-hacer",
+    "build:main-site": "lerna run build --scope main-site",
+    "build:por-hacer": "lerna run build --scope por-hacer"
   },
   "workspaces": [
     "packages/*"
