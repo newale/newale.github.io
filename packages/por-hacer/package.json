@@ -2,6 +2,7 @@
   "name": "por-hacer",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://alejandro.earth/por-hacer/",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
