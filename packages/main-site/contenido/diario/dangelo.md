@@ -1,7 +1,7 @@
 ---
 title: "Adiós D'angelo"
 date: "2025-10-14"
-tag: "tech"
+tag: "musica"
 journal: true
 layout: "layouts/journal-entry.html"
 draft: false
