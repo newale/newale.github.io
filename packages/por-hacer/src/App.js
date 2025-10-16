@@ -86,7 +86,6 @@ function App() {
           </div>
 
           <Button type="submit">Agregar</Button>
-          <Button type="submit">Borrar todo</Button>
         </form>
         <ul style={{ listStyle: "none", padding: 0 }}>
           {tasks.map((task, index) => (
