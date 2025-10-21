@@ -7,6 +7,7 @@ import './App.css';
 function App() {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
+  const [editIndex, setEditIndex] = useState(null);
 
   // Load tasks from localStorage on component mount
   useEffect(() => {
@@ -32,14 +33,29 @@ function App() {
   const addTask = (e) => {
     e.preventDefault(); // Prevent page reload
     if (newTask.trim()) {
-      const task = {
-        date: new Date().toISOString(),
-        state: "active",
-        task: newTask.trim(),
-      };
-      setTasks((prevTasks) => sortTasks([...prevTasks, task]));
+      if (editIndex !== null) {
+        // Guardar edición
+        const updatedTasks = tasks.map((task, i) =>
+          i === editIndex ? { ...task, task: newTask } : task
+        );
+        setTasks(sortTasks(updatedTasks));
+        setEditIndex(null);
+      } else {
+        // Agregar nueva tarea
+        const task = {
+          date: new Date().toISOString(),
+          state: "active",
+          task: newTask.trim(),
+        };
+        setTasks((prevTasks) => sortTasks([...prevTasks, task]));
+      }
       setNewTask("");
     }
+  };
+
+  const startEditTask = (index) => {
+    setNewTask(tasks[index].task);
+    setEditIndex(index);
   };
 
   const toggleTaskState = (index) => {
@@ -52,6 +68,10 @@ function App() {
   const deleteTask = (index) => {
     const updatedTasks = tasks.filter((_, i) => i !== index);
     setTasks(updatedTasks);
+    if (editIndex === index) {
+      setEditIndex(null);
+      setNewTask("");
+    }
   };
 
   const sortTasks = (tasks) => {
@@ -84,8 +104,7 @@ function App() {
               }}
             />
           </div>
-
-          <Button type="submit">Agregar</Button>
+          <Button type="submit">{editIndex !== null ? "Guardar" : "Agregar"}</Button>
         </form>
         <ul style={{ listStyle: "none", padding: 0 }}>
           {tasks.map((task, index) => (
@@ -107,6 +126,23 @@ function App() {
                   ({new Date(task.date).toLocaleDateString()})
                 </small>
               </Checkbox>
+              <Button
+                onClick={() => startEditTask(index)}
+                kind="secondary"
+                size="compact"
+                overrides={{
+                  BaseButton: {
+                    style: {
+                      marginLeft: "0.5rem",
+                      paddingTop: "4px",
+                      paddingBottom: "4px",
+                      minWidth: "32px",
+                    },
+                  },
+                }}
+              >
+                Editar
+              </Button>
               <Button
                 onClick={() => deleteTask(index)}
                 kind="tertiary"
@@ -134,7 +170,7 @@ function App() {
                 overrides={{
                   BaseButton: {
                     style: {
-                      marginLeft: "auto",
+                      marginLeft: "0.5rem",
                       color: "#d32f2f",
                       paddingTop: "4px",
                       paddingBottom: "4px",
