@@ -5,7 +5,8 @@ import { Checkbox } from "baseui/checkbox";
 import './App.css';
 
 function App() {
-  const [tasks, setTasks] = useState([]);
+  const [activeTasks, setActiveTasks] = useState([]);
+  const [doneTasks, setDoneTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
   const [editIndex, setEditIndex] = useState(null);
 
@@ -15,30 +16,49 @@ function App() {
     if (savedTasks) {
       try {
         const parsedTasks = JSON.parse(savedTasks);
-        setTasks(parsedTasks.sort((a, b) => (a.state === "done" ? 1 : -1)));
+        setActiveTasks(parsedTasks.filter(t => t.state !== "done"));
+        setDoneTasks(parsedTasks.filter(t => t.state === "done"));
       } catch (error) {
         console.error("Error parsing tasks from localStorage:", error);
-        setTasks([]);
+        setActiveTasks([]);
+        setDoneTasks([]);
       }
     }
   }, []);
 
   // Save tasks to localStorage whenever they change
   useEffect(() => {
-    if (tasks.length > 0) {
-      localStorage.setItem("tasks", JSON.stringify(tasks));
-    }
-  }, [tasks]);
+    const allTasks = [...activeTasks, ...doneTasks];
+    localStorage.setItem("tasks", JSON.stringify(allTasks));
+  }, [activeTasks, doneTasks]);
+
+  const formatDate = (dateStr) => {
+    if (!dateStr) return "";
+    const date = new Date(dateStr);
+    return date.toLocaleDateString(undefined, {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    });
+  };
+
+  const getDaysDuration = (start, end) => {
+    if (!start || !end) return "";
+    const startDate = new Date(start);
+    const endDate = new Date(end);
+    const diff = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24));
+    return diff === 1 ? `${diff} día` : `${diff} días`;
+  };
 
   const addTask = (e) => {
-    e.preventDefault(); // Prevent page reload
+    e.preventDefault();
     if (newTask.trim()) {
       if (editIndex !== null) {
         // Guardar edición
-        const updatedTasks = tasks.map((task, i) =>
+        const updatedTasks = activeTasks.map((task, i) =>
           i === editIndex ? { ...task, task: newTask } : task
         );
-        setTasks(sortTasks(updatedTasks));
+        setActiveTasks(updatedTasks);
         setEditIndex(null);
       } else {
         // Agregar nueva tarea
@@ -47,35 +67,44 @@ function App() {
           state: "active",
           task: newTask.trim(),
         };
-        setTasks((prevTasks) => sortTasks([...prevTasks, task]));
+        setActiveTasks([...activeTasks, task]);
       }
       setNewTask("");
     }
   };
 
   const startEditTask = (index) => {
-    setNewTask(tasks[index].task);
+    setNewTask(activeTasks[index].task);
     setEditIndex(index);
   };
 
-  const toggleTaskState = (index) => {
-    const updatedTasks = tasks.map((task, i) =>
-      i === index ? { ...task, state: task.state === "active" ? "done" : "active" } : task
-    );
-    setTasks(sortTasks(updatedTasks));
-  };
-
-  const deleteTask = (index) => {
-    const updatedTasks = tasks.filter((_, i) => i !== index);
-    setTasks(updatedTasks);
-    if (editIndex === index) {
-      setEditIndex(null);
-      setNewTask("");
+  const toggleTaskState = (index, isActive) => {
+    if (isActive) {
+      // Mover de activas a done y guardar fecha de completado
+      const task = { ...activeTasks[index], state: "done", completedAt: new Date().toISOString() };
+      setActiveTasks(activeTasks.filter((_, i) => i !== index));
+      setDoneTasks([...doneTasks, task]);
+    } else {
+      // Mover de done a activas y borrar fecha de completado
+      const { completedAt, ...rest } = doneTasks[index];
+      const task = { ...rest, state: "active" };
+      setDoneTasks(doneTasks.filter((_, i) => i !== index));
+      setActiveTasks([...activeTasks, task]);
     }
+    setEditIndex(null);
+    setNewTask("");
   };
 
-  const sortTasks = (tasks) => {
-    return tasks.sort((a, b) => (a.state === "done" ? 1 : -1));
+  const deleteTask = (index, isActive) => {
+    if (isActive) {
+      setActiveTasks(activeTasks.filter((_, i) => i !== index));
+      if (editIndex === index) {
+        setEditIndex(null);
+        setNewTask("");
+      }
+    } else {
+      setDoneTasks(doneTasks.filter((_, i) => i !== index));
+    }
   };
 
   return (
@@ -107,7 +136,7 @@ function App() {
           <Button type="submit">{editIndex !== null ? "Guardar" : "Agregar"}</Button>
         </form>
         <ul style={{ listStyle: "none", padding: 0 }}>
-          {tasks.map((task, index) => (
+          {activeTasks.map((task, index) => (
             <li
               key={`${task.date}-${index}`}
               style={{
@@ -119,13 +148,13 @@ function App() {
             >
               <div style={{ display: "flex", alignItems: "center" }}>
                 <Checkbox
-                  checked={task.state === "done"}
-                  onChange={() => toggleTaskState(index)}
+                  checked={false}
+                  onChange={() => toggleTaskState(index, true)}
                   overrides={{ Root: { style: { marginRight: "0.5rem" } } }}
                 >
                   <span
                     style={{
-                      textDecoration: task.state === "done" ? "line-through" : "none",
+                      textDecoration: "none",
                       cursor: "pointer",
                     }}
                   >
@@ -135,10 +164,9 @@ function App() {
                     style={{
                       marginLeft: "0.5rem",
                       color: "#888",
-                      textDecoration: task.state === "done" ? "line-through" : "none",
                     }}
                   >
-                    ({new Date(task.date).toLocaleDateString()})
+                    ({formatDate(task.date)})
                   </small>
                 </Checkbox>
               </div>
@@ -179,7 +207,7 @@ function App() {
                   </svg>
                 </Button>
                 <Button
-                  onClick={() => deleteTask(index)}
+                  onClick={() => deleteTask(index, true)}
                   kind="tertiary"
                   size="compact"
                   aria-label={`Eliminar ${task.task}`}
@@ -220,6 +248,89 @@ function App() {
             </li>
           ))}
         </ul>
+        <details style={{ marginTop: "2rem" }}>
+          <summary style={{ fontWeight: "bold", fontSize: "1.1rem" }}>
+            Completadas ({doneTasks.length})
+          </summary>
+          <ul style={{ listStyle: "none", padding: 0, marginTop: "1rem" }}>
+            {doneTasks.map((task, index) => (
+              <li
+                key={`${task.date}-${index}`}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  marginBottom: "0.5rem",
+                  justifyContent: "space-between",
+                  opacity: 0.7,
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <Checkbox
+                    checked={true}
+                    onChange={() => toggleTaskState(index, false)}
+                    overrides={{ Root: { style: { marginRight: "0.5rem" } } }}
+                  >
+                    <span
+                      style={{
+                        textDecoration: "line-through",
+                        cursor: "pointer",
+                      }}
+                    >
+                      {task.task}
+                    </span>
+                    <small
+                      style={{
+                        marginLeft: "0.5rem",
+                        color: "#888",
+                        textDecoration: "line-through",
+                      }}
+                    >
+                      {getDaysDuration(task.date, task.completedAt)}
+                    </small>
+                  </Checkbox>
+                </div>
+                <Button
+                  onClick={() => deleteTask(index, false)}
+                  kind="tertiary"
+                  size="compact"
+                  aria-label={`Eliminar ${task.task}`}
+                  overrides={{
+                    BaseButton: {
+                      style: {
+                        marginLeft: "0.5rem",
+                        color: "#d32f2f",
+                        paddingTop: "4px",
+                        paddingBottom: "4px",
+                        minWidth: "32px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      },
+                    },
+                  }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    style={{ display: "block" }}
+                  >
+                    <polyline points="3 6 5 6 21 6" />
+                    <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" />
+                    <path d="M10 11v6M14 11v6" />
+                    <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
+                  </svg>
+                </Button>
+              </li>
+            ))}
+          </ul>
+        </details>
       </header>
     </div>
   );
