@@ -108,47 +108,96 @@ function App() {
         </form>
         <ul style={{ listStyle: "none", padding: 0 }}>
           {tasks.map((task, index) => (
-            <li key={`${task.date}-${index}`} style={{ display: "flex", alignItems: "center", marginBottom: "0.5rem" }}>
-              <Checkbox
-                checked={task.state === "done"}
-                onChange={() => toggleTaskState(index)}
-                overrides={{ Root: { style: { marginRight: "0.5rem" } } }}
-              >
-                <span
-                  style={{
-                    textDecoration: task.state === "done" ? "line-through" : "none",
-                    cursor: "pointer",
+            <li
+              key={`${task.date}-${index}`}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                marginBottom: "0.5rem",
+                justifyContent: "space-between",
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <Checkbox
+                  checked={task.state === "done"}
+                  onChange={() => toggleTaskState(index)}
+                  overrides={{ Root: { style: { marginRight: "0.5rem" } } }}
+                >
+                  <span
+                    style={{
+                      textDecoration: task.state === "done" ? "line-through" : "none",
+                      cursor: "pointer",
+                    }}
+                  >
+                    {task.task}
+                  </span>
+                  <small
+                    style={{
+                      marginLeft: "0.5rem",
+                      color: "#888",
+                      textDecoration: task.state === "done" ? "line-through" : "none",
+                    }}
+                  >
+                    ({new Date(task.date).toLocaleDateString()})
+                  </small>
+                </Checkbox>
+              </div>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <Button
+                  onClick={() => startEditTask(index)}
+                  kind="tertiary"
+                  size="compact"
+                  aria-label={`Editar ${task.task}`}
+                  overrides={{
+                    BaseButton: {
+                      style: {
+                        marginLeft: "0.5rem",
+                        paddingTop: "4px",
+                        paddingBottom: "4px",
+                        minWidth: "32px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      },
+                    },
                   }}
                 >
-                  {task.task}
-                </span>
-                <small style={{ marginLeft: "0.5rem", color: "#888", textDecoration: task.state === "done" ? "line-through" : "none" }}>
-                  ({new Date(task.date).toLocaleDateString()})
-                </small>
-              </Checkbox>
-              <Button
-                onClick={() => startEditTask(index)}
-                kind="secondary"
-                size="compact"
-                overrides={{
-                  BaseButton: {
-                    style: {
-                      marginLeft: "0.5rem",
-                      paddingTop: "4px",
-                      paddingBottom: "4px",
-                      minWidth: "32px",
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    style={{ display: "block" }}
+                  >
+                    <path d="M12 20h9" />
+                    <path d="M16.5 3.5a2.121 2.121 0 1 1 3 3L7 19l-4 1 1-4 12.5-12.5z" />
+                  </svg>
+                </Button>
+                <Button
+                  onClick={() => deleteTask(index)}
+                  kind="tertiary"
+                  size="compact"
+                  aria-label={`Eliminar ${task.task}`}
+                  overrides={{
+                    BaseButton: {
+                      style: {
+                        marginLeft: "0.5rem",
+                        color: "#d32f2f",
+                        paddingTop: "4px",
+                        paddingBottom: "4px",
+                        minWidth: "32px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      },
                     },
-                  },
-                }}
-              >
-                Editar
-              </Button>
-              <Button
-                onClick={() => deleteTask(index)}
-                kind="tertiary"
-                size="compact"
-                aria-label={`Eliminar ${task.task}`}
-                startEnhancer={() => (
+                  }}
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -166,19 +215,8 @@ function App() {
                     <path d="M10 11v6M14 11v6" />
                     <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
                   </svg>
-                )}
-                overrides={{
-                  BaseButton: {
-                    style: {
-                      marginLeft: "0.5rem",
-                      color: "#d32f2f",
-                      paddingTop: "4px",
-                      paddingBottom: "4px",
-                      minWidth: "32px",
-                    },
-                  },
-                }}
-              />
+                </Button>
+              </div>
             </li>
           ))}
         </ul>
