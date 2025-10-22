@@ -140,27 +140,31 @@ function App() {
   return (
     <div className="App">
       <header className="App-header" style={{ position: "relative" }}>
-        <div style={{ position: "absolute", top: 16, right: 16, display: "flex", gap: "0.5rem" }}>
-          <button
+        <div style={{ marginTop: 16, marginRight: 16, display: "flex", justifyContent: "right", gap: "0.5rem" }}>
+          <Button
             onClick={handleDownload}
-            style={{ background: "none", border: "none", cursor: "pointer", padding: 0 }}
+            kind="minimal"
+            size="compact"
+            overrides={{ BaseButton: { style: { padding: 0, minWidth: 0 } } }}
             title="Descargar tareas"
           >
             <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
               <path d="M12 5v14" />
               <polyline points="19 12 12 19 5 12" />
             </svg>
-          </button>
-          <button
+          </Button>
+          <Button
             onClick={() => fileInputRef.current.click()}
-            style={{ background: "none", border: "none", cursor: "pointer", padding: 0 }}
+            kind="minimal"
+            size="compact"
+            overrides={{ BaseButton: { style: { padding: 0, minWidth: 0 } } }}
             title="Cargar tareas"
           >
             <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
               <path d="M12 19V5" />
               <polyline points="5 12 12 5 19 12" />
             </svg>
-          </button>
+          </Button>
           <input
             type="file"
             accept="application/json"
