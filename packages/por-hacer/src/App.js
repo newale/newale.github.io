@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Button } from "baseui/button";
 import { Input } from "baseui/input";
 import { Checkbox } from "baseui/checkbox";
@@ -9,6 +9,7 @@ function App() {
   const [doneTasks, setDoneTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
   const [editIndex, setEditIndex] = useState(null);
+  const fileInputRef = useRef(null);
 
   // Load tasks from localStorage on component mount
   useEffect(() => {
@@ -107,9 +108,67 @@ function App() {
     }
   };
 
+  // Descargar tasks como JSON
+  const handleDownload = () => {
+    const allTasks = [...activeTasks, ...doneTasks];
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(allTasks, null, 2));
+    const downloadAnchorNode = document.createElement('a');
+    downloadAnchorNode.setAttribute("href", dataStr);
+    downloadAnchorNode.setAttribute("download", "tasks.json");
+    document.body.appendChild(downloadAnchorNode);
+    downloadAnchorNode.click();
+    downloadAnchorNode.remove();
+  };
+
+  // Cargar tasks desde archivo JSON
+  const handleUpload = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      try {
+        const importedTasks = JSON.parse(event.target.result);
+        setActiveTasks(importedTasks.filter(t => t.state !== "done"));
+        setDoneTasks(importedTasks.filter(t => t.state === "done"));
+      } catch (err) {
+        alert("Error al cargar el archivo. ¿Es un JSON válido?");
+      }
+    };
+    reader.readAsText(file);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App-header" style={{ position: "relative" }}>
+        <div style={{ position: "absolute", top: 16, right: 16, display: "flex", gap: "0.5rem" }}>
+          <button
+            onClick={handleDownload}
+            style={{ background: "none", border: "none", cursor: "pointer", padding: 0 }}
+            title="Descargar tareas"
+          >
+            <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+              <path d="M12 5v14" />
+              <polyline points="19 12 12 19 5 12" />
+            </svg>
+          </button>
+          <button
+            onClick={() => fileInputRef.current.click()}
+            style={{ background: "none", border: "none", cursor: "pointer", padding: 0 }}
+            title="Cargar tareas"
+          >
+            <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+              <path d="M12 19V5" />
+              <polyline points="5 12 12 5 19 12" />
+            </svg>
+          </button>
+          <input
+            type="file"
+            accept="application/json"
+            ref={fileInputRef}
+            style={{ display: "none" }}
+            onChange={handleUpload}
+          />
+        </div>
         <h1>Por hacer</h1>
         <form
           onSubmit={addTask}
