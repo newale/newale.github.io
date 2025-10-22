@@ -111,10 +111,13 @@ function App() {
   // Descargar tasks como JSON
   const handleDownload = () => {
     const allTasks = [...activeTasks, ...doneTasks];
+    const now = new Date();
+    const dateStr = now.toISOString().replace(/[:]/g, "-").replace(/[T]/g, "_").replace(/[.]/g, "-").split('Z')[0];
+    const filename = `tasks_${dateStr}.json`;
     const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(allTasks, null, 2));
     const downloadAnchorNode = document.createElement('a');
     downloadAnchorNode.setAttribute("href", dataStr);
-    downloadAnchorNode.setAttribute("download", "tasks.json");
+    downloadAnchorNode.setAttribute("download", filename);
     document.body.appendChild(downloadAnchorNode);
     downloadAnchorNode.click();
     downloadAnchorNode.remove();
