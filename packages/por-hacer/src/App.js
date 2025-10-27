@@ -51,6 +51,14 @@ function App() {
     return diff === 1 ? `${diff} día` : `${diff} días`;
   };
 
+  const getDaysPending = (start) => {
+    if (!start) return "";
+    const startDate = new Date(start);
+    const now = new Date();
+    const diff = Math.ceil((now - startDate) / (1000 * 60 * 60 * 24));
+    return diff === 1 ? `Pendiente hace ${diff} día` : `Pendiente hace ${diff} días`;
+  };
+
   const addTask = (e) => {
     e.preventDefault();
     if (newTask.trim()) {
@@ -176,7 +184,7 @@ function App() {
             onChange={handleUpload}
           />
         </div>
-        <h1>Por hacer</h1>
+        <h1>Por hacer ({activeTasks.length})</h1>
         <form
           onSubmit={addTask}
           style={{
@@ -202,117 +210,120 @@ function App() {
           <Button type="submit">{editIndex !== null ? "Guardar" : "Agregar"}</Button>
         </form>
         <ul style={{ listStyle: "none", padding: 0 }}>
-          {activeTasks.map((task, index) => (
-            <li
-              key={`${task.date}-${index}`}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                marginBottom: "0.5rem",
-                justifyContent: "space-between",
-              }}
-            >
-              <div style={{ display: "flex", alignItems: "center" }}>
-                <Checkbox
-                  checked={false}
-                  onChange={() => toggleTaskState(index, true)}
-                  overrides={{ Root: { style: { marginRight: "0.5rem" } } }}
-                >
-                  <span
-                    style={{
-                      textDecoration: "none",
-                      cursor: "pointer",
+          {activeTasks
+            .slice()
+            .sort((a, b) => new Date(b.date) - new Date(a.date))
+            .map((task, index) => (
+              <li
+                key={`${task.date}-${index}`}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  marginBottom: "0.5rem",
+                  justifyContent: "space-between",
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <Checkbox
+                    checked={false}
+                    onChange={() => toggleTaskState(index, true)}
+                    overrides={{ Root: { style: { marginRight: "0.5rem" } } }}
+                  >
+                    <span
+                      style={{
+                        textDecoration: "none",
+                        cursor: "pointer",
+                      }}
+                    >
+                      {task.task}
+                    </span>
+                    <small
+                      style={{
+                        marginLeft: "0.5rem",
+                        color: "#888",
+                      }}
+                    >
+                      ({formatDate(task.date)}) · {getDaysPending(task.date)}
+                    </small>
+                  </Checkbox>
+                </div>
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <Button
+                    onClick={() => startEditTask(index)}
+                    kind="tertiary"
+                    size="compact"
+                    aria-label={`Editar ${task.task}`}
+                    overrides={{
+                      BaseButton: {
+                        style: {
+                          marginLeft: "0.5rem",
+                          paddingTop: "4px",
+                          paddingBottom: "4px",
+                          minWidth: "32px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        },
+                      },
                     }}
                   >
-                    {task.task}
-                  </span>
-                  <small
-                    style={{
-                      marginLeft: "0.5rem",
-                      color: "#888",
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      width="16"
+                      height="16"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      style={{ display: "block" }}
+                    >
+                      <path d="M12 20h9" />
+                      <path d="M16.5 3.5a2.121 2.121 0 1 1 3 3L7 19l-4 1 1-4 12.5-12.5z" />
+                    </svg>
+                  </Button>
+                  <Button
+                    onClick={() => deleteTask(index, true)}
+                    kind="tertiary"
+                    size="compact"
+                    aria-label={`Eliminar ${task.task}`}
+                    overrides={{
+                      BaseButton: {
+                        style: {
+                          marginLeft: "0.5rem",
+                          color: "#d32f2f",
+                          paddingTop: "4px",
+                          paddingBottom: "4px",
+                          minWidth: "32px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        },
+                      },
                     }}
                   >
-                    ({formatDate(task.date)})
-                  </small>
-                </Checkbox>
-              </div>
-              <div style={{ display: "flex", alignItems: "center" }}>
-                <Button
-                  onClick={() => startEditTask(index)}
-                  kind="tertiary"
-                  size="compact"
-                  aria-label={`Editar ${task.task}`}
-                  overrides={{
-                    BaseButton: {
-                      style: {
-                        marginLeft: "0.5rem",
-                        paddingTop: "4px",
-                        paddingBottom: "4px",
-                        minWidth: "32px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      },
-                    },
-                  }}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="16"
-                    height="16"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    style={{ display: "block" }}
-                  >
-                    <path d="M12 20h9" />
-                    <path d="M16.5 3.5a2.121 2.121 0 1 1 3 3L7 19l-4 1 1-4 12.5-12.5z" />
-                  </svg>
-                </Button>
-                <Button
-                  onClick={() => deleteTask(index, true)}
-                  kind="tertiary"
-                  size="compact"
-                  aria-label={`Eliminar ${task.task}`}
-                  overrides={{
-                    BaseButton: {
-                      style: {
-                        marginLeft: "0.5rem",
-                        color: "#d32f2f",
-                        paddingTop: "4px",
-                        paddingBottom: "4px",
-                        minWidth: "32px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      },
-                    },
-                  }}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="16"
-                    height="16"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    style={{ display: "block" }}
-                  >
-                    <polyline points="3 6 5 6 21 6" />
-                    <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" />
-                    <path d="M10 11v6M14 11v6" />
-                    <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
-                  </svg>
-                </Button>
-              </div>
-            </li>
-          ))}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      width="16"
+                      height="16"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      style={{ display: "block" }}
+                    >
+                      <polyline points="3 6 5 6 21 6" />
+                      <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" />
+                      <path d="M10 11v6M14 11v6" />
+                      <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
+                    </svg>
+                  </Button>
+                </div>
+              </li>
+            ))}
         </ul>
         <details style={{ marginTop: "2rem" }}>
           <summary style={{ fontWeight: "bold", fontSize: "1.1rem" }}>
