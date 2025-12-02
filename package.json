@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "lerna run dev --scope main-site",
-    "build": "npm run build:por-hacer npm && run build:escala-notas && npm run build:main-site && cp -r packages/por-hacer/build packages/main-site/_site/por-hacer && cp -r packages/escala-notas/build packages/main-site/_site/escala-notas",
+    "build": "npm run build:por-hacer && npm run build:escala-notas && npm run build:main-site && cp -r packages/por-hacer/build packages/main-site/_site/por-hacer && cp -r packages/escala-notas/build packages/main-site/_site/escala-notas",
     "build:main-site": "lerna run build --scope main-site",
     "build:por-hacer": "lerna run build --scope por-hacer",
     "build:escala-notas": "lerna run build --scope escala-notas"
