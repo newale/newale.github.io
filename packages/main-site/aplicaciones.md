@@ -1,5 +1,5 @@
 ---
-title: "bio"
+title: "Aplicaciones"
 date: 2025-10-12
 tag: Aplicaciones
 categoria: "Aplicaciones"
