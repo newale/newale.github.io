@@ -1,7 +1,7 @@
 ---
 title: "bio"
 date: 2025-10-12
-tag: bio
+tag: Aplicaciones
 categoria: "Aplicaciones"
 layout: "layouts/post.html"
 ---
