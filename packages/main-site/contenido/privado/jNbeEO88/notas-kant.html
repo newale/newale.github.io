@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notas · Estética · Kant — 13 mayo 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f5f0e8;
+    --ink: #1a1410;
+    --accent: #8b2e0f;
+    --muted: #6b5f52;
+    --rule: #c8bfb0;
+    --highlight: #e8dfd0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 300;
+    line-height: 1.75;
+    font-size: 17px;
+  }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 60px 40px 100px;
+  }
+
+  header {
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 24px;
+    margin-bottom: 48px;
+  }
+
+  .curso-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: 'Source Serif 4', serif;
+    font-weight: 400;
+    margin-bottom: 12px;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .fecha {
+    margin-top: 10px;
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  section {
+    margin-bottom: 44px;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-top: 1px solid var(--rule);
+    padding-top: 20px;
+    margin-bottom: 16px;
+  }
+
+  p {
+    margin-bottom: 14px;
+    color: var(--ink);
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 14px;
+  }
+
+  ul li {
+    padding-left: 22px;
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  ul li ul {
+    margin-top: 8px;
+    margin-bottom: 0;
+  }
+
+  ul li ul li::before {
+    content: '·';
+    font-size: 1.2em;
+    top: -1px;
+  }
+
+  .nota-clase {
+    background: var(--highlight);
+    border-left: 3px solid var(--accent);
+    padding: 14px 18px;
+    margin: 20px 0;
+    font-size: 15px;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  .nota-clase strong {
+    font-style: normal;
+    color: var(--ink);
+    font-weight: 400;
+  }
+
+  .complement {
+    background: white;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 18px 22px;
+    margin-top: 16px;
+    font-size: 15.5px;
+  }
+
+  .complement-label {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+    font-weight: 400;
+  }
+
+  .term {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    margin-top: 60px;
+    padding-top: 20px;
+    font-size: 12px;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  @media (max-width: 600px) {
+    .page { padding: 36px 22px 70px; }
+    h1 { font-size: 1.8rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="curso-label">Estética · Notas de clase</div>
+    <h1>Kant y la <em>Crítica</em><br>del Juicio</h1>
+    <div class="fecha">13 de mayo de 2026</div>
+  </header>
+
+  <!-- BLOQUE 1: Ilustración y autonomía -->
+  <section>
+    <h2>I. Ilustración y autonomía</h2>
+
+    <ul>
+      <li>
+        <strong>Ilustración como crítica:</strong> la Ilustración no es solo un período histórico, sino una actitud: la disposición a cuestionar la autoridad externa y pensar por uno mismo.
+        <div class="complement">
+          <div class="complement-label">Complemento</div>
+          Kant lo define en su ensayo de 1784 <span class="term">¿Qué es la Ilustración?</span>: "Sapere aude — atrévete a saber". La mayoría de edad intelectual significa no necesitar un tutor que piense por ti.
+        </div>
+      </li>
+      <li>
+        <strong>Salir de la mayoría de edad:</strong> frase tomada directamente del ensayo kantiano. La "minoría de edad" no es falta de inteligencia, sino cobardía para usar la propia razón sin guía ajena.
+      </li>
+      <li>
+        <strong><span class="term">Sapere aude</span>:</strong> "Atrévete a saber" / "Ten el valor de servirte de tu propio entendimiento" — lema de la Ilustración según Kant.
+      </li>
+      <li>
+        <strong>Darse leyes a uno mismo (autonomía):</strong>
+        <ul>
+          <li>Salir de la infancia = salir de la heteronomía (recibir las normas desde fuera).</li>
+          <li>Implica aspirar a la autodeterminación racional.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>No implica libertad total:</strong> la autonomía kantiana no es arbitrariedad; la ley que uno se da debe ser universalizable (imperativo categórico).
+      </li>
+    </ul>
+  </section>
+
+  <!-- BLOQUE 2: Kant y los pietistas -->
+  <section>
+    <h2>II. Kant y los pietistas</h2>
+
+    <ul>
+      <li>Kant creció en un ambiente pietista (corriente protestante austera que enfatizaba la experiencia religiosa personal y la lectura directa de la Biblia).</li>
+      <li>En ese entorno se valoraba la <strong>interpretación propia</strong> del texto sagrado, no la mediación institucional — lo cual paradójicamente prepara el terreno para el pensamiento autónomo.</li>
+      <li>A la vez, no se "jerarquizaba" socialmente el saber: el zapatero y el pastor leían el mismo texto. Esa horizontalidad influyó en la idea kantiana de razón universal.</li>
+    </ul>
+
+    <div class="nota-clase"><strong>Nota de clase:</strong> este contexto explica por qué Kant podía separar fe y razón sin hostilidad: el pietismo ya había interiorizado la autoridad, así que Kant simplemente racionalizó ese movimiento.</div>
+  </section>
+
+  <!-- BLOQUE 3: Importancia de Kant / Estética trascendental -->
+  <section>
+    <h2>III. Importancia de Kant en estética</h2>
+
+    <ul>
+      <li>
+        <strong>La estética de Kant es trascendental:</strong> no pregunta "¿qué es bello?" sino "¿cuáles son las condiciones de posibilidad del juicio estético?".
+        <div class="complement">
+          <div class="complement-label">Complemento</div>
+          Esto lo distingue de toda estética anterior (Baumgarten, Hume): Kant no describe objetos bellos, sino la estructura subjetiva que hace posible decir "esto es bello" con pretensión de universalidad.
+        </div>
+      </li>
+      <li>
+        Fuentes principales:
+        <ul>
+          <li><span class="term">Crítica de la razón pura</span> (1781) — epistemología y condiciones del conocimiento.</li>
+          <li><span class="term">Crítica del juicio</span> (1790) — estética y teleología. Aquí aparece la teoría del juicio de gusto, lo bello y lo sublime.</li>
+        </ul>
+      </li>
+      <li>
+        Conceptos clave de la estética kantiana:
+        <ul>
+          <li><strong>Lo bello:</strong> produce placer desinteresado y pretende validez universal sin concepto.</li>
+          <li><strong>Lo sublime:</strong> desborda los sentidos (matemático: lo inconmensurablemente grande; dinámico: el poder de la naturaleza) y conduce a la razón.</li>
+          <li><strong>Bell / lo bello:</strong> la forma agrada sin que medie ningún interés práctico ni conocimiento determinado.</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <!-- BLOQUE 4: Kant vs empiristas y racionalistas -->
+  <section>
+    <h2>IV. Kant frente a empiristas y racionalistas</h2>
+
+    <ul>
+      <li>
+        <strong>Un filósofo legislador:</strong> Kant propone un rigor casi científico para definir los campos de acción de la razón (teórica, práctica, estética).
+      </li>
+      <li>
+        <strong>Busca lo universal:</strong> a diferencia de Hume (empirista), Kant no acepta que el gusto sea puramente subjetivo; a diferencia de los racionalistas (Leibniz, Wolff), no cree que la belleza sea una propiedad objetiva del mundo.
+        <div class="complement">
+          <div class="complement-label">Complemento</div>
+          La solución kantiana es la <span class="term">universalidad subjetiva</span>: el juicio "esto es bello" no describe el objeto ni mi gusto privado, sino que reclama acuerdo de todos los sujetos mediante el <span class="term">sensus communis</span> (sentido común estético). Es una universalidad sin concepto.
+        </div>
+      </li>
+      <li>
+        <strong>Empiristas:</strong> (Hume, Locke) el conocimiento viene de la experiencia; el gusto es relativo a cada sujeto.
+      </li>
+      <li>
+        <strong>Racionalistas:</strong> (Descartes, Leibniz) la razón posee ideas innatas; la belleza podría derivarse de proporciones racionales.
+      </li>
+      <li>
+        Kant hace una <em>síntesis crítica</em>: reconoce el papel de la experiencia sensible <em>y</em> exige condiciones a priori (las formas puras de la intuición y las categorías).
+      </li>
+    </ul>
+  </section>
+
+  <!-- BLOQUE 5: Próxima clase -->
+  <section>
+    <h2>V. Próxima clase</h2>
+    <ul>
+      <li><strong>Kant y Hegel</strong> — se verá cómo Hegel recoge y supera la estética kantiana: para Hegel el arte es la manifestación sensible del Espíritu, lo que rompe con el "desinterés" kantiano.</li>
+    </ul>
+    <div class="nota-clase"><strong>Para preparar:</strong> revisar <span class="term">Crítica del Juicio</span> §§ 1–5 (juicio de gusto) y §§ 23–29 (lo sublime). Para Hegel, echar un vistazo a la introducción de las <span class="term">Lecciones sobre la estética</span>.</div>
+  </section>
+
+  <footer>
+    Notas transcritas y complementadas · Clase de Estética · 13.05.2026
+  </footer>
+
+</div>
+</body>
+</html>
