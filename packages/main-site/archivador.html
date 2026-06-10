@@ -1,0 +1,12 @@
+---
+layout: "layouts/home.html"
+title: "Archivador"
+---
+
+<h1>Archivador</h1>
+
+<ul class="archivador-list">
+  {% for archivo in archivadores %}
+  <li><a href="/archivador/{{ archivo.slug }}/">{{ archivo.titulo }}</a></li>
+  {% endfor %}
+</ul>

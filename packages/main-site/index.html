@@ -7,11 +7,11 @@ title: "Notas"
   {% for entry in collections.garden %}
   <li class="feed-item">
     <div class="feed-item-meta">
-      {% if entry.data.type %}<span class="entry-type">{{ entry.data.type }}</span>{% endif %}
-      <span class="feed-item-date">{{ entry.date | formattedDate }}</span>
+      <span class="feed-item-date">{{ entry.date | formattedDate }}</span> -
+      {% if entry.data.archivador %}<a class="entry-archivador" href="/archivador/{{ entry.data.archivador }}/">{{ entry.data.archivador | capitalize }}</a>{% endif %}
     </div>
     <a class="feed-item-title" href="{{ entry.url }}">{{ entry.data.title }}</a>
-    {% if entry.data.cuaderno %}<a class="entry-cuaderno" href="/cuadernos/{{ entry.data.cuaderno }}/">{{ entry.data.cuaderno }}</a>{% endif %}
+    
   </li>
   {% endfor %}
 </ul>

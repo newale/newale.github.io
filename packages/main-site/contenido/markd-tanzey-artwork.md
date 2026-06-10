@@ -5,7 +5,7 @@ tag: "arte"
 layout: "layouts/garden-entry.html"
 garden: true
 type: nota
-cuaderno: arte
+archivador: arte
 draft: false
 ---
 

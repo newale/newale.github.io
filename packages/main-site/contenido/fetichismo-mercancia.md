@@ -1,11 +1,11 @@
 ---
-title: "Fetichismo de mercancia"
+title: "Espacios liminales"
 date: "2025-09-25"
 tag: "prueba"
 layout: "layouts/garden-entry.html"
 garden: true
 type: nota
-cuaderno: filosofia
+archivador: filosofia
 draft: true
 ---
 
@@ -17,8 +17,3 @@ Conocí el concepto en el arte, Suelen ser espacios de transición. No sé si de
 
 Por ejemplo, cuando alguien pasa de ser candidato a Doctor (en X disciplina), y se transforma en Doctor. La candidatura pueda ser
 
-
-En los juegos, 
-# Changelog
-
-- 

@@ -1,11 +1,11 @@
 ---
 title: "Nos vamos a Pucón"
 date: "2025-09-26"
-tag: "casual"
+tags: "casual"
 layout: "layouts/garden-entry.html"
 garden: true
 type: nota
-cuaderno: tecnologia
+archivador: "tecnocultura"
 draft: false
 ---
 

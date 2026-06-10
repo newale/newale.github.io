@@ -5,7 +5,7 @@ tag: "tech"
 layout: "layouts/garden-entry.html"
 garden: true
 type: nota
-cuaderno: tecnologia
+archivador: "tecnocultura"
 draft: false
 ---
 

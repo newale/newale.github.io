@@ -1,11 +1,10 @@
 ---
 title: "Debates en Televisión"
 date: "2025-08-25"
-tag: "prueba"
 layout: "layouts/garden-entry.html"
 garden: true
 type: nota
-cuaderno: filosofia
+archivador: "Opinion"
 draft: true
 ---
 

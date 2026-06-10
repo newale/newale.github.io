@@ -5,7 +5,7 @@ tag: "opinion"
 layout: "layouts/garden-entry.html"
 garden: true
 type: nota
-cuaderno: filosofia
+archivador: filosofia
 draft: true
 ---
 

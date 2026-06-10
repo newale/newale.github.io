@@ -10,18 +10,9 @@
 <body>
   {% include "./components/header.html" %}
   <main>
-    <div class="entry-meta">
-      {% if type %}<span class="entry-type">{{ type }}</span>{% endif %}
-      {% if cuaderno %}<a class="entry-cuaderno" href="/cuadernos/{{ cuaderno }}/">{{ cuaderno }}</a>{% endif %}
-    </div>
     <h1>{{ title }}</h1>
-    <p class="entry-date">{{ date | formattedDate }}</p>
+    <p class="entry-date">{{ date | formattedDate }} - {% if archivador %}Archivador: <a class="entry-archivador" href="/archivador/{{ archivador }}/">{{ archivador | capitalize }}</a>{% endif %}</p>
     {{ content }}
-    {% if tags %}
-    <div class="entry-tags">
-      {% for tag in tags %}{% if tag != "garden" %}<a class="tag" href="/tags/{{ tag }}/">{{ tag }}</a> {% endif %}{% endfor %}
-    </div>
-    {% endif %}
   </main>
   {% include "components/footer.html" %}
 </body>
