@@ -4,9 +4,12 @@
   {% include "head.html" %}
   <title>{{ title }}</title>
   <style>
-    html, body { max-width: 45rem; }
-    main { text-align: center; }
-    .poem-body p { font-style: italic; line-height: 2; }
+    html, body { max-width: 28rem; }
+    .poem-body p {
+      font-size: 1.45rem;
+      line-height: 1.8;
+      font-style: italic;
+    }
   </style>
 </head>
 <body>
@@ -14,7 +17,7 @@
   <main>
     <div class="entry-meta">
       <span class="entry-type">poema</span>
-      {% if cuaderno %}<a class="entry-cuaderno" href="/cuadernos/{{ cuaderno }}/">{{ cuaderno }}</a>{% endif %}
+      {% if cuaderno %}<a class="entry-cuaderno" href="/archivador/{{ cuaderno }}/">{{ cuaderno }}</a>{% endif %}
     </div>
     <h1>{{ title }}</h1>
     <p class="entry-date">{{ date | formattedDate }}</p>

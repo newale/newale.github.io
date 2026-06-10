@@ -5,7 +5,7 @@ tag: "prueba"
 layout: "layouts/garden-entry.html"
 garden: true
 type: nota
-cuaderno: filosofia
+archivador: filosofia
 draft: true
 ---
 
@@ -19,6 +19,3 @@ Por ejemplo, cuando alguien pasa de ser candidato a Doctor (en X disciplina), y 
 
 
 En los juegos, 
-# Changelog
-
-- 

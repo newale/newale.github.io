@@ -1,0 +1,22 @@
+---
+pagination:
+  data: archivadores
+  size: 1
+  alias: archivo
+permalink: "/archivador/{{ archivo.slug }}/"
+layout: "layouts/home.html"
+---
+
+<p><a href="/archivador">← Archivador</a></p>
+<h1>{{ archivo.titulo }}</h1>
+
+<ul class="archivo-lista">
+  {% for entry in collections.garden %}
+  {% if entry.data.archivador == archivo.slug %}
+    <li>
+      <a href="{{ entry.url }}">{{ entry.data.title }}</a>
+      <p class="entry-date">{{ entry.date | formattedDate }}</p>
+    </li>
+  {% endif %}
+  {% endfor %}
+</ul>

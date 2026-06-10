@@ -1,0 +1,128 @@
+/* Estilos Generales */
+body {
+    font-family: Arial, sans-serif; /* Simular una fuente sin serifa como en el PDF */
+    line-height: 1.5;
+    margin: 0;
+    padding: 30px; /* Margen general para simular el espacio en la página */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Encabezado */
+.header {
+    padding-bottom: 10px;
+    border-bottom: 3px solid #000; /* Línea separadora */
+    margin-bottom: 20px;
+    text-align: center;
+    max-width: 100%;
+}
+
+.header h1 {
+    font-size: 2.2em;
+    margin-bottom: 0px;
+}
+
+.header .subtitle {
+    font-size: 1.1em;
+    margin-top: 5px;
+    color: #333;
+}
+
+/* Estructura de Contenido (Dos Columnas) */
+.content-wrapper {
+    display: flex;
+    gap: 30px; /* Espacio entre las dos columnas */
+}
+
+/* Columna Lateral (Izquierda) */
+.sidebar {
+    flex: 0 0 300px; /* Ancho fijo para la columna lateral */
+}
+
+/* Contenido Principal (Derecha) */
+.main-content {
+    flex-grow: 1;
+}
+
+/* Secciones */
+.section {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+}
+
+.sidebar .section {
+    border-bottom: 1px solid #ddd; /* Separador más sutil en la barra lateral */
+}
+
+/* Títulos de Sección */
+h2 {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #000;
+    border-bottom: 1px solid #333; /* Línea bajo los títulos de sección */
+    padding-bottom: 5px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* Perfil */
+#perfil p {
+    text-align: justify;
+    margin-bottom: 10px;
+}
+
+/* Listas (Información y Certificaciones) */
+#informacion-personal ul, #certificaciones ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+#informacion-personal li, #certificaciones li {
+    margin-bottom: 5px;
+}
+
+#informacion-personal a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Experiencia y Educación */
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.experience-item, .education-item {
+    margin-bottom: 15px;
+}
+
+.experience-item h3, .education-item h3 {
+    font-size: 1.1em;
+    margin: 0;
+}
+
+.experience-item .company, .education-item .institution {
+    font-style: italic;
+    color: #555;
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+
+.experience-item .dates {
+    font-weight: normal;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.experience-item ul {
+    margin-top: 5px;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.experience-item li {
+    margin-bottom: 5px;
+}
