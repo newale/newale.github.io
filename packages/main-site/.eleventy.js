@@ -1,62 +1,36 @@
-const isJournalAndNotDraft = (item) => item.data.journal === true && item.data.draft == false;
+const isGardenAndNotDraft = (item) => item.data.garden === true && item.data.draft !== true;
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("static/css");
   eleventyConfig.addPassthroughCopy("static/images");
   eleventyConfig.addPassthroughCopy("static/audios");
 
-  eleventyConfig.addCollection("journal", function(collectionApi) {
-    return collectionApi.getAll().filter(isJournalAndNotDraft);
+  eleventyConfig.addCollection("garden", function(collectionApi) {
+    return collectionApi
+      .getAll()
+      .filter(isGardenAndNotDraft)
+      .sort((a, b) => new Date(b.date) - new Date(a.date));
   });
 
-  eleventyConfig.addCollection("journalMonths", function(collectionApi) {
-    const journalEntries = collectionApi
-      .getAll()
-      .filter(isJournalAndNotDraft);
-
-    // Map monthYear to its latest date
-    const monthMap = new Map();
-
-    journalEntries.forEach(entry => {
-      const date = new Date(entry.date);
-      const monthYear = date.toLocaleString("es-CL", { month: "long", year: "numeric" });
-      if (!monthMap.has(monthYear) || date > monthMap.get(monthYear)) {
-        monthMap.set(monthYear, date);
+  eleventyConfig.addCollection("cuadernos", function(collectionApi) {
+    const entries = collectionApi.getAll().filter(isGardenAndNotDraft);
+    const map = {};
+    entries.forEach(entry => {
+      const cuaderno = entry.data.cuaderno;
+      if (cuaderno) {
+        if (!map[cuaderno]) map[cuaderno] = [];
+        map[cuaderno].push(entry);
       }
     });
-
-    // Sort monthYear by date descending
-    const grouped = Array.from(monthMap.entries())
-      .sort((a, b) => b[1] - a[1])
-      .map(([monthYear]) => monthYear);
-
-    return grouped;
-  });
-
-  eleventyConfig.addCollection("journalByMonth", function(collectionApi) {
-    const journalEntries = collectionApi
-      .getAll()
-      .filter(isJournalAndNotDraft)
-      .sort((a, b) => new Date(b.date) - new Date(a.date)); // Ordenar de más nuevo a más antiguo
-
-    const grouped = {};
-
-    journalEntries.forEach(entry => {
-      const date = new Date(entry.date);
-      const monthYear = date.toLocaleString("es-CL", { month: "long", year: "numeric" });
-
-      if (!grouped[monthYear]) {
-        grouped[monthYear] = [];
-      }
-
-      grouped[monthYear].push(entry);
-    });
-
-    return grouped;
+    return map;
   });
 
   eleventyConfig.addFilter("formattedDate", function(date) {
     const options = { day: "numeric", month: "long", year: "numeric" };
     return new Date(date).toLocaleDateString("es-CL", options);
+  });
+
+  eleventyConfig.addFilter("byCuaderno", function(collection, cuaderno) {
+    return collection.filter(item => item.data.cuaderno === cuaderno);
   });
 }

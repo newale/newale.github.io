@@ -2,8 +2,10 @@
 title: "Adiós D'angelo"
 date: "2025-10-14"
 tag: "musica"
-journal: true
-layout: "layouts/journal-entry.html"
+layout: "layouts/garden-entry.html"
+garden: true
+type: nota
+cuaderno: musica
 draft: false
 ---
 

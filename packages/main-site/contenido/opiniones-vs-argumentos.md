@@ -2,8 +2,10 @@
 title: "La importancia de diferenciar opiniones de argumentos"
 date: "2025-09-24"
 tag: "opinion"
-journal: true
-layout: "layouts/journal-entry.html"
+layout: "layouts/garden-entry.html"
+garden: true
+type: nota
+cuaderno: filosofia
 draft: true
 ---
 

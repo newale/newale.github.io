@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  {% include "head.html" %}
+  <title>{{ title }}</title>
+  <style>
+    html, body { max-width: 45rem; }
+  </style>
+</head>
+<body>
+  {% include "./components/header.html" %}
+  <main>
+    <div class="entry-meta">
+      {% if type %}<span class="entry-type">{{ type }}</span>{% endif %}
+      {% if cuaderno %}<a class="entry-cuaderno" href="/cuadernos/{{ cuaderno }}/">{{ cuaderno }}</a>{% endif %}
+    </div>
+    <h1>{{ title }}</h1>
+    <p class="entry-date">{{ date | formattedDate }}</p>
+    {{ content }}
+    {% if tags %}
+    <div class="entry-tags">
+      {% for tag in tags %}{% if tag != "garden" %}<a class="tag" href="/tags/{{ tag }}/">{{ tag }}</a> {% endif %}{% endfor %}
+    </div>
+    {% endif %}
+  </main>
+  {% include "components/footer.html" %}
+</body>
+</html>

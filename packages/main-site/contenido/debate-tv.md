@@ -2,8 +2,10 @@
 title: "Debates en Televisión"
 date: "2025-08-25"
 tag: "prueba"
-journal: true
-layout: "layouts/journal-entry.html"
+layout: "layouts/garden-entry.html"
+garden: true
+type: nota
+cuaderno: filosofia
 draft: true
 ---
 

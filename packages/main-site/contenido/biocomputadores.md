@@ -2,8 +2,10 @@
 title: "Biocomputadores"
 date: "2025-09-27"
 tag: "tech"
-journal: true
-layout: "layouts/journal-entry.html"
+layout: "layouts/garden-entry.html"
+garden: true
+type: nota
+cuaderno: tecnologia
 draft: false
 ---
 

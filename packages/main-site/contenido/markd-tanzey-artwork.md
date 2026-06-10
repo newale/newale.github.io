@@ -2,8 +2,10 @@
 title: "El arte de Mark Tansey"
 date: "2025-10-06"
 tag: "arte"
-journal: true
-layout: "layouts/journal-entry.html"
+layout: "layouts/garden-entry.html"
+garden: true
+type: nota
+cuaderno: arte
 draft: false
 ---
 

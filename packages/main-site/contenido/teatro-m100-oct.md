@@ -2,8 +2,10 @@
 title: "Teatro, M100: Lo que queda del fuego"
 date: "2025-10-03"
 tag: "opinion"
-journal: true
-layout: "layouts/journal-entry.html"
+layout: "layouts/garden-entry.html"
+garden: true
+type: nota
+cuaderno: arte
 draft: false
 ---
 

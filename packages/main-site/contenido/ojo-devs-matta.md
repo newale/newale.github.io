@@ -2,8 +2,10 @@
 title: "Fango original, ojo con los desarrolladores de Roberto Matta"
 date: "2025-09-24"
 tag: "opinion"
-journal: true
-layout: "layouts/journal-entry.html"
+layout: "layouts/garden-entry.html"
+garden: true
+type: nota
+cuaderno: arte
 draft: false
 ---
 

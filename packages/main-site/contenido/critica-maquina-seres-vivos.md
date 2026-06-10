@@ -3,7 +3,11 @@ title: "Crítica a De Máquinas y Seres Vivos"
 date: 2023-11-04
 tag: ensayo
 categoria: "Filosofia"
-layout: "layouts/post.html"
+layout: "layouts/garden-entry.html"
+garden: true
+type: ensayo
+cuaderno: filosofia
+draft: true
 ---
 
 Un ser vivo es aquel que nace, crece, se reproduce y muere.

@@ -1,17 +1,30 @@
 ---
 layout: "layouts/home.html"
-title: "Notas"
+title: "Etiquetas"
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - "all"
+    - "garden"
+    - "cuadernos"
+permalink: "/tags/{{ tag | slugify }}/"
 ---
 
+<p><a href="/">← Inicio</a></p>
+<h1>#{{ tag }}</h1>
+
 <ul class="garden-feed">
-  {% for entry in collections.garden %}
+  {% for entry in collections[tag] %}
+  {% if entry.data.garden and entry.data.draft != true %}
   <li class="feed-item">
     <div class="feed-item-meta">
       {% if entry.data.type %}<span class="entry-type">{{ entry.data.type }}</span>{% endif %}
       <span class="feed-item-date">{{ entry.date | formattedDate }}</span>
     </div>
     <a class="feed-item-title" href="{{ entry.url }}">{{ entry.data.title }}</a>
-    {% if entry.data.cuaderno %}<a class="entry-cuaderno" href="/cuadernos/{{ entry.data.cuaderno }}/">{{ entry.data.cuaderno }}</a>{% endif %}
   </li>
+  {% endif %}
   {% endfor %}
 </ul>

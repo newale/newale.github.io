@@ -1,17 +1,22 @@
 ---
 layout: "layouts/home.html"
-title: "Notas"
+title: "Cuaderno de Tecnología"
+cuadernoActual: "tecnologia"
 ---
+
+<p><a href="/cuadernos">← Cuadernos</a></p>
+<h1>Tecnología</h1>
 
 <ul class="garden-feed">
   {% for entry in collections.garden %}
+  {% if entry.data.cuaderno == "tecnologia" %}
   <li class="feed-item">
     <div class="feed-item-meta">
       {% if entry.data.type %}<span class="entry-type">{{ entry.data.type }}</span>{% endif %}
       <span class="feed-item-date">{{ entry.date | formattedDate }}</span>
     </div>
     <a class="feed-item-title" href="{{ entry.url }}">{{ entry.data.title }}</a>
-    {% if entry.data.cuaderno %}<a class="entry-cuaderno" href="/cuadernos/{{ entry.data.cuaderno }}/">{{ entry.data.cuaderno }}</a>{% endif %}
   </li>
+  {% endif %}
   {% endfor %}
 </ul>

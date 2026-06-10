@@ -1,9 +1,11 @@
 ---
-title: "Algunas ideas sobre los espacios liminales"
+title: "Fetichismo de mercancia"
 date: "2025-09-25"
 tag: "prueba"
-journal: true
-layout: "layouts/journal-entry.html"
+layout: "layouts/garden-entry.html"
+garden: true
+type: nota
+cuaderno: filosofia
 draft: true
 ---
 
