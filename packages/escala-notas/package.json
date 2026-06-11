@@ -2,7 +2,7 @@
   "name": "escala-notas",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://alejandroebnuñez.cl/escala-notas/",
+  "homepage": "https://aebn.cl/escala-notas/",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",

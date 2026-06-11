@@ -3,6 +3,7 @@ const isGardenAndNotDraft = (item) => item.data.garden === true && item.data.dra
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("static/css");
   eleventyConfig.addPassthroughCopy("static/images");
+  eleventyConfig.addPassthroughCopy("static/imagenes");
   eleventyConfig.addPassthroughCopy("static/audios");
   eleventyConfig.addPassthroughCopy("static/documentos");
 
