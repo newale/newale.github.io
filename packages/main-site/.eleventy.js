@@ -4,6 +4,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("static/css");
   eleventyConfig.addPassthroughCopy("static/images");
   eleventyConfig.addPassthroughCopy("static/audios");
+  eleventyConfig.addPassthroughCopy("static/documentos");
 
   eleventyConfig.addCollection("garden", function(collectionApi) {
     return collectionApi
