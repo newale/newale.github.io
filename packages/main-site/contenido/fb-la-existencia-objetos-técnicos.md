@@ -6,6 +6,6 @@ layout: "layouts/garden-entry.html"
 garden: true
 type: nota
 archivador: "fichas-bibliograficas"
-draft: false
+draft: true
 ---
 

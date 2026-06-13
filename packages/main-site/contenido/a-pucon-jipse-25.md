@@ -6,7 +6,7 @@ layout: "layouts/garden-entry.html"
 garden: true
 type: nota
 archivador: "tecnocultura"
-draft: false
+draft: true
 ---
 
 La postulación al [JIPSE](https://jipse2025.ufro.cl) de Pucón de este año, resultó bien. Nos aceptaron la ponencia.
