@@ -1,5 +1,5 @@
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 
   /* colors */
   --primary-color: light-dark(#2b0ca6, #bf57e9);
@@ -18,6 +18,7 @@
 
   /* spacing */
   --space-s: 1.5rem;
+  --space-s: 0.75rem;
 
   /* tag */
   --tag-bg-color: light-dark(#a16215, #F4F5DD);
@@ -34,14 +35,29 @@ html, body {
   font-family: Georgia, "Times New Roman", Times, serif;
   background-color: var(--background-color);
   color: var(--text-body-color);
+  background-image: url('/static/imagenes/background-pattern.png');
 }
 
 body {
+  max-width: 49rem;
   padding: var(--space-s);
 }
 
 header, footer {
   margin: 0 auto 2rem;
+  padding: 0 var(--space-s);
+  background-color: var(--secondary-color);
+  border: 1px solid var(--border-color);
+}
+
+header {
+ padding: 1.5rem var(--space-s);
+}
+
+main {
+  border: 1px solid var(--border-color);
+  background-color: var(--secondary-color);
+  padding: 2rem;
 }
 
 main img {
@@ -58,18 +74,28 @@ main img {
   justify-content: right;
 }
 
+@media (max-width: 600px) {
+  body {
+    padding: var(--space-s);
+  }
+
+  main {
+    padding: 1rem;
+  }
+}
+
 
 hr {
   margin: var(--space-s) auto;
   border-color: var(--border-color);
   border-width: 1px;
   border-style: solid;
-  max-width: 45rem;
+  max-width: 47rem;
 }
 
 p, li {
   font-size: 1.15rem;
-  line-height: 1.5;
+  line-height: 1.7;
   color: var(--text-body-color);
 }
 
@@ -87,6 +113,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
   margin: 1rem 0;
   color: var(--text-primary-color);
+  font-weight: normal;
 }
 
 blockquote {
@@ -94,7 +121,19 @@ blockquote {
   flex-direction: column;
   align-items: end;
   text-align: right;
+  margin: 0;
+  margin-left: auto;
   margin-bottom: 5rem;
+  margin-block-end: 0rem;
+  width: auto;
+}
+
+@media (min-width: 600px) {
+  blockquote {
+    width: 70%;
+    margin-left: auto;
+    margin-right: 0;
+  }
 }
 
 blockquote::after {
@@ -103,6 +142,7 @@ blockquote::after {
   width: 50%;
   height: 1px;
   background-color: #98838e;
+
 }
 
 .posts-list {
@@ -154,6 +194,10 @@ blockquote::after {
 
   /* Animación de fondo azulada */
   background: var(--background-color)
+}
+
+footer.entry-footer {
+  margin-top: 2rem;
 }
 
 footer.entry-footer p {
