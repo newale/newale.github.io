@@ -4,10 +4,9 @@ archivador:
 date: 2026-06-12T00:00:00.000Z
 garden: true
 tags:
-  - por-revisar
+  - publicado
 title: Una crítica estética al enfoque de las capacidades de Martha Nussbaum
 layout: layouts/garden-entry.html
-draft: false
 ---
 
 > _"La esencia de lo camp es el amor a lo no natural: al artificio y la exageración."_
@@ -17,8 +16,9 @@ draft: false
 > Martha Nussbaum, _Frontiers of Justice_
 
 
-Nussbaum quiere extender la justicia a los animales y lo hace bien. Su enfoque de las capacidades trata a cada criatura como un agente que busca florecer, no como un recipiente de placer ni como propiedad humana. Pero el enfoque descansa en la categoría de lo natural sin mirar sus fronteras con la cultura y con el artificio. Nussbaum supone que sabe qué es "lo natural" en un animal y construye toda su teoría del florecimiento sobre ese supuesto. El pergolero –un ave que construye escenarios, cura objetos por color y manipula la mirada de quien lo observa– rompe ese supuesto. Su conducta no es naturaleza cruda, es artificio animal. Leído desde la sensibilidad camp de Susan Sontag, el pergolero evidencia que "lo natural" de Nussbaum no es un dato biológico, sino una imagen ya domesticada por la razón antes de que llegue cualquier justicia a suplantarla.+
+Nussbaum quiere extender la justicia a los animales y lo hace bien. Su enfoque de las capacidades trata a cada criatura como un agente que busca florecer, no como un recipiente de placer ni como propiedad humana. Pero el enfoque descansa en la categoría de lo natural sin mirar sus fronteras con, por ejemplo, la cultura y lo artificial. Nussbaum supone que sabe qué es "lo natural" en un animal y construye toda su teoría del florecimiento sobre ese supuesto. El pergolero –un ave que construye escenarios, cura objetos por color y manipula la mirada de quien lo observa– tensiona ese supuesto. Su conducta no es naturaleza "cruda", es artificio animal. Leído desde la sensibilidad camp de Susan Sontag, el pergolero evidencia que "lo natural" de Nussbaum no es un dato biológico, sino una imagen ya domesticada por la razón antes de que llegue cualquier justicia a suplantarla.
 
+![una-critica-estetica-al-enfoque-de-las-capacidades-de-martha-nussbaum-1781311987604.webp](/static/imagenes/una-critica-estetica-al-enfoque-de-las-capacidades-de-martha-nussbaum-1781311987604.webp)
 
 ## 1. El animal que construye ilusiones
 
