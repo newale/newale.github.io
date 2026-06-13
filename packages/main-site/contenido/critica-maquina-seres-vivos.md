@@ -6,8 +6,8 @@ categoria: "Filosofia"
 layout: "layouts/garden-entry.html"
 garden: true
 type: ensayo
-archivador: "filosofia"
-draft: false
+archivador: filosofia
+draft: true
 ---
 
 Un ser vivo es aquel que nace, crece, se reproduce y muere.

@@ -28,7 +28,7 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addFilter("formattedDate", function(date) {
-    const options = { day: "numeric", month: "long", year: "numeric" };
+    const options = { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" };
     return new Date(date).toLocaleDateString("es-CL", options);
   });
 
