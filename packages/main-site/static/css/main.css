@@ -6,14 +6,17 @@
   --secondary-color: light-dark(#f4f4f4, #F4F5DD);
   --text-base-color: light-dark(#2f2f2f, #ecf0f1);
   --background-color: light-dark(#F4F5DD, #1a1a1a);
+
   
-  --text-primary-color: light-dark(var(--text-base-color), #d8aaeb);
+  
+  /* --text-primary-color: light-dark(var(--text-base-color), #d8aaeb); */
+  --text-primary-color: light-dark(#03074d, #d8aaeb);
   --text-body-color: light-dark(#2f2f2f, #8edff3);
   --text-icon-color: light-dark(#a16215, #77bacb);
-  --text-link-color: light-dark(#a16215, #8a86f7);
+  --text-link-color: light-dark(#0611CD, #8a86f7);
 
   /* borders */
-  --border-color: light-dark(#ddd, #333);
+  --border-color: light-dark(#0611CD, #333);
   --border-color-dark: light-dark(#141414, #727272);
 
   /* spacing */
@@ -96,7 +99,7 @@ hr {
 p, li {
   font-size: 1.15rem;
   line-height: 1.7;
-  color: var(--text-body-color);
+  color: var(--text-primary-color);
 }
 
 .navigation ul {
@@ -111,7 +114,7 @@ a {
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
-  margin: 1rem 0;
+  margin: 2rem 0 1rem 0;
   color: var(--text-primary-color);
   font-weight: normal;
 }
@@ -256,14 +259,14 @@ footer.entry-footer p {
 
 .entry-archivador, .entry-cuaderno {
   font-size: 0.75rem;
-  color: var(--text-icon-color);
+  color: var(--text-primary-color);
   text-decoration: none;
   border-bottom: 1px solid var(--border-color);
 }
 
 .entry-date {
   font-size: 0.85rem;
-  color: var(--text-icon-color);
+  color: var(--text-primary-color);
   margin: 0 0 1.5rem 0;
 }
 

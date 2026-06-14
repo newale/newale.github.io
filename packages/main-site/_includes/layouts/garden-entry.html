@@ -11,7 +11,7 @@
   {% include "./components/header.html" %}
   <main>
     <h1>{{ title }}</h1>
-    <p class="entry-date">{{ date | formattedDate }} - {% if archivador %}Archivador: <a class="entry-archivador" href="/archivador/{{ archivador }}/">{{ archivador | capitalize }}</a>{% endif %}</p>
+    <p class="entry-date">{{ date | formattedDate }} / {% if archivador %}Archivador: <a class="entry-archivador" href="/archivador/{{ archivador }}/">📚 {{ archivador | capitalize }}</a>{% endif %}</p>
     {{ content }}
   </main>
   {% include "components/footer.html" %}
