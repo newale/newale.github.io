@@ -7,6 +7,7 @@ tags:
   - publicado
 title: Una crítica estética al enfoque de las capacidades de Martha Nussbaum
 layout: layouts/garden-entry.html
+draft: true
 ---
 
 > _"La esencia de lo camp es el amor a lo no natural: al artificio y la exageración."_
