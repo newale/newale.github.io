@@ -19,3 +19,9 @@ Sirve para calcular una escala de notas según exigencia, puntaje máximo, entre
 [✅ Por hacer](/por-hacer)
 
 Aplicación que sirve para gestionar listas de cosas por hacer, funciona con almacenamiento local. Puedes descargar y subir el estado de la aplicación en formato json.
+
+---
+
+[✔️ Hecho](/hecho)
+
+Registro de actividades realizadas. Permite anotar qué hiciste, en qué categoría y en qué horario, agrupando los registros por día con estadísticas simples.
