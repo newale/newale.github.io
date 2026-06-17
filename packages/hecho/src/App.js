@@ -133,8 +133,16 @@ function shortDay(dateKey) {
 
 
 function VistaEstadisticas({ registros }) {
+  const [winWidth, setWinWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const h = () => setWinWidth(window.innerWidth);
+    window.addEventListener('resize', h);
+    return () => window.removeEventListener('resize', h);
+  }, []);
+
   const today = localToday();
-  const days = Array.from({ length: 7 }, (_, i) => addDays(today, i - 3));
+  const count = winWidth < 640 ? 3 : 7;
+  const days = Array.from({ length: count }, (_, i) => addDays(today, i - Math.floor(count / 2)));
 
   // Largest total minutes across visible days — used to scale column heights
   const dayTotals = days.map(dayKey => {
@@ -201,15 +209,15 @@ function VistaEstadisticas({ registros }) {
                         background: colorForCategoria(r.categoria),
                         borderRadius: "3px",
                         overflow: "hidden",
-                        fontSize: "0.55rem",
+                        fontSize: "12px",
                         color: "#1a1a1a",
                         fontWeight: 600,
-                        padding: "2px 3px",
-                        lineHeight: 1.2,
+                        padding: "2px 4px",
+                        lineHeight: 1.3,
                         flexShrink: 0,
                       }}
                     >
-                      {blockH > 14 ? r.texto : ""}
+                      {blockH > 20 ? r.texto : ""}
                     </div>
                   );
                 })}
