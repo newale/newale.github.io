@@ -10,18 +10,18 @@ Aplicaciones sencillas que he programado para fines personales. Todas son de có
 
 ---
 
-[🎓 Escala de notas](/escala-notas)
+[🎓 Escala de notas](/aplicaciones/escala-notas)
 
 Sirve para calcular una escala de notas según exigencia, puntaje máximo, entre otras configuraciones. 
 
 ---
 
-[✅ Por hacer](/por-hacer)
+[✅ Por hacer](/aplicaciones/por-hacer)
 
 Aplicación que sirve para gestionar listas de cosas por hacer, funciona con almacenamiento local. Puedes descargar y subir el estado de la aplicación en formato json.
 
 ---
 
-[✔️ Hecho](/hecho)
+[✔️ Hecho](/aplicaciones/hecho)
 
 Registro de actividades realizadas. Permite anotar qué hiciste, en qué categoría y en qué horario, agrupando los registros por día con estadísticas simples.

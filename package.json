@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "lerna run dev --scope main-site",
     "build": "lerna run build --ignore main-site && lerna run build --scope main-site && npm run build:cp",
-    "build:cp": "cp -r packages/hecho/build packages/main-site/_site/hecho && cp -r packages/por-hacer/build packages/main-site/_site/por-hacer && cp -r packages/escala-notas/build packages/main-site/_site/escala-notas"
+    "build:cp": "mkdir -p packages/main-site/_site/aplicaciones && cp -r packages/hecho/build packages/main-site/_site/aplicaciones/hecho && cp -r packages/por-hacer/build packages/main-site/_site/aplicaciones/por-hacer && cp -r packages/escala-notas/build packages/main-site/_site/aplicaciones/escala-notas"
   },
   "workspaces": [
     "packages/*"
