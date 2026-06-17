@@ -121,6 +121,107 @@ const itemStyle = {
   borderBottom: "1px solid #3a3f4b",
 };
 
+function addDays(dateKey, n) {
+  const d = new Date(dateKey + "T12:00:00");
+  d.setDate(d.getDate() + n);
+  return [d.getFullYear(), String(d.getMonth() + 1).padStart(2, '0'), String(d.getDate()).padStart(2, '0')].join('-');
+}
+
+function shortDay(dateKey) {
+  return new Date(dateKey + "T12:00:00").toLocaleDateString("es-CL", { weekday: "short" });
+}
+
+
+function VistaEstadisticas({ registros }) {
+  const today = localToday();
+  const days = Array.from({ length: 7 }, (_, i) => addDays(today, i - 3));
+
+  // Largest total minutes across visible days — used to scale column heights
+  const dayTotals = days.map(dayKey => {
+    const items = registros.filter(r => getDayKey(r.fecha) === dayKey);
+    return items.reduce((sum, r) => {
+      if (r.horaInicio && r.horaFin) return sum + Math.max(0, timeToMinutes(r.horaFin) - timeToMinutes(r.horaInicio));
+      return sum + 30; // untimed items count as 30 min for sizing
+    }, 0);
+  });
+  const maxMins = Math.max(...dayTotals, 60);
+
+  return (
+    <div style={{ width: "100%" }}>
+      <div style={{ display: "flex", gap: "4px", width: "100%", alignItems: "flex-start" }}>
+        {days.map((dayKey, di) => {
+          const items = registros.filter(r => getDayKey(r.fecha) === dayKey);
+          const isToday = dayKey === today;
+          const dayNum = new Date(dayKey + "T12:00:00").getDate();
+
+          const timedMins = items.reduce((sum, r) => {
+            if (r.horaInicio && r.horaFin) return sum + Math.max(0, timeToMinutes(r.horaFin) - timeToMinutes(r.horaInicio));
+            return sum;
+          }, 0);
+
+          // Sort timed items by start time; untimed go at end
+          const sorted = [
+            ...items.filter(r => r.horaInicio).sort((a, b) => a.horaInicio.localeCompare(b.horaInicio)),
+            ...items.filter(r => !r.horaInicio),
+          ];
+
+          return (
+            <div key={dayKey} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "stretch", minWidth: 0 }}>
+              {/* Header */}
+              <div style={{
+                textAlign: "center",
+                padding: "5px 2px",
+                borderRadius: "6px",
+                background: isToday ? "#4fc3f7" : "#3a3f4b",
+                color: isToday ? "#1a1a1a" : "white",
+                marginBottom: "4px",
+              }}>
+                <div style={{ fontSize: "0.65rem", textTransform: "capitalize", opacity: 0.8 }}>{shortDay(dayKey)}</div>
+                <div style={{ fontWeight: 700, fontSize: "0.95rem", lineHeight: 1.1 }}>{dayNum}</div>
+                {timedMins > 0 && (
+                  <div style={{ fontSize: "0.6rem", fontWeight: 600, opacity: 0.85, marginTop: "1px" }}>
+                    {minutesToDuration(timedMins)}
+                  </div>
+                )}
+              </div>
+
+              {/* Stacked blocks */}
+              <div style={{ display: "flex", flexDirection: "column", gap: "1px" }}>
+                {sorted.map(r => {
+                  const mins = r.horaInicio && r.horaFin
+                    ? Math.max(timeToMinutes(r.horaFin) - timeToMinutes(r.horaInicio), 0)
+                    : 30;
+                  const blockH = Math.max((mins / maxMins) * 260, 8);
+                  return (
+                    <div
+                      key={r.id}
+                      title={r.horaInicio ? `${r.texto} (${r.horaInicio}–${r.horaFin})` : r.texto}
+                      style={{
+                        height: `${blockH}px`,
+                        background: colorForCategoria(r.categoria),
+                        borderRadius: "3px",
+                        overflow: "hidden",
+                        fontSize: "0.55rem",
+                        color: "#1a1a1a",
+                        fontWeight: 600,
+                        padding: "2px 3px",
+                        lineHeight: 1.2,
+                        flexShrink: 0,
+                      }}
+                    >
+                      {blockH > 14 ? r.texto : ""}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 function readLS(key, fallback) {
   try { return JSON.parse(localStorage.getItem(key)) ?? fallback; } catch { return fallback; }
 }
@@ -135,6 +236,7 @@ function App() {
   const [openDays, setOpenDays] = useState(() => ({ [localToday()]: true }));
   const [fecha, setFecha] = useState(() => localToday());
   const [editId, setEditId] = useState(null);
+  const [vista, setVista] = useState("registros");
   const [showCats, setShowCats] = useState(false);
   const [editCatId, setEditCatId] = useState(null);
   const [editCatLabel, setEditCatLabel] = useState("");
@@ -279,6 +381,16 @@ function App() {
           <div style={{ display: "flex", gap: "0.25rem" }}>
             <Button
               kind="minimal" size="compact"
+              onClick={() => setVista(v => v === "estadisticas" ? "registros" : "estadisticas")}
+              title="Estadísticas"
+              overrides={{ BaseButton: { style: { padding: "4px", color: vista === "estadisticas" ? "#4fc3f7" : undefined } } }}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="3" width="4" height="18" rx="1"/><rect x="10" y="8" width="4" height="13" rx="1"/><rect x="18" y="13" width="4" height="8" rx="1"/>
+              </svg>
+            </Button>
+            <Button
+              kind="minimal" size="compact"
               onClick={() => setShowCats(v => !v)}
               title="Categorías"
               overrides={{ BaseButton: { style: { padding: "4px" } } }}
@@ -368,6 +480,9 @@ function App() {
             </div>
           </div>
         )}
+        {vista === "estadisticas" && <VistaEstadisticas registros={registros} />}
+
+        {vista === "registros" && <>
         <form onSubmit={guardar} style={{ display: "flex", flexDirection: "column", gap: "0.5rem", width: "100%", marginBottom: "1.5rem" }}>
           <Input
             value={texto}
@@ -541,6 +656,7 @@ function App() {
             );
           })}
         </div>
+        </>}
       </header>
     </div>
   );
