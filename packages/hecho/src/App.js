@@ -141,7 +141,7 @@ function VistaEstadisticas({ registros }) {
   }, []);
 
   const today = localToday();
-  const count = winWidth < 640 ? 3 : 7;
+  const count = winWidth < 640 ? 3 : 5;
   const days = Array.from({ length: count }, (_, i) => addDays(today, i - Math.floor(count / 2)));
 
   // Largest total minutes across visible days — used to scale column heights
@@ -199,7 +199,7 @@ function VistaEstadisticas({ registros }) {
                   const mins = r.horaInicio && r.horaFin
                     ? Math.max(timeToMinutes(r.horaFin) - timeToMinutes(r.horaInicio), 0)
                     : 30;
-                  const blockH = Math.max((mins / maxMins) * 260, 8);
+                  const blockH = Math.max((mins / maxMins) * 260, 22);
                   return (
                     <div
                       key={r.id}
@@ -217,7 +217,7 @@ function VistaEstadisticas({ registros }) {
                         flexShrink: 0,
                       }}
                     >
-                      {blockH > 20 ? r.texto : ""}
+                      {r.texto}
                     </div>
                   );
                 })}
