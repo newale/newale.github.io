@@ -30,8 +30,16 @@ function minutesToDuration(mins) {
   return `${m}m`;
 }
 
-function getDayKey(isoDate) {
-  return isoDate.slice(0, 10);
+function localToday() {
+  const d = new Date();
+  return [d.getFullYear(), String(d.getMonth() + 1).padStart(2, '0'), String(d.getDate()).padStart(2, '0')].join('-');
+}
+
+function getDayKey(fechaStr) {
+  if (!fechaStr) return "";
+  if (fechaStr.length <= 10) return fechaStr;
+  const d = new Date(fechaStr);
+  return [d.getFullYear(), String(d.getMonth() + 1).padStart(2, '0'), String(d.getDate()).padStart(2, '0')].join('-');
 }
 
 function formatDayLabel(dayKey) {
@@ -124,7 +132,8 @@ function App() {
   const [categoria, setCategoria] = useState([]);
   const [horaInicio, setHoraInicio] = useState(() => defaultTimes().inicio);
   const [horaFin, setHoraFin] = useState(() => defaultTimes().fin);
-  const [openDays, setOpenDays] = useState(() => ({ [getDayKey(new Date().toISOString())]: true }));
+  const [openDays, setOpenDays] = useState(() => ({ [localToday()]: true }));
+  const [fecha, setFecha] = useState(() => localToday());
   const [editId, setEditId] = useState(null);
   const [showCats, setShowCats] = useState(false);
   const [editCatId, setEditCatId] = useState(null);
@@ -196,6 +205,7 @@ function App() {
   const resetForm = () => {
     setTexto("");
     setCategoria([]);
+    setFecha(localToday());
     const t = defaultTimes();
     setHoraInicio(t.inicio);
     setHoraFin(t.fin);
@@ -218,13 +228,13 @@ function App() {
     if (editId !== null) {
       setRegistros(prev => prev.map(r =>
         r.id === editId
-          ? { ...r, texto: texto.trim(), categoria: catFinal, horaInicio: horaInicio || null, horaFin: horaFin || null }
+          ? { ...r, fecha, texto: texto.trim(), categoria: catFinal, horaInicio: horaInicio || null, horaFin: horaFin || null }
           : r
       ));
     } else {
       setRegistros(prev => [{
         id: Date.now(),
-        fecha: new Date().toISOString(),
+        fecha,
         texto: texto.trim(),
         categoria: catFinal,
         horaInicio: horaInicio || null,
@@ -237,6 +247,7 @@ function App() {
   const editar = (r) => {
     setTexto(r.texto);
     setCategoria(r.categoria ? [{ id: r.categoria, label: r.categoria }] : []);
+    setFecha(getDayKey(r.fecha));
     setHoraInicio(r.horaInicio || "");
     setHoraFin(r.horaFin || "");
     setEditId(r.id);
@@ -377,6 +388,15 @@ function App() {
                 creatable
                 clearable
                 overrides={{ Root: { style: { width: "100%" } } }}
+              />
+            </div>
+            <div style={{ display: "flex", alignItems: "center", gap: "0.35rem" }}>
+              <input
+                type="date"
+                value={fecha}
+                onChange={e => setFecha(e.target.value)}
+                style={timeInputStyle}
+                title="Fecha"
               />
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: "0.35rem" }}>
