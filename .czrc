@@ -1,0 +1,16 @@
+{
+  "path": "cz-conventional-changelog",
+  "scopes": [
+    "dashboard",
+    "por-hacer",
+    "hecho",
+    "escala-notas",
+    "ui",
+    "main-site",
+    "deps"
+  ],
+  "allowCustomScopes": false,
+  "allowBreakingChanges": ["feat", "fix"],
+  "skipQuestions": ["footer"],
+  "subjectLimit": 72
+}

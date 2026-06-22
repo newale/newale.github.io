@@ -7,6 +7,7 @@
     "build": "npm run build -w @newale/ui && npm run build -w por-hacer -w hecho -w escala-notas -w dashboard && npm run build -w main-site && npm run build:cp",
     "build:cp": "mkdir -p packages/main-site/_site/aplicaciones && cp -r packages/hecho/build packages/main-site/_site/aplicaciones/hecho && cp -r packages/por-hacer/build packages/main-site/_site/aplicaciones/por-hacer && cp -r packages/escala-notas/build packages/main-site/_site/aplicaciones/escala-notas && cp -r packages/dashboard/build packages/main-site/_site/aplicaciones/dashboard",
     "changelog": "conventional-changelog -p conventionalcommits -i CHANGELOG.md -s -r 0",
+    "commit": "cz",
     "prepare": "husky"
   },
   "workspaces": [
@@ -19,7 +20,9 @@
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
+    "commitizen": "^4.3.2",
     "conventional-changelog-cli": "^5.0.0",
+    "cz-conventional-changelog": "^3.3.0",
     "husky": "^9.1.7",
     "lerna": "^8.2.3"
   }
