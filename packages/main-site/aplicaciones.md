@@ -25,3 +25,9 @@ Aplicación que sirve para gestionar listas de cosas por hacer, funciona con alm
 [✔️ Hecho](/aplicaciones/hecho)
 
 Registro de actividades realizadas. Permite anotar qué hiciste, en qué categoría y en qué horario, agrupando los registros por día con estadísticas simples.
+
+---
+
+[🖥️ Dashboard](/aplicaciones/dashboard)
+
+Vista tipo sistema operativo que integra Por hacer y Hecho en una sola pantalla dividida, con ventanas redimensionables.
