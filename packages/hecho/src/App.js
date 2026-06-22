@@ -1,19 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Button } from "baseui/button";
 import { Input } from "baseui/input";
-import { Select } from "baseui/select";
+import { CategorySelect, colorForCategoria } from '@newale/ui';
 import './App.css';
-
-const PALETTE = [
-  "#4fc3f7", "#a5d6a7", "#ffcc80", "#ce93d8", "#ef9a9a",
-  "#80cbc4", "#ffab91", "#b0bec5", "#fff176", "#f48fb1",
-];
-
-function colorForCategoria(cat) {
-  let hash = 0;
-  for (let i = 0; i < cat.length; i++) hash = cat.charCodeAt(i) + ((hash << 5) - hash);
-  return PALETTE[Math.abs(hash) % PALETTE.length];
-}
 
 function timeToMinutes(t) {
   if (!t) return 0;
@@ -501,16 +490,12 @@ function App() {
           />
           <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
             <div style={{ flex: 1, minWidth: "140px" }}>
-              <Select
+              <CategorySelect
                 options={categorias}
                 value={categoria}
                 onChange={({ value }) => setCategoria(value)}
+                onCreateOption={(label) => guardarCategoria(label)}
                 placeholder="Categoría"
-                labelKey="label"
-                valueKey="id"
-                creatable
-                clearable
-                overrides={{ Root: { style: { width: "100%" } } }}
               />
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: "0.35rem" }}>
