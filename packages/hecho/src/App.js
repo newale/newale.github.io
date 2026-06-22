@@ -238,7 +238,7 @@ function App() {
   const [editCatId, setEditCatId] = useState(null);
   const [editCatLabel, setEditCatLabel] = useState("");
   const [newCatLabel, setNewCatLabel] = useState("");
-  const [porHacerTasks, setPorHacerTasks] = useState(() => {
+  const [porHacerTasks] = useState(() => {
     try {
       const saved = JSON.parse(localStorage.getItem("tasks") ?? "[]");
       return saved.filter(t => t.state !== "done").map(t => t.task);
