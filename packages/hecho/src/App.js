@@ -238,6 +238,12 @@ function App() {
   const [editCatId, setEditCatId] = useState(null);
   const [editCatLabel, setEditCatLabel] = useState("");
   const [newCatLabel, setNewCatLabel] = useState("");
+  const [porHacerTasks, setPorHacerTasks] = useState(() => {
+    try {
+      const saved = JSON.parse(localStorage.getItem("tasks") ?? "[]");
+      return saved.filter(t => t.state !== "done").map(t => t.task);
+    } catch { return []; }
+  });
   const fileInputRef = useRef(null);
 
   useEffect(() => {
@@ -481,12 +487,18 @@ function App() {
 
         {vista === "registros" && <>
         <form onSubmit={guardar} style={{ display: "flex", flexDirection: "column", gap: "0.5rem", width: "100%", marginBottom: "1.5rem" }}>
+          <datalist id="por-hacer-suggestions">
+            {porHacerTasks.map((t, i) => <option key={i} value={t} />)}
+          </datalist>
           <Input
             value={texto}
             onChange={e => setTexto(e.target.value)}
             placeholder="¿Qué hiciste?"
             clearOnEscape
-            overrides={{ Root: { style: { width: "100%" } } }}
+            overrides={{
+              Root: { style: { width: "100%" } },
+              Input: { props: { list: "por-hacer-suggestions" } },
+            }}
           />
           <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
             <div style={{ flex: 1, minWidth: "140px" }}>
