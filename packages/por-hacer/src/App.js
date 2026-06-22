@@ -205,6 +205,17 @@ function App() {
 
         <h1>Por hacer ({filteredActive.length})</h1>
 
+        {(() => {
+          const selectedProjId = taskProject[0]?.id ?? null;
+          const suggestions = activeTasks
+            .filter(t => selectedProjId ? t.projectId === selectedProjId : true)
+            .map(t => t.task);
+          return (
+            <datalist id="por-hacer-suggestions">
+              {suggestions.map((t, i) => <option key={i} value={t} />)}
+            </datalist>
+          );
+        })()}
         <form onSubmit={addTask} style={{ display: "flex", flexDirection: "column", gap: "0.5rem", width: "100%", marginBottom: "1rem" }}>
           <div style={{ display: "flex", gap: "0.5rem" }}>
             <div style={{ flex: 1 }}>
@@ -213,7 +224,10 @@ function App() {
                 onChange={(e) => setNewTask(e.target.value)}
                 placeholder="Ingresa una tarea"
                 clearOnEscape
-                overrides={{ Input: { style: { width: "100%" } }, Root: { style: { width: "100%" } } }}
+                overrides={{
+                  Input: { style: { width: "100%" }, props: { list: "por-hacer-suggestions" } },
+                  Root: { style: { width: "100%" } },
+                }}
               />
             </div>
             <Button type="submit">{editIndex !== null ? "Guardar" : "Agregar"}</Button>
