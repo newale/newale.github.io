@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "lerna run dev --scope main-site",
-    "build": "lerna run build --scope @newale/ui && lerna run build --ignore main-site --ignore @newale/ui && lerna run build --scope main-site && npm run build:cp",
-    "build:cp": "mkdir -p packages/main-site/_site/aplicaciones && cp -r packages/hecho/build packages/main-site/_site/aplicaciones/hecho && cp -r packages/por-hacer/build packages/main-site/_site/aplicaciones/por-hacer && cp -r packages/escala-notas/build packages/main-site/_site/aplicaciones/escala-notas"
+    "dev": "npm run dev -w main-site",
+    "build": "npm run build -w @newale/ui && npm run build -w por-hacer -w hecho -w escala-notas -w dashboard && npm run build -w main-site && npm run build:cp",
+    "build:cp": "mkdir -p packages/main-site/_site/aplicaciones && cp -r packages/hecho/build packages/main-site/_site/aplicaciones/hecho && cp -r packages/por-hacer/build packages/main-site/_site/aplicaciones/por-hacer && cp -r packages/escala-notas/build packages/main-site/_site/aplicaciones/escala-notas && cp -r packages/dashboard/build packages/main-site/_site/aplicaciones/dashboard",
+    "deploy": "npm run build && cp CNAME packages/main-site/_site/CNAME && git add packages/main-site/_site && git commit -m 'deploy' && git subtree push --prefix packages/main-site/_site origin gh-pages"
   },
   "workspaces": [
     "packages/*"

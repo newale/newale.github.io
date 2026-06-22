@@ -1,2 +1,9 @@
 node_modules/
 _site/
+
+# Build outputs de las apps
+packages/*/build/
+packages/ui/dist/
+
+# Variables de entorno locales
+packages/dashboard/.env.local
