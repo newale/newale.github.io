@@ -203,7 +203,6 @@ export default function App() {
   const maximized = Object.entries(states).find(([, s]) => s === 'maximized')?.[0] ?? null;
 
   const now = new Date();
-  const clock = now.toLocaleTimeString('es-CL', { hour: '2-digit', minute: '2-digit' });
   const dateLabel = now.toLocaleDateString('es-CL', { weekday: 'short', day: 'numeric', month: 'short' });
 
   return (
