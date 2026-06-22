@@ -7,3 +7,5 @@ packages/ui/dist/
 
 # Variables de entorno locales
 packages/dashboard/.env.local
+
+.changelog-amend
