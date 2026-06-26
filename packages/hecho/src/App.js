@@ -2,12 +2,19 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Button } from "baseui/button";
 import { Input } from "baseui/input";
 import { CategorySelect, colorForCategoria } from '@newale/ui';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import './App.css';
 
 function timeToMinutes(t) {
   if (!t) return 0;
   const [h, m] = t.split(":").map(Number);
   return h * 60 + m;
+}
+
+function duracionMins(inicio, fin) {
+  if (!inicio || !fin) return 0;
+  const diff = timeToMinutes(fin) - timeToMinutes(inicio);
+  return diff < 0 ? diff + 24 * 60 : diff;
 }
 
 function minutesToDuration(mins) {
@@ -137,11 +144,30 @@ function VistaEstadisticas({ registros }) {
   const dayTotals = days.map(dayKey => {
     const items = registros.filter(r => getDayKey(r.fecha) === dayKey);
     return items.reduce((sum, r) => {
-      if (r.horaInicio && r.horaFin) return sum + Math.max(0, timeToMinutes(r.horaFin) - timeToMinutes(r.horaInicio));
+      if (r.horaInicio && r.horaFin) return sum + duracionMins(r.horaInicio, r.horaFin);
       return sum + 30; // untimed items count as 30 min for sizing
     }, 0);
   });
   const maxMins = Math.max(...dayTotals, 60);
+
+  // --- datos para recharts — desde el primer registro hasta hoy, todos los días ---
+  const registroDayKeys = registros.map(r => getDayKey(r.fecha));
+  const firstDay = registroDayKeys.length ? [...registroDayKeys].sort()[0] : today;
+  const allDayKeys = [];
+  let cursor = firstDay;
+  while (cursor <= today) { allDayKeys.push(cursor); cursor = addDays(cursor, 1); }
+
+  const chartCats = [...new Set(registros.map(r => r.categoria))].sort();
+
+  const chartData = allDayKeys.map(dayKey => {
+    const items = registros.filter(r => getDayKey(r.fecha) === dayKey && r.horaInicio && r.horaFin);
+    const entry = { dayKey };
+    items.forEach(r => {
+      const mins = duracionMins(r.horaInicio, r.horaFin);
+      entry[r.categoria] = (entry[r.categoria] || 0) + mins;
+    });
+    return entry;
+  });
 
   return (
     <div style={{ width: "100%" }}>
@@ -152,7 +178,7 @@ function VistaEstadisticas({ registros }) {
           const dayNum = new Date(dayKey + "T12:00:00").getDate();
 
           const timedMins = items.reduce((sum, r) => {
-            if (r.horaInicio && r.horaFin) return sum + Math.max(0, timeToMinutes(r.horaFin) - timeToMinutes(r.horaInicio));
+            if (r.horaInicio && r.horaFin) return sum + duracionMins(r.horaInicio, r.horaFin);
             return sum;
           }, 0);
 
@@ -186,7 +212,7 @@ function VistaEstadisticas({ registros }) {
               <div style={{ display: "flex", flexDirection: "column", gap: "1px" }}>
                 {sorted.map(r => {
                   const mins = r.horaInicio && r.horaFin
-                    ? Math.max(timeToMinutes(r.horaFin) - timeToMinutes(r.horaInicio), 0)
+                    ? duracionMins(r.horaInicio, r.horaFin)
                     : 30;
                   const blockH = Math.max((mins / maxMins) * 260, 22);
                   return (
@@ -215,6 +241,85 @@ function VistaEstadisticas({ registros }) {
           );
         })}
       </div>
+
+      <GraficoHoras data={chartData} cats={chartCats} />
+    </div>
+  );
+}
+
+const Y_W = 38;
+const CHART_H = 180;
+const LABEL_H = 36;
+
+function XAxisTick({ x, y, payload }) {
+  const d = new Date(payload.value + "T12:00:00");
+  const weekday = d.toLocaleDateString("es-CL", { weekday: "short" });
+  const day = d.getDate();
+  const mon = d.toLocaleDateString("es-CL", { month: "short" }).replace(".", "");
+  const isWeekend = d.getDay() === 0 || d.getDay() === 6;
+  const color = isWeekend ? "#4fc3f7" : "#666";
+  return (
+    <g transform={`translate(${x},${y})`}>
+      <text x={0} y={10} textAnchor="middle" fill={color} fontSize={8} style={{ textTransform: "capitalize" }}>{weekday}</text>
+      <text x={0} y={22} textAnchor="middle" fill={color} fontSize={8}>{day} {mon}</text>
+    </g>
+  );
+}
+
+function GraficoHoras({ data, cats }) {
+  if (!data.length || !cats.length) return null;
+
+  // Mostrar solo una etiqueta cada N días para no saturar el eje X
+  const tickInterval = Math.ceil(data.length / 20);
+
+  return (
+    <div style={{ width: "100%", marginTop: "1.5rem" }}>
+      <div style={{ fontSize: "0.72rem", color: "#555", marginBottom: "8px", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+        Horas por categoría — todos los registros
+      </div>
+      <ResponsiveContainer width="100%" height={CHART_H + LABEL_H}>
+        <BarChart
+          data={data}
+          margin={{ top: 4, right: 4, left: 0, bottom: 0 }}
+          barGap={0}
+          barCategoryGap="15%"
+        >
+          <XAxis
+            dataKey="dayKey"
+            tick={<XAxisTick />}
+            axisLine={false}
+            tickLine={false}
+            height={LABEL_H}
+            interval={tickInterval - 1}
+          />
+          <YAxis
+            tickFormatter={m => `${(m / 60).toFixed(m >= 600 ? 0 : 1)}h`}
+            tick={{ fill: "#888", fontSize: 9 }}
+            axisLine={false}
+            tickLine={false}
+            width={Y_W}
+            tickCount={5}
+          />
+          <Tooltip
+            formatter={(value, name) => [minutesToDuration(value), name]}
+            labelFormatter={k => new Date(k + "T12:00:00").toLocaleDateString("es-CL", { weekday: "long", day: "numeric", month: "long" })}
+            contentStyle={{ background: "#1e2229", border: "1px solid #333", borderRadius: 6, fontSize: "0.75rem" }}
+            labelStyle={{ color: "#aaa", marginBottom: 4 }}
+            itemStyle={{ color: "#ccc" }}
+            cursor={{ fill: "rgba(255,255,255,0.04)" }}
+          />
+          <Legend wrapperStyle={{ fontSize: "0.72rem", paddingTop: 6 }} />
+          {cats.map((cat, i) => (
+            <Bar
+              key={cat}
+              dataKey={cat}
+              stackId="a"
+              fill={colorForCategoria(cat)}
+              radius={i === cats.length - 1 ? [2, 2, 0, 0] : [0, 0, 0, 0]}
+            />
+          ))}
+        </BarChart>
+      </ResponsiveContainer>
     </div>
   );
 }
@@ -572,7 +677,7 @@ function App() {
                     <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                       {items.map(r => {
                         const dur = r.horaInicio && r.horaFin
-                          ? minutesToDuration(timeToMinutes(r.horaFin) - timeToMinutes(r.horaInicio))
+                          ? minutesToDuration(duracionMins(r.horaInicio, r.horaFin))
                           : null;
                         return (
                           <li key={r.id} style={itemStyle}>

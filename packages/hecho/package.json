@@ -13,6 +13,7 @@
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-scripts": "5.0.1",
+    "recharts": "^3.8.1",
     "styletron-engine-monolithic": "^1.0.0",
     "styletron-react": "^6.1.1",
     "web-vitals": "^2.1.4"
