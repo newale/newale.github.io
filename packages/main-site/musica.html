@@ -1,0 +1,55 @@
+---
+title: "Música"
+date: 2026-07-26
+layout: "layouts/musica.html"
+license: "reservados"
+---
+
+<h1>Música</h1>
+
+{% for proyecto in musica %}
+<section class="proyecto" data-slug="{{ proyecto.slug }}" data-tipo="{{ proyecto.tipo }}">
+  <h2>{{ proyecto.titulo }}</h2>
+  <p class="proyecto-descripcion">{{ proyecto.descripcion }}</p>
+  {% if proyecto.discoTotal %}
+  <p class="proyecto-progreso">Primer disco: {{ proyecto.canciones.size }} de {{ proyecto.discoTotal }} canciones publicadas.</p>
+  {% endif %}
+
+  {% if proyecto.canciones.size > 0 %}
+  <ul class="tracklist" data-proyecto="{{ proyecto.slug }}">
+    {% for cancion in proyecto.canciones %}
+    <li class="track" data-src="{{ cancion.archivo }}" data-titulo="{{ cancion.titulo }}" data-proyecto="{{ proyecto.titulo }}">
+      <button class="track-play" aria-label="Reproducir {{ cancion.titulo }}">▶</button>
+      <span class="track-info">
+        <span class="track-titulo">{{ cancion.titulo }}</span>
+        {% if cancion.formatos %}
+        <small class="track-formatos">Disponible en {{ cancion.formatos }}</small>
+        {% endif %}
+      </span>
+      <span class="track-precio">${{ cancion.precio | formatPrecio }}</span>
+      {% if cancion.linkPago != "" %}
+      <a class="track-comprar" href="{{ cancion.linkPago }}" target="_blank" rel="noopener">Comprar</a>
+      {% else %}
+      <span class="track-comprar track-comprar--pronto" aria-disabled="true">Próximamente</span>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="tracklist-vacia">Aún no hay canciones publicadas para este proyecto.</p>
+  {% if proyecto.tipo == "ambiental" %}
+  <p class="placeholder-note">visual en desarrollo</p>
+  {% endif %}
+  {% endif %}
+</section>
+{% endfor %}
+
+<div class="player-bar" id="player-bar" hidden>
+  <button id="player-prev" aria-label="Anterior">⏮</button>
+  <button id="player-toggle" aria-label="Reproducir / pausar">▶</button>
+  <button id="player-next" aria-label="Siguiente">⏭</button>
+  <div class="player-info">
+    <span id="player-titulo"></span>
+    <progress id="player-progress" value="0" max="100"></progress>
+  </div>
+</div>

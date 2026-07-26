@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  {% include "head.html" %}
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="/static/css/musica.css">
+</head>
+<body>
+  {% include "./components/header.html" %}
+  <main class="musica-main">
+    {{ content }}
+  </main>
+  {% include "components/footer.html" %}
+  <script src="/static/js/musica.js" defer></script>
+</body>
+</html>

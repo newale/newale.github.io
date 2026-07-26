@@ -1,4 +1,10 @@
 <footer class="entry-footer">
+  {% if license == "reservados" %}
+  <p>
+    Todos los derechos reservados. Este contenido no puede reproducirse,
+    distribuirse ni modificarse sin autorización previa.
+  </p>
+  {% else %}
   <p>
     Todo el contenido de este sitio está bajo la licencia
     <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
@@ -22,6 +28,7 @@
       />
     </a>
   </p>
+  {% endif %}
   <p>
     Página de código abierto, disponible en
     <a target="_blank" href="https://github.com/newale/newale.github.io">github</a>. Desarrollado con <a target="_blank" href="https://github.com/11ty/eleventy">eleventy</a>.

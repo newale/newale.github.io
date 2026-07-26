@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "por-hacer-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["start", "-w", "por-hacer"],
+      "port": 3000
+    },
+    {
+      "name": "main-site-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["exec", "--workspace", "main-site", "--", "eleventy", "--serve", "--port=8080"],
+      "port": 8080
+    }
+  ]
+}

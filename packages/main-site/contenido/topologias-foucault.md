@@ -25,20 +25,20 @@ layout: layouts/garden-entry.html
 
 ### I. Utopías y Heterotopías
 
-1. **Los contra-espacios (Sección 1):** Foucault argumenta que, a diferencia de las utopías que no tienen lugar, las heterotopías son sitios reales que existen en toda sociedad para compensar o neutralizar el espacio común (p. 2, 3).
-2. **La heterotopología (Sección 2):** Se propone una ciencia para clasificar estos espacios. Sus principios dictan que las heterotopías cambian de función según la época (como el cementerio, que pasó del centro de la ciudad a la periferia) y se dividen en heterotopías de "crisis" y de "desviación" (p. 4, 5).
-3. **Yuxtaposición de espacios (Sección 3):** La heterotopía tiene la capacidad de reunir en un solo sitio real varios espacios que normalmente serían incompatibles, como ocurre en el teatro, el cine o el jardín (p. 6).
-4. **Cortes del tiempo (Sección 4):** Se vinculan con las **heterocronías**, lugares donde el tiempo se acumula infinitamente (museos, bibliotecas) o donde el tiempo es efímero y festivo (ferias, campamentos) (p. 7).
-5. **Sistemas de cierre y apertura (Sección 5):** No son espacios públicos; requieren ritos de entrada o son ilusiones donde, al entrar, uno se da cuenta de que sigue estando "afuera" (p. 8).
-6. **Impugnaciones y el Barco (Sección 6):** Funcionan creando una ilusión que denuncia la realidad o un orden perfecto que denuncia el desorden (colonias jesuitas). El barco es el ejemplo supremo de heterotopía por ser un espacio flotante y libre (p. 9, 10).
+**Los contra-espacios (Sección 1):** Foucault argumenta que, a diferencia de las utopías que no tienen lugar, las heterotopías son sitios reales que existen en toda sociedad para compensar o neutralizar el espacio común (p. 2, 3).
+**La heterotopología (Sección 2):** Se propone una ciencia para clasificar estos espacios. Sus principios dictan que las heterotopías cambian de función según la época (como el cementerio, que pasó del centro de la ciudad a la periferia) y se dividen en heterotopías de "crisis" y de "desviación" (p. 4, 5).
+**Yuxtaposición de espacios (Sección 3):** La heterotopía tiene la capacidad de reunir en un solo sitio real varios espacios que normalmente serían incompatibles, como ocurre en el teatro, el cine o el jardín (p. 6).
+**Cortes del tiempo (Sección 4):** Se vinculan con las **heterocronías**, lugares donde el tiempo se acumula infinitamente (museos, bibliotecas) o donde el tiempo es efímero y festivo (ferias, campamentos) (p. 7).
+**Sistemas de cierre y apertura (Sección 5):** No son espacios públicos; requieren ritos de entrada o son ilusiones donde, al entrar, uno se da cuenta de que sigue estando "afuera" (p. 8).
+**Impugnaciones y el Barco (Sección 6):** Funcionan creando una ilusión que denuncia la realidad o un orden perfecto que denuncia el desorden (colonias jesuitas). El barco es el ejemplo supremo de heterotopía por ser un espacio flotante y libre (p. 9, 10).
 
 ### II. El Cuerpo Utópico
 
-1. **Mi cuerpo, implacable topía (Sección 1):** El cuerpo es el lugar absoluto al que estamos condenados; es lo opuesto a la utopía porque siempre está "aquí" (p. 11).
-2. **Utopías que borran el cuerpo (Sección 2):** Las utopías (el alma, los duendes, las momias) nacen del deseo de tener un cuerpo sin cuerpo, libre de vejez y muerte (p. 12, 13).
-3. **Recursos de fantasía (Sección 3):** El cuerpo posee su propia invisibilidad (la espalda, el interior del cráneo), lo que lo hace ser, por naturaleza, una utopía: es vida y cosa a la vez (p. 13, 14).
-4. **El cuerpo como actor (Sección 4):** Máscaras, tatuajes y maquillaje son operaciones para arrancar al cuerpo de su espacio propio y proyectarlo hacia lo sagrado o lo imaginario (p. 15).
-5. **Punto cero del mundo (Sección 5):** El cuerpo organiza todas las coordenadas espaciales. El espejo, el cadáver y el acto sexual son los elementos que anclan al sujeto en la realidad, apaciguando su "rabia utópica" (p. 17, 18).
+**Mi cuerpo, implacable topía (Sección 1):** El cuerpo es el lugar absoluto al que estamos condenados; es lo opuesto a la utopía porque siempre está "aquí" (p. 11).
+**Utopías que borran el cuerpo (Sección 2):** Las utopías (el alma, los duendes, las momias) nacen del deseo de tener un cuerpo sin cuerpo, libre de vejez y muerte (p. 12, 13).
+**Recursos de fantasía (Sección 3):** El cuerpo posee su propia invisibilidad (la espalda, el interior del cráneo), lo que lo hace ser, por naturaleza, una utopía: es vida y cosa a la vez (p. 13, 14).
+**El cuerpo como actor (Sección 4):** Máscaras, tatuajes y maquillaje son operaciones para arrancar al cuerpo de su espacio propio y proyectarlo hacia lo sagrado o lo imaginario (p. 15).
+**Punto cero del mundo (Sección 5):** El cuerpo organiza todas las coordenadas espaciales. El espejo, el cadáver y el acto sexual son los elementos que anclan al sujeto en la realidad, apaciguando su "rabia utópica" (p. 17, 18).
 
 ---
 

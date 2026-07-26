@@ -6,6 +6,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("static/imagenes");
   eleventyConfig.addPassthroughCopy("static/audios");
   eleventyConfig.addPassthroughCopy("static/documentos");
+  eleventyConfig.addPassthroughCopy("static/js");
 
   eleventyConfig.addCollection("garden", function(collectionApi) {
     return collectionApi
@@ -34,5 +35,9 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addFilter("byCuaderno", function(collection, cuaderno) {
     return collection.filter(item => item.data.cuaderno === cuaderno);
+  });
+
+  eleventyConfig.addFilter("formatPrecio", function(precio) {
+    return precio.toLocaleString("es-CL");
   });
 }
