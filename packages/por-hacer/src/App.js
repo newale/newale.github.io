@@ -259,15 +259,17 @@ function App() {
                 <li key={`${task.date}-${realIndex}`} style={{ display: "flex", alignItems: "center", marginBottom: "0.5rem", justifyContent: "space-between" }}>
                   <div style={{ display: "flex", alignItems: "center", flex: 1, minWidth: 0 }}>
                     <Checkbox checked={false} onChange={() => toggleTaskState(realIndex, true)} overrides={{ Root: { style: { marginRight: "0.5rem" } } }}>
-                      <span>{task.task}</span>
-                      {projLabel && (
-                        <span style={{ marginLeft: "0.5rem", fontSize: "0.75rem", background: colorForCategoria(projLabel), color: "#1a1a1a", padding: "1px 8px", borderRadius: 10, fontWeight: 600 }}>
-                          {projLabel}
-                        </span>
-                      )}
-                      <small style={{ marginLeft: "0.5rem", color: "#888" }}>
-                        ({formatDate(task.date)}) · {getDaysPending(task.date)}
-                      </small>
+                      <span style={{ display: "block" }}>{task.task}</span>
+                      <span style={{ display: "block", marginTop: "0.3rem" }}>
+                        {projLabel && (
+                          <span style={{ display: "inline-block", lineHeight: 1.4, fontSize: "0.75rem", background: colorForCategoria(projLabel), color: "#1a1a1a", padding: "1px 8px", borderRadius: 10, fontWeight: 600, marginRight: "0.4rem" }}>
+                            {projLabel}
+                          </span>
+                        )}
+                        <small style={{ color: "#888" }}>
+                          ({formatDate(task.date)}) · {getDaysPending(task.date)}
+                        </small>
+                      </span>
                     </Checkbox>
                   </div>
                   <div style={{ display: "flex", alignItems: "center" }}>
@@ -293,15 +295,17 @@ function App() {
                 <li key={`${task.date}-${index}`} style={{ display: "flex", alignItems: "center", marginBottom: "0.5rem", justifyContent: "space-between", opacity: 0.7 }}>
                   <div style={{ display: "flex", alignItems: "center" }}>
                     <Checkbox checked={true} onChange={() => toggleTaskState(realIndex, false)} overrides={{ Root: { style: { marginRight: "0.5rem" } } }}>
-                      <span style={{ textDecoration: "line-through" }}>{task.task}</span>
-                      {projLabel && (
-                        <span style={{ marginLeft: "0.5rem", fontSize: "0.75rem", background: colorForCategoria(projLabel), color: "#1a1a1a", padding: "1px 8px", borderRadius: 10, fontWeight: 600 }}>
-                          {projLabel}
-                        </span>
-                      )}
-                      <small style={{ marginLeft: "0.5rem", color: "#888", textDecoration: "line-through" }}>
-                        {getDaysDuration(task.date, task.completedAt)}
-                      </small>
+                      <span style={{ display: "block", textDecoration: "line-through" }}>{task.task}</span>
+                      <span style={{ display: "block", marginTop: "0.3rem" }}>
+                        {projLabel && (
+                          <span style={{ display: "inline-block", lineHeight: 1.4, fontSize: "0.75rem", background: colorForCategoria(projLabel), color: "#1a1a1a", padding: "1px 8px", borderRadius: 10, fontWeight: 600, marginRight: "0.4rem" }}>
+                            {projLabel}
+                          </span>
+                        )}
+                        <small style={{ color: "#888", textDecoration: "line-through" }}>
+                          {getDaysDuration(task.date, task.completedAt)}
+                        </small>
+                      </span>
                     </Checkbox>
                   </div>
                   <IconButton onClick={() => deleteTask(realIndex, false)} label={`Eliminar ${task.task}`} danger>
