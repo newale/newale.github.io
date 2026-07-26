@@ -1,13 +1,24 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from "baseui/button";
 import { Input } from "baseui/input";
 import { Checkbox } from "baseui/checkbox";
 import { CategorySelect, colorForCategoria } from '@newale/ui';
+import { SettingsModal } from './SettingsModal';
 import './App.css';
 
 function App() {
-  const [activeTasks, setActiveTasks] = useState([]);
-  const [doneTasks, setDoneTasks] = useState([]);
+  const [activeTasks, setActiveTasks] = useState(() => {
+    try {
+      const saved = JSON.parse(localStorage.getItem("tasks")) ?? [];
+      return saved.filter(t => t.state !== "done");
+    } catch { return []; }
+  });
+  const [doneTasks, setDoneTasks] = useState(() => {
+    try {
+      const saved = JSON.parse(localStorage.getItem("tasks")) ?? [];
+      return saved.filter(t => t.state === "done");
+    } catch { return []; }
+  });
   const [newTask, setNewTask] = useState("");
   const [editIndex, setEditIndex] = useState(null);
   const [projects, setProjects] = useState(() => {
@@ -15,21 +26,7 @@ function App() {
   });
   const [selectedProject, setSelectedProject] = useState(null);
   const [taskProject, setTaskProject] = useState([]);
-  const fileInputRef = useRef(null);
-
-  useEffect(() => {
-    const savedTasks = localStorage.getItem("tasks");
-    if (savedTasks) {
-      try {
-        const parsedTasks = JSON.parse(savedTasks);
-        setActiveTasks(parsedTasks.filter(t => t.state !== "done"));
-        setDoneTasks(parsedTasks.filter(t => t.state === "done"));
-      } catch {
-        setActiveTasks([]);
-        setDoneTasks([]);
-      }
-    }
-  }, []);
+  const [settingsOpen, setSettingsOpen] = useState(false);
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify([...activeTasks, ...doneTasks]));
@@ -38,6 +35,17 @@ function App() {
   useEffect(() => {
     localStorage.setItem("projects", JSON.stringify(projects));
   }, [projects]);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.metaKey && e.key === ".") {
+        e.preventDefault();
+        setSettingsOpen(prev => !prev);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   const formatDate = (dateStr) => {
     if (!dateStr) return "";
@@ -70,13 +78,15 @@ function App() {
 
     const rawProject = taskProject[0];
     let projectId = null;
+    let projectLabel = null;
     if (rawProject) {
-      projectId = ensureProject(rawProject.label || rawProject.id);
+      projectLabel = rawProject.label || rawProject.id;
+      projectId = ensureProject(projectLabel);
     }
 
     if (editIndex !== null) {
       setActiveTasks(prev => prev.map((task, i) =>
-        i === editIndex ? { ...task, task: newTask, projectId } : task
+        i === editIndex ? { ...task, task: newTask, projectId, projectLabel } : task
       ));
       setEditIndex(null);
     } else {
@@ -85,6 +95,7 @@ function App() {
         state: "active",
         task: newTask.trim(),
         projectId,
+        projectLabel,
       }]);
     }
     setNewTask("");
@@ -97,7 +108,8 @@ function App() {
     setEditIndex(index);
     if (task.projectId) {
       const proj = projects.find(p => p.id === task.projectId);
-      setTaskProject(proj ? [{ id: proj.id, label: proj.label }] : []);
+      const label = proj?.label ?? task.projectLabel ?? task.projectId;
+      setTaskProject([{ id: task.projectId, label }]);
     } else {
       setTaskProject([]);
     }
@@ -160,7 +172,10 @@ function App() {
     if (selectedProject === id) setSelectedProject(null);
   };
 
-  const getProjectLabel = (projectId) => projects.find(p => p.id === projectId)?.label ?? null;
+  const getProjectLabel = (task) => {
+    if (!task || !task.projectId) return null;
+    return projects.find(p => p.id === task.projectId)?.label ?? task.projectLabel ?? task.projectId;
+  };
 
   const filteredActive = selectedProject
     ? activeTasks.filter(t => t.projectId === selectedProject)
@@ -174,17 +189,9 @@ function App() {
     <div className="App">
       <header className="App-header" style={{ position: "relative" }}>
         <div style={{ marginTop: 16, display: "flex", justifyContent: "flex-end", gap: "0.5rem" }}>
-          <Button onClick={handleDownload} kind="minimal" size="compact" overrides={{ BaseButton: { style: { padding: 0, minWidth: 0 } } }} title="Descargar tareas">
-            <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-              <path d="M12 5v14" /><polyline points="19 12 12 19 5 12" />
-            </svg>
+          <Button onClick={() => setSettingsOpen(true)} kind="minimal" size="compact" overrides={{ BaseButton: { style: { padding: 0, minWidth: 0 } } }} title="Configuración (⌘.)">
+            <SettingsIcon />
           </Button>
-          <Button onClick={() => fileInputRef.current.click()} kind="minimal" size="compact" overrides={{ BaseButton: { style: { padding: 0, minWidth: 0 } } }} title="Cargar tareas">
-            <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-              <path d="M12 19V5" /><polyline points="5 12 12 5 19 12" />
-            </svg>
-          </Button>
-          <input type="file" accept="application/json" ref={fileInputRef} style={{ display: "none" }} onChange={handleUpload} />
         </div>
 
         {projects.length > 0 && (
@@ -247,7 +254,7 @@ function App() {
             .sort((a, b) => new Date(b.date) - new Date(a.date))
             .map((task) => {
               const realIndex = activeTasks.findIndex(t => t.date === task.date && t.task === task.task);
-              const projLabel = getProjectLabel(task.projectId);
+              const projLabel = getProjectLabel(task);
               return (
                 <li key={`${task.date}-${realIndex}`} style={{ display: "flex", alignItems: "center", marginBottom: "0.5rem", justifyContent: "space-between" }}>
                   <div style={{ display: "flex", alignItems: "center", flex: 1, minWidth: 0 }}>
@@ -281,7 +288,7 @@ function App() {
           <ul style={{ listStyle: "none", padding: 0, marginTop: "1rem" }}>
             {filteredDone.map((task, index) => {
               const realIndex = doneTasks.findIndex(t => t.date === task.date && t.task === task.task);
-              const projLabel = getProjectLabel(task.projectId);
+              const projLabel = getProjectLabel(task);
               return (
                 <li key={`${task.date}-${index}`} style={{ display: "flex", alignItems: "center", marginBottom: "0.5rem", justifyContent: "space-between", opacity: 0.7 }}>
                   <div style={{ display: "flex", alignItems: "center" }}>
@@ -306,6 +313,18 @@ function App() {
           </ul>
         </details>
       </header>
+
+      <SettingsModal
+        isOpen={settingsOpen}
+        onClose={() => setSettingsOpen(false)}
+        projects={projects}
+        setProjects={setProjects}
+        deleteProject={deleteProject}
+        activeTasks={activeTasks}
+        doneTasks={doneTasks}
+        handleDownload={handleDownload}
+        handleUpload={handleUpload}
+      />
     </div>
   );
 }
@@ -327,6 +346,15 @@ function IconButton({ onClick, label, danger, children }) {
       overrides={{ BaseButton: { style: { marginLeft: "0.5rem", color: danger ? "#d32f2f" : undefined, paddingTop: "4px", paddingBottom: "4px", minWidth: "32px", display: "flex", alignItems: "center", justifyContent: "center" } } }}>
       {children}
     </Button>
+  );
+}
+
+function SettingsIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="3" />
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+    </svg>
   );
 }
 

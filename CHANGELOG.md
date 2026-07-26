@@ -1,4 +1,4 @@
-## 1.0.0 (2026-06-26)
+## 1.0.0 (2026-07-26)
 
 ### Features
 
@@ -16,6 +16,7 @@
 * change domain on apps ([3b7d4e0](https://github.com/newale/newale.github.io/commit/3b7d4e018875b219fd214e7cda7334444ba102dc))
 * changing site domain ([0fd059f](https://github.com/newale/newale.github.io/commit/0fd059fc224f519db24774dc48d74b6b3563f75f))
 * compress image in devs matta ([df5fc0b](https://github.com/newale/newale.github.io/commit/df5fc0b0fb416d44e044303a19f54e6515588257))
+* crea menu de configuracion ([928e598](https://github.com/newale/newale.github.io/commit/928e598113dda16bddbe6265e8c60d13b4451027))
 * create archivador perspective ([0533be0](https://github.com/newale/newale.github.io/commit/0533be060d101bf9bd48bb22b063ca77cba9cc05))
 * create prices accesibility ([28b40d8](https://github.com/newale/newale.github.io/commit/28b40d8bd1505593b8164830491738a02dbeea10))
 * default project in autocomplete ([8fb2df3](https://github.com/newale/newale.github.io/commit/8fb2df37500da494fa91a88bbc27231c9c6641f7))
@@ -91,7 +92,7 @@
 * adding public in git ([6febb11](https://github.com/newale/newale.github.io/commit/6febb110f869814333eb21d3f687c573314edda3))
 * base url in react-app ([0722d64](https://github.com/newale/newale.github.io/commit/0722d64650c6de4649912ccbbc7114fa1a02b3bb))
 * deploy escala notas ([378cec9](https://github.com/newale/newale.github.io/commit/378cec9cc2a98f142ec34e9eda326f476f462f94))
-* **hecho:** fix bug for pastmidnight tasks ([27164e9](https://github.com/newale/newale.github.io/commit/27164e9ffa6dd7d27bc92114e0bb1d2fbf791a6a))
+* **hecho:** fix bug for pastmidnight tasks ([7932419](https://github.com/newale/newale.github.io/commit/7932419f3fe0fb6b93fe95651f35a0e3ea3262ae))
 * **hecho:** updated linting ([ed01b9c](https://github.com/newale/newale.github.io/commit/ed01b9c9f7178c7769a0f8081a67a34d84104f56))
 * restore margin and update padding ([6cb1a8c](https://github.com/newale/newale.github.io/commit/6cb1a8c8889f7bde4a0a3167f754935478abaa41))
 * title in pages ([1bebdc4](https://github.com/newale/newale.github.io/commit/1bebdc461a232a1eeed8df26518c3f9800b1ecf9))
