@@ -1,17 +1,94 @@
 ---
-layout: "layouts/home.html"
-title: "Notas"
+layout: "layouts/inicio.html"
+title: "AEBN"
 ---
 
-<ul class="garden-feed">
-  {% for entry in collections.garden %}
-  <li class="feed-item">
-    <div class="feed-item-meta">
-      <span class="feed-item-date">{{ entry.date | formattedDate }}</span> -
-      {% if entry.data.archivador %}<a class="entry-archivador" href="/archivador/{{ entry.data.archivador }}/">{{ entry.data.archivador | capitalize }}</a>{% endif %}
+<div style="max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,72px) 0;">
+
+  <nav class="nav" style="padding-inline:0;position:sticky;top:0;background:var(--color-bg);z-index:5;">
+    <span class="nav-brand">AEBN</span>
+    <a href="/" aria-current="page">Inicio</a>
+    <!-- <a href="/bio">Bio</a> -->
+    <!-- <a href="/archivador">Archivador</a> -->
+    <a href="/musica">Música</a>
+    <a href="/aplicaciones">Aplicaciones</a>
+  </nav>
+
+  <section style="position:relative;padding:calc(4.5*28px) 0 calc(3.5*28px);overflow:hidden;">
+    <div class="hero-bg"></div>
+    <div style="position:relative;z-index:1;">
+      <h1 style="font-family:var(--font-heading);font-weight:var(--font-heading-weight);font-size:clamp(46px,7vw,92px);line-height:1.05;letter-spacing:-0.02em;margin:0 0 0 -0.035em;">
+        <span style="position:relative;display:block;">
+          <span style="position:relative;">Archivo personal</span>
+          <span aria-hidden="true" class="hero-plate-c" style="position:absolute;inset:0;color:var(--color-accent);mix-blend-mode:multiply;opacity:0.6;">Archivo personal</span>
+          <span aria-hidden="true" class="hero-plate-m" style="position:absolute;inset:0;color:var(--color-accent-2);mix-blend-mode:multiply;opacity:0.55;">Archivo personal</span>
+        </span>
+        <span style="position:relative;display:block;">
+          <span style="position:relative;">de AEBN.</span>
+          <span aria-hidden="true" class="hero-plate-c" style="position:absolute;inset:0;color:var(--color-accent);mix-blend-mode:multiply;opacity:0.6;">de AEBN.</span>
+          <span aria-hidden="true" class="hero-plate-m" style="position:absolute;inset:0;color:var(--color-accent-2);mix-blend-mode:multiply;opacity:0.55;">de AEBN.</span>
+        </span>
+      </h1>
+      <p style="font-size:17px;line-height:28px;max-width:52ch;margin:calc(1.5*28px) 0 0;color:color-mix(in srgb, var(--color-text) 82%, transparent);">Música, estudio y algunas herramientas. Todo en un mismo lugar, sin calendario ni categoría fija.</p>
     </div>
-    <a class="feed-item-title" href="{{ entry.url }}">{{ entry.data.title }}</a>
-    
-  </li>
-  {% endfor %}
-</ul>
+  </section>
+
+  <section id="proyectos" style="padding:calc(2*28px) 0 calc(3.5*28px);">
+    <span style="display:block;font-size:13px;line-height:14px;letter-spacing:0.08em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 70%, transparent);margin:0 0 14px;">Proyectos</span>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--space-3);margin-top:14px;">
+
+      <a href="/musica" class="card elev-sm" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;">
+        <span class="card-kicker">Música</span>
+        <span class="card-title">Música</span>
+        <p class="card-body">Obras propias, para escuchar y comprar.</p>
+      </a>
+
+      <!--
+      <a href="/ziniestra" class="card elev-sm" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;">
+        <span class="card-kicker">Marca</span>
+        <span class="card-title">Ziniestra</span>
+        <p class="card-body">Pedales y amplificadores digitales y físicos.</p>
+      </a>
+      -->
+
+      <!--
+      <a href="/archivador" class="card elev-sm" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;">
+        <span class="card-kicker">Estudio</span>
+        <span class="card-title">Archivador</span>
+        <p class="card-body">Fichas, ensayos y apuntes en curso.</p>
+      </a>
+      -->
+
+      <a href="/aplicaciones" class="card elev-sm" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;">
+        <span class="card-kicker">Herramientas</span>
+        <span class="card-title">Aplicaciones</span>
+        <p class="card-body">Escala de Notas, Por Hacer, Hecho y Dashboard.</p>
+      </a>
+
+      <!--
+      <a href="/libros" class="card elev-sm" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;">
+        <span class="card-kicker">Lectura</span>
+        <span class="card-title">Libros</span>
+        <p class="card-body">Selección de libros que he escrito o recomiendo.</p>
+      </a>
+      -->
+
+      <!--
+      <a href="/cursos" class="card elev-sm" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;">
+        <span class="card-kicker">Enseñanza</span>
+        <span class="card-title">Cursos</span>
+        <p class="card-body">Cursos y talleres que dicto, dentro y fuera del aula.</p>
+      </a>
+      -->
+
+    </div>
+  </section>
+
+  <footer style="padding:calc(2*28px) 0;font-size:13px;line-height:28px;color:color-mix(in srgb, var(--color-text) 70%, transparent);display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;">
+    <span>© 2026 AEBN — aebn.cl</span>
+    <span>Santiago, Chile</span>
+  </footer>
+
+  {% include "components/footer.html" %}
+
+</div>

@@ -4,6 +4,7 @@ module.exports = [
     titulo: "male.s",
     descripcion: "Cantautor de guitarra acústica.",
     tipo: "acustico",
+    portada: "/static/imagenes/musica/male-s-cover.svg",
     canciones: [
       {
         slug: "naguara",
@@ -19,7 +20,12 @@ module.exports = [
     titulo: "m.siniestra",
     descripcion: "Música ambiental electrónica.",
     tipo: "ambiental",
+    portada: "/static/imagenes/musica/m-siniestra-cover.svg",
     discoTotal: 10,
+    streaming: [
+      { nombre: "Spotify", url: "https://open.spotify.com/album/108no6qoV8qqoomxDk4Her" },
+      { nombre: "Apple Music", url: "https://music.apple.com/us/album/exploraciones-ambientales-ep/6795013701?uo=4&app=music&at=1001lry3&ct=dashboard" },
+    ],
     canciones: [
       {
         slug: "ambiente-001",

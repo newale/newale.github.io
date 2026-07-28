@@ -5,27 +5,41 @@ layout: "layouts/musica.html"
 license: "reservados"
 ---
 
-<h1>Música</h1>
+<h1 class="musica-titulo">Música</h1>
 
 {% for proyecto in musica %}
-<section class="proyecto" data-slug="{{ proyecto.slug }}" data-tipo="{{ proyecto.tipo }}">
-  <h2>{{ proyecto.titulo }}</h2>
-  <p class="proyecto-descripcion">{{ proyecto.descripcion }}</p>
-  {% if proyecto.discoTotal %}
-  <p class="proyecto-progreso">Primer disco: {{ proyecto.canciones.size }} de {{ proyecto.discoTotal }} canciones publicadas.</p>
+<article class="disco" data-slug="{{ proyecto.slug }}" data-tipo="{{ proyecto.tipo }}">
+  <img class="disco-portada" src="{{ proyecto.portada }}" alt="Portada de {{ proyecto.titulo }}">
+  <div class="disco-info">
+    <span class="disco-eyebrow">Proyecto</span>
+    <h2>{{ proyecto.titulo }}</h2>
+    <p class="disco-descripcion">{{ proyecto.descripcion }}</p>
+    {% if proyecto.discoTotal %}
+    <p class="disco-progreso">Primer disco · {{ proyecto.canciones.size }} de {{ proyecto.discoTotal }} canciones</p>
+    {% endif %}
+  </div>
+
+  {% if proyecto.streaming.size > 0 %}
+  <details class="escucha-en">
+    <summary>Escucha en…</summary>
+    <ul>
+      {% for s in proyecto.streaming %}
+      <li><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.nombre }}</a></li>
+      {% endfor %}
+    </ul>
+  </details>
   {% endif %}
 
   {% if proyecto.canciones.size > 0 %}
   <ul class="tracklist" data-proyecto="{{ proyecto.slug }}">
     {% for cancion in proyecto.canciones %}
-    <li class="track" data-src="{{ cancion.archivo }}" data-titulo="{{ cancion.titulo }}" data-proyecto="{{ proyecto.titulo }}">
-      <button class="track-play" aria-label="Reproducir {{ cancion.titulo }}">▶</button>
-      <span class="track-info">
-        <span class="track-titulo">{{ cancion.titulo }}</span>
-        {% if cancion.formatos %}
-        <small class="track-formatos">Disponible en {{ cancion.formatos }}</small>
-        {% endif %}
-      </span>
+    <li class="track" data-src="{{ cancion.archivo }}" data-titulo="{{ cancion.titulo }}" data-proyecto="{{ proyecto.titulo }}" data-portada="{{ proyecto.portada }}">
+      <span class="track-num">{{ forloop.index }}</span>
+      <button class="track-play" aria-label="Reproducir {{ cancion.titulo }}">
+        <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+      </button>
+      <span class="track-titulo">{{ cancion.titulo }}</span>
       <span class="track-precio">${{ cancion.precio | formatPrecio }}</span>
       {% if cancion.linkPago != "" %}
       <a class="track-comprar" href="{{ cancion.linkPago }}" target="_blank" rel="noopener">Comprar</a>
@@ -37,17 +51,24 @@ license: "reservados"
   </ul>
   {% else %}
   <p class="tracklist-vacia">Aún no hay canciones publicadas para este proyecto.</p>
-  {% if proyecto.tipo == "ambiental" %}
-  <p class="placeholder-note">visual en desarrollo</p>
   {% endif %}
-  {% endif %}
-</section>
+</article>
 {% endfor %}
 
 <div class="player-bar" id="player-bar" hidden>
-  <button id="player-prev" aria-label="Anterior">⏮</button>
-  <button id="player-toggle" aria-label="Reproducir / pausar">▶</button>
-  <button id="player-next" aria-label="Siguiente">⏭</button>
+  <img class="player-cover" id="player-cover" src="" alt="">
+  <div class="player-controls">
+    <button id="player-prev" aria-label="Anterior">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg>
+    </button>
+    <button id="player-toggle" aria-label="Reproducir / pausar">
+      <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+      <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+    </button>
+    <button id="player-next" aria-label="Siguiente">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 6h2v12h-2zM6 6l8.5 6L6 18z"/></svg>
+    </button>
+  </div>
   <div class="player-info">
     <span id="player-titulo"></span>
     <progress id="player-progress" value="0" max="100"></progress>

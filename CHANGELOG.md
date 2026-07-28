@@ -1,4 +1,4 @@
-## 1.0.0 (2026-07-26)
+## 1.0.0 (2026-07-28)
 
 ### Features
 
@@ -18,7 +18,7 @@
 * changing site domain ([0fd059f](https://github.com/newale/newale.github.io/commit/0fd059fc224f519db24774dc48d74b6b3563f75f))
 * compress image in devs matta ([df5fc0b](https://github.com/newale/newale.github.io/commit/df5fc0b0fb416d44e044303a19f54e6515588257))
 * crea menu de configuracion ([ec869aa](https://github.com/newale/newale.github.io/commit/ec869aa1b3c3cef64339233d68d9bd55e9828409))
-* crea seccion de musica con reproductor y licencia reservada ([51302ad](https://github.com/newale/newale.github.io/commit/51302ad22083c02a4c458d0fb052ee457656a7e4))
+* crea seccion de musica con reproductor y licencia reservada ([da63718](https://github.com/newale/newale.github.io/commit/da63718c17a05886cc519c44f1149cf93d73bb71))
 * create archivador perspective ([0533be0](https://github.com/newale/newale.github.io/commit/0533be060d101bf9bd48bb22b063ca77cba9cc05))
 * create prices accesibility ([28b40d8](https://github.com/newale/newale.github.io/commit/28b40d8bd1505593b8164830491738a02dbeea10))
 * default project in autocomplete ([8fb2df3](https://github.com/newale/newale.github.io/commit/8fb2df37500da494fa91a88bbc27231c9c6641f7))
@@ -45,6 +45,7 @@
 * new design ([c58bfca](https://github.com/newale/newale.github.io/commit/c58bfca029ff1bb5c8e7279fe6df23d128823d63))
 * new font for logo ([2a13580](https://github.com/newale/newale.github.io/commit/2a13580e5c4231afc4bd9e4f6dd6fc5fcdb4d114))
 * new footer, and font ([f12a13b](https://github.com/newale/newale.github.io/commit/f12a13bae8a60e398d30e22cd5777dad1f7906b3))
+* new landing website ([307513c](https://github.com/newale/newale.github.io/commit/307513c2bf1634b9a63810085f1fbbe2df095e4c))
 * new layout ([3173b16](https://github.com/newale/newale.github.io/commit/3173b16240138c8e96d550a1ef8c7d4fe8940d4f))
 * new layout ([f2b1fc2](https://github.com/newale/newale.github.io/commit/f2b1fc2fadd644bdee1cab5141516f2ab9d502ac))
 * new layout and posts ([976fabf](https://github.com/newale/newale.github.io/commit/976fabfb80507c2850837daa50ab357e6651038c))

@@ -1,0 +1,54 @@
+/* Overrides so the Broadsheet system (loaded after main.css) owns this
+   page's chrome — main.css's site-wide body/header/footer box styling
+   is scoped away here since this stylesheet only loads on the home page. */
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  max-width: none;
+  padding: 0;
+  background-image: none;
+  text-wrap: pretty;
+}
+footer {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+footer.entry-footer {
+  margin: calc(2 * 28px) 0 0;
+  max-width: none;
+}
+footer.entry-footer p {
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+}
+footer.entry-footer a {
+  color: var(--color-accent-700);
+}
+
+a { color: var(--color-accent-700); }
+a:hover { color: var(--color-accent); }
+
+@keyframes driftC { 0%,100% { transform: translate(0,0); } 33% { transform: translate(-3px,2px); } 66% { transform: translate(2px,-2px); } }
+@keyframes driftM { 0%,100% { transform: translate(0,0); } 33% { transform: translate(3px,-1px); } 66% { transform: translate(-2px,2px); } }
+@keyframes driftY { 0%,100% { transform: translate(0,0); } 33% { transform: translate(-1px,-3px); } 66% { transform: translate(3px,1px); } }
+.hero-plate-c { animation: driftC 9s ease-in-out infinite; }
+.hero-plate-m { animation: driftM 11s ease-in-out infinite; }
+.hero-plate-y { animation: driftY 13s ease-in-out infinite; }
+
+@keyframes dotPan { 0% { background-position: 0 0, 0 0; } 100% { background-position: 220px 140px, -180px 160px; } }
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    radial-gradient(circle, color-mix(in srgb, var(--color-accent) 55%, transparent) 1.4px, transparent 1.6px),
+    radial-gradient(circle, color-mix(in srgb, var(--color-accent-2) 45%, transparent) 1.2px, transparent 1.4px);
+  background-size: 34px 34px, 46px 46px;
+  opacity: 0.35;
+  animation: dotPan 40s linear infinite;
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 30% 40%, black 40%, transparent 85%);
+  mask-image: radial-gradient(ellipse 80% 70% at 30% 40%, black 40%, transparent 85%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-plate-c, .hero-plate-m, .hero-plate-y, .hero-bg { animation: none; }
+}

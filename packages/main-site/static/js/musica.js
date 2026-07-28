@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (trackEls.length === 0) return;
 
   const playerBar = document.getElementById("player-bar");
+  const playerCover = document.getElementById("player-cover");
   const playerToggle = document.getElementById("player-toggle");
   const playerPrev = document.getElementById("player-prev");
   const playerNext = document.getElementById("player-next");
@@ -12,8 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let currentIndex = -1;
 
-  function setPlayIcon(el, playing) {
-    el.textContent = playing ? "⏸" : "▶";
+  function setPlayIcon(container, playing) {
+    container.classList.toggle("is-playing", playing);
   }
 
   function loadTrack(index) {
@@ -28,6 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
     el.classList.add("active");
 
     playerBar.hidden = false;
+    playerCover.src = el.dataset.portada;
+    playerCover.alt = "Portada de " + el.dataset.proyecto;
     playerTitulo.textContent = el.dataset.titulo + " — " + el.dataset.proyecto;
   }
 
