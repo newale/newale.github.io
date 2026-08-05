@@ -2,7 +2,8 @@
 archivador:
   - tecnoestética
 date: 2026-06-12T00:00:00.000Z
-garden: true
+garden: false
+draft: true
 tags:
   - publicado
 title: Una crítica estética al enfoque de las capacidades de Martha Nussbaum

@@ -85,6 +85,7 @@
 * updated proyecto estetica ([6a0dc4a](https://github.com/newale/newale.github.io/commit/6a0dc4a1e52335cfe805f64b2e42860394f90e1c))
 * updated public posts ([b564d9c](https://github.com/newale/newale.github.io/commit/b564d9c83304964a8b630acadfb8df6e4bae55e9))
 * updated system ([aba36d1](https://github.com/newale/newale.github.io/commit/aba36d15d4fa736c52f46193dedc6daee7e1453c))
+* updated texts ([d3e6c6c](https://github.com/newale/newale.github.io/commit/d3e6c6c22118e0d1cf8091f2df3dc77fb432268b))
 * updated URLS for apps ([38288a7](https://github.com/newale/newale.github.io/commit/38288a740b363b2c8c8b1517524c09ae62242150))
 * updates paragraph font size ([43eca98](https://github.com/newale/newale.github.io/commit/43eca981a61255a198be0e105b93dfcd891c1b25))
 * updates site to 11ty ([9f9ff38](https://github.com/newale/newale.github.io/commit/9f9ff385eb8b6d1e8c2cfcfe1ea3afd467d24f68))
@@ -114,4 +115,4 @@
 * updated name on file ([ad953b4](https://github.com/newale/newale.github.io/commit/ad953b47cdb369e852e3ffe21dd0d9bcab6661b2))
 * updated post ([c3a1142](https://github.com/newale/newale.github.io/commit/c3a1142c504dc1423ddd37e40843bbd8ce1c93bc))
 * updated route to documentos ([4d007c4](https://github.com/newale/newale.github.io/commit/4d007c425c6e7a3983daa77309a91584979a3bee))
-* versioning footer fix ([d13fe88](https://github.com/newale/newale.github.io/commit/d13fe888e60ba605561e6af15e1141e41510df0b))
+* versioning footer fix ([7ade854](https://github.com/newale/newale.github.io/commit/7ade854e82302235cb7a3ef749f11f66f25b92ff))
