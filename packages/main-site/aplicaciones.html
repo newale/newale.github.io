@@ -1,0 +1,69 @@
+---
+layout: "layouts/inicio.html"
+title: "Aplicaciones"
+---
+
+<div style="max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,72px) 0;">
+
+  <nav class="nav" style="padding-inline:0;position:sticky;top:0;background:var(--color-bg);z-index:5;">
+    <span class="nav-brand">AEBN</span>
+    <a href="/">Inicio</a>
+    <!-- <a href="/bio">Bio</a> -->
+    <!-- <a href="/archivador">Archivador</a> -->
+    <a href="/musica">Música</a>
+    <a href="/aplicaciones" aria-current="page">Aplicaciones</a>
+  </nav>
+
+  <section style="position:relative;padding:calc(4.5*28px) 0 calc(3.5*28px);overflow:hidden;">
+    <div class="hero-bg"></div>
+    <div style="position:relative;z-index:1;">
+      <h1 style="font-family:var(--font-heading);font-weight:var(--font-heading-weight);font-size:clamp(46px,7vw,92px);line-height:1.05;letter-spacing:-0.02em;margin:0 0 0 -0.035em;">
+        <span style="position:relative;display:block;">
+          <span style="position:relative;">Aplicaciones</span>
+          <span aria-hidden="true" class="hero-plate-c" style="position:absolute;inset:0;color:var(--color-accent);mix-blend-mode:multiply;opacity:0.6;">Aplicaciones</span>
+          <span aria-hidden="true" class="hero-plate-m" style="position:absolute;inset:0;color:var(--color-accent-2);mix-blend-mode:multiply;opacity:0.55;">Aplicaciones</span>
+        </span>
+      </h1>
+      <p style="font-size:17px;line-height:28px;max-width:52ch;margin:calc(1.5*28px) 0 0;color:color-mix(in srgb, var(--color-text) 82%, transparent);">Aplicaciones sencillas que he programado para fines personales. Todas son de código abierto.</p>
+    </div>
+  </section>
+
+  <section id="apps" style="padding:calc(2*28px) 0 calc(3.5*28px);">
+    <span style="display:block;font-size:13px;line-height:14px;letter-spacing:0.08em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 70%, transparent);margin:0 0 14px;">Proyectos</span>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-3);margin-top:14px;">
+
+      <a href="/aplicaciones/escala-notas" class="card elev-sm" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;">
+        <span class="card-kicker">🎓 Docencia</span>
+        <span class="card-title">Escala de notas</span>
+        <p class="card-body">Calcula una escala de notas según exigencia, puntaje máximo, entre otras configuraciones.</p>
+      </a>
+
+      <a href="/aplicaciones/por-hacer" class="card elev-sm" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;">
+        <span class="card-kicker">✅ Productividad</span>
+        <span class="card-title">Por hacer</span>
+        <p class="card-body">Gestiona listas de cosas por hacer, funciona con almacenamiento local. Permite descargar y subir el estado en formato json.</p>
+      </a>
+
+      <a href="/aplicaciones/hecho" class="card elev-sm" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;">
+        <span class="card-kicker">✔️ Registro</span>
+        <span class="card-title">Hecho</span>
+        <p class="card-body">Anota qué hiciste, en qué categoría y en qué horario, agrupando los registros por día con estadísticas simples.</p>
+      </a>
+
+      <a href="/aplicaciones/dashboard" class="card elev-sm" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;">
+        <span class="card-kicker">🖥️ Panel</span>
+        <span class="card-title">Dashboard</span>
+        <p class="card-body">Vista tipo sistema operativo que integra Por hacer y Hecho en una sola pantalla dividida, con ventanas redimensionables.</p>
+      </a>
+
+    </div>
+  </section>
+
+  <footer style="padding:calc(2*28px) 0;font-size:13px;line-height:28px;color:color-mix(in srgb, var(--color-text) 70%, transparent);display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;">
+    <span>© 2026 AEBN — aebn.cl</span>
+    <span>Santiago, Chile</span>
+  </footer>
+
+  {% include "components/footer.html" %}
+
+</div>
