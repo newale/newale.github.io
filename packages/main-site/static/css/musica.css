@@ -212,7 +212,7 @@ body.musica-page main.musica-main {
   background-color: #121212;
   border: none;
   border-top: 1px solid #2a2a2a;
-  color: #737373;
+  color: #b3b3b3;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 0.8rem;
 }
@@ -222,7 +222,8 @@ body.musica-page main.musica-main {
 }
 
 .musica-footer a {
-  color: #b3b3b3;
+  color: #d0d0d0;
+  text-decoration: underline;
 }
 
 .musica-footer a:hover {

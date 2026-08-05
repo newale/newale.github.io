@@ -95,6 +95,7 @@
 
 * adding public in git ([6febb11](https://github.com/newale/newale.github.io/commit/6febb110f869814333eb21d3f687c573314edda3))
 * base url in react-app ([0722d64](https://github.com/newale/newale.github.io/commit/0722d64650c6de4649912ccbbc7114fa1a02b3bb))
+* color in footer ([f2e802c](https://github.com/newale/newale.github.io/commit/f2e802c7b8786a4b829fd8dd2da9dd94ecb8b425))
 * deploy escala notas ([378cec9](https://github.com/newale/newale.github.io/commit/378cec9cc2a98f142ec34e9eda326f476f462f94))
 * **hecho:** fix bug for pastmidnight tasks ([7932419](https://github.com/newale/newale.github.io/commit/7932419f3fe0fb6b93fe95651f35a0e3ea3262ae))
 * **hecho:** updated linting ([ed01b9c](https://github.com/newale/newale.github.io/commit/ed01b9c9f7178c7769a0f8081a67a34d84104f56))
