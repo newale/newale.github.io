@@ -70,7 +70,7 @@
 * update jipse ([dbde92e](https://github.com/newale/newale.github.io/commit/dbde92e68290137040794f73c3b92790be43d6e7))
 * update layouts and other stuff ([39a2e41](https://github.com/newale/newale.github.io/commit/39a2e41c5cce1ad9af8a7423799c66d1ac710131))
 * update margin values ([54cd0f4](https://github.com/newale/newale.github.io/commit/54cd0f4785388dda999d70be90562e6e4e99d280))
-* update musica sitio ([5dc226c](https://github.com/newale/newale.github.io/commit/5dc226c1b4de1fda323abdaf5647bfb11b1ce357))
+* update musica sitio ([03a26d3](https://github.com/newale/newale.github.io/commit/03a26d3948cc8924f470d0e3fde9bc075edd96d8))
 * update site and add otto ([dfe4e46](https://github.com/newale/newale.github.io/commit/dfe4e468b79aacb74f11a2f788a12c8fcb910c0c))
 * update social icons ([d894e08](https://github.com/newale/newale.github.io/commit/d894e0861cf477e32ae52980d3d3d3ceb7d832f3))
 * update strike and borrar todo button ([884c5f7](https://github.com/newale/newale.github.io/commit/884c5f7f6d6f4959c9fd8b3cf77c52b457349b39))
