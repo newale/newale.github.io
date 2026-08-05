@@ -1,0 +1,68 @@
+---
+title: "Gracias por tu compra"
+date: 2026-08-04
+layout: "layouts/musica.html"
+license: "reservados"
+---
+
+<div class="gracias-wrap">
+  <div id="gracias-estado" class="gracias-estado gracias-estado--cargando">
+    <h1>Revisando tu pago…</h1>
+    <p>Un segundo mientras confirmamos el estado de tu compra.</p>
+  </div>
+
+  <div class="gracias-info">
+    <p>
+      Esta es una confirmación de cortesía: el sitio es estático y no verifica el pago automáticamente.
+      Una vez que Mercado Pago confirme la transacción de su lado, te voy a enviar el link de descarga
+      del archivo comprado (en los formatos disponibles: MP3, MP3 320kbps y WAV cuando corresponda) al
+      correo o medio de contacto que usaste al pagar.
+    </p>
+    <p>
+      Si pasaron más de 48 horas y no has recibido tu archivo, o si algo no cuadra con tu pago,
+      escríbeme directamente y lo resolvemos.
+    </p>
+    <a class="gracias-volver" href="/musica.html">Volver a Música</a>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    var status = params.get("status") || params.get("collection_status");
+    var el = document.getElementById("gracias-estado");
+
+    var estados = {
+      approved: {
+        clase: "gracias-estado--ok",
+        titulo: "¡Gracias por tu compra!",
+        texto: "Tu pago fue aprobado por Mercado Pago.",
+      },
+      pending: {
+        clase: "gracias-estado--pendiente",
+        titulo: "Tu pago está pendiente",
+        texto: "Mercado Pago todavía está procesando este pago. Te contactaré apenas se confirme.",
+      },
+      in_process: {
+        clase: "gracias-estado--pendiente",
+        titulo: "Tu pago está en revisión",
+        texto: "Mercado Pago está revisando este pago. Te contactaré apenas se confirme.",
+      },
+      rejected: {
+        clase: "gracias-estado--error",
+        titulo: "El pago no se pudo completar",
+        texto: "Mercado Pago rechazó este pago. Puedes intentarlo de nuevo desde la página de música.",
+      },
+    };
+
+    var info = estados[status];
+    if (info) {
+      el.className = "gracias-estado " + info.clase;
+      el.innerHTML = "<h1>" + info.titulo + "</h1><p>" + info.texto + "</p>";
+    } else {
+      el.className = "gracias-estado gracias-estado--generico";
+      el.innerHTML =
+        "<h1>Gracias por tu visita</h1><p>No encontré datos de un pago reciente en esta página.</p>";
+    }
+  })();
+</script>

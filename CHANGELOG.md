@@ -1,4 +1,4 @@
-## 1.0.0 (2026-07-28)
+## 1.0.0 (2026-08-05)
 
 ### Features
 
@@ -45,7 +45,7 @@
 * new design ([c58bfca](https://github.com/newale/newale.github.io/commit/c58bfca029ff1bb5c8e7279fe6df23d128823d63))
 * new font for logo ([2a13580](https://github.com/newale/newale.github.io/commit/2a13580e5c4231afc4bd9e4f6dd6fc5fcdb4d114))
 * new footer, and font ([f12a13b](https://github.com/newale/newale.github.io/commit/f12a13bae8a60e398d30e22cd5777dad1f7906b3))
-* new landing website ([307513c](https://github.com/newale/newale.github.io/commit/307513c2bf1634b9a63810085f1fbbe2df095e4c))
+* new landing website ([92eb07b](https://github.com/newale/newale.github.io/commit/92eb07be0936259ba4875637a81191212916681d))
 * new layout ([3173b16](https://github.com/newale/newale.github.io/commit/3173b16240138c8e96d550a1ef8c7d4fe8940d4f))
 * new layout ([f2b1fc2](https://github.com/newale/newale.github.io/commit/f2b1fc2fadd644bdee1cab5141516f2ab9d502ac))
 * new layout and posts ([976fabf](https://github.com/newale/newale.github.io/commit/976fabfb80507c2850837daa50ab357e6651038c))
@@ -70,6 +70,7 @@
 * update jipse ([dbde92e](https://github.com/newale/newale.github.io/commit/dbde92e68290137040794f73c3b92790be43d6e7))
 * update layouts and other stuff ([39a2e41](https://github.com/newale/newale.github.io/commit/39a2e41c5cce1ad9af8a7423799c66d1ac710131))
 * update margin values ([54cd0f4](https://github.com/newale/newale.github.io/commit/54cd0f4785388dda999d70be90562e6e4e99d280))
+* update musica sitio ([5dc226c](https://github.com/newale/newale.github.io/commit/5dc226c1b4de1fda323abdaf5647bfb11b1ce357))
 * update site and add otto ([dfe4e46](https://github.com/newale/newale.github.io/commit/dfe4e468b79aacb74f11a2f788a12c8fcb910c0c))
 * update social icons ([d894e08](https://github.com/newale/newale.github.io/commit/d894e0861cf477e32ae52980d3d3d3ceb7d832f3))
 * update strike and borrar todo button ([884c5f7](https://github.com/newale/newale.github.io/commit/884c5f7f6d6f4959c9fd8b3cf77c52b457349b39))

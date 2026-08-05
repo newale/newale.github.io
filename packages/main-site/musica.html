@@ -5,72 +5,169 @@ layout: "layouts/musica.html"
 license: "reservados"
 ---
 
-<h1 class="musica-titulo">Música</h1>
-
-{% for proyecto in musica %}
-<article class="disco" data-slug="{{ proyecto.slug }}" data-tipo="{{ proyecto.tipo }}">
-  <img class="disco-portada" src="{{ proyecto.portada }}" alt="Portada de {{ proyecto.titulo }}">
-  <div class="disco-info">
-    <span class="disco-eyebrow">Proyecto</span>
-    <h2>{{ proyecto.titulo }}</h2>
-    <p class="disco-descripcion">{{ proyecto.descripcion }}</p>
-    {% if proyecto.discoTotal %}
-    <p class="disco-progreso">Primer disco · {{ proyecto.canciones.size }} de {{ proyecto.discoTotal }} canciones</p>
-    {% endif %}
+<div class="musica-app">
+  <div class="musica-titulo-row">
+    <h1 class="musica-titulo">Música</h1>
+    <button type="button" class="musica-titulo-info" id="about-open">¿Qué es esto?</button>
   </div>
 
-  {% if proyecto.streaming.size > 0 %}
-  <details class="escucha-en">
-    <summary>Escucha en…</summary>
-    <ul>
-      {% for s in proyecto.streaming %}
-      <li><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.nombre }}</a></li>
+  <section class="album-grid" aria-label="Álbumes">
+    {% for proyecto in musica %}
+    <a class="album-card" href="#{{ proyecto.slug }}">
+      <div class="album-card-cover">
+        <img src="{{ proyecto.portada }}" alt="Portada de {{ proyecto.titulo }}">
+        <button class="album-card-play" type="button" data-album-play="{{ proyecto.slug }}" aria-label="Reproducir {{ proyecto.titulo }}">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+      </div>
+      <p class="album-card-titulo">{{ proyecto.album | default: proyecto.sencillo | default: proyecto.titulo }}</p>
+      <p class="album-card-sub">{{ proyecto.titulo }}</p>
+    </a>
+    {% endfor %}
+  </section>
+
+  {% for proyecto in musica %}
+  <article class="disco" id="{{ proyecto.slug }}" data-slug="{{ proyecto.slug }}" data-tipo="{{ proyecto.tipo }}">
+    <div class="disco-hero">
+      <img class="disco-portada" src="{{ proyecto.portada }}" alt="Portada de {{ proyecto.titulo }}">
+      <div class="disco-info">
+        {% if proyecto.album %}
+        <span class="disco-eyebrow">Álbum{% if proyecto.anio %} · {{ proyecto.anio }}{% endif %}</span>
+        <h2>{{ proyecto.album }}</h2>
+        <p class="disco-artista">{{ proyecto.titulo }}</p>
+        {% elsif proyecto.sencillo %}
+        <span class="disco-eyebrow">Sencillo{% if proyecto.anio %} · {{ proyecto.anio }}{% endif %}</span>
+        <h2>{{ proyecto.sencillo }}</h2>
+        <p class="disco-artista">{{ proyecto.titulo }}</p>
+        {% else %}
+        <span class="disco-eyebrow">Proyecto{% if proyecto.anio %} · {{ proyecto.anio }}{% endif %}</span>
+        <h2>{{ proyecto.titulo }}</h2>
+        {% endif %}
+        {% if proyecto.genero %}<span class="disco-genero">{{ proyecto.genero }}</span>{% endif %}
+        <p class="disco-descripcion">{{ proyecto.descripcion }}</p>
+
+        <div class="disco-acciones">
+          {% if proyecto.canciones.size > 0 %}
+          <button class="disco-play" type="button" data-album-play="{{ proyecto.slug }}" aria-label="Reproducir {{ proyecto.titulo }}">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          {% endif %}
+
+          {% for s in proyecto.streaming %}
+          <a class="escucha-en-directo pill-escucha" href="{{ s.url }}" target="_blank" rel="noopener">Escucha en {{ s.nombre }}</a>
+          {% endfor %}
+
+          {% if proyecto.canciones.size > 0 %}
+          <button
+            type="button"
+            class="escucha-en-directo pill-escucha disco-descargar-zip"
+            data-zip-nombre="{{ proyecto.album | default: proyecto.titulo }}"
+            data-zip-urls="{% for cancion in proyecto.canciones %}{% for a in cancion.archivos %}{{ a.url }}|{% endfor %}{% endfor %}"
+          >Descargar todo (.zip)</button>
+          {% endif %}
+        </div>
+
+        {% if proyecto.apoyo %}
+        <div class="disco-apoyo-linea">
+          <span class="disco-apoyo-pregunta">¿Te gusta lo que escuchas?</span>
+          {% if proyecto.apoyo.mensual != "" %}
+          <a class="escucha-en-directo pill-apoyo" href="{{ proyecto.apoyo.mensual }}" target="_blank" rel="noopener">Aporte mensual</a>
+          {% else %}
+          <span class="escucha-en-directo pill-apoyo escucha-en-directo--pronto" aria-disabled="true">Aporte mensual</span>
+          {% endif %}
+
+          {% if proyecto.apoyo.unico != "" %}
+          <button type="button" class="escucha-en-directo pill-apoyo" data-donar-href="{{ proyecto.apoyo.unico }}">Aporte único</button>
+          {% else %}
+          <span class="escucha-en-directo pill-apoyo escucha-en-directo--pronto" aria-disabled="true">Aporte único</span>
+          {% endif %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+    {% if proyecto.canciones.size > 0 %}
+    <div class="tracklist-header">
+      <span class="tracklist-header-num">#</span>
+      <span>Título</span>
+      <span class="tracklist-header-duracion">Duración</span>
+    </div>
+    <ul class="tracklist" data-proyecto="{{ proyecto.slug }}">
+      {% for cancion in proyecto.canciones %}
+      <li class="track" data-src="{{ cancion.archivos[0].url }}" data-titulo="{{ cancion.titulo }}" data-proyecto="{{ proyecto.titulo }}" data-portada="{{ proyecto.portada }}" data-album="{{ proyecto.slug }}">
+        <span class="track-num">{{ forloop.index }}</span>
+        <button class="track-play" aria-label="Reproducir {{ cancion.titulo }}">
+          <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+        </button>
+        <span class="track-titulo">
+          {{ cancion.titulo }}
+          {% if cancion.estreno %}<span class="track-chip track-chip--estreno">Estreno</span>{% endif %}
+        </span>
+
+        {% if cancion.video %}
+        <span class="track-actions">
+          <button class="track-video" type="button" data-video="{{ cancion.video }}" data-titulo="{{ cancion.titulo }}" aria-label="Ver video de {{ cancion.titulo }}">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 10.5V7a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3.5l4 4v-11z"/></svg>
+          </button>
+        </span>
+        {% endif %}
+
+        <span class="track-duracion" data-duracion></span>
+      </li>
       {% endfor %}
     </ul>
-  </details>
-  {% endif %}
+    {% else %}
+    <p class="tracklist-vacia">Aún no hay canciones publicadas para este proyecto.</p>
+    {% endif %}
+  </article>
+  {% endfor %}
+</div>
 
-  {% if proyecto.canciones.size > 0 %}
-  <ul class="tracklist" data-proyecto="{{ proyecto.slug }}">
-    {% for cancion in proyecto.canciones %}
-    <li class="track" data-src="{{ cancion.archivo }}" data-titulo="{{ cancion.titulo }}" data-proyecto="{{ proyecto.titulo }}" data-portada="{{ proyecto.portada }}">
-      <span class="track-num">{{ forloop.index }}</span>
-      <button class="track-play" aria-label="Reproducir {{ cancion.titulo }}">
+<div class="player-bar" id="player-bar" hidden>
+  <div class="player-bar-track">
+    <img class="player-cover" id="player-cover" src="" alt="">
+    <span id="player-titulo"></span>
+  </div>
+
+  <div class="player-bar-center">
+    <div class="player-controls">
+      <button id="player-shuffle" class="player-toggle-btn" aria-label="Aleatorio" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 4v2h1.59l-4.3 4.3 1.42 1.4L20 7.41V9h2V4zm-6.3 5.29L3 17l1.41 1.41 7.71-7.7zM17 20v-2h1.59l-2.3-2.3 1.42-1.4 2.29 2.29V15h2v5zM3 7l5.7 5.7 1.42-1.4L4.41 6H6V4H1v5h2z"/></svg>
+      </button>
+      <button id="player-prev" aria-label="Anterior">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg>
+      </button>
+      <button id="player-toggle" aria-label="Reproducir / pausar">
         <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
         <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
       </button>
-      <span class="track-titulo">{{ cancion.titulo }}</span>
-      <span class="track-precio">${{ cancion.precio | formatPrecio }}</span>
-      {% if cancion.linkPago != "" %}
-      <a class="track-comprar" href="{{ cancion.linkPago }}" target="_blank" rel="noopener">Comprar</a>
-      {% else %}
-      <span class="track-comprar track-comprar--pronto" aria-disabled="true">Próximamente</span>
-      {% endif %}
-    </li>
-    {% endfor %}
-  </ul>
-  {% else %}
-  <p class="tracklist-vacia">Aún no hay canciones publicadas para este proyecto.</p>
-  {% endif %}
-</article>
-{% endfor %}
-
-<div class="player-bar" id="player-bar" hidden>
-  <img class="player-cover" id="player-cover" src="" alt="">
-  <div class="player-controls">
-    <button id="player-prev" aria-label="Anterior">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg>
-    </button>
-    <button id="player-toggle" aria-label="Reproducir / pausar">
-      <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-      <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
-    </button>
-    <button id="player-next" aria-label="Siguiente">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 6h2v12h-2zM6 6l8.5 6L6 18z"/></svg>
-    </button>
+      <button id="player-next" aria-label="Siguiente">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 6h2v12h-2zM6 6l8.5 6L6 18z"/></svg>
+      </button>
+      <button id="player-repeat" class="player-toggle-btn" aria-label="Repetir" aria-pressed="false" data-mode="off">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v3l4-4-4-4v3H5v6h2zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2z"/></svg>
+        <span class="player-repeat-one">1</span>
+      </button>
+    </div>
+    <div class="player-progress-wrap">
+      <span id="player-time-current">0:00</span>
+      <progress id="player-progress" value="0" max="100"></progress>
+      <span id="player-time-total">0:00</span>
+    </div>
   </div>
-  <div class="player-info">
-    <span id="player-titulo"></span>
-    <progress id="player-progress" value="0" max="100"></progress>
+
+  <div class="player-volume">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10v4h4l5 5V5L7 10H3zm13.5 2A4.5 4.5 0 0 0 14 7.97v8.05A4.48 4.48 0 0 0 16.5 12z"/></svg>
+    <input type="range" id="player-volume" min="0" max="1" step="0.01" value="1" aria-label="Volumen">
+  </div>
+</div>
+
+<div class="video-modal" id="video-modal" hidden>
+  <div class="video-modal-backdrop" id="video-modal-backdrop"></div>
+  <div class="video-modal-content">
+    <button class="video-modal-close" id="video-modal-close" aria-label="Cerrar video">&times;</button>
+    <p class="video-modal-titulo" id="video-modal-titulo"></p>
+    <video id="video-modal-player" controls></video>
   </div>
 </div>

@@ -5,12 +5,59 @@
   <title>{{ title }}</title>
   <link rel="stylesheet" href="/static/css/musica.css">
 </head>
-<body>
-  {% include "./components/header.html" %}
+<body class="musica-page">
+  <header class="musica-header">
+    <a class="musica-header-logo" href="/">AEBN</a>
+    <nav>
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/musica" class="is-active">Música</a></li>
+        <li><a href="/aplicaciones">Aplicaciones</a></li>
+      </ul>
+    </nav>
+  </header>
   <main class="musica-main">
     {{ content }}
   </main>
-  {% include "components/footer.html" %}
+  <footer class="musica-footer">
+    <p>Todos los derechos reservados.</p>
+    <p><a href="/">aebn.cl</a> · código en <a target="_blank" rel="noopener" href="https://github.com/newale/newale.github.io">github</a></p>
+  </footer>
+
+  <div class="about-modal" id="about-modal" hidden>
+    <div class="about-modal-backdrop" id="about-modal-backdrop"></div>
+    <div class="about-modal-content">
+      <button class="about-modal-close" id="about-modal-close" aria-label="Cerrar">&times;</button>
+      <h2>¿Qué es esto?</h2>
+      <p>
+        Este es mi reproductor de música personal. Aquí publico mis proyectos musicales —
+        canciones que grabo bajo distintos nombres, como <strong>male</strong> y
+        <strong>siniestra</strong> — para que las puedas escuchar directamente, ver sus
+        videos cuando existan, descargarlas en distintos formatos y, si te gusta lo que
+        escuchas, apoyarme.
+      </p>
+      <p>
+        No es una plataforma de streaming ni un sello discográfico: es mi propio espacio,
+        hospedado en mi sitio, donde decido qué mostrar y cómo. Un lugar chico, hecho a mano.
+      </p>
+    </div>
+  </div>
+
+  <div class="donar-modal" id="donar-modal" hidden>
+    <div class="donar-modal-backdrop" id="donar-modal-backdrop"></div>
+    <div class="donar-modal-content">
+      <button class="donar-modal-close" id="donar-modal-close" aria-label="Cerrar">&times;</button>
+      <h2>¡Gracias de antemano!</h2>
+      <p>
+        Cualquier aporte ayuda a que este proyecto siga vivo — tú eliges el monto en
+        Mercado Pago. Vas a salir de este sitio para completar la donación.
+      </p>
+      <a id="donar-modal-link" class="donar-modal-link" href="#" target="_blank" rel="noopener">Ir a Mercado Pago</a>
+      <p class="donar-modal-volver">Cuando termines, puedes volver a esta página cuando quieras.</p>
+    </div>
+  </div>
+
+  <script src="/static/js/vendor/jszip.min.js" defer></script>
   <script src="/static/js/musica.js" defer></script>
 </body>
 </html>

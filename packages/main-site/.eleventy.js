@@ -5,8 +5,10 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("static/images");
   eleventyConfig.addPassthroughCopy("static/imagenes");
   eleventyConfig.addPassthroughCopy("static/audios");
+  eleventyConfig.addPassthroughCopy("static/videos");
   eleventyConfig.addPassthroughCopy("static/documentos");
   eleventyConfig.addPassthroughCopy("static/js");
+  eleventyConfig.addPassthroughCopy({ "../../node_modules/jszip/dist/jszip.min.js": "static/js/vendor/jszip.min.js" });
 
   eleventyConfig.addCollection("garden", function(collectionApi) {
     return collectionApi
@@ -39,5 +41,9 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addFilter("formatPrecio", function(precio) {
     return precio.toLocaleString("es-CL");
+  });
+
+  eleventyConfig.addFilter("upper", function(str) {
+    return String(str).toUpperCase();
   });
 }
