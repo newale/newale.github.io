@@ -1,5 +1,12 @@
 # main-site
 
+## 1.1.1 (2026-08-05)
+
+### Bug Fixes
+
+* color in footer ([8500ee8](https://github.com/newale/newale.github.io/commit/8500ee819cec4f11efd99505cb921295ff606417))
+  * corrige el color del footer en la página de música
+
 ## 1.1.0 (2026-08-05)
 
 ### Features

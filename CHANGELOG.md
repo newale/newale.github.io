@@ -95,7 +95,7 @@
 
 * adding public in git ([6febb11](https://github.com/newale/newale.github.io/commit/6febb110f869814333eb21d3f687c573314edda3))
 * base url in react-app ([0722d64](https://github.com/newale/newale.github.io/commit/0722d64650c6de4649912ccbbc7114fa1a02b3bb))
-* color in footer ([f2e802c](https://github.com/newale/newale.github.io/commit/f2e802c7b8786a4b829fd8dd2da9dd94ecb8b425))
+* color in footer ([8500ee8](https://github.com/newale/newale.github.io/commit/8500ee819cec4f11efd99505cb921295ff606417))
 * deploy escala notas ([378cec9](https://github.com/newale/newale.github.io/commit/378cec9cc2a98f142ec34e9eda326f476f462f94))
 * **hecho:** fix bug for pastmidnight tasks ([7932419](https://github.com/newale/newale.github.io/commit/7932419f3fe0fb6b93fe95651f35a0e3ea3262ae))
 * **hecho:** updated linting ([ed01b9c](https://github.com/newale/newale.github.io/commit/ed01b9c9f7178c7769a0f8081a67a34d84104f56))
@@ -114,3 +114,4 @@
 * updated name on file ([ad953b4](https://github.com/newale/newale.github.io/commit/ad953b47cdb369e852e3ffe21dd0d9bcab6661b2))
 * updated post ([c3a1142](https://github.com/newale/newale.github.io/commit/c3a1142c504dc1423ddd37e40843bbd8ce1c93bc))
 * updated route to documentos ([4d007c4](https://github.com/newale/newale.github.io/commit/4d007c425c6e7a3983daa77309a91584979a3bee))
+* versioning footer fix ([d13fe88](https://github.com/newale/newale.github.io/commit/d13fe888e60ba605561e6af15e1141e41510df0b))
