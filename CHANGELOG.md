@@ -1,4 +1,4 @@
-## 1.0.0 (2026-08-05)
+## 1.0.0 (2026-08-06)
 
 ### Features
 
@@ -76,6 +76,7 @@
 * update strike and borrar todo button ([884c5f7](https://github.com/newale/newale.github.io/commit/884c5f7f6d6f4959c9fd8b3cf77c52b457349b39))
 * update subtitle at home ([e46e004](https://github.com/newale/newale.github.io/commit/e46e004bfa5d69d1ac3d17668fb24ed648cb2c90))
 * update title on post and home ([ee0c68a](https://github.com/newale/newale.github.io/commit/ee0c68ad10e4bd5adfd89b84d449d09228451f93))
+* updated aplicaciones layout ([a6b4212](https://github.com/newale/newale.github.io/commit/a6b421241c44705054e61ae2fee812b23005d8e4))
 * updated article ([e6678bb](https://github.com/newale/newale.github.io/commit/e6678bb86d8d70a47cf059dddcfeeb5389f26c70))
 * updated layout mobile and font ([b833743](https://github.com/newale/newale.github.io/commit/b833743a3e589de8b641a03f37b1f51f9ee9730c))
 * updated layout to images ([b42cc46](https://github.com/newale/newale.github.io/commit/b42cc462bbee766a468e6f34690eb60825ca63cb))
@@ -86,7 +87,7 @@
 * updated public posts ([b564d9c](https://github.com/newale/newale.github.io/commit/b564d9c83304964a8b630acadfb8df6e4bae55e9))
 * updated system ([aba36d1](https://github.com/newale/newale.github.io/commit/aba36d15d4fa736c52f46193dedc6daee7e1453c))
 * updated texts ([ef392a3](https://github.com/newale/newale.github.io/commit/ef392a315803c93a431513f833596a846fd82c4f))
-* updated texts and aplications ([7611802](https://github.com/newale/newale.github.io/commit/7611802b7cd0223690d4df89699d6d71de4d5278))
+* updated texts and aplications ([c3012ac](https://github.com/newale/newale.github.io/commit/c3012accd305d73cdc8f4061caa3f7a3e43a5f53))
 * updated URLS for apps ([38288a7](https://github.com/newale/newale.github.io/commit/38288a740b363b2c8c8b1517524c09ae62242150))
 * updates paragraph font size ([43eca98](https://github.com/newale/newale.github.io/commit/43eca981a61255a198be0e105b93dfcd891c1b25))
 * updates site to 11ty ([9f9ff38](https://github.com/newale/newale.github.io/commit/9f9ff385eb8b6d1e8c2cfcfe1ea3afd467d24f68))
