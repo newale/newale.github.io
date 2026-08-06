@@ -15,6 +15,7 @@ body.musica-page main.musica-main {
   padding: 0;
   background-color: #121212;
   color-scheme: dark;
+  display: flow-root;
 }
 
 .musica-header {
@@ -219,6 +220,7 @@ body.musica-page main.musica-main {
 
 .musica-footer p {
   margin: 0 0 0.35rem;
+  color: #b3b3b3;
 }
 
 .musica-footer a {

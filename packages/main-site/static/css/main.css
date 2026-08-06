@@ -1,5 +1,5 @@
 :root {
-  color-scheme: light;
+  color-scheme: light dark;
 
   /* colors */
   --primary-color: light-dark(#2b0ca6, #bf57e9);
@@ -32,17 +32,22 @@
 
 }
 
+html {
+  min-height: 100%;
+  background-color: var(--background-color);
+}
+
 html, body {
   margin: 0 auto;
   padding: 0rem;
   font-family: Georgia, "Times New Roman", Times, serif;
   background-color: var(--background-color);
   color: var(--text-body-color);
-  background-image: url('/static/imagenes/background-pattern.png');
 }
 
 body {
   max-width: 49rem;
+  min-height: 100vh;
   padding: var(--space-s);
 }
 
