@@ -1,0 +1,57 @@
+---
+layout: "layouts/inicio.html"
+title: "Investigación"
+---
+
+<nav style="position:sticky;top:0;z-index:5;background:var(--color-bg);">
+  <div class="nav" style="max-width:1080px;margin:0 auto;padding:var(--space-3) clamp(20px,5vw,72px);">
+    <span class="nav-brand">AEBN</span>
+    <a href="/">Inicio</a>
+    <a href="/musica">Música</a>
+    <a href="/investigacion" aria-current="page">Investigación</a>
+    <a href="/aplicaciones">Aplicaciones</a>
+  </div>
+</nav>
+
+<section style="position:relative;padding:calc(4.5*28px) 0 calc(3.5*28px);overflow:hidden;">
+  <div class="hero-bg"></div>
+  <div style="position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,72px);">
+    <h1 style="font-family:var(--font-heading);font-weight:var(--font-heading-weight);font-size:clamp(46px,7vw,92px);line-height:1.05;letter-spacing:-0.02em;margin:0 0 0 -0.035em;">
+      <span style="position:relative;display:block;">
+        <span style="position:relative;">Investigación</span>
+        <span aria-hidden="true" class="hero-plate-c" style="position:absolute;inset:0;color:var(--color-accent);mix-blend-mode:multiply;opacity:0.6;">Investigación</span>
+        <span aria-hidden="true" class="hero-plate-m" style="position:absolute;inset:0;color:var(--color-accent-2);mix-blend-mode:multiply;opacity:0.55;">Investigación</span>
+      </span>
+    </h1>
+    <p style="font-size:17px;line-height:28px;max-width:52ch;margin:calc(1.5*28px) 0 0;color:var(--color-text);text-shadow:0 1px 3px color-mix(in srgb, var(--color-bg) 75%, transparent), 0 1px 12px color-mix(in srgb, var(--color-bg) 60%, transparent);">Notas, avances y material del magíster en éticas aplicadas. Un cuaderno de bitácora público.</p>
+  </div>
+</section>
+
+<div style="max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,72px) 0;">
+
+  <section id="posts" style="padding:calc(2*28px) 0 calc(3.5*28px);">
+    <span style="display:block;font-size:13px;line-height:14px;letter-spacing:0.08em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 70%, transparent);margin:0 0 14px;">Entradas</span>
+
+    {% if collections.investigacion.length %}
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--space-3);margin-top:14px;">
+      {% for post in collections.investigacion %}
+      <a href="{{ post.url }}" class="card elev-sm" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;">
+        <span class="card-kicker">{{ post.date | formattedDate }}</span>
+        <span class="card-title">{{ post.data.title }}</span>
+        {% if post.data.resumen %}<p class="card-body">{{ post.data.resumen }}</p>{% endif %}
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p style="color:color-mix(in srgb, var(--color-text) 70%, transparent);">Todavía no hay entradas publicadas.</p>
+    {% endif %}
+  </section>
+
+  <footer style="padding:calc(2*28px) 0;font-size:13px;line-height:28px;color:color-mix(in srgb, var(--color-text) 70%, transparent);display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;">
+    <span>© 2026 AEBN — aebn.cl</span>
+    <span>Santiago, Chile</span>
+  </footer>
+
+  {% include "components/footer.html" %}
+
+</div>

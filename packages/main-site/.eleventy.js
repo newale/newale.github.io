@@ -1,4 +1,5 @@
 const isGardenAndNotDraft = (item) => item.data.garden === true && item.data.draft !== true;
+const isInvestigacionAndNotDraft = (item) => item.data.investigacion === true && item.data.draft !== true;
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("static/css");
@@ -14,6 +15,13 @@ module.exports = function(eleventyConfig) {
     return collectionApi
       .getAll()
       .filter(isGardenAndNotDraft)
+      .sort((a, b) => new Date(b.date) - new Date(a.date));
+  });
+
+  eleventyConfig.addCollection("investigacion", function(collectionApi) {
+    return collectionApi
+      .getAll()
+      .filter(isInvestigacionAndNotDraft)
       .sort((a, b) => new Date(b.date) - new Date(a.date));
   });
 

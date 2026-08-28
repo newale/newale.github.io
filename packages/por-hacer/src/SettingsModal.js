@@ -26,7 +26,7 @@ const TASKS_JSON_SCHEMA = JSON.stringify({
       },
       "state": {
         "type": "string",
-        "enum": ["active", "done"],
+        "enum": ["active", "done", "archived"],
         "description": "Estado actual de la tarea"
       },
       "task": {
@@ -45,15 +45,25 @@ const TASKS_JSON_SCHEMA = JSON.stringify({
         "type": "string",
         "format": "date-time",
         "description": "Fecha de finalización, presente solo si state es \"done\""
+      },
+      "archivedAt": {
+        "type": "string",
+        "format": "date-time",
+        "description": "Fecha de archivado, presente solo si state es \"archived\""
+      },
+      "scheduledFor": {
+        "type": ["string", "null"],
+        "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+        "description": "Día local (YYYY-MM-DD) para el que se planificó la tarea"
       }
     }
   }
 }, null, 2);
 
-function getMissingProjects(projects, activeTasks, doneTasks) {
+function getMissingProjects(projects, activeTasks, doneTasks, archivedTasks) {
   const existingIds = new Set(projects.map(p => p.id));
   const missing = new Map();
-  [...activeTasks, ...doneTasks].forEach(t => {
+  [...activeTasks, ...doneTasks, ...archivedTasks].forEach(t => {
     if (t.projectId && !existingIds.has(t.projectId) && !missing.has(t.projectId)) {
       missing.set(t.projectId, t.projectLabel || t.projectId);
     }
@@ -69,13 +79,14 @@ export function SettingsModal({
   deleteProject,
   activeTasks,
   doneTasks,
+  archivedTasks,
   handleDownload,
   handleUpload,
 }) {
   const [activeTab, setActiveTab] = useState('proyectos');
   const fileInputRef = useRef(null);
 
-  const missingProjects = getMissingProjects(projects, activeTasks, doneTasks);
+  const missingProjects = getMissingProjects(projects, activeTasks, doneTasks, archivedTasks);
 
   const rescueProjects = () => {
     if (missingProjects.length === 0) return;

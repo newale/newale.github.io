@@ -1,9 +1,10 @@
-## 1.0.0 (2026-08-06)
+## 1.0.0 (2026-08-28)
 
 ### Features
 
 * add CC ([044bc75](https://github.com/newale/newale.github.io/commit/044bc7524655afef3d474074a7e01d17ad6c41e2))
 * add description to naguara and fix footer ([6f4acf0](https://github.com/newale/newale.github.io/commit/6f4acf0e4b2842d25d30b1b7905c9b45af355284))
+* add investigacion site and seminario PUC ([6ca8c0f](https://github.com/newale/newale.github.io/commit/6ca8c0fbf477e8e1380b437fb41fc0508b4325d2))
 * added dashboard ([1560cf0](https://github.com/newale/newale.github.io/commit/1560cf00a41eb86bb8601682594d2cc242766fa4))
 * added edit feature ([10aa681](https://github.com/newale/newale.github.io/commit/10aa681e6bf6cf25cc88f120c8ddd69af47d45c6))
 * adding journal ([d236070](https://github.com/newale/newale.github.io/commit/d2360707a5318a0e402f5f8e594bc1ea4c0bf2d7))
@@ -78,7 +79,7 @@
 * update title on post and home ([ee0c68a](https://github.com/newale/newale.github.io/commit/ee0c68ad10e4bd5adfd89b84d449d09228451f93))
 * updated aplicaciones layout ([2bc11bc](https://github.com/newale/newale.github.io/commit/2bc11bc0ffe8c9e9285efd96210eab62749c1317))
 * updated article ([e6678bb](https://github.com/newale/newale.github.io/commit/e6678bb86d8d70a47cf059dddcfeeb5389f26c70))
-* updated in webpage ([ff5eb49](https://github.com/newale/newale.github.io/commit/ff5eb496e0b3b723af4d94c0fb7311894ddd6b5c))
+* updated in webpage ([b4496b2](https://github.com/newale/newale.github.io/commit/b4496b2a1622c597fdf38cd309a15c7065f07918))
 * updated layout mobile and font ([b833743](https://github.com/newale/newale.github.io/commit/b833743a3e589de8b641a03f37b1f51f9ee9730c))
 * updated layout to images ([b42cc46](https://github.com/newale/newale.github.io/commit/b42cc462bbee766a468e6f34690eb60825ca63cb))
 * updated options ([508b85c](https://github.com/newale/newale.github.io/commit/508b85cb0aba348bb6cc41d4a6ce8406c7bef964))
