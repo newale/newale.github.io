@@ -1,0 +1,9 @@
+<nav style="position:sticky;top:0;z-index:5;background:var(--color-bg);">
+  <div class="nav" style="max-width:{{ navAncho | default: '1080px' }};margin:0 auto;padding:var(--space-3) clamp(20px,5vw,72px);">
+    <span class="nav-brand">AEBN</span>
+    <a href="/"{% if navActiva == "inicio" %} aria-current="page"{% endif %}>Inicio</a>
+    <a href="/musica"{% if navActiva == "musica" %} aria-current="page"{% endif %}>Música</a>
+    <a href="/articulos"{% if navActiva == "articulos" %} aria-current="page"{% endif %}>Artículos</a>
+    <a href="/aplicaciones"{% if navActiva == "aplicaciones" %} aria-current="page"{% endif %}>Aplicaciones</a>
+  </div>
+</nav>

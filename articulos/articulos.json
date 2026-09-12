@@ -1,0 +1,4 @@
+{
+  "layout": "layouts/articulo.html",
+  "permalink": "/articulos/{{ page.fileSlug }}/"
+}

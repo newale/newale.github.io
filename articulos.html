@@ -1,0 +1,79 @@
+---
+layout: "layouts/inicio.html"
+title: "Artículos"
+navActiva: "articulos"
+---
+
+{% include "components/nav.html" %}
+
+<section style="position:relative;padding:calc(4.5*28px) 0 calc(3.5*28px);overflow:hidden;">
+  <div class="hero-bg"></div>
+  <div style="position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,72px);">
+    <h1 style="font-family:var(--font-heading);font-weight:var(--font-heading-weight);font-size:clamp(46px,7vw,92px);line-height:1.05;letter-spacing:-0.02em;margin:0 0 0 -0.035em;">
+      <span style="position:relative;display:block;">
+        <span style="position:relative;">Artículos</span>
+        <span aria-hidden="true" class="hero-plate-c" style="position:absolute;inset:0;color:var(--color-accent);mix-blend-mode:multiply;opacity:0.6;">Artículos</span>
+        <span aria-hidden="true" class="hero-plate-m" style="position:absolute;inset:0;color:var(--color-accent-2);mix-blend-mode:multiply;opacity:0.55;">Artículos</span>
+      </span>
+    </h1>
+    <p style="font-size:17px;line-height:28px;max-width:52ch;margin:calc(1.5*28px) 0 0;color:var(--color-text);text-shadow:0 1px 3px color-mix(in srgb, var(--color-bg) 75%, transparent), 0 1px 12px color-mix(in srgb, var(--color-bg) 60%, transparent);">Notas, ensayos y avances del magíster en éticas aplicadas. Un cuaderno de bitácora público.</p>
+  </div>
+</section>
+
+<div style="max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,72px) 0;">
+
+  <section id="entradas" style="padding:calc(2*28px) 0 calc(3.5*28px);">
+    <span style="display:block;font-size:13px;line-height:14px;letter-spacing:0.08em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 70%, transparent);margin:0 0 14px;">Entradas</span>
+
+    {% if collections.articulos.size > 0 %}
+    {% if collections.secciones.size > 1 %}
+    <style>
+      .filtro { font: inherit; font-size: 13px; letter-spacing: 0.04em; padding: 6px 14px; border-radius: 999px; cursor: pointer; background: transparent; color: color-mix(in srgb, var(--color-text) 70%, transparent); border: 1px solid color-mix(in srgb, var(--color-text) 25%, transparent); }
+      .filtro:hover { border-color: var(--color-accent); color: var(--color-accent); }
+      .filtro[aria-pressed="true"] { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-bg); }
+    </style>
+    <div class="filtros-seccion" style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin:0 0 var(--space-4);">
+      <button type="button" class="filtro" data-seccion="" aria-pressed="true">Todos</button>
+      {% for seccion in collections.secciones %}
+      <button type="button" class="filtro" data-seccion="{{ seccion }}" aria-pressed="false">{{ seccion }}</button>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <div id="lista-articulos" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--space-3);margin-top:14px;">
+      {% for post in collections.articulos %}
+      <a href="{{ post.url }}" class="card elev-sm" data-seccion="{{ post.data.seccion }}" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;">
+        <span class="card-kicker">{{ post.date | formattedDate }}{% if post.data.seccion %} · {{ post.data.seccion }}{% endif %}</span>
+        <span class="card-title">{{ post.data.title }}</span>
+        {% if post.data.resumen %}<p class="card-body">{{ post.data.resumen }}</p>{% endif %}
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p style="color:color-mix(in srgb, var(--color-text) 70%, transparent);">Todavía no hay entradas publicadas.</p>
+    {% endif %}
+  </section>
+
+  <footer style="padding:calc(2*28px) 0;font-size:13px;line-height:28px;color:color-mix(in srgb, var(--color-text) 70%, transparent);display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;">
+    <span>© 2026 AEBN — aebn.cl</span>
+    <span>Santiago, Chile</span>
+  </footer>
+
+  {% include "components/footer.html" %}
+
+</div>
+
+<script>
+  (function () {
+    const botones = document.querySelectorAll(".filtros-seccion [data-seccion]");
+    const tarjetas = document.querySelectorAll("#lista-articulos [data-seccion]");
+    botones.forEach(boton => boton.addEventListener("click", () => {
+      const seccion = boton.dataset.seccion;
+      botones.forEach(b => b.setAttribute("aria-pressed", String(b === boton)));
+      tarjetas.forEach(t => {
+        const visible = seccion === "" || t.dataset.seccion === seccion;
+        t.style.display = visible ? "flex" : "none";
+      });
+    }));
+  })();
+</script>

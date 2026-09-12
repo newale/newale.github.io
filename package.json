@@ -1,29 +1,28 @@
 {
-  "name": "newale.github.io",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "aebn-sitio",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Sitio personal de Alejandro Bustos (aebn.cl), construido con Eleventy.",
+  "license": "ISC",
   "scripts": {
-    "dev": "npm run dev -w main-site",
-    "build": "npm run build -w @newale/ui && npm run build -w por-hacer -w hecho -w escala-notas -w dashboard && npm run build -w main-site && npm run build:cp",
-    "build:cp": "mkdir -p packages/main-site/_site/aplicaciones && cp -r packages/hecho/build packages/main-site/_site/aplicaciones/hecho && cp -r packages/por-hacer/build packages/main-site/_site/aplicaciones/por-hacer && cp -r packages/escala-notas/build packages/main-site/_site/aplicaciones/escala-notas && cp -r packages/dashboard/build packages/main-site/_site/aplicaciones/dashboard",
+    "sync": "node scripts/sync-vault.js",
+    "dev": "node scripts/sync-vault.js && npx @11ty/eleventy --serve",
+    "build": "eleventy",
     "changelog": "conventional-changelog -p conventionalcommits -i CHANGELOG.md -s -r 0",
     "commit": "cz",
     "prepare": "husky"
   },
-  "workspaces": [
-    "packages/*"
-  ],
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "jszip": "^3.10.1"
+  },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "commitizen": "^4.3.2",
     "conventional-changelog-cli": "^5.0.0",
     "cz-conventional-changelog": "^3.3.0",
-    "husky": "^9.1.7",
-    "lerna": "^8.2.3"
+    "gray-matter": "^4.0.3",
+    "husky": "^9.1.7"
   }
 }
