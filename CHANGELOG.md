@@ -1,4 +1,4 @@
-## 2.0.0 (2026-09-12)
+## 2.0.0 (2026-09-16)
 
 * add analytics ([33a523f](https://github.com/newale/newale.github.io/commit/33a523f))
 * Add theme and first post ([da18102](https://github.com/newale/newale.github.io/commit/da18102))
@@ -14,7 +14,8 @@
 * Delete gh-pages.yml ([20d4455](https://github.com/newale/newale.github.io/commit/20d4455))
 * Deleting unused files ([f4cbfe2](https://github.com/newale/newale.github.io/commit/f4cbfe2))
 * Disable some pages ([5c01e84](https://github.com/newale/newale.github.io/commit/5c01e84))
-* feat!: convertir el monorepo en el sitio personal de Eleventy ([c02c396](https://github.com/newale/newale.github.io/commit/c02c396))
+* feat!: convertir el monorepo en el sitio personal de Eleventy ([c9be6b3](https://github.com/newale/newale.github.io/commit/c9be6b3))
+* feat!: limpiar el sitio y abrir la sección Investigación ([8075569](https://github.com/newale/newale.github.io/commit/8075569))
 * first version of the website ([b1e91db](https://github.com/newale/newale.github.io/commit/b1e91db))
 * fix acercade page ([6daff5b](https://github.com/newale/newale.github.io/commit/6daff5b))
 * Move folder ([592c0bd](https://github.com/newale/newale.github.io/commit/592c0bd))
@@ -191,6 +192,10 @@
 
 ### BREAKING CHANGE
 
+* las URLs /articulos/<slug>/ pasan a /investigacion/<slug>/,
+y /tags/, /archivador/, /bio/, /cv/ y /contenido/ dejan de existir.
+
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
 * las URLs /contenido/<slug>/ e /investigacion/<slug>/ pasan
 a /articulos/<slug>/, y las apps ya no se sirven bajo /aplicaciones/<app>/.
 

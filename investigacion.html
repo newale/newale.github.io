@@ -1,0 +1,69 @@
+---
+layout: layouts/base.html
+title: "Investigación"
+description: "Notas, ensayos y avances del magíster en éticas aplicadas, más los proyectos en curso."
+navActiva: investigacion
+---
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <h1 class="hero-titulo">
+    <span>
+      <span>Investigación</span>
+      <span aria-hidden="true" class="hero-plate-c">Investigación</span>
+      <span aria-hidden="true" class="hero-plate-m">Investigación</span>
+    </span>
+  </h1>
+  <p class="hero-bajada">Notas, ensayos y avances del magíster en éticas aplicadas, y los proyectos en los que ando. Un cuaderno de bitácora público.</p>
+</section>
+
+<section class="seccion">
+  <span class="kicker">Entradas</span>
+
+  {% if collections.entradas.size > 0 %}
+
+  {% if collections.tagsUsados.size > 1 %}
+  <div class="filtros" role="group" aria-label="Filtrar entradas por tag">
+    <button type="button" class="filtro" data-tag="" aria-pressed="true">Todas</button>
+    {% for tag in collections.tagsUsados %}
+    <button type="button" class="filtro" data-tag="{{ tag }}" aria-pressed="false">{{ tag }}</button>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div class="grid-tarjetas" id="lista-entradas">
+    {% for entrada in collections.entradas %}
+    {%- assign listaDeTags = entrada.data.tags | listaTags -%}
+    <a href="{{ entrada.url }}" class="card elev-sm" data-tags="{{ listaDeTags | join: '|' }}">
+      <span class="card-kicker">{{ entrada.date | formattedDate }}</span>
+      <span class="card-title">{{ entrada.data.title }}</span>
+      {% if entrada.data.resumen %}<p class="card-body">{{ entrada.data.resumen }}</p>{% endif %}
+      {% if listaDeTags.size > 0 %}
+      <span class="card-tags">
+        {% for tag in listaDeTags %}<span class="tag tag-outline">{{ tag }}</span>{% endfor %}
+      </span>
+      {% endif %}
+    </a>
+    {% endfor %}
+  </div>
+
+  {% else %}
+  <p class="text-muted">Todavía no hay entradas publicadas.</p>
+  {% endif %}
+</section>
+
+<script>
+  (function () {
+    const botones = document.querySelectorAll(".filtros [data-tag]");
+    const tarjetas = document.querySelectorAll("#lista-entradas [data-tags]");
+
+    botones.forEach((boton) => boton.addEventListener("click", () => {
+      const tag = boton.dataset.tag;
+      botones.forEach((b) => b.setAttribute("aria-pressed", String(b === boton)));
+      tarjetas.forEach((tarjeta) => {
+        const tags = tarjeta.dataset.tags ? tarjeta.dataset.tags.split("|") : [];
+        tarjeta.style.display = tag === "" || tags.includes(tag) ? "flex" : "none";
+      });
+    }));
+  })();
+</script>

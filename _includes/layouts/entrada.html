@@ -1,0 +1,37 @@
+---
+layout: layouts/base.html
+navActiva: investigacion
+anchoLectura: true
+---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ title | jsonify }},
+  "datePublished": "{{ date | isoDate }}",
+  "description": {{ resumen | default: site.descripcion | jsonify }},
+  "inLanguage": "es-CL",
+  "author": { "@type": "Person", "name": {{ site.nombre | jsonify }}, "url": "{{ site.url }}/sobre-mi/" },
+  "mainEntityOfPage": "{{ site.url }}{{ page.url }}"
+}
+</script>
+
+<article class="entrada">
+  <p class="volver"><a href="/investigacion/">← Investigación</a></p>
+
+  <h1>{{ title }}</h1>
+
+  <p class="entrada-meta">
+    <time datetime="{{ date | isoDate }}">{{ date | formattedDate }}</time>
+    {%- assign listaDeTags = tags | listaTags -%}
+    {%- if listaDeTags.size > 0 %}
+    {% for tag in listaDeTags %}<span class="tag tag-outline">{{ tag }}</span>{% endfor %}
+    {%- endif %}
+    {%- if draft %}<span class="tag tag-borrador">borrador</span>{% endif %}
+  </p>
+
+  <div class="entrada-cuerpo">
+    {{ content }}
+  </div>
+</article>

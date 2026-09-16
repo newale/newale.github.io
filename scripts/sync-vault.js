@@ -7,13 +7,11 @@ const os   = require("os");
 
 const VAULT_ROOT   = path.join(os.homedir(), "obsidian vault2050");
 const VAULT_IMAGES = path.join(VAULT_ROOT, "images");
-const SITE_CONTENT = path.join(__dirname, "../articulos");
+const SITE_CONTENT = path.join(__dirname, "../investigacion");
 const SITE_IMAGES  = path.join(__dirname, "../static/imagenes");
 
-// El layout y el permalink los aporta articulos/articulos.json.
-const FRONTMATTER_DEFAULTS = {
-  seccion: "jardín",
-};
+// El layout y el permalink los aporta investigacion/investigacion.11tydata.js.
+const FRONTMATTER_DEFAULTS = {};
 
 // ── Slug helpers ─────────────────────────────────────────────────────────────
 
@@ -161,7 +159,7 @@ function processWikilinks(content, noteMap, currentFile, warnings) {
     }
 
     const urlSlug = note.slug.replace(/\.md$/, "");
-    return `[${display}](/articulos/${urlSlug}/)`;
+    return `[${display}](/investigacion/${urlSlug}/)`;
   });
 }
 

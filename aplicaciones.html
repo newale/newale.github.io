@@ -1,71 +1,54 @@
 ---
-layout: "layouts/inicio.html"
+layout: layouts/base.html
 title: "Aplicaciones"
-navActiva: "aplicaciones"
+description: "Aplicaciones sencillas de código abierto que programé para fines personales."
+navActiva: aplicaciones
 ---
 
-{% include "components/nav.html" %}
-
-<section style="position:relative;padding:calc(4.5*28px) 0 calc(3.5*28px);overflow:hidden;">
+<section class="hero">
   <div class="hero-bg"></div>
-  <div style="position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,72px);">
-    <h1 style="font-family:var(--font-heading);font-weight:var(--font-heading-weight);font-size:clamp(46px,7vw,92px);line-height:1.05;letter-spacing:-0.02em;margin:0 0 0 -0.035em;">
-      <span style="position:relative;display:block;">
-        <span style="position:relative;">Aplicaciones</span>
-        <span aria-hidden="true" class="hero-plate-c" style="position:absolute;inset:0;color:var(--color-accent);mix-blend-mode:multiply;opacity:0.6;">Aplicaciones</span>
-        <span aria-hidden="true" class="hero-plate-m" style="position:absolute;inset:0;color:var(--color-accent-2);mix-blend-mode:multiply;opacity:0.55;">Aplicaciones</span>
-      </span>
-    </h1>
-    <p style="font-size:17px;line-height:28px;max-width:52ch;margin:calc(1.5*28px) 0 0;color:var(--color-text);text-shadow:0 1px 3px color-mix(in srgb, var(--color-bg) 75%, transparent), 0 1px 12px color-mix(in srgb, var(--color-bg) 60%, transparent);">Aplicaciones sencillas que he programado para fines personales. Todas son de código abierto.</p>
-  </div>
+  <h1 class="hero-titulo">
+    <span>
+      <span>Aplicaciones</span>
+      <span aria-hidden="true" class="hero-plate-c">Aplicaciones</span>
+      <span aria-hidden="true" class="hero-plate-m">Aplicaciones</span>
+    </span>
+  </h1>
+  <p class="hero-bajada">Aplicaciones sencillas que he programado para fines personales. Todas son de código abierto y cada una vive en su propio repositorio.</p>
 </section>
 
-<div style="max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,72px) 0;">
+<section class="seccion">
+  <span class="kicker">Proyectos</span>
+  <div class="grid-tarjetas">
 
-  <section style="margin-top:calc(2.5*28px);padding:0 0 calc(1.5*28px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:var(--space-4);">
-    <p style="margin:0;max-width:52ch;font-size:18px;line-height:1.6;color:color-mix(in srgb, var(--color-text) 82%, transparent);">Cada aplicación vive en su propio repositorio y se despliega por separado.</p>
-    <a class="btn btn-primary" href="https://github.com/newale" target="_blank" rel="noopener">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
-      Ver los repositorios
+    <a href="https://github.com/newale/escala-notas" target="_blank" rel="noopener" class="card elev-sm">
+      <span class="card-kicker">🎓 Docencia</span>
+      <span class="card-title">Escala de notas</span>
+      <p class="card-body">Calcula una escala de notas según exigencia, puntaje máximo, entre otras configuraciones.</p>
     </a>
-  </section>
 
-  <section id="apps" style="padding:calc(2*28px) 0 calc(3.5*28px);">
-    <span style="display:block;font-size:13px;line-height:14px;letter-spacing:0.08em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 70%, transparent);margin:0 0 14px;">Proyectos</span>
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-3);margin-top:14px;">
+    <a href="https://github.com/newale/por-hacer" target="_blank" rel="noopener" class="card elev-sm">
+      <span class="card-kicker">✅ Productividad</span>
+      <span class="card-title">Por hacer</span>
+      <p class="card-body">Gestiona listas de cosas por hacer, funciona con almacenamiento local. Permite descargar y subir el estado en formato json.</p>
+    </a>
 
-      <a href="https://github.com/newale/escala-notas" target="_blank" rel="noopener" class="card elev-sm" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;">
-        <span class="card-kicker">🎓 Docencia</span>
-        <span class="card-title">Escala de notas</span>
-        <p class="card-body">Calcula una escala de notas según exigencia, puntaje máximo, entre otras configuraciones.</p>
-      </a>
+    <a href="https://github.com/newale/hecho" target="_blank" rel="noopener" class="card elev-sm">
+      <span class="card-kicker">✔️ Registro</span>
+      <span class="card-title">Hecho</span>
+      <p class="card-body">Anota qué hiciste, en qué categoría y en qué horario, agrupando los registros por día con estadísticas simples.</p>
+    </a>
 
-      <a href="https://github.com/newale/por-hacer" target="_blank" rel="noopener" class="card elev-sm" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;">
-        <span class="card-kicker">✅ Productividad</span>
-        <span class="card-title">Por hacer</span>
-        <p class="card-body">Gestiona listas de cosas por hacer, funciona con almacenamiento local. Permite descargar y subir el estado en formato json.</p>
-      </a>
+    <a href="https://github.com/newale/dashboard" target="_blank" rel="noopener" class="card elev-sm">
+      <span class="card-kicker">🖥️ Panel</span>
+      <span class="card-title">Dashboard</span>
+      <p class="card-body">Vista tipo sistema operativo que integra Por hacer y Hecho en una sola pantalla dividida, con ventanas redimensionables.</p>
+    </a>
 
-      <a href="https://github.com/newale/hecho" target="_blank" rel="noopener" class="card elev-sm" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;">
-        <span class="card-kicker">✔️ Registro</span>
-        <span class="card-title">Hecho</span>
-        <p class="card-body">Anota qué hiciste, en qué categoría y en qué horario, agrupando los registros por día con estadísticas simples.</p>
-      </a>
+  </div>
 
-      <a href="https://github.com/newale/dashboard" target="_blank" rel="noopener" class="card elev-sm" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;">
-        <span class="card-kicker">🖥️ Panel</span>
-        <span class="card-title">Dashboard</span>
-        <p class="card-body">Vista tipo sistema operativo que integra Por hacer y Hecho en una sola pantalla dividida, con ventanas redimensionables.</p>
-      </a>
-
-    </div>
-  </section>
-
-  <footer style="padding:calc(2*28px) 0;font-size:13px;line-height:28px;color:color-mix(in srgb, var(--color-text) 70%, transparent);display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;">
-    <span>© 2026 AEBN — aebn.cl</span>
-    <span>Santiago, Chile</span>
-  </footer>
-
-  {% include "components/footer.html" %}
-
-</div>
+  <p><a class="btn btn-primary" href="https://github.com/newale" target="_blank" rel="noopener">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+    Ver los repositorios
+  </a></p>
+</section>

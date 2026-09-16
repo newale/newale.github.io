@@ -1,0 +1,29 @@
+---
+permalink: /feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Investigación — {{ site.titulo }}</title>
+  <subtitle>{{ site.descripcion }}</subtitle>
+  <link href="{{ site.url }}/feed.xml" rel="self"/>
+  <link href="{{ site.url }}/investigacion/"/>
+  <id>{{ site.url }}/</id>
+  <updated>{{ collections.entradas[0].date | isoDate }}</updated>
+  <author>
+    <name>{{ site.nombre }}</name>
+    <uri>{{ site.url }}/sobre-mi/</uri>
+  </author>
+  {%- for entrada in collections.entradas limit: 20 %}
+  <entry>
+    <title>{{ entrada.data.title | escape }}</title>
+    <link href="{{ entrada.url | urlAbsoluta }}"/>
+    <id>{{ entrada.url | urlAbsoluta }}</id>
+    <updated>{{ entrada.date | isoDate }}</updated>
+    {%- if entrada.data.resumen %}
+    <summary>{{ entrada.data.resumen | escape }}</summary>
+    {%- endif %}
+    <content type="html">{{ entrada.templateContent | escape }}</content>
+  </entry>
+  {%- endfor %}
+</feed>

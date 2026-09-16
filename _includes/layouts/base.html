@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  {% include "head.html" %}
+  <link rel="stylesheet" href="/static/css/sitio.css">
+</head>
+<body>
+  {% include "components/nav.html" %}
+
+  <div class="contenedor {% if anchoLectura %}contenedor-lectura{% endif %}">
+    {{ content }}
+
+    {% include "components/footer.html" %}
+  </div>
+</body>
+</html>

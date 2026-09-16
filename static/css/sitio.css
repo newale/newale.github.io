@@ -1,0 +1,417 @@
+/* Broadsheet — design-system tokens and component classes. This file is the source of truth for the system's look; retune it here and see readme.md. */
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+  --color-bg: #f3f2f2;
+  --color-surface: #eae9e9;
+  --color-text: #201e1d;
+  --color-accent: #0088b0;
+  --color-accent-2: #d6006c;
+  --color-divider: color-mix(in srgb, #201e1d 16%, transparent);
+
+  /* Tonal ramps — generated in OKLCH on one shared lightness scale, so the
+     same step of any role matches the others in visual value. */
+  --color-neutral-100: #f8f4f4;
+  --color-neutral-200: #eae7e7;
+  --color-neutral-300: #d7d3d3;
+  --color-neutral-400: #bab6b6;
+  --color-neutral-500: #9b9797;
+  --color-neutral-600: #7d7979;
+  --color-neutral-700: #605d5d;
+  --color-neutral-800: #444141;
+  --color-neutral-900: #2d2b2b;
+
+  --color-accent-100: #e9f8ff;
+  --color-accent-200: #cbeeff;
+  --color-accent-300: #99e0ff;
+  --color-accent-400: #62c5ee;
+  --color-accent-500: #38a6cf;
+  --color-accent-600: #1186ac;
+  --color-accent-700: #006786;
+  --color-accent-800: #004961;
+  --color-accent-900: #0a303e;
+
+  --color-accent-2-100: #fff1f4;
+  --color-accent-2-200: #ffdee6;
+  --color-accent-2-300: #ffc0d0;
+  --color-accent-2-400: #ff90b1;
+  --color-accent-2-500: #ff458e;
+  --color-accent-2-600: #d82071;
+  --color-accent-2-700: #aa0b56;
+  --color-accent-2-800: #790e3d;
+  --color-accent-2-900: #4b1528;
+
+  /* The third process ink — review round 3: the deck's print treatments
+     (the CMYK separation and the misregistered plate numerals below) need
+     the full four-color set. Cyan and magenta are the system's own accents;
+     this yellow completes them, muted to the same press-ink register. A
+     print treatment color, not an interface accent — body copy and chrome
+     never take it. */
+  --color-process-yellow: #edbb00;
+
+  --font-heading: "Source Serif 4", system-ui, sans-serif;
+  --font-heading-weight: 600;
+  --font-body: "Source Serif 4", system-ui, sans-serif;
+
+  --space-1: 5.0px;
+  --space-2: 10.0px;
+  --space-3: 15.0px;
+  --space-4: 20.0px;
+  --space-6: 30.0px;
+  --space-8: 40.0px;
+
+  --radius-sm: 1px;
+  --radius-md: 2px;
+  --radius-lg: 4px;
+
+  /* Elevation — derived from the ground: soft ink-tinted shadows on a
+     light theme, a hairline edge + ambient darkness on a dark one. */
+  --shadow-sm: 0 1px 2px color-mix(in srgb, #2d2b2b 14%, transparent);
+  --shadow-md: 0 3px 10px color-mix(in srgb, #2d2b2b 16%, transparent);
+  --shadow-lg: 0 12px 32px color-mix(in srgb, #2d2b2b 22%, transparent);
+
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #171514;
+    --color-surface: #211f1e;
+    --color-text: #f2efec;
+    --color-accent: #4fc9ec;
+    --color-accent-2: #ff5fa0;
+    --color-divider: color-mix(in srgb, #f2efec 16%, transparent);
+
+    --color-neutral-100: #2d2b2b;
+    --color-neutral-200: #444141;
+    --color-neutral-300: #605d5d;
+    --color-neutral-400: #7d7979;
+    --color-neutral-500: #9b9797;
+    --color-neutral-600: #bab6b6;
+    --color-neutral-700: #d7d3d3;
+    --color-neutral-800: #eae7e7;
+    --color-neutral-900: #f8f4f4;
+
+    --color-accent-100: #0a303e;
+    --color-accent-200: #004961;
+    --color-accent-300: #006786;
+    --color-accent-400: #1186ac;
+    --color-accent-500: #38a6cf;
+    --color-accent-600: #62c5ee;
+    --color-accent-700: #99e0ff;
+    --color-accent-800: #cbeeff;
+    --color-accent-900: #e9f8ff;
+
+    --color-accent-2-100: #4b1528;
+    --color-accent-2-200: #790e3d;
+    --color-accent-2-300: #aa0b56;
+    --color-accent-2-400: #d82071;
+    --color-accent-2-500: #ff458e;
+    --color-accent-2-600: #ff90b1;
+    --color-accent-2-700: #ffc0d0;
+    --color-accent-2-800: #ffdee6;
+    --color-accent-2-900: #fff1f4;
+
+    --shadow-sm: 0 1px 2px color-mix(in srgb, #000 40%, transparent);
+    --shadow-md: 0 3px 10px color-mix(in srgb, #000 45%, transparent);
+    --shadow-lg: 0 12px 32px color-mix(in srgb, #000 55%, transparent);
+  }
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); }
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-size: 15px; line-height: 1.55; font-weight: 400; }
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  line-height: 1.12; letter-spacing: -0.015em; margin: 0 0 var(--space-2);
+}
+
+h1 { font-size: 42px; }
+h2 { font-size: 32px; }
+h3 { font-size: 25px; }
+h4 { font-size: 20px; }
+h5 { font-size: 16px; }
+h6 { font-size: 13px; }
+h6 { letter-spacing: 0.08em; text-transform: uppercase; }
+p { margin: 0 0 var(--space-3); }
+a { color: var(--color-accent); text-underline-offset: 3px; }
+img { display: block; max-width: 100%; }
+figure { margin: 0; }
+figcaption {
+  font-size: 11px; margin-top: var(--space-1);
+  color: color-mix(in srgb, var(--color-text) 55%, transparent);
+}
+.text-muted { color: color-mix(in srgb, var(--color-text) 55%, transparent); }
+:focus { outline: none; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+::selection { background: color-mix(in srgb, var(--color-accent) 30%, transparent); }
+
+.hr {
+  height: 1px; border: 0; margin: var(--space-4) 0;
+  background: var(--color-divider);
+}
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  cursor: pointer; text-decoration: none;
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 14px; line-height: 1.2; color: var(--color-text);
+  background: transparent; border: 1px solid transparent;
+  padding: var(--space-2) calc(var(--space-3) * 1.2);
+  border-radius: 999px;
+}
+.btn svg { display: block; }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.btn-primary { background: var(--color-accent); color: var(--color-bg); }
+.btn-primary:hover { background: var(--color-accent-600); color: var(--color-bg); }
+.btn-primary:active { background: var(--color-accent-700); color: var(--color-bg); }
+.btn-secondary { border-color: var(--color-divider); }
+.btn-secondary:hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+.btn-secondary:active { background: color-mix(in srgb, var(--color-text) 14%, transparent); }
+.btn-ghost { color: var(--color-accent); padding-inline: var(--space-1); }
+.btn-ghost:hover { background: color-mix(in srgb, var(--color-accent) 10%, transparent); }
+.btn-ghost:active { background: color-mix(in srgb, var(--color-accent) 18%, transparent); }
+.btn-icon { width: 36px; height: 36px; padding: 0; }
+
+.card {
+  display: flex; flex-direction: column; gap: var(--space-2);
+  padding: var(--space-3); border-radius: var(--radius-md); background: var(--color-surface);
+}
+.card-kicker { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); }
+.card-title {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 17px; line-height: 1.2;
+}
+.card-body { margin: 0; font-size: 13px; opacity: 0.8; flex: 1; }
+.card-meta {
+  display: flex; align-items: center; gap: 6px; font-size: 11px;
+  color: color-mix(in srgb, var(--color-text) 50%, transparent);
+}
+.elev-sm { box-shadow: var(--shadow-sm); }
+.elev-md { box-shadow: var(--shadow-md); }
+.elev-lg { box-shadow: var(--shadow-lg); }
+
+.tag {
+  display: inline-flex; align-items: center; font-size: 11px;
+  letter-spacing: 0.02em; padding: 3px 10px;
+  border-radius: calc(var(--radius-md) * 0.75);
+}
+.tag-accent { background: var(--color-accent-100); color: var(--color-accent-800); }
+.tag-accent-2 { background: var(--color-accent-2-100); color: var(--color-accent-2-800); }
+.tag-neutral { background: var(--color-neutral-100); color: var(--color-neutral-800); }
+.tag-outline { border: 1px solid var(--color-accent); color: var(--color-accent); background: transparent; }
+
+.nav {
+  display: flex; align-items: center; gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: none;
+}
+.nav-brand {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 18px; margin-right: auto;
+}
+.nav a { color: inherit; text-decoration: none; font-size: 14px; }
+.nav a:hover, .nav a[aria-current='page'] { color: var(--color-accent); }
+
+/* ───────────────────────────────────────────────────────────────────────────
+   Capa del sitio — todo lo que antes vivía embebido en los atributos style de
+   las páginas, más lo que quedó de inicio.css.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+html { scroll-behavior: smooth; overflow-x: hidden; }
+
+.contenedor {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-inline: clamp(20px, 5vw, 72px);
+}
+.contenedor-lectura { max-width: 760px; }
+
+.nav-barra {
+  position: sticky; top: 0; z-index: 5;
+  background: var(--color-bg);
+}
+.nav-barra .nav { padding-inline: 0; }
+.nav-brand { text-decoration: none; }
+
+/* Portada de sección ------------------------------------------------------ */
+
+.hero {
+  position: relative;
+  padding: calc(4.5 * 28px) 0 calc(3.5 * 28px);
+  overflow: hidden;
+}
+.hero > * { position: relative; z-index: 1; }
+.hero-titulo {
+  font-size: clamp(46px, 7vw, 92px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0 0 0 -0.035em;
+}
+.hero-titulo > span { position: relative; display: block; }
+.hero-bajada {
+  font-size: 17px; line-height: 28px; max-width: 52ch;
+  margin: calc(1.5 * 28px) 0 0;
+  text-shadow:
+    0 1px 3px color-mix(in srgb, var(--color-bg) 75%, transparent),
+    0 1px 12px color-mix(in srgb, var(--color-bg) 60%, transparent);
+}
+
+.hero-plate-c, .hero-plate-m, .hero-plate-y {
+  position: absolute; inset: 0;
+  mix-blend-mode: multiply;
+}
+.hero-plate-c { color: var(--color-accent); opacity: 0.6; animation: driftC 9s ease-in-out infinite; }
+.hero-plate-m { color: var(--color-accent-2); opacity: 0.55; animation: driftM 11s ease-in-out infinite; }
+.hero-plate-y { color: var(--color-process-yellow); opacity: 0.5; animation: driftY 13s ease-in-out infinite; }
+
+@keyframes driftC { 0%,100% { transform: translate(0,0); } 33% { transform: translate(-3px,2px); } 66% { transform: translate(2px,-2px); } }
+@keyframes driftM { 0%,100% { transform: translate(0,0); } 33% { transform: translate(3px,-1px); } 66% { transform: translate(-2px,2px); } }
+@keyframes driftY { 0%,100% { transform: translate(0,0); } 33% { transform: translate(-1px,-3px); } 66% { transform: translate(3px,1px); } }
+
+@keyframes dotPan { 0% { background-position: 0 0, 0 0; } 100% { background-position: 220px 140px, -180px 160px; } }
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    radial-gradient(circle, color-mix(in srgb, var(--color-accent) 55%, transparent) 1.4px, transparent 1.6px),
+    radial-gradient(circle, color-mix(in srgb, var(--color-accent-2) 45%, transparent) 1.2px, transparent 1.4px);
+  background-size: 34px 34px, 46px 46px;
+  opacity: 0.35;
+  animation: dotPan 40s linear infinite;
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 30% 40%, black 40%, transparent 85%);
+  mask-image: radial-gradient(ellipse 80% 70% at 30% 40%, black 40%, transparent 85%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero-plate-c, .hero-plate-m, .hero-plate-y, .hero-bg { animation: none; }
+}
+
+/* Secciones y rejillas ---------------------------------------------------- */
+
+.seccion { padding: calc(2 * 28px) 0 calc(3.5 * 28px); }
+.seccion + .seccion { padding-top: 0; }
+
+.kicker {
+  display: block; margin: 0 0 14px;
+  font-size: 13px; line-height: 14px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+}
+
+.grid-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-3);
+  margin-top: 14px;
+}
+a.card { text-decoration: none; color: inherit; }
+a.card:hover { box-shadow: var(--shadow-md); }
+.card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: var(--space-2); }
+
+/* Filtros por tag --------------------------------------------------------- */
+
+.filtros { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: 0 0 var(--space-4); }
+.filtro {
+  font: inherit; font-size: 13px; letter-spacing: 0.04em;
+  padding: 6px 14px; border-radius: 999px; cursor: pointer;
+  background: transparent;
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-text) 25%, transparent);
+}
+.filtro:hover { border-color: var(--color-accent); color: var(--color-accent); }
+.filtro[aria-pressed="true"] {
+  background: var(--color-accent); border-color: var(--color-accent); color: var(--color-bg);
+}
+
+/* Entrada ----------------------------------------------------------------- */
+
+.entrada { padding: calc(2 * 28px) 0 calc(3.5 * 28px); }
+.volver { margin: 0 0 var(--space-4); }
+.volver a {
+  font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; text-decoration: none;
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+}
+.volver a:hover { color: var(--color-accent); }
+
+.entrada-meta {
+  display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-2);
+  margin: 0 0 var(--space-6);
+  font-size: 13px; letter-spacing: 0.02em;
+  color: color-mix(in srgb, var(--color-text) 60%, transparent);
+}
+.tag-borrador { border: 1px dashed var(--color-accent-2); color: var(--color-accent-2); }
+
+.entrada-cuerpo { font-size: 17px; line-height: 1.7; }
+.entrada-cuerpo h2 { margin-top: var(--space-8); }
+.entrada-cuerpo h3 { margin-top: var(--space-6); }
+.entrada-cuerpo img, .entrada-cuerpo iframe { max-width: 100%; margin: var(--space-4) 0; }
+.entrada-cuerpo iframe { width: 100%; aspect-ratio: 16 / 9; height: auto; border: 0; }
+.entrada-cuerpo blockquote {
+  margin: var(--space-4) 0; padding-left: var(--space-4);
+  border-left: 2px solid var(--color-accent);
+  color: color-mix(in srgb, var(--color-text) 80%, transparent);
+}
+.entrada-cuerpo table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.entrada-cuerpo th, .entrada-cuerpo td {
+  text-align: left; padding: var(--space-2);
+  border-bottom: 1px solid var(--color-divider);
+  vertical-align: top;
+}
+
+/* Perfil (Sobre mí) ------------------------------------------------------- */
+
+.perfil { padding: calc(2 * 28px) 0 calc(3.5 * 28px); }
+.perfil-intro { font-size: 18px; line-height: 1.7; max-width: 60ch; }
+.perfil-bloque { margin-top: var(--space-8); }
+.perfil-bloque > h2 { font-size: 22px; margin-bottom: var(--space-4); }
+
+.puesto { padding: var(--space-3) 0; border-top: 1px solid var(--color-divider); }
+.puesto > h3 { font-size: 18px; margin: 0 0 2px; }
+.puesto-donde {
+  margin: 0 0 var(--space-2);
+  font-size: 13px;
+  color: color-mix(in srgb, var(--color-text) 65%, transparent);
+}
+.puesto ul { margin: 0; padding-left: 1.1em; font-size: 15px; }
+.puesto li { margin-bottom: 4px; }
+
+.lista-simple { margin: 0; padding-left: 1.1em; }
+.lista-simple li { margin-bottom: var(--space-2); }
+
+.enlaces-perfil { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-4); }
+
+/* Pie --------------------------------------------------------------------- */
+
+.pie {
+  margin-top: calc(2 * 28px);
+  padding: calc(2 * 28px) 0;
+  border-top: 1px solid var(--color-divider);
+  font-size: 13px; line-height: 28px;
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+}
+.pie-linea { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
+.pie p { margin: var(--space-2) 0 0; }
+.pie a { color: var(--color-accent-700); }
+
+/* Impresión — /sobre-mi/ tiene que salir como un CV presentable ------------ */
+
+@media print {
+  .nav-barra, .hero-bg, .filtros, .volver, .pie p { display: none !important; }
+  html, body { background: #fff; color: #000; font-size: 11pt; }
+  .contenedor { max-width: none; padding: 0; }
+  .perfil, .entrada { padding: 0; }
+  .perfil-bloque { margin-top: 18pt; break-inside: avoid; }
+  .puesto { break-inside: avoid; }
+  h1 { font-size: 22pt; }
+  .perfil-bloque > h2 { font-size: 14pt; }
+  .puesto > h3 { font-size: 12pt; }
+  .pie { border-top: 1px solid #ccc; margin-top: 18pt; padding: 6pt 0 0; }
+  a { color: #000; text-decoration: none; }
+  .enlaces-perfil a::after { content: " (" attr(href) ")"; font-size: 9pt; }
+}

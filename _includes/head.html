@@ -1,9 +1,43 @@
+{%- assign tituloPagina = title | default: site.titulo -%}
+{%- assign tituloCompleto = tituloPagina | append: " · " | append: site.titulo -%}
+{%- if page.url == "/" -%}{%- assign tituloCompleto = site.titulo | append: " — " | append: site.nombre -%}{%- endif -%}
+{%- assign descripcionPagina = description | default: resumen | default: site.descripcion -%}
+{%- assign urlCanonica = site.url | append: page.url -%}
+{%- assign imagen = imagenSocial | default: site.imagenSocial -%}
+{%- assign urlImagen = site.url | append: imagen -%}
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>{{ tituloCompleto }}</title>
+<meta name="description" content="{{ descripcionPagina }}">
+<meta name="author" content="{{ site.nombre }}">
+<link rel="canonical" href="{{ urlCanonica }}">
+{% if draft %}<meta name="robots" content="noindex, nofollow">{% endif %}
+
+<meta property="og:type" content="{% if layout == 'layouts/entrada.html' %}article{% else %}website{% endif %}">
+<meta property="og:title" content="{{ tituloPagina }}">
+<meta property="og:description" content="{{ descripcionPagina }}">
+<meta property="og:url" content="{{ urlCanonica }}">
+<meta property="og:image" content="{{ urlImagen }}">
+<meta property="og:site_name" content="{{ site.titulo }}">
+<meta property="og:locale" content="{{ site.locale }}">
+{% if date %}<meta property="article:published_time" content="{{ date | isoDate }}">{% endif %}
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ tituloPagina }}">
+<meta name="twitter:description" content="{{ descripcionPagina }}">
+<meta name="twitter:image" content="{{ urlImagen }}">
+
+<link rel="icon" href="/static/imagenes/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/static/imagenes/apple-touch-icon.png">
+<meta name="theme-color" content="#f3f2f2">
+
+<link rel="alternate" type="application/atom+xml" title="Investigación — {{ site.titulo }}" href="{{ site.url }}/feed.xml">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/static/css/main.css">
+
 {% if license == "reservados" %}
 <link rel="license" href="https://es.wikipedia.org/wiki/Todos_los_derechos_reservados">
 {% else %}
