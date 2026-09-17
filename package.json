@@ -5,8 +5,7 @@
   "description": "Sitio personal de Alejandro Bustos (aebn.cl), construido con Eleventy.",
   "license": "ISC",
   "scripts": {
-    "sync": "node scripts/sync-vault.js",
-    "dev": "node scripts/sync-vault.js && npx @11ty/eleventy --serve",
+    "dev": "npx @11ty/eleventy --serve",
     "build": "eleventy",
     "changelog": "conventional-changelog -p conventionalcommits -i CHANGELOG.md -s -r 0",
     "commit": "cz",
@@ -14,7 +13,7 @@
   },
   "dependencies": {
     "@11ty/eleventy": "^3.1.2",
-    "jszip": "^3.10.1"
+    "jszip": "^3.10.1"  
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",

@@ -1,0 +1,87 @@
+---
+layout: layouts/base.html
+title: "Seguir el blog por feed"
+description: "Cómo suscribirse al feed de Investigación para recibir las entradas nuevas en un lector de feeds."
+permalink: /investigacion/feed/
+navActiva: investigacion
+anchoLectura: true
+---
+
+<article class="entrada">
+  <p class="volver"><a href="/investigacion/">← Investigación</a></p>
+
+  <h1>Seguir el blog por feed</h1>
+
+  <div class="entrada-cuerpo">
+    <p>
+      Las entradas de <a href="/investigacion/">Investigación</a> se publican también como
+      feed. Es la forma más vieja y más sana de seguir un sitio: tú decides qué sigues, las
+      entradas llegan completas y en orden, no hay algoritmo que las ordene por ti y no
+      tienes que dejarme tu correo.
+    </p>
+
+    <p>Esta es la dirección:</p>
+
+    <div class="caja-url">
+      <code id="url-feed">{{ site.url }}/feed.xml</code>
+      <button type="button" class="btn btn-secondary" id="copiar-feed" data-url="{{ site.url }}/feed.xml">Copiar</button>
+    </div>
+
+    <h2>Cómo se usa</h2>
+    <p>
+      Necesitas un lector de feeds. Instalas uno, pegas esa dirección y listo: cada vez que
+      publique algo, aparece ahí junto a lo demás que sigas. Algunos conocidos son
+      <a href="https://netnewswire.com/" target="_blank" rel="noopener">NetNewsWire</a>
+      (gratis, para Mac y iPhone),
+      <a href="https://feedly.com/" target="_blank" rel="noopener">Feedly</a> (en el
+      navegador) y <a href="https://miniflux.app/" target="_blank" rel="noopener">Miniflux</a>
+      (para quien prefiera alojarlo por su cuenta). Cualquiera sirve; el feed es un estándar
+      abierto y no depende de ninguno.
+    </p>
+
+    <p>
+      La mayoría de los lectores también encuentra el feed solo: basta con pegarles
+      <code>{{ site.url }}</code> y ellos lo detectan.
+    </p>
+
+    <p class="text-muted">
+      Si abres <a href="/feed.xml">el feed</a> directamente en el navegador vas a ver la
+      misma lista de entradas, pero ese archivo está hecho para el lector, no para leerlo ahí.
+    </p>
+  </div>
+</article>
+
+<script>
+  (function () {
+    const boton = document.getElementById("copiar-feed");
+    const url = document.getElementById("url-feed");
+    if (!boton || !url) return;
+
+    const avisar = (texto) => {
+      const original = boton.dataset.original || boton.textContent;
+      boton.dataset.original = original;
+      boton.textContent = texto;
+      setTimeout(() => { boton.textContent = original; }, 2500);
+    };
+
+    // Si el portapapeles está bloqueado (permisos, http, navegador antiguo),
+    // dejamos la URL seleccionada para que se copie a mano.
+    const seleccionar = () => {
+      const rango = document.createRange();
+      rango.selectNodeContents(url);
+      const seleccion = window.getSelection();
+      seleccion.removeAllRanges();
+      seleccion.addRange(rango);
+    };
+
+    boton.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(url.textContent.trim());
+        avisar("Copiado");
+      } catch {
+        seleccionar();
+        avisar("Copia con ⌘C");
+      }
+    });
+  })();
+</script>

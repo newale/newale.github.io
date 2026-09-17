@@ -4,7 +4,7 @@
     <span>Santiago, Chile</span>
   </div>
 
-  <p>
+  <p class="pie-creditos">
     {% if license == "reservados" %}
     Todos los derechos reservados. Este contenido no puede reproducirse, distribuirse
     ni modificarse sin autorización previa.
@@ -12,9 +12,16 @@
     Contenido bajo licencia
     <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
     {% endif %}
-    Sitio de código abierto en
-    <a href="https://github.com/newale/newale.github.io" target="_blank" rel="noopener">GitHub</a>,
-    hecho con <a href="https://www.11ty.dev/" target="_blank" rel="noopener">Eleventy</a>.
-    <a href="/feed.xml">Feed</a>.
   </p>
+
+  <ul class="pie-enlaces">
+    <li>
+      <a href="/investigacion/feed/">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 12.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM2 7.5a.75.75 0 0 1 .75-.75A6.5 6.5 0 0 1 9.25 13.25a.75.75 0 0 1-1.5 0A5 5 0 0 0 2.75 8.25.75.75 0 0 1 2 7.5ZM2 3a.75.75 0 0 1 .75-.75c6.075 0 11 4.925 11 11a.75.75 0 0 1-1.5 0c0-5.247-4.253-9.5-9.5-9.5A.75.75 0 0 1 2 3Z"/></svg>
+        Feed RSS
+      </a>
+    </li>
+    <li><a href="https://github.com/newale/newale.github.io" target="_blank" rel="noopener">GitHub</a></li>
+    <li><a href="https://www.11ty.dev/" target="_blank" rel="noopener">Eleventy</a></li>
+  </ul>
 </footer>

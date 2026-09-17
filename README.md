@@ -7,7 +7,7 @@ desplegado en GitHub Pages.
 
 ```bash
 npm install
-npm run dev     # sincroniza el vault y levanta el servidor local
+npm run dev     # levanta el servidor local
 npm run build   # genera _site/
 ```
 
@@ -23,10 +23,10 @@ En `npm run dev` los borradores se ven; en `npm run build` no se construyen.
   el `<head>`, el sitemap, el feed y el JSON-LD.
 - `static/` — CSS, imágenes, audios y documentos. Una sola hoja, `static/css/sitio.css`,
   salvo música.
-- `scripts/sync-vault.js` — importa al blog las notas con `garden: true` desde el vault de
-  Obsidian.
 - `feed.liquid`, `sitemap.liquid`, `robots.liquid` — generan `/feed.xml`, `/sitemap.xml` y
-  `/robots.txt`.
+  `/robots.txt`. `feed.xsl.liquid` es la hoja XSLT que hace que `/feed.xml` se vea como una
+  página cuando se abre en un navegador, y `suscribirse.html` es `/investigacion/feed/`, la
+  página que explica cómo suscribirse.
 
 ## Escribir una entrada
 

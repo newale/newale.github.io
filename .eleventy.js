@@ -54,6 +54,15 @@ module.exports = function (eleventyConfig) {
     return new URL(url, "https://aebn.cl").href;
   });
 
+  // Dentro de un lector de feeds no hay una página base, así que los enlaces e
+  // imágenes relativos del contenido no resuelven. Se absolutizan para el feed.
+  eleventyConfig.addFilter("htmlAbsoluto", function (html) {
+    return String(html || "").replace(
+      /(\s(?:href|src)=")\/(?!\/)/g,
+      `$1https://aebn.cl/`
+    );
+  });
+
   eleventyConfig.addFilter("formatPrecio", function (precio) {
     return precio.toLocaleString("es-CL");
   });

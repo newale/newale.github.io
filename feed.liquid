@@ -3,13 +3,18 @@ permalink: /feed.xml
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="/feed.xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Investigación — {{ site.titulo }}</title>
   <subtitle>{{ site.descripcion }}</subtitle>
-  <link href="{{ site.url }}/feed.xml" rel="self"/>
-  <link href="{{ site.url }}/investigacion/"/>
+  <link href="{{ site.url }}/feed.xml" rel="self" type="application/atom+xml"/>
+  <link href="{{ site.url }}/investigacion/" rel="alternate" type="text/html"/>
   <id>{{ site.url }}/</id>
   <updated>{{ collections.entradas[0].date | isoDate }}</updated>
+  <icon>{{ site.url }}/static/imagenes/favicon.svg</icon>
+  <logo>{{ site.url }}{{ site.imagenSocial }}</logo>
+  <rights>Contenido bajo licencia CC BY-SA 4.0</rights>
+  <generator uri="https://www.11ty.dev/">Eleventy</generator>
   <author>
     <name>{{ site.nombre }}</name>
     <uri>{{ site.url }}/sobre-mi/</uri>
@@ -17,13 +22,17 @@ eleventyExcludeFromCollections: true
   {%- for entrada in collections.entradas limit: 20 %}
   <entry>
     <title>{{ entrada.data.title | escape }}</title>
-    <link href="{{ entrada.url | urlAbsoluta }}"/>
+    <link href="{{ entrada.url | urlAbsoluta }}" rel="alternate" type="text/html"/>
     <id>{{ entrada.url | urlAbsoluta }}</id>
     <updated>{{ entrada.date | isoDate }}</updated>
+    {%- assign tagsEntrada = entrada.data.tags | listaTags -%}
+    {%- for tag in tagsEntrada %}
+    <category term="{{ tag | escape }}"/>
+    {%- endfor %}
     {%- if entrada.data.resumen %}
-    <summary>{{ entrada.data.resumen | escape }}</summary>
+    <summary type="text">{{ entrada.data.resumen | escape }}</summary>
     {%- endif %}
-    <content type="html">{{ entrada.templateContent | escape }}</content>
+    <content type="html">{{ entrada.templateContent | htmlAbsoluto | escape }}</content>
   </entry>
   {%- endfor %}
 </feed>

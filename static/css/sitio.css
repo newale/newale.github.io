@@ -399,10 +399,52 @@ a.card:hover { box-shadow: var(--shadow-md); }
 .pie p { margin: var(--space-2) 0 0; }
 .pie a { color: var(--color-accent-700); }
 
+.pie-enlaces {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: var(--space-2) var(--space-4);
+  margin: var(--space-3) 0 0; padding: 0; list-style: none;
+}
+.pie-enlaces a {
+  display: inline-flex; align-items: center; gap: 6px;
+  line-height: 1.2; text-decoration: none;
+}
+.pie-enlaces a:hover { text-decoration: underline; }
+.pie-enlaces svg { flex: none; }
+
+/* Aviso de /feed.xml (lo pinta feed.xsl) y caja de la URL en /investigacion/feed/ */
+
+.aviso-feed {
+  margin: var(--space-6) 0;
+  padding: var(--space-4);
+  border-left: 3px solid var(--color-accent);
+  background: var(--color-surface);
+}
+.aviso-feed p { margin: 0 0 var(--space-2); }
+.aviso-feed p:last-child { margin-bottom: 0; }
+.aviso-feed-titulo {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 17px;
+}
+.feed-url code, .caja-url code {
+  font-size: 14px;
+  padding: 4px 8px; border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--color-text) 7%, transparent);
+  word-break: break-all;
+}
+
+.caja-url {
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2);
+  margin: var(--space-3) 0 var(--space-6);
+  padding: var(--space-3);
+  border: 1px solid var(--color-divider); border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+.caja-url code { flex: 1; min-width: 14ch; background: transparent; padding: 0; }
+
 /* Impresión — /sobre-mi/ tiene que salir como un CV presentable ------------ */
 
 @media print {
-  .nav-barra, .hero-bg, .filtros, .volver, .pie p { display: none !important; }
+  .nav-barra, .hero-bg, .filtros, .volver, .pie p, .pie-enlaces { display: none !important; }
   html, body { background: #fff; color: #000; font-size: 11pt; }
   .contenedor { max-width: none; padding: 0; }
   .perfil, .entrada { padding: 0; }
