@@ -399,17 +399,8 @@ a.card:hover { box-shadow: var(--shadow-md); }
 .pie p { margin: var(--space-2) 0 0; }
 .pie a { color: var(--color-accent-700); }
 
-.pie-enlaces {
-  display: flex; flex-wrap: wrap; align-items: center;
-  gap: var(--space-2) var(--space-4);
-  margin: var(--space-3) 0 0; padding: 0; list-style: none;
-}
-.pie-enlaces a {
-  display: inline-flex; align-items: center; gap: 6px;
-  line-height: 1.2; text-decoration: none;
-}
-.pie-enlaces a:hover { text-decoration: underline; }
-.pie-enlaces svg { flex: none; }
+/* El icono RSS acompaña a la frase, no la reemplaza. */
+.pie-feed svg { vertical-align: -2px; margin-right: 4px; }
 
 /* Aviso de /feed.xml (lo pinta feed.xsl) y caja de la URL en /investigacion/feed/ */
 
@@ -444,7 +435,7 @@ a.card:hover { box-shadow: var(--shadow-md); }
 /* Impresión — /sobre-mi/ tiene que salir como un CV presentable ------------ */
 
 @media print {
-  .nav-barra, .hero-bg, .filtros, .volver, .pie p, .pie-enlaces { display: none !important; }
+  .nav-barra, .hero-bg, .filtros, .volver, .pie p { display: none !important; }
   html, body { background: #fff; color: #000; font-size: 11pt; }
   .contenedor { max-width: none; padding: 0; }
   .perfil, .entrada { padding: 0; }
