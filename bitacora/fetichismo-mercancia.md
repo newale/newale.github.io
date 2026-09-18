@@ -4,6 +4,7 @@ date: "2025-09-25"
 type: nota
 archivador: filosofia
 draft: true
+tags: miscelaneo
 ---
 
 Llevo un tiempo reflexionando acerca de los espacios liminales, asíque me decidí a escribir sobre ello.

@@ -26,7 +26,7 @@ module.exports = function (eleventyConfig) {
 
   const entradas = (collectionApi) =>
     collectionApi
-      .getFilteredByGlob("investigacion/**/*.md")
+      .getFilteredByGlob("bitacora/**/*.md")
       .filter(esPublicado)
       .sort((a, b) => new Date(b.date) - new Date(a.date));
 

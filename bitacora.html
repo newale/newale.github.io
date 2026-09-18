@@ -1,17 +1,17 @@
 ---
 layout: layouts/base.html
-title: "Investigación"
+title: "Bitácora"
 description: "Notas, ensayos y avances del magíster en éticas aplicadas, más los proyectos en curso."
-navActiva: investigacion
+navActiva: bitacora
 ---
 
 <section class="hero">
   <div class="hero-bg"></div>
   <h1 class="hero-titulo">
     <span>
-      <span>Investigación</span>
-      <span aria-hidden="true" class="hero-plate-c">Investigación</span>
-      <span aria-hidden="true" class="hero-plate-m">Investigación</span>
+      <span>Bitácora</span>
+      <span aria-hidden="true" class="hero-plate-c">Bitácora</span>
+      <span aria-hidden="true" class="hero-plate-m">Bitácora</span>
     </span>
   </h1>
   <p class="hero-bajada">Notas, ensayos y avances del magíster en éticas aplicadas, y los proyectos en los que ando. Un cuaderno de bitácora público.</p>
@@ -24,9 +24,9 @@ navActiva: investigacion
 
   {% if collections.tagsUsados.size > 1 %}
   <div class="filtros" role="group" aria-label="Filtrar entradas por tag">
-    <button type="button" class="filtro" data-tag="" aria-pressed="true">Todas</button>
+    <a href="/bitacora/" class="filtro" aria-current="page">Todas</a>
     {% for tag in collections.tagsUsados %}
-    <button type="button" class="filtro" data-tag="{{ tag }}" aria-pressed="false">{{ tag }}</button>
+    <a href="/bitacora/{{ tag }}/" class="filtro">{{ tag }}</a>
     {% endfor %}
   </div>
   {% endif %}
@@ -51,19 +51,3 @@ navActiva: investigacion
   <p class="text-muted">Todavía no hay entradas publicadas.</p>
   {% endif %}
 </section>
-
-<script>
-  (function () {
-    const botones = document.querySelectorAll(".filtros [data-tag]");
-    const tarjetas = document.querySelectorAll("#lista-entradas [data-tags]");
-
-    botones.forEach((boton) => boton.addEventListener("click", () => {
-      const tag = boton.dataset.tag;
-      botones.forEach((b) => b.setAttribute("aria-pressed", String(b === boton)));
-      tarjetas.forEach((tarjeta) => {
-        const tags = tarjeta.dataset.tags ? tarjeta.dataset.tags.split("|") : [];
-        tarjeta.style.display = tag === "" || tags.includes(tag) ? "flex" : "none";
-      });
-    }));
-  })();
-</script>

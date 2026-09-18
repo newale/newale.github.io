@@ -8,7 +8,9 @@ module.exports = {
     permalink: (data) => {
       const enDesarrollo = process.env.ELEVENTY_RUN_MODE === "serve";
       if (data.draft === true && !enDesarrollo) return false;
-      return `/investigacion/${data.page.fileSlug}/`;
+      const tags = Array.isArray(data.tags) ? data.tags : (data.tags ? [data.tags] : []);
+      const tagPrincipal = tags.length ? String(tags[0]).trim() : "miscelaneo";
+      return `/bitacora/${tagPrincipal}/${data.page.fileSlug}/`;
     },
   },
 };

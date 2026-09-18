@@ -63,7 +63,6 @@ module.exports = [
       {
         slug: "ambiente-003",
         titulo: "ambiente 003",
-        estreno: true,
         archivos: [
           { formato: "mp3", etiqueta: "MP3", url: "/static/audios/ambient-003.mp3" },
           { formato: "mp3-hq", etiqueta: "MP3 (alta calidad)", url: "/static/audios/ambient-003-hq.mp3" },

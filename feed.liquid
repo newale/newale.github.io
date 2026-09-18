@@ -5,10 +5,10 @@ eleventyExcludeFromCollections: true
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="/feed.xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Investigación — {{ site.titulo }}</title>
+  <title>Bitácora — {{ site.titulo }}</title>
   <subtitle>{{ site.descripcion }}</subtitle>
   <link href="{{ site.url }}/feed.xml" rel="self" type="application/atom+xml"/>
-  <link href="{{ site.url }}/investigacion/" rel="alternate" type="text/html"/>
+  <link href="{{ site.url }}/bitacora/" rel="alternate" type="text/html"/>
   <id>{{ site.url }}/</id>
   <updated>{{ collections.entradas[0].date | isoDate }}</updated>
   <icon>{{ site.url }}/static/imagenes/favicon.svg</icon>

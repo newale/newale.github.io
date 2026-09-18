@@ -1,6 +1,6 @@
 ---
 layout: layouts/base.html
-navActiva: investigacion
+navActiva: bitacora
 anchoLectura: true
 ---
 
@@ -18,7 +18,7 @@ anchoLectura: true
 </script>
 
 <article class="entrada">
-  <p class="volver"><a href="/investigacion/">← Investigación</a></p>
+  <p class="volver"><a href="/bitacora/">← Bitácora</a></p>
 
   <h1>{{ title }}</h1>
 
@@ -26,7 +26,7 @@ anchoLectura: true
     <time datetime="{{ date | isoDate }}">{{ date | formattedDate }}</time>
     {%- assign listaDeTags = tags | listaTags -%}
     {%- if listaDeTags.size > 0 %}
-    {% for tag in listaDeTags %}<span class="tag tag-outline">{{ tag }}</span>{% endfor %}
+    {% for tag in listaDeTags %}<a href="/bitacora/{{ tag }}/" class="tag tag-outline">{{ tag }}</a>{% endfor %}
     {%- endif %}
     {%- if draft %}<span class="tag tag-borrador">borrador</span>{% endif %}
   </p>

@@ -1,0 +1,53 @@
+---
+layout: layouts/base.html
+navActiva: bitacora
+pagination:
+  data: collections.tagsUsados
+  size: 1
+  alias: tag
+permalink: "/bitacora/{{ tag }}/"
+eleventyComputed:
+  title: "Bitácora — {{ tag }}"
+  description: "Entradas de la bitácora etiquetadas «{{ tag }}»."
+---
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <h1 class="hero-titulo">
+    <span>
+      <span>{{ tag }}</span>
+      <span aria-hidden="true" class="hero-plate-c">{{ tag }}</span>
+      <span aria-hidden="true" class="hero-plate-m">{{ tag }}</span>
+    </span>
+  </h1>
+  <p class="hero-bajada">Entradas de la bitácora etiquetadas «{{ tag }}».</p>
+</section>
+
+<section class="seccion">
+  <span class="kicker">Entradas</span>
+
+  <div class="filtros" role="group" aria-label="Filtrar entradas por tag">
+    <a href="/bitacora/" class="filtro">Todas</a>
+    {% for otroTag in collections.tagsUsados %}
+    <a href="/bitacora/{{ otroTag }}/" class="filtro"{% if otroTag == tag %} aria-current="page"{% endif %}>{{ otroTag }}</a>
+    {% endfor %}
+  </div>
+
+  <div class="grid-tarjetas">
+    {% for entrada in collections.entradas %}
+    {%- assign listaDeTags = entrada.data.tags | listaTags -%}
+    {% if listaDeTags contains tag %}
+    <a href="{{ entrada.url }}" class="card elev-sm">
+      <span class="card-kicker">{{ entrada.date | formattedDate }}</span>
+      <span class="card-title">{{ entrada.data.title }}</span>
+      {% if entrada.data.resumen %}<p class="card-body">{{ entrada.data.resumen }}</p>{% endif %}
+      {% if listaDeTags.size > 0 %}
+      <span class="card-tags">
+        {% for otroTag in listaDeTags %}<span class="tag tag-outline">{{ otroTag }}</span>{% endfor %}
+      </span>
+      {% endif %}
+    </a>
+    {% endif %}
+    {% endfor %}
+  </div>
+</section>

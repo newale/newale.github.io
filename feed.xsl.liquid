@@ -6,7 +6,7 @@ eleventyExcludeFromCollections: true
 <!--
   Hoja de estilos del feed: hace que /feed.xml se vea como una página del sitio
   cuando alguien lo abre en un navegador. Es XSLT 1.0 porque es lo único que los
-  navegadores implementan. Si Chrome termina de retirar XSLT, /investigacion/feed/
+  navegadores implementan. Si Chrome termina de retirar XSLT, /bitacora/feed/
   sigue cumpliendo el mismo papel.
 -->
 <xsl:stylesheet version="1.0"
@@ -30,7 +30,7 @@ eleventyExcludeFromCollections: true
         <nav class="nav-barra">
           <div class="nav contenedor contenedor-lectura">
             <a class="nav-brand" href="/">AEBN</a>
-            <a href="/investigacion/">Investigación</a>
+            <a href="/bitacora/">Bitácora</a>
             <a href="/musica/">Música</a>
             <a href="/aplicaciones/">Aplicaciones</a>
             <a href="/sobre-mi/">Sobre mí</a>
@@ -46,8 +46,8 @@ eleventyExcludeFromCollections: true
             </p>
             <p class="feed-url"><code>{{ site.url }}/feed.xml</code></p>
             <p>
-              <a href="/investigacion/feed/">¿Cómo se usa esto?</a> ·
-              <a href="/investigacion/">Ir al blog</a>
+              <a href="/bitacora/feed/">¿Cómo se usa esto?</a> ·
+              <a href="/bitacora/">Ir al blog</a>
             </p>
           </div>
 

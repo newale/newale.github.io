@@ -4,6 +4,7 @@ date: "2025-10-06"
 type: nota
 archivador: arte
 draft: true
+tags: miscelaneo
 ---
 
 <iframe width="" height="" src="https://www.youtube.com/embed/1FV9HjM8S6g?si=iIorgznLVopmaaBG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
