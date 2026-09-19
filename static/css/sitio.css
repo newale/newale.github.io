@@ -142,9 +142,10 @@ h6 { letter-spacing: 0.08em; text-transform: uppercase; }
 p { margin: 0 0 var(--space-3); }
 a { color: var(--color-accent); text-underline-offset: 3px; }
 img { display: block; max-width: 100%; }
-figure { margin: 0; }
+figure { margin: 0 0 var(--space-4); }
 figcaption {
-  font-size: 11px; margin-top: var(--space-1);
+  /* Excepción al mínimo de 16px: a 14px sigue pasando AA (~5.5:1 sobre el fondo). */
+  font-size: 14px; margin-top: var(--space-2);
   color: color-mix(in srgb, var(--color-text) 55%, transparent);
 }
 .text-muted { color: color-mix(in srgb, var(--color-text) 55%, transparent); }
@@ -227,11 +228,61 @@ figcaption {
 html { scroll-behavior: smooth; overflow-x: hidden; }
 
 .contenedor {
+  --pad-contenedor: clamp(20px, 5vw, 72px);
   max-width: 1080px;
   margin: 0 auto;
-  padding-inline: clamp(20px, 5vw, 72px);
+  padding-inline: var(--pad-contenedor);
 }
-.contenedor-lectura { max-width: 760px; }
+.contenedor-lectura {
+  max-width: 760px;
+  /* Gutter fijo en las páginas de lectura: no depende del viewport, para que
+     el cálculo del "breakout" de abajo sea predecible en pantallas anchas. */
+  --pad-contenedor: 20px;
+}
+
+/* Dentro de la lectura, solo las imágenes ocupan el ancho completo del
+   contenedor (760px); el título y el texto se quedan en 680px, al estilo
+   Medium. */
+.contenedor-lectura .entrada-cuerpo figure,
+.contenedor-lectura .entrada-cuerpo > img,
+.contenedor-lectura .entrada-cuerpo > iframe {
+  width: calc(100% + 2 * var(--pad-contenedor));
+  max-width: calc(100% + 2 * var(--pad-contenedor));
+  margin-inline: calc(-1 * var(--pad-contenedor));
+}
+.contenedor-lectura .entrada > h1,
+.contenedor-lectura .entrada > .volver,
+.contenedor-lectura .entrada > .entrada-meta,
+.contenedor-lectura .entrada-cuerpo > p,
+.contenedor-lectura .entrada-cuerpo > ul,
+.contenedor-lectura .entrada-cuerpo > ol,
+.contenedor-lectura .entrada-cuerpo > blockquote,
+.contenedor-lectura .entrada-cuerpo > table,
+.contenedor-lectura .entrada-cuerpo > h2,
+.contenedor-lectura .entrada-cuerpo > h3 {
+  max-width: 680px;
+  margin-inline: auto;
+}
+/* Lo inverso del breakout: en vez de salir hacia los 760px, la imagen entra
+   hacia adentro, más angosta que el propio texto. */
+.contenedor-lectura .entrada-cuerpo figure.figura-pequena {
+  width: 60%;
+  max-width: 420px;
+  margin-inline: auto;
+}
+/* Pero el figcaption de una imagen chica vuelve a probar el ancho del
+   párrafo (680px), no el de la imagen angosta que la contiene. */
+.contenedor-lectura .entrada-cuerpo figure.figura-pequena figcaption {
+  width: 680px;
+  max-width: min(680px, 92vw);
+  margin-inline: calc((100% - 680px) / 2);
+}
+/* El figcaption vuelve al ancho de los párrafos, no al de la imagen. */
+.contenedor-lectura .entrada-cuerpo figure figcaption {
+  max-width: 680px;
+  width: 100%;
+  margin-inline: auto;
+}
 
 .nav-barra {
   position: sticky; top: 0; z-index: 5;
@@ -352,6 +403,26 @@ a.card:hover { box-shadow: var(--shadow-md); }
 .entrada-cuerpo h3 { margin-top: var(--space-6); }
 .entrada-cuerpo img, .entrada-cuerpo iframe { max-width: 100%; margin: var(--space-4) 0; }
 .entrada-cuerpo iframe { width: 100%; aspect-ratio: 16 / 9; height: auto; border: 0; }
+.entrada-cuerpo figure { margin: var(--space-6) 0; }
+.entrada-cuerpo figure img { margin: 0; }
+.entrada-cuerpo figure.figura-doble {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.entrada-cuerpo figure.figura-doble img,
+.entrada-cuerpo figure.figura-doble iframe {
+  flex: 1 1 300px;
+  min-width: 0;
+  max-width: 100%;
+  margin: 0;
+}
+.entrada-cuerpo figure.figura-doble iframe { aspect-ratio: 16 / 9; height: auto; border: 0; }
+.entrada-cuerpo figure.figura-doble figcaption { flex-basis: 100%; }
+.lista-recursos {
+  display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-4);
+  list-style: none; margin: 0; padding: 0;
+}
 .entrada-cuerpo blockquote {
   margin: var(--space-4) 0; padding-left: var(--space-4);
   border-left: 2px solid var(--color-accent);
