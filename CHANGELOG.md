@@ -1,4 +1,4 @@
-## 2.0.0 (2026-09-19)
+## 2.0.0 (2026-09-20)
 
 * feat: add CC ([044bc75](https://github.com/newale/newale.github.io/commit/044bc75))
 * feat: add description to naguara and fix footer ([6f4acf0](https://github.com/newale/newale.github.io/commit/6f4acf0))
@@ -9,6 +9,7 @@
 * feat: adding medium on posts ([298759d](https://github.com/newale/newale.github.io/commit/298759d))
 * feat: adding orcid ([e4f6d87](https://github.com/newale/newale.github.io/commit/e4f6d87))
 * feat: adjust for icons in buttons ([9ed8cb7](https://github.com/newale/newale.github.io/commit/9ed8cb7))
+* feat: agregar botones de app y repositorio en tarjetas de aplicaciones ([2d0a2ee](https://github.com/newale/newale.github.io/commit/2d0a2ee))
 * feat: arregla layout tareas largas ([53865a8](https://github.com/newale/newale.github.io/commit/53865a8))
 * feat: autocomplete in hecho from por-hacer ([b909605](https://github.com/newale/newale.github.io/commit/b909605))
 * feat: bio ([c196049](https://github.com/newale/newale.github.io/commit/c196049))
@@ -55,7 +56,7 @@
 * feat: notas de kant ([1954b1d](https://github.com/newale/newale.github.io/commit/1954b1d))
 * feat: nuevo orden, dias pendiente y total tareas ([3340005](https://github.com/newale/newale.github.io/commit/3340005))
 * feat: post order in diario ([b391eec](https://github.com/newale/newale.github.io/commit/b391eec))
-* feat: publicar el artículo del seminario con imágenes, layout y accesibilidad ([b8d3414](https://github.com/newale/newale.github.io/commit/b8d3414))
+* feat: publicar el artículo del seminario con imágenes, layout y accesibilidad ([204b596](https://github.com/newale/newale.github.io/commit/204b596))
 * feat: publish a pucon ([75539de](https://github.com/newale/newale.github.io/commit/75539de))
 * feat: publish diario and some changes ([57fa95f](https://github.com/newale/newale.github.io/commit/57fa95f))
 * feat: remove insta ([88069c0](https://github.com/newale/newale.github.io/commit/88069c0))
