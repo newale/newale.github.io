@@ -1,0 +1,21 @@
+{
+  "dedicatoria": true,
+  "orcid": "https://orcid.org/0009-0004-9893-0958",
+  "pdf": "/static/documentos/soberania-digital-borrador-de-prueba.pdf",
+  "proyectos": [
+    { "id": "cooperativa", "anillo": 1, "angulo": -90, "url": "https://tecnocoop.aebn.cl" },
+    { "id": "software", "anillo": 1, "angulo": 30, "url": "/aplicaciones/" },
+    { "id": "arquitecturas", "anillo": 1, "angulo": 150, "url": "/bitacora/apuntes/arquitecturas-soberanas-solid/" },
+    { "id": "estetica", "anillo": 2, "angulo": -30, "url": null },
+    { "id": "audioteca", "anillo": 2, "angulo": 90, "url": null },
+    { "id": "cuentos", "anillo": 2, "angulo": 210, "url": null }
+  ],
+  "casos": [
+    { "id": "cerrillos", "ficticio": false, "valores": [2, 3, 2, 1, 2, 1] },
+    { "id": "mesh", "ficticio": true, "valores": [4, 3, 4, 4, 4, 3] },
+    { "id": "liceo", "ficticio": true, "valores": [1, 0, 0, 1, 0, 1] },
+    { "id": "municipio", "ficticio": true, "valores": [3, 3, 3, 3, 4, 2] },
+    { "id": "agua", "ficticio": true, "valores": [3, 2, 3, 3, 3, 4] },
+    { "id": "consultorio", "ficticio": true, "valores": [1, 1, 2, 0, 1, 2] }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "nombre": "Español",
+  "htmlLang": "es-CL",
+  "locale": "es_CL",
+  "meta": {
+    "titulo": "¿Dónde se juega la soberanía digital?",
+    "descripcion": "Tesis de Magíster en Éticas Aplicadas (UC) de Alejandro Bustos Núñez sobre autoridad y legitimidad en la soberanía digital, y los proyectos que la acompañan."
+  },
+  "ui": {
+    "saltar": "Saltar al contenido",
+    "idioma": "Idioma",
+    "volver": "Ir a mi espacio digital"
+  },
+  "institucion": [
+    "Pontificia Universidad Católica de Chile",
+    "Instituto de Éticas Aplicadas · Magíster en Éticas Aplicadas"
+  ],
+  "titulo": "¿Dónde se juega la soberanía digital? Analizando la autoridad y la legitimidad desde una perspectiva tecnoética",
+  "autor": "Alejandro Esteban Bustos Núñez",
+  "dedicatoria": {"titulo": "Dedicatoria", "lineas": ["A mamá y papá, aquí y en el cielo", "A la Educación Pública que me formó", "Para Ana, por su inspiración aún en la distancia", "Y a Raúl por las conversaciones y una profunda aceptación"]},
+  "resumenTitulo": "Resumen",
+  "resumen": "En este trabajo pregunto qué relación con los sistemas técnicos digitales necesita un Estado democrático para ejercer sobre ellos una autoridad legítima. Los enfoques dominantes sobre soberanía digital, representados por Roberts (2024) y Fratini et al. (2024), dan forma a la soberanía sin formar primero esa relación: tratan la norma como forma y el sistema técnico como materia. A partir de la crítica de Gilbert Simondon al esquema hilemórfico, sostengo que los instrumentos jurisdiccionales, adquisitivos y de implementación forman parte del medio asociado de los sistemas que pretenden gobernar, y que se reajustan a ellos cuando el Estado solo condiciona lo que otro anticipó. Propongo el criterio de alta tecnicidad: un Estado ejerce soberanía digital cuando participa en la individuación de esos sistemas con cultura técnica y conserva capacidad de reindividuarse con ellos. Con Philip Pettit, vinculo ese criterio con la legitimidad: el Estado es legítimo cuando no domina ni deja dominar a la comunidad que habita el medio asociado del sistema. Ilustro el marco con el caso del centro de datos de Google en Cerrillos.",
+  "clavesTitulo": "Palabras clave",
+  "claves": ["Soberanía", "Tecnologías digitales", "Ética", "Cultura técnica", "Republicanismo"],
+  "nota": "Este trabajo se realiza bajo la guía de Gabriela Arriagada Bruneau. Soy tesista del proyecto FONDECYT Regular N°1261259 «Saber, poder y subjetivación en la era de las tecnologías algorítmicas de gobierno».",
+  "enlaces": {
+    "orcid": "Mi ORCID",
+    "pdf": "Descargar PDF",
+    "pdfNota": "Archivo de prueba: aún no publico el texto, que está en revisión."
+  },
+  "proyectos": {
+    "titulo": "Lo que se construye alrededor",
+    "intro": "La tesis trata de un Estado. Mientras la escribía fui levantando otros proyectos, unos en consonancia directa con ella y otros más periféricos, que hacen la misma pregunta desde la comunidad y la práctica: qué significa participar en la individuación de los sistemas que nos gobiernan.",
+    "anillos": ["En consonancia", "Periféricos"],
+    "centro": "Tesis",
+    "ir": "Ver proyecto",
+    "pronto": "Próximamente",
+    "items": {
+      "cooperativa": {
+        "nombre": "Cooperativa Espacio Público Digital",
+        "concepto": "cultura técnica distribuida",
+        "bajada": "Una cooperativa cuyos miembros alojan su propia infraestructura y reciben un pod Solid con identidad abierta (WebID). Es el caso inverso a Cerrillos: la comunidad anticipa su medio asociado."
+      },
+      "software": {
+        "nombre": "Software y aplicaciones",
+        "concepto": "reversibilidad",
+        "bajada": "espacio y un conjunto de apps pequeñas que separan los datos de la aplicación, para que cualquiera pueda sustituirla o abandonarla sin perder lo suyo."
+      },
+      "arquitecturas": {
+        "nombre": "Arquitecturas soberanas",
+        "concepto": "anticipación del medio",
+        "bajada": "Notas de arquitectura sobre Solid y Linked Data: otra manera de acoplar sistema y medio, con infraestructura distribuida entre hogares en vez de centros de datos de hiperescala."
+      },
+      "estetica": {
+        "nombre": "Apuntes de estética",
+        "concepto": "ética del devenir",
+        "bajada": "Una ética que surge en la individuación, en vez de aplicar normas a objetos ya dados. La saqué del texto de la tesis por extensión."
+      },
+      "audioteca": {
+        "nombre": "Audioteca",
+        "concepto": "cultura técnica para todos",
+        "bajada": "Audio narrado con voces abiertas: un podcast sobre La individuación de Simondon y otro que despliega el argumento de la tesis."
+      },
+      "cuentos": {
+        "nombre": "Cuentos",
+        "concepto": "cultura técnica encarnada",
+        "bajada": "Sael: ficción especulativa sobre un técnico digital en una sociedad organizada en redes mesh después de una crisis."
+      }
+    }
+  },
+  "criterios": {
+    "titulo": "Mide la alta tecnicidad",
+    "intro": "Seis preguntas que propongo en la tesis para saber si un Estado, o una comunidad, participa en la génesis de un sistema técnico o solo se reajusta a él. Elige un caso, mueve los valores y compara las formas. Cerrillos es el caso real de la tesis; los demás son hipotéticos y a pequeña escala.",
+    "ui": {
+      "caso": "Caso",
+      "comparar": "Comparar con",
+      "ninguno": "ninguno",
+      "ficticio": "Caso ficticio",
+      "real": "Caso de la tesis",
+      "escala": "De 0 (ausente) a 4 (pleno)",
+      "promedio": "Promedio",
+      "debil": "Eslabón más débil",
+      "fuerte": "Eslabón más fuerte",
+      "reiniciar": "Volver al caso",
+      "editado": "Valores editados",
+      "radar": "Gráfico de araña con los seis criterios de alta tecnicidad",
+      "nota": "Los valores son una lectura mía, para pensar con ellos. No son una medición."
+    },
+    "ejes": [
+      { "corto": "Capacidades locales", "pregunta": "¿Construye el sistema capacidades locales?" },
+      { "corto": "Incidencia en el diseño", "pregunta": "¿Modifica el medio local alguna decisión de diseño del sistema?" },
+      { "corto": "Quién se reajusta", "pregunta": "Ante un cambio del medio, ¿se reajusta el sistema o se reajusta el medio?" },
+      { "corto": "Reversibilidad", "pregunta": "¿Es reversible la operación sin colapso del servicio?" },
+      { "corto": "Lectura del sistema", "pregunta": "¿Puede el Estado leer el sistema, o solo sancionarlo?" },
+      { "corto": "Voz de la comunidad", "pregunta": "¿Quiénes, dentro de la comunidad del medio asociado, tuvieron voz? ¿Quiénes quedaron excluidos?" }
+    ],
+    "casos": {
+      "cerrillos": {
+        "nombre": "Centro de datos de Google en Cerrillos",
+        "resumen": "La alta tecnicidad apareció dispersa y por la vía del conflicto. El colectivo aprendió a leer el sistema y forzó el paso a refrigeración por aire, pero Google definió el modo del reajuste y los canales formales excluyeron al colectivo."
+      },
+      "mesh": {
+        "nombre": "Red mesh vecinal",
+        "resumen": "Un barrio arma y mantiene su propia red de antenas con firmware abierto. Los vecinos entienden el sistema porque lo montaron, lo cambian cuando el medio cambia y pueden desconectarlo sin que se caiga el barrio."
+      },
+      "liceo": {
+        "nombre": "Liceo con plataforma escolar propietaria",
+        "resumen": "Un liceo contrata una plataforma en la nube sin acceso al código ni a los datos exportables. El proveedor define el diseño, el liceo solo se reajusta, y salir de la plataforma costaría un año de trabajo docente."
+      },
+      "municipio": {
+        "nombre": "Municipalidad con ventanilla de permisos en software libre",
+        "resumen": "El equipo informático de una comuna migra su ventanilla de permisos a software libre y hace talleres abiertos para leer el código. Gana capacidad de lectura y de cambio, pero los vecinos aún no participan en las decisiones de diseño."
+      },
+      "agua": {
+        "nombre": "Comité de agua rural con sensores abiertos",
+        "resumen": "Un comité de agua potable rural instala sensores de humedad con diseño abierto y guarda los datos en un pod propio. Las vecinas participaron desde el primer prototipo, aunque el comité depende de un solo técnico."
+      },
+      "consultorio": {
+        "nombre": "Consultorio con ficha clínica de proveedor único",
+        "resumen": "Un consultorio usa una ficha clínica cuyo formato no se puede exportar. El personal sabe operarla pero no leerla, y cambiar de proveedor obligaría a digitar de nuevo años de historias clínicas."
+      }
+    }
+  },
+  "pie": {
+    "texto": "Sitio estático, sin rastreadores. Contenido bajo licencia",
+    "licencia": "CC BY-SA 4.0",
+    "traduccion": "Las versiones en inglés y ruso son traducciones mías en borrador."
+  }
+}

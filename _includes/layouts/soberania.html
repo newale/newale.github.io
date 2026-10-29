@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{ t.htmlLang }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ t.meta.titulo }} · {{ site.nombre }}</title>
+  <meta name="description" content="{{ t.meta.descripcion }}">
+  <meta name="author" content="{{ site.nombre }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  {%- for l in soberania %}
+  <link rel="alternate" hreflang="{{ l.codigo }}" href="{{ site.url }}{% if l.codigo == 'es' %}/soberania-digital/{% else %}/soberania-digital/{{ l.codigo }}/{% endif %}">
+  {%- endfor %}
+  <link rel="alternate" hreflang="x-default" href="{{ site.url }}/soberania-digital/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ t.meta.titulo }}">
+  <meta property="og:description" content="{{ t.meta.descripcion }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:image" content="{{ site.url }}{{ site.imagenSocial }}">
+  <meta property="og:locale" content="{{ t.locale }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f3f2f2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e1519" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/static/imagenes/favicon.svg" type="image/svg+xml">
+  <link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="stylesheet" href="/static/css/soberania.css">
+</head>
+<body>
+  {{ content }}
+  <script src="/static/js/soberania.js" defer></script>
+</body>
+</html>

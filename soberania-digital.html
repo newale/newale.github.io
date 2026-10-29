@@ -1,0 +1,99 @@
+---
+layout: layouts/soberania.html
+pagination:
+  data: soberania
+  size: 1
+  alias: t
+permalink: "{% if t.codigo == 'es' %}/soberania-digital/{% else %}/soberania-digital/{{ t.codigo }}/{% endif %}"
+eleventyExcludeFromCollections: true
+---
+<a class="saltar" href="#proyectos">{{ t.ui.saltar }}</a>
+
+<header class="hero">
+  <canvas id="olas" aria-hidden="true"></canvas>
+
+  <div class="hero-top">
+    <a class="hero-volver" href="/">{{ t.ui.volver }} →</a>
+    <nav class="idiomas" aria-label="{{ t.ui.idioma }}">
+      {%- for l in soberania %}
+      <a href="{% if l.codigo == 'es' %}/soberania-digital/{% else %}/soberania-digital/{{ l.codigo }}/{% endif %}" hreflang="{{ l.codigo }}" lang="{{ l.codigo }}"{% if l.codigo == t.codigo %} aria-current="true"{% endif %} title="{{ l.nombre }}">{{ l.codigo | upper }}</a>
+      {%- endfor %}
+    </nav>
+  </div>
+
+  <div class="hero-titulo">
+    <p class="hero-autor">{{ t.autor }}</p>
+    <p class="hero-inst">{% for linea in t.institucion %}<span>{{ linea }}</span>{% endfor %}</p>
+    <h1>{{ t.titulo }}</h1>
+    <p class="hero-enlaces">
+      <a class="enlace" href="{{ t.pdf }}" download>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg>
+        {{ t.enlaces.pdf }}
+      </a>
+    </p>
+    <p class="nota">{{ t.enlaces.pdfNota }}</p>
+    <p class="nota nota-guia">{{ t.nota }}</p>
+    {%- if t.mostrarDedicatoria %}
+    <details class="dedicatoria">
+      <summary aria-label="{{ t.dedicatoria.titulo }}"><i></i><i></i><i></i><i></i></summary>
+      <p class="ded-lineas">{% for l in t.dedicatoria.lineas %}<span style="--i: {{ forloop.index0 }}">{{ l }}</span>{% endfor %}</p>
+    </details>
+    {%- endif %}
+  </div>
+
+  <section class="hero-resumen abstract" aria-labelledby="abs">
+    <h2 id="abs">{{ t.resumenTitulo }}</h2>
+    <p>{{ t.resumen }}</p>
+    <p class="claves"><strong>{{ t.clavesTitulo }}:</strong> {{ t.claves | join: " · " }}</p>
+  </section>
+</header>
+
+<main>
+<!-- ── Proyectos ── -->
+<section class="bloque" id="proyectos" aria-labelledby="h-proy">
+  <h2 id="h-proy">{{ t.proyectos.titulo }}</h2>
+  <p class="bloque-intro">{{ t.proyectos.intro }}</p>
+
+  <figure class="orbitas" aria-hidden="true">
+    <svg id="orbitas" viewBox="0 0 900 640"
+         data-centro="{{ t.proyectos.centro | escape }}"></svg>
+  </figure>
+
+  <ul class="proyectos">
+    {%- for p in t.proyectos.items %}
+    {%- assign ia = p.anillo | minus: 1 %}
+    <li class="proyecto" data-id="{{ p.id }}" data-anillo="{{ p.anillo }}" data-angulo="{{ p.angulo }}" data-concepto="{{ p.concepto | escape }}" data-nombre="{{ p.nombre | escape }}" data-anillo-nombre="{{ t.proyectos.anillos[ia] | escape }}">
+      <p class="rotulo">{{ t.proyectos.anillos[ia] }} · {{ p.concepto }}</p>
+      <h3>{{ p.nombre }}</h3>
+      <p>{{ p.bajada }}</p>
+      {%- if p.url %}
+      <a class="enlace" href="{{ p.url }}"{% if p.url contains 'http' %} target="_blank" rel="noopener"{% endif %}>{{ t.proyectos.ir }} <span aria-hidden="true">{% if p.url contains 'http' %}↗{% else %}→{% endif %}</span></a>
+      {%- else %}
+      <span class="enlace enlace-off">{{ t.proyectos.pronto }}</span>
+      {%- endif %}
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<!-- ── Criterios ── -->
+<section class="bloque" id="criterios" aria-labelledby="h-crit">
+  <h2 id="h-crit">{{ t.criterios.titulo }}</h2>
+  <p class="bloque-intro">{{ t.criterios.intro }}</p>
+
+  <div class="app" id="app-criterios">
+    <noscript>
+      <ul class="proyectos">
+        {%- for c in t.criterios.casos %}
+        <li class="proyecto"><p class="rotulo">{% if c.ficticio %}{{ t.criterios.ui.ficticio }}{% else %}{{ t.criterios.ui.real }}{% endif %}</p><h3>{{ c.nombre }}</h3><p>{{ c.resumen }}</p></li>
+        {%- endfor %}
+      </ul>
+    </noscript>
+  </div>
+  <script type="application/json" id="datos-criterios">{{ t.criterios | jsonify }}</script>
+</section>
+</main>
+
+<footer class="pie">
+  <p>{{ t.pie.texto }} <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">{{ t.pie.licencia }}</a>. {{ t.pie.traduccion }}</p>
+</footer>

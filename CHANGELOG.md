@@ -1,4 +1,4 @@
-## 2.0.0 (2026-09-20)
+## 2.0.0 (2026-10-29)
 
 * feat: add CC ([044bc75](https://github.com/newale/newale.github.io/commit/044bc75))
 * feat: add description to naguara and fix footer ([6f4acf0](https://github.com/newale/newale.github.io/commit/6f4acf0))
@@ -9,7 +9,8 @@
 * feat: adding medium on posts ([298759d](https://github.com/newale/newale.github.io/commit/298759d))
 * feat: adding orcid ([e4f6d87](https://github.com/newale/newale.github.io/commit/e4f6d87))
 * feat: adjust for icons in buttons ([9ed8cb7](https://github.com/newale/newale.github.io/commit/9ed8cb7))
-* feat: agregar botones de app y repositorio en tarjetas de aplicaciones ([2d0a2ee](https://github.com/newale/newale.github.io/commit/2d0a2ee))
+* feat: agregar botones de app y repositorio en tarjetas de aplicaciones ([34578be](https://github.com/newale/newale.github.io/commit/34578be))
+* feat: agregar la landing de la tesis sobre soberanía digital ([a0f6630](https://github.com/newale/newale.github.io/commit/a0f6630))
 * feat: arregla layout tareas largas ([53865a8](https://github.com/newale/newale.github.io/commit/53865a8))
 * feat: autocomplete in hecho from por-hacer ([b909605](https://github.com/newale/newale.github.io/commit/b909605))
 * feat: bio ([c196049](https://github.com/newale/newale.github.io/commit/c196049))

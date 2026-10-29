@@ -1,0 +1,125 @@
+{
+  "nombre": "English",
+  "htmlLang": "en",
+  "locale": "en_US",
+  "meta": {
+    "titulo": "Where Is Digital Sovereignty at Stake?",
+    "descripcion": "Master's thesis in Applied Ethics (UC) by Alejandro Bustos Núñez on authority and legitimacy in digital sovereignty, and the projects built around it."
+  },
+  "ui": { "saltar": "Skip to content", "idioma": "Language", "volver": "Go to my digital space" },
+  "institucion": [
+    "Pontificia Universidad Católica de Chile",
+    "Institute of Applied Ethics · Master's in Applied Ethics"
+  ],
+  "titulo": "Where Is Digital Sovereignty at Stake? Analyzing Authority and Legitimacy from a Technoethical Perspective",
+  "autor": "Alejandro Esteban Bustos Núñez",
+  "dedicatoria": {"titulo": "Dedication", "lineas": ["To Mom and Dad, here and in heaven", "To the public education that formed me", "For Ana, for her inspiration even from afar", "And to Raúl, for the conversations and a profound acceptance"]},
+  "resumenTitulo": "Abstract",
+  "resumen": "In this paper I ask what relationship with digital technical systems a democratic State needs in order to exercise legitimate authority over them. The dominant approaches to digital sovereignty, represented by Roberts (2024) and Fratini et al. (2024), give sovereignty a form without first shaping that relationship: they treat the norm as form and the technical system as matter. Drawing on Gilbert Simondon's critique of the hylomorphic scheme, I argue that jurisdictional, acquisition and implementation instruments are part of the associated milieu of the systems they aim to govern, and that they readjust to those systems when the State merely conditions what someone else anticipated. I propose the criterion of high technicity: a State exercises digital sovereignty when it takes part in the individuation of those systems with technical culture and retains the capacity to re-individuate with them. With Philip Pettit, I link that criterion to legitimacy: the State is legitimate when it neither dominates nor allows domination of the community that inhabits the system's associated milieu. I illustrate the framework with the case of Google's data center in Cerrillos.",
+  "clavesTitulo": "Keywords",
+  "claves": ["Sovereignty", "Digital technologies", "Ethics", "Technical culture", "Republicanism"],
+  "nota": "This work is carried out under the guidance of Gabriela Arriagada Bruneau. I am a thesis student in FONDECYT Regular project No. 1261259 “Knowledge, power and subjectivation in the age of algorithmic technologies of government”.",
+  "enlaces": {
+    "orcid": "My ORCID",
+    "pdf": "Download PDF",
+    "pdfNota": "Test file: I have not published the text yet, which is under review."
+  },
+  "proyectos": {
+    "titulo": "What is being built around it",
+    "intro": "The thesis is about a State. While writing it I kept starting other projects, some in direct consonance with it and others more peripheral, that ask the same question from the community and from practice: what does it mean to take part in the individuation of the systems that govern us?",
+    "anillos": ["In consonance", "Peripheral"],
+    "centro": "Thesis",
+    "ir": "See project",
+    "pronto": "Coming soon",
+    "items": {
+      "cooperativa": {
+        "nombre": "Digital Public Space Cooperative",
+        "concepto": "distributed technical culture",
+        "bajada": "A cooperative whose members host their own infrastructure and receive a Solid pod with an open identity (WebID). It is the inverse of Cerrillos: the community anticipates its own associated milieu."
+      },
+      "software": {
+        "nombre": "Software and apps",
+        "concepto": "reversibility",
+        "bajada": "espacio and a set of small apps that separate data from the application, so anyone can replace or abandon an app without losing what is theirs."
+      },
+      "arquitecturas": {
+        "nombre": "Sovereign architectures",
+        "concepto": "anticipating the milieu",
+        "bajada": "Architecture notes on Solid and Linked Data: another way of coupling system and milieu, with infrastructure distributed across homes instead of hyperscale data centers."
+      },
+      "estetica": {
+        "nombre": "Notes on aesthetics",
+        "concepto": "ethics of becoming",
+        "bajada": "An ethics that emerges in individuation, instead of applying norms to given objects. I cut it from the thesis text for length."
+      },
+      "audioteca": {
+        "nombre": "Audio library",
+        "concepto": "technical culture for everyone",
+        "bajada": "Narrated audio with open voices: a podcast on Simondon's Individuation and another that unfolds the thesis argument."
+      },
+      "cuentos": {
+        "nombre": "Short stories",
+        "concepto": "embodied technical culture",
+        "bajada": "Sael: speculative fiction about a digital technician in a society organized in mesh networks after a crisis."
+      }
+    }
+  },
+  "criterios": {
+    "titulo": "Measure high technicity",
+    "intro": "Six questions I propose in the thesis to tell whether a State, or a community, takes part in the genesis of a technical system or only readjusts to it. Pick a case, move the values and compare the shapes. Cerrillos is the thesis case; the others are hypothetical and small-scale.",
+    "ui": {
+      "caso": "Case",
+      "comparar": "Compare with",
+      "ninguno": "none",
+      "ficticio": "Fictional case",
+      "real": "Thesis case",
+      "escala": "From 0 (absent) to 4 (full)",
+      "promedio": "Average",
+      "debil": "Weakest link",
+      "fuerte": "Strongest link",
+      "reiniciar": "Back to the case",
+      "editado": "Edited values",
+      "radar": "Radar chart of the six criteria of high technicity",
+      "nota": "The values are my own reading, meant for thinking with. They are not a measurement."
+    },
+    "ejes": [
+      { "corto": "Local capacities", "pregunta": "Does the system build local capacities?" },
+      { "corto": "Design influence", "pregunta": "Does the local milieu change any design decision of the system?" },
+      { "corto": "Who readjusts", "pregunta": "When the milieu changes, does the system readjust or does the milieu?" },
+      { "corto": "Reversibility", "pregunta": "Can the operation be reversed without the service collapsing?" },
+      { "corto": "Legibility", "pregunta": "Can the State read the system, or only sanction it?" },
+      { "corto": "Community voice", "pregunta": "Who in the community of the associated milieu had a voice? Who was excluded?" }
+    ],
+    "casos": {
+      "cerrillos": {
+        "nombre": "Google data center in Cerrillos",
+        "resumen": "High technicity appeared scattered and through conflict. The collective learned to read the system and forced the shift to air cooling, but Google defined how the readjustment happened and the formal channels excluded the collective."
+      },
+      "mesh": {
+        "nombre": "Neighborhood mesh network",
+        "resumen": "A neighborhood builds and maintains its own antenna network with open firmware. Neighbors understand the system because they set it up, change it when the milieu changes and can disconnect it without the neighborhood collapsing."
+      },
+      "liceo": {
+        "nombre": "High school with a proprietary school platform",
+        "resumen": "A school contracts a cloud platform with no access to the code or to exportable data. The vendor defines the design, the school only readjusts, and leaving the platform would cost a year of teachers' work."
+      },
+      "municipio": {
+        "nombre": "Municipality with a free-software permit desk",
+        "resumen": "A town's IT team migrates its permit desk to free software and runs open workshops to read the code. It gains the ability to read and to change the system, but residents do not yet take part in design decisions."
+      },
+      "agua": {
+        "nombre": "Rural water committee with open sensors",
+        "resumen": "A rural drinking-water committee installs open-design moisture sensors and keeps the data in its own pod. Neighbors took part from the first prototype, though the committee depends on a single technician."
+      },
+      "consultorio": {
+        "nombre": "Clinic with a single-vendor medical record",
+        "resumen": "A clinic uses a medical record system whose format cannot be exported. Staff can operate it but not read it, and changing vendors would mean retyping years of patient histories."
+      }
+    }
+  },
+  "pie": {
+    "texto": "Static site, no trackers. Content under license",
+    "licencia": "CC BY-SA 4.0",
+    "traduccion": "The English and Russian versions are my draft translations."
+  }
+}
