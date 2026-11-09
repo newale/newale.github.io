@@ -20,23 +20,71 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("static/documentos");
   eleventyConfig.addPassthroughCopy("static/js");
   eleventyConfig.addPassthroughCopy("CNAME");
+  // Eleventy ignora carpetas con punto por defecto; espacio (la app de
+  // escritorio de la cooperativa) descubre las mini-apps de un dominio leyendo
+  // /.well-known/espacio-apps.json — ver tecnocoop.aebn.cl.
+  eleventyConfig.addPassthroughCopy(".well-known");
   eleventyConfig.addPassthroughCopy({
     "node_modules/jszip/dist/jszip.min.js": "static/js/vendor/jszip.min.js",
   });
 
-  const entradas = (collectionApi) =>
-    collectionApi
-      .getFilteredByGlob("bitacora/**/*.md")
-      .filter(esPublicado)
-      .sort((a, b) => new Date(b.date) - new Date(a.date));
+  // Cada sección tiene su carpeta de entradas. `todo` las junta para la
+  // portada y el feed.
+  const porFecha = (a, b) => new Date(b.date) - new Date(a.date);
+  const carpetas = {
+    investigacion: "investigacion/**/*.md",
+    proyectos: "proyectos/**/*.md",
+    cuentos: "obra/cuentos/**/*.md",
+  };
+  const deCarpeta = (collectionApi, glob) =>
+    collectionApi.getFilteredByGlob(glob).filter(esPublicado).sort(porFecha);
 
-  eleventyConfig.addCollection("entradas", entradas);
-
-  // Los tags que de verdad están en uso, para los botones del listado.
-  eleventyConfig.addCollection("tagsUsados", function (collectionApi) {
-    const todos = entradas(collectionApi).flatMap((item) => aLista(item.data.tags));
-    return [...new Set(todos)].sort((a, b) => a.localeCompare(b, "es"));
+  Object.entries(carpetas).forEach(([nombre, glob]) => {
+    eleventyConfig.addCollection(nombre, (collectionApi) => deCarpeta(collectionApi, glob));
   });
+  eleventyConfig.addCollection("todo", (collectionApi) =>
+    Object.values(carpetas).flatMap((glob) => deCarpeta(collectionApi, glob)).sort(porFecha)
+  );
+
+  // Los `tipo` en uso dentro de una lista de entradas, para los filtros.
+  eleventyConfig.addFilter("tiposUsados", (items) =>
+    [...new Set((items || []).map((item) => item.data.tipo).filter(Boolean))]
+  );
+
+  eleventyConfig.addFilter("nombreSeccion", (seccion) =>
+    ({ investigacion: "Investigación", proyectos: "Proyectos", obra: "Obra" })[seccion] || ""
+  );
+
+  eleventyConfig.addFilter("nombreTipo", (tipo) =>
+    ({ ensayo: "Ensayo", seminario: "Seminario", apunte: "Apunte", proyecto: "Proyecto", cuento: "Cuento" })[tipo] || tipo
+  );
+
+  eleventyConfig.addFilter("dosDigitos", (n) => String(n).padStart(2, "0"));
+
+  eleventyConfig.addFilter("formattedDateCorta", function (date) {
+    return new Date(date).toLocaleDateString("es-CL", { month: "short", year: "numeric", timeZone: "UTC" });
+  });
+
+  // Contenido de /soberania-digital/: cada archivo .md es un bloque editable
+  // (nodo, término del glosario, criterio…) y se ordena con `orden`.
+  ["bloques", "nodos", "glosario", "criterios", "objeciones", "tiempo"].forEach((carpeta) => {
+    eleventyConfig.addCollection(`soberania_${carpeta}`, (collectionApi) =>
+      collectionApi
+        .getFilteredByGlob(`contenido-soberania/${carpeta}/*.md`)
+        .sort((a, b) => (a.data.orden || 0) - (b.data.orden || 0))
+    );
+  });
+
+  eleventyConfig.addFilter("porSlug", (items, slug) =>
+    (items || []).find((item) => item.fileSlug === slug)
+  );
+
+  // Término del glosario dentro de un texto: enlaza al glosario y, con JS,
+  // abre la definición en un globo.
+  eleventyConfig.addShortcode(
+    "g",
+    (slug, texto) => `<a class="g" href="#g-${slug}" data-g="${slug}">${texto}</a>`
+  );
 
   eleventyConfig.addFilter("listaTags", aLista);
 

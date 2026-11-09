@@ -6,7 +6,7 @@ eleventyExcludeFromCollections: true
 <!--
   Hoja de estilos del feed: hace que /feed.xml se vea como una página del sitio
   cuando alguien lo abre en un navegador. Es XSLT 1.0 porque es lo único que los
-  navegadores implementan. Si Chrome termina de retirar XSLT, /bitacora/feed/
+  navegadores implementan. Si Chrome termina de retirar XSLT, /feed/
   sigue cumpliendo el mismo papel.
 -->
 <xsl:stylesheet version="1.0"
@@ -27,37 +27,29 @@ eleventyExcludeFromCollections: true
         <link rel="stylesheet" href="/static/css/sitio.css"/>
       </head>
       <body>
-        <nav class="nav-barra">
-          <div class="nav contenedor contenedor-lectura">
-            <a class="nav-brand" href="/">AEBN</a>
-            <a href="/bitacora/">Bitácora</a>
-            <a href="/musica/">Música</a>
-            <a href="/aplicaciones/">Aplicaciones</a>
-            <a href="/sobre-mi/">Sobre mí</a>
-          </div>
-        </nav>
+        {% include "components/nav.html" %}
 
         <div class="contenedor contenedor-lectura">
           <div class="aviso-feed">
             <p class="aviso-feed-titulo">Esto es un feed</p>
             <p>
               No está pensado para leerse acá: es la dirección que se pega en un lector
-              de feeds para seguir el blog sin depender de un algoritmo ni dejar un correo.
+              de feeds para seguir el sitio sin depender de un algoritmo ni dejar un correo.
             </p>
             <p class="feed-url"><code>{{ site.url }}/feed.xml</code></p>
             <p>
-              <a href="/bitacora/feed/">¿Cómo se usa esto?</a> ·
-              <a href="/bitacora/">Ir al blog</a>
+              <a href="/feed/">¿Cómo se usa esto?</a> ·
+              <a href="/">Ir al sitio</a>
             </p>
           </div>
 
           <h1><xsl:value-of select="/atom:feed/atom:title"/></h1>
           <p class="text-muted"><xsl:value-of select="/atom:feed/atom:subtitle"/></p>
 
-          <span class="kicker">Entradas</span>
-          <div class="grid-tarjetas">
+          <span class="rotulo">Entradas</span>
+          <div class="grid-tarjetas grid-dos">
             <xsl:for-each select="/atom:feed/atom:entry">
-              <a class="card elev-sm">
+              <a class="card">
                 <xsl:attribute name="href">
                   <xsl:value-of select="atom:link/@href"/>
                 </xsl:attribute>

@@ -1,0 +1,25 @@
+{%- comment -%}
+  Índice de entradas tipo sumario. Recibe `items` (lista de entradas) y,
+  opcionales, `conSeccion` para mostrar la sección además del tipo y
+  `limite` para cortar la lista.
+{%- endcomment -%}
+<ol class="indice">
+  {%- assign tope = limite | default: 999 -%}
+  {%- for entrada in items limit: tope %}
+  <li class="indice-item" data-tipo="{{ entrada.data.tipo }}">
+    <a href="{{ entrada.url }}">
+      <span class="indice-num" aria-hidden="true"><span>{{ forloop.index | dosDigitos }}</span></span>
+      <span class="indice-meta">
+        {%- if conSeccion %}<span>{{ entrada.data.seccion | nombreSeccion }}</span>{% endif %}
+        {%- unless conSeccion and entrada.data.tipo == "proyecto" %}<span>{{ entrada.data.tipo | nombreTipo }}</span>{% endunless %}
+        <span><time datetime="{{ entrada.date | isoDate }}">{{ entrada.date | formattedDateCorta }}</time></span>
+      </span>
+      <span class="indice-texto">
+        <span class="indice-titulo">{{ entrada.data.title }}</span>
+        {% if entrada.data.resumen %}<span class="indice-resumen">{{ entrada.data.resumen }}</span>{% endif %}
+      </span>
+      {% if entrada.data.imagen %}<img class="indice-imagen" src="{{ entrada.data.imagen }}" alt="" loading="lazy">{% endif %}
+    </a>
+  </li>
+  {%- endfor %}
+</ol>

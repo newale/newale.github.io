@@ -13,29 +13,37 @@ eleventyExcludeFromCollections: true
   <canvas id="olas" aria-hidden="true"></canvas>
 
   <div class="hero-top">
-    <a class="hero-volver" href="/">{{ t.ui.volver }} →</a>
-    <nav class="idiomas" aria-label="{{ t.ui.idioma }}">
-      {%- for l in soberania %}
-      <a href="{% if l.codigo == 'es' %}/soberania-digital/{% else %}/soberania-digital/{{ l.codigo }}/{% endif %}" hreflang="{{ l.codigo }}" lang="{{ l.codigo }}"{% if l.codigo == t.codigo %} aria-current="true"{% endif %} title="{{ l.nombre }}">{{ l.codigo | upper }}</a>
-      {%- endfor %}
-    </nav>
+    <a class="hero-volver" href="/">{{ t.ui.volver }} (aebn.cl) →</a>
+    <div class="hero-controles">
+      <button type="button" class="btn-pausa" id="btn-pausa" aria-pressed="false" data-pausar="{{ t.ui.pausar }}" data-reanudar="{{ t.ui.reanudar }}" hidden>{{ t.ui.pausar }}</button>
+      <nav class="idiomas" aria-label="{{ t.ui.idioma }}">
+        {%- for l in soberania %}
+        <a href="{% if l.codigo == 'es' %}/soberania-digital/{% else %}/soberania-digital/{{ l.codigo }}/{% endif %}" hreflang="{{ l.codigo }}" lang="{{ l.codigo }}"{% if l.codigo == t.codigo %} aria-current="true"{% endif %} title="{{ l.nombre }}">{{ l.codigo | upper }}</a>
+        {%- endfor %}
+      </nav>
+    </div>
   </div>
 
   <div class="hero-titulo">
-    <p class="hero-autor">{{ t.autor }}</p>
-    <p class="hero-inst">{% for linea in t.institucion %}<span>{{ linea }}</span>{% endfor %}</p>
+    <p class="hero-inst">
+      {%- for fila in t.institucion %}
+      <span>{% for i in fila %}<a href="{{ i.url }}" target="_blank" rel="noopener">{{ i.texto }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}</span>
+      {%- endfor %}
+    </p>
     <h1>{{ t.titulo }}</h1>
+    <p class="hero-autor">{{ t.autor }}</p>
     <p class="hero-enlaces">
-      <a class="enlace" href="{{ t.pdf }}" download>
+      <a class="enlace" href="{{ t.pdf }}" target="_blank" rel="noopener">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg>
         {{ t.enlaces.pdf }}
       </a>
     </p>
-    <p class="nota">{{ t.enlaces.pdfNota }}</p>
-    <p class="nota nota-guia">{{ t.nota }}</p>
+    <p class="nota nota-guia">{{ t.guia.etiqueta }}: {{ t.guia.nombre }}</p>
+    <p class="nota nota-pdf">{{ t.presentado }}</p>
+    <p class="nota nota-pdf">{{ t.fondecyt }}</p>
     {%- if t.mostrarDedicatoria %}
     <details class="dedicatoria">
-      <summary aria-label="{{ t.dedicatoria.titulo }}"><i></i><i></i><i></i><i></i></summary>
+      <summary aria-label="{{ t.dedicatoria.titulo }}"><i></i><i></i><i></i></summary>
       <p class="ded-lineas">{% for l in t.dedicatoria.lineas %}<span style="--i: {{ forloop.index0 }}">{{ l }}</span>{% endfor %}</p>
     </details>
     {%- endif %}
@@ -49,15 +57,41 @@ eleventyExcludeFromCollections: true
 </header>
 
 <main>
+<!-- ── Cómo abordar ── -->
+<section class="bloque" id="abordar" aria-labelledby="h-abordar">
+  <h2 id="h-abordar">{{ t.abordar.titulo }}</h2>
+  <p class="bloque-intro">{{ t.abordar.intro }}</p>
+  <ul class="proyectos abordar">
+    {%- for i in t.abordar.items %}
+    <li class="proyecto" data-tipo="{{ i.tipo }}">
+      <p class="rotulo">{{ i.etiqueta }}</p>
+      <h3>{{ i.titulo }}</h3>
+      <p>{{ i.bajada }}</p>
+      {%- if i.url == "pdf" %}
+      <a class="enlace" href="{{ t.pdf }}" target="_blank" rel="noopener">{{ i.accion }} <span aria-hidden="true">↓</span></a>
+      {%- elsif i.url %}
+      <a class="enlace" href="{{ i.url }}">{{ i.accion }} <span aria-hidden="true">→</span></a>
+      {%- else %}
+      <span class="enlace enlace-off" title="{{ t.abordar.pronto }}">{{ t.abordar.pronto }} · {{ i.accion }}</span>
+      {%- endif %}
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+
 <!-- ── Proyectos ── -->
 <section class="bloque" id="proyectos" aria-labelledby="h-proy">
   <h2 id="h-proy">{{ t.proyectos.titulo }}</h2>
   <p class="bloque-intro">{{ t.proyectos.intro }}</p>
 
-  <figure class="orbitas" aria-hidden="true">
-    <svg id="orbitas" viewBox="0 0 900 640"
-         data-centro="{{ t.proyectos.centro | escape }}"></svg>
+  <figure class="red" aria-hidden="true">
+    <svg id="red" viewBox="0 0 1000 760"></svg>
+    <figcaption class="leyenda-red">
+      <span><i class="pto p1"></i>{{ t.proyectos.anillos[0] }}</span>
+      <span><i class="pto p2"></i>{{ t.proyectos.anillos[1] }}</span>
+    </figcaption>
   </figure>
+  <script type="application/json" id="datos-red">{{ t.red | jsonify }}</script>
 
   <ul class="proyectos">
     {%- for p in t.proyectos.items %}
@@ -76,10 +110,14 @@ eleventyExcludeFromCollections: true
   </ul>
 </section>
 
+</main>
+
 <!-- ── Criterios ── -->
-<section class="bloque" id="criterios" aria-labelledby="h-crit">
-  <h2 id="h-crit">{{ t.criterios.titulo }}</h2>
-  <p class="bloque-intro">{{ t.criterios.intro }}</p>
+<section class="bloque bloque-ancho" id="criterios" aria-labelledby="h-crit">
+  <div class="columna">
+    <h2 id="h-crit">{{ t.criterios.titulo }}</h2>
+    <p class="bloque-intro">{{ t.criterios.intro }}</p>
+  </div>
 
   <div class="app" id="app-criterios">
     <noscript>
@@ -92,7 +130,7 @@ eleventyExcludeFromCollections: true
   </div>
   <script type="application/json" id="datos-criterios">{{ t.criterios | jsonify }}</script>
 </section>
-</main>
+
 
 <footer class="pie">
   <p>{{ t.pie.texto }} <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">{{ t.pie.licencia }}</a>. {{ t.pie.traduccion }}</p>

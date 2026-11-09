@@ -1,0 +1,21 @@
+---
+pagination:
+  data: redirecciones
+  size: 1
+  alias: r
+permalink: "{{ r.desde }}"
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8">
+  <title>Esta página se movió</title>
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="{{ r.hacia | urlAbsoluta }}">
+  <meta http-equiv="refresh" content="0; url={{ r.hacia }}">
+</head>
+<body>
+  <p>Esta página se movió a <a href="{{ r.hacia }}">{{ r.hacia | urlAbsoluta }}</a>.</p>
+</body>
+</html>

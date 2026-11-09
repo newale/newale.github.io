@@ -1,0 +1,18 @@
+---
+items:
+  - "Bratton (2015). The Stack."
+  - "Crawford (2021). Atlas of AI."
+  - "Feenberg (1999)."
+  - "Fratini et al. (2024)."
+  - "Goodin (2007)."
+  - "Hoeksema (2023)."
+  - "Hui (2016)."
+  - "Latour (2005)."
+  - "Pettit. Republicanism."
+  - "Philpott (2024)."
+  - "Roberts (2024)."
+  - "Simondon (2007). El modo de existencia de los objetos técnicos."
+  - "Simondon (2009). La individuación a la luz de las nociones de forma y de información."
+  - "Tironi & Albornoz (2025)."
+  - "Winner (1980)."
+---

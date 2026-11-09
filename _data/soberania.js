@@ -21,9 +21,24 @@ module.exports = fs
     return {
       ...t,
       codigo,
+      institucion: t.institucion.map((fila) => fila.map((i) => ({ ...i, url: comun.institucion[i.id] }))),
       mostrarDedicatoria: comun.dedicatoria,
       orcid: comun.orcid,
       pdf: comun.pdf,
+      abordar: {
+        ...t.abordar,
+        items: comun.abordar.map((i) => ({ ...i, ...t.abordar.items[i.id], etiqueta: t.abordar.etiquetas[i.tipo] })),
+      },
+      red: {
+        aria: t.proyectos.red.aria,
+        nodos: comun.red.nodos.map((n) => ({
+          ...n,
+          corto: t.proyectos.red.nodos[n.id],
+          anillo: (comun.proyectos.find((p) => p.id === n.id) || {}).anillo || 0,
+          url: n.id === "tesis" ? "#abordar" : (comun.proyectos.find((p) => p.id === n.id) || {}).url,
+        })),
+        aristas: comun.red.aristas.map(([a, b, tipo]) => ({ a, b, tipo, etiqueta: t.proyectos.red.aristas[`${a}|${b}`] })),
+      },
       proyectos: {
         ...t.proyectos,
         items: comun.proyectos.map((p) => ({ ...p, ...proy[p.id] })),

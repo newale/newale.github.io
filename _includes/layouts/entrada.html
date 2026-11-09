@@ -1,37 +1,51 @@
 ---
 layout: layouts/base.html
-navActiva: bitacora
 anchoLectura: true
+eleventyComputed:
+  navActiva: "{{ seccion }}"
 ---
+{%- assign urlSeccion = "/" | append: seccion | append: "/" -%}
+{%- if seccion == "obra" -%}{%- assign urlSeccion = "/obra/#cuentos" -%}{%- endif -%}
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BlogPosting",
+  "@type": "{% if tipo == 'cuento' %}ShortStory{% else %}Article{% endif %}",
   "headline": {{ title | jsonify }},
   "datePublished": "{{ date | isoDate }}",
   "description": {{ resumen | default: site.descripcion | jsonify }},
   "inLanguage": "es-CL",
-  "author": { "@type": "Person", "name": {{ site.nombre | jsonify }}, "url": "{{ site.url }}/sobre-mi/" },
+  {% if imagen %}"image": "{{ imagen | urlAbsoluta }}",{% endif %}
+  "author": { "@type": "Person", "name": {{ site.nombre | jsonify }}, "url": "{{ site.url }}/trayectoria/" },
   "mainEntityOfPage": "{{ site.url }}{{ page.url }}"
 }
 </script>
 
 <article class="entrada">
-  <p class="volver"><a href="/bitacora/">← Bitácora</a></p>
+  <header class="entrada-cabecera">
+    <p class="rotulo">
+      <a href="{{ urlSeccion }}">{{ seccion | nombreSeccion }}</a>
+      {%- if tipo %} · <span class="rotulo-acento">{{ tipo | nombreTipo }}</span>{% endif %}
+    </p>
 
-  <h1>{{ title }}</h1>
+    <h1>{{ title }}</h1>
 
-  <p class="entrada-meta">
-    <time datetime="{{ date | isoDate }}">{{ date | formattedDate }}</time>
-    {%- assign listaDeTags = tags | listaTags -%}
-    {%- if listaDeTags.size > 0 %}
-    {% for tag in listaDeTags %}<a href="/bitacora/{{ tag }}/" class="tag tag-outline">{{ tag }}</a>{% endfor %}
-    {%- endif %}
-    {%- if draft %}<span class="tag tag-borrador">borrador</span>{% endif %}
-  </p>
+    {% if resumen %}<p class="entrada-dek">{{ resumen }}</p>{% endif %}
+
+    <p class="entrada-meta">
+      <time datetime="{{ date | isoDate }}">{{ date | formattedDate }}</time>
+      {%- assign temas = tags | listaTags -%}
+      {%- for tema in temas %}<span class="entrada-tema">{{ tema }}</span>{% endfor %}
+      {%- if draft %}<span class="tag-borrador">borrador</span>{% endif %}
+    </p>
+  </header>
 
   <div class="entrada-cuerpo">
     {{ content }}
   </div>
+
+  <footer class="entrada-pie">
+    <a href="{{ urlSeccion }}">← {{ seccion | nombreSeccion }}</a>
+    <a href="/feed/">Seguir por feed</a>
+  </footer>
 </article>

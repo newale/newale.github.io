@@ -5,11 +5,14 @@
   <link rel="stylesheet" href="/static/css/sitio.css">
 </head>
 <body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
   {% include "components/nav.html" %}
 
-  <div class="contenedor {% if anchoLectura %}contenedor-lectura{% endif %}">
+  <main id="contenido" class="contenedor {% if anchoLectura %}contenedor-lectura{% endif %}">
     {{ content }}
+  </main>
 
+  <div class="contenedor">
     {% include "components/footer.html" %}
   </div>
 </body>

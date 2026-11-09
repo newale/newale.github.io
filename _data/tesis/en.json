@@ -6,28 +6,63 @@
     "titulo": "Where Is Digital Sovereignty at Stake?",
     "descripcion": "Master's thesis in Applied Ethics (UC) by Alejandro Bustos Núñez on authority and legitimacy in digital sovereignty, and the projects built around it."
   },
-  "ui": { "saltar": "Skip to content", "idioma": "Language", "volver": "Go to my digital space" },
+  "ui": {
+    "saltar": "Skip to content",
+    "idioma": "Language",
+    "volver": "Go to my digital space",
+    "pausar": "Pause animation",
+    "reanudar": "Resume animation"
+  },
   "institucion": [
-    "Pontificia Universidad Católica de Chile",
-    "Institute of Applied Ethics · Master's in Applied Ethics"
+    [
+      {
+        "id": "uc",
+        "texto": "Pontificia Universidad Católica de Chile"
+      }
+    ],
+    [
+      {
+        "id": "instituto",
+        "texto": "Institute of Applied Ethics"
+      },
+      {
+        "id": "magister",
+        "texto": "Master's in Applied Ethics"
+      }
+    ]
   ],
   "titulo": "Where Is Digital Sovereignty at Stake? Analyzing Authority and Legitimacy from a Technoethical Perspective",
   "autor": "Alejandro Esteban Bustos Núñez",
-  "dedicatoria": {"titulo": "Dedication", "lineas": ["To Mom and Dad, here and in heaven", "To the public education that formed me", "For Ana, for her inspiration even from afar", "And to Raúl, for the conversations and a profound acceptance"]},
+  "dedicatoria": {
+    "titulo": "Dedication",
+    "lineas": [
+      "To Mom and Dad, here and in heaven",
+      "To the public education that formed me",
+      "For Ana, for her inspiration even from afar",
+      "And to Raúl, for the conversations and a profound acceptance"
+    ]
+  },
   "resumenTitulo": "Abstract",
   "resumen": "In this paper I ask what relationship with digital technical systems a democratic State needs in order to exercise legitimate authority over them. The dominant approaches to digital sovereignty, represented by Roberts (2024) and Fratini et al. (2024), give sovereignty a form without first shaping that relationship: they treat the norm as form and the technical system as matter. Drawing on Gilbert Simondon's critique of the hylomorphic scheme, I argue that jurisdictional, acquisition and implementation instruments are part of the associated milieu of the systems they aim to govern, and that they readjust to those systems when the State merely conditions what someone else anticipated. I propose the criterion of high technicity: a State exercises digital sovereignty when it takes part in the individuation of those systems with technical culture and retains the capacity to re-individuate with them. With Philip Pettit, I link that criterion to legitimacy: the State is legitimate when it neither dominates nor allows domination of the community that inhabits the system's associated milieu. I illustrate the framework with the case of Google's data center in Cerrillos.",
   "clavesTitulo": "Keywords",
-  "claves": ["Sovereignty", "Digital technologies", "Ethics", "Technical culture", "Republicanism"],
-  "nota": "This work is carried out under the guidance of Gabriela Arriagada Bruneau. I am a thesis student in FONDECYT Regular project No. 1261259 “Knowledge, power and subjectivation in the age of algorithmic technologies of government”.",
+  "claves": [
+    "Sovereignty",
+    "Digital technologies",
+    "Ethics",
+    "Technical culture",
+    "Republicanism"
+  ],
   "enlaces": {
     "orcid": "My ORCID",
-    "pdf": "Download PDF",
-    "pdfNota": "Test file: I have not published the text yet, which is under review."
+    "pdf": "Download PDF"
   },
   "proyectos": {
     "titulo": "What is being built around it",
-    "intro": "The thesis is about a State. While writing it I kept starting other projects, some in direct consonance with it and others more peripheral, that ask the same question from the community and from practice: what does it mean to take part in the individuation of the systems that govern us?",
-    "anillos": ["In consonance", "Peripheral"],
+    "intro": "The thesis is not the center of these projects: it is one more node in an anisomorphic network, where each piece has its own form and connects to the others for different reasons. While writing it I kept starting other projects, some in direct consonance with it and others more peripheral, that ask the same question from the community and from practice: what does it mean to take part in the individuation of the systems that govern us?",
+    "anillos": [
+      "In consonance",
+      "Peripheral"
+    ],
     "centro": "Thesis",
     "ir": "See project",
     "pronto": "Coming soon",
@@ -62,6 +97,29 @@
         "concepto": "embodied technical culture",
         "bajada": "Sael: speculative fiction about a digital technician in a society organized in mesh networks after a crisis."
       }
+    },
+    "red": {
+      "nodos": {
+        "tesis": "The thesis",
+        "cooperativa": "Cooperative",
+        "software": "Software",
+        "arquitecturas": "Architectures",
+        "estetica": "Aesthetics",
+        "audioteca": "Audio library",
+        "cuentos": "Stories"
+      },
+      "aristas": {
+        "tesis|cooperativa": "distributed technical culture",
+        "tesis|arquitecturas": "anticipating the milieu",
+        "tesis|audioteca": "thesis podcast",
+        "cooperativa|software": "espacio",
+        "software|arquitecturas": "data in pods",
+        "cooperativa|arquitecturas": "Solid",
+        "audioteca|estetica": "Simondon",
+        "estetica|cuentos": "becoming",
+        "cuentos|arquitecturas": "mesh networks"
+      },
+      "aria": "Network of interconnected projects; the thesis is one of the nodes"
     }
   },
   "criterios": {
@@ -83,12 +141,30 @@
       "nota": "The values are my own reading, meant for thinking with. They are not a measurement."
     },
     "ejes": [
-      { "corto": "Local capacities", "pregunta": "Does the system build local capacities?" },
-      { "corto": "Design influence", "pregunta": "Does the local milieu change any design decision of the system?" },
-      { "corto": "Who readjusts", "pregunta": "When the milieu changes, does the system readjust or does the milieu?" },
-      { "corto": "Reversibility", "pregunta": "Can the operation be reversed without the service collapsing?" },
-      { "corto": "Legibility", "pregunta": "Can the State read the system, or only sanction it?" },
-      { "corto": "Community voice", "pregunta": "Who in the community of the associated milieu had a voice? Who was excluded?" }
+      {
+        "corto": "Local capacities",
+        "pregunta": "Does the system build local capacities?"
+      },
+      {
+        "corto": "Design influence",
+        "pregunta": "Does the local milieu change any design decision of the system?"
+      },
+      {
+        "corto": "Who readjusts",
+        "pregunta": "When the milieu changes, does the system readjust or does the milieu?"
+      },
+      {
+        "corto": "Reversibility",
+        "pregunta": "Can the operation be reversed without the service collapsing?"
+      },
+      {
+        "corto": "Legibility",
+        "pregunta": "Can the State read the system, or only sanction it?"
+      },
+      {
+        "corto": "Community voice",
+        "pregunta": "Who in the community of the associated milieu had a voice? Who was excluded?"
+      }
     ],
     "casos": {
       "cerrillos": {
@@ -121,5 +197,48 @@
     "texto": "Static site, no trackers. Content under license",
     "licencia": "CC BY-SA 4.0",
     "traduccion": "The English and Russian versions are my draft translations."
+  },
+  "abordar": {
+    "titulo": "How to approach the thesis",
+    "intro": "There is no single door. Depending on where you come from, this thesis can be read, listened to or explored. Pick an entry point.",
+    "etiquetas": {
+      "explorar": "Explore",
+      "escuchar": "Listen",
+      "leer": "Read"
+    },
+    "pronto": "Coming soon",
+    "items": {
+      "caso": {
+        "titulo": "Start with Cerrillos",
+        "bajada": "A data center, an aquifer in a mega-drought and a collective that challenged the project: the case that opens the thesis. You can apply the six criteria to it right there.",
+        "accion": "See the case"
+      },
+      "simondon": {
+        "titulo": "Simondon is the key",
+        "bajada": "The thesis rests on three of his ideas: individuation, the associated milieu and the critique of the hylomorphic scheme. I am preparing a podcast on Individuation so you can enter it without being a philosopher.",
+        "accion": "Listen in the audio library"
+      },
+      "audio": {
+        "titulo": "Listen to the thesis",
+        "bajada": "A podcast with a four-chapter script that unfolds the argument on digital sovereignty.",
+        "accion": "Listen in the audio library"
+      },
+      "texto": {
+        "titulo": "Read the full text",
+        "bajada": "An essay of about 6,000 words, under review until November 30, 2026. For now the file is a test.",
+        "accion": "Download PDF"
+      },
+      "proyectos": {
+        "titulo": "See what is being built around it",
+        "bajada": "The cooperative, the software and the architectures put the same question into practice, from the community.",
+        "accion": "See the projects"
+      }
+    }
+  },
+  "presentado": "Work presented as the final submission to qualify for the degree of Master in Applied Ethics from Pontificia Universidad Católica de Chile",
+  "fondecyt": "This project is part of FONDECYT Regular No. 1261259 “Knowledge, power and subjectivation in the age of algorithmic technologies of government”",
+  "guia": {
+    "etiqueta": "Advisor",
+    "nombre": "Gabriela Arriagada Bruneau"
   }
 }

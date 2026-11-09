@@ -3,19 +3,247 @@
   "orcid": "https://orcid.org/0009-0004-9893-0958",
   "pdf": "/static/documentos/soberania-digital-borrador-de-prueba.pdf",
   "proyectos": [
-    { "id": "cooperativa", "anillo": 1, "angulo": -90, "url": "https://tecnocoop.aebn.cl" },
-    { "id": "software", "anillo": 1, "angulo": 30, "url": "/aplicaciones/" },
-    { "id": "arquitecturas", "anillo": 1, "angulo": 150, "url": "/bitacora/apuntes/arquitecturas-soberanas-solid/" },
-    { "id": "estetica", "anillo": 2, "angulo": -30, "url": null },
-    { "id": "audioteca", "anillo": 2, "angulo": 90, "url": null },
-    { "id": "cuentos", "anillo": 2, "angulo": 210, "url": null }
+    {
+      "id": "cooperativa",
+      "anillo": 1,
+      "angulo": -90,
+      "url": "https://tecnocoop.aebn.cl"
+    },
+    {
+      "id": "software",
+      "anillo": 1,
+      "angulo": 30,
+      "url": "/proyectos/#aplicaciones"
+    },
+    {
+      "id": "arquitecturas",
+      "anillo": 1,
+      "angulo": 150,
+      "url": "/investigacion/arquitecturas-soberanas-solid/"
+    },
+    {
+      "id": "estetica",
+      "anillo": 2,
+      "angulo": -30,
+      "url": null
+    },
+    {
+      "id": "audioteca",
+      "anillo": 2,
+      "angulo": 90,
+      "url": null
+    },
+    {
+      "id": "cuentos",
+      "anillo": 2,
+      "angulo": 210,
+      "url": null
+    }
   ],
   "casos": [
-    { "id": "cerrillos", "ficticio": false, "valores": [2, 3, 2, 1, 2, 1] },
-    { "id": "mesh", "ficticio": true, "valores": [4, 3, 4, 4, 4, 3] },
-    { "id": "liceo", "ficticio": true, "valores": [1, 0, 0, 1, 0, 1] },
-    { "id": "municipio", "ficticio": true, "valores": [3, 3, 3, 3, 4, 2] },
-    { "id": "agua", "ficticio": true, "valores": [3, 2, 3, 3, 3, 4] },
-    { "id": "consultorio", "ficticio": true, "valores": [1, 1, 2, 0, 1, 2] }
-  ]
+    {
+      "id": "cerrillos",
+      "ficticio": false,
+      "valores": [
+        2,
+        3,
+        2,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "id": "mesh",
+      "ficticio": true,
+      "valores": [
+        4,
+        3,
+        4,
+        4,
+        4,
+        3
+      ]
+    },
+    {
+      "id": "liceo",
+      "ficticio": true,
+      "valores": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "municipio",
+      "ficticio": true,
+      "valores": [
+        3,
+        3,
+        3,
+        3,
+        4,
+        2
+      ]
+    },
+    {
+      "id": "agua",
+      "ficticio": true,
+      "valores": [
+        3,
+        2,
+        3,
+        3,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "consultorio",
+      "ficticio": true,
+      "valores": [
+        1,
+        1,
+        2,
+        0,
+        1,
+        2
+      ]
+    }
+  ],
+  "abordar": [
+    {
+      "id": "caso",
+      "tipo": "explorar",
+      "url": "#criterios"
+    },
+    {
+      "id": "simondon",
+      "tipo": "escuchar",
+      "url": null
+    },
+    {
+      "id": "audio",
+      "tipo": "escuchar",
+      "url": null
+    },
+    {
+      "id": "texto",
+      "tipo": "leer",
+      "url": "pdf"
+    },
+    {
+      "id": "proyectos",
+      "tipo": "explorar",
+      "url": "#proyectos"
+    }
+  ],
+  "red": {
+    "nodos": [
+      {
+        "id": "tesis",
+        "radio": 235,
+        "angulo": 150,
+        "vel": -0.028,
+        "tam": 36
+      },
+      {
+        "id": "arquitecturas",
+        "radio": 130,
+        "angulo": 200,
+        "vel": 0.05,
+        "tam": 26
+      },
+      {
+        "id": "cooperativa",
+        "radio": 235,
+        "angulo": -80,
+        "vel": -0.028,
+        "tam": 28
+      },
+      {
+        "id": "software",
+        "radio": 235,
+        "angulo": 75,
+        "vel": -0.028,
+        "tam": 24
+      },
+      {
+        "id": "audioteca",
+        "radio": 330,
+        "angulo": 110,
+        "vel": 0.018,
+        "tam": 24
+      },
+      {
+        "id": "estetica",
+        "radio": 330,
+        "angulo": 10,
+        "vel": 0.018,
+        "tam": 22
+      },
+      {
+        "id": "cuentos",
+        "radio": 330,
+        "angulo": 250,
+        "vel": 0.018,
+        "tam": 22
+      }
+    ],
+    "aristas": [
+      [
+        "tesis",
+        "cooperativa",
+        "concepto"
+      ],
+      [
+        "tesis",
+        "arquitecturas",
+        "concepto"
+      ],
+      [
+        "tesis",
+        "audioteca",
+        "concepto"
+      ],
+      [
+        "cooperativa",
+        "software",
+        "practica"
+      ],
+      [
+        "software",
+        "arquitecturas",
+        "practica"
+      ],
+      [
+        "cooperativa",
+        "arquitecturas",
+        "practica"
+      ],
+      [
+        "audioteca",
+        "estetica",
+        "concepto"
+      ],
+      [
+        "estetica",
+        "cuentos",
+        "relato"
+      ],
+      [
+        "cuentos",
+        "arquitecturas",
+        "relato"
+      ]
+    ]
+  },
+  "institucion": {
+    "uc": "https://www.uc.cl",
+    "instituto": "https://eticasaplicadas.uc.cl/",
+    "magister": "https://eticasaplicadas.uc.cl/programa-de-estudio/magister-eticas-aplicadas/"
+  }
 }

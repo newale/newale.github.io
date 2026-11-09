@@ -1,0 +1,19 @@
+{
+  "espacio_apps_version": 1,
+  "apps": [
+    {
+      "id": "por-hacer",
+      "name": "Por hacer",
+      "version": "0.3.0",
+      "entry": "/",
+      "sdk": "^0.1.0",
+      "capabilities": {
+        "solid": { "container": "por-hacer/", "modes": ["read", "append", "write"] },
+        "profile": "read",
+        "ui": ["prompt", "confirm", "notify"],
+        "files": false,
+        "share": false
+      }
+    }
+  ]
+}

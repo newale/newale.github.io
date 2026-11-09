@@ -9,29 +9,60 @@
   "ui": {
     "saltar": "Saltar al contenido",
     "idioma": "Idioma",
-    "volver": "Ir a mi espacio digital"
+    "volver": "Ir a mi espacio digital",
+    "pausar": "Pausar animación",
+    "reanudar": "Reanudar animación"
   },
   "institucion": [
-    "Pontificia Universidad Católica de Chile",
-    "Instituto de Éticas Aplicadas · Magíster en Éticas Aplicadas"
+    [
+      {
+        "id": "uc",
+        "texto": "Pontificia Universidad Católica de Chile"
+      }
+    ],
+    [
+      {
+        "id": "instituto",
+        "texto": "Instituto de Éticas Aplicadas"
+      },
+      {
+        "id": "magister",
+        "texto": "Magíster en Éticas Aplicadas"
+      }
+    ]
   ],
   "titulo": "¿Dónde se juega la soberanía digital? Analizando la autoridad y la legitimidad desde una perspectiva tecnoética",
   "autor": "Alejandro Esteban Bustos Núñez",
-  "dedicatoria": {"titulo": "Dedicatoria", "lineas": ["A mamá y papá, aquí y en el cielo", "A la Educación Pública que me formó", "Para Ana, por su inspiración aún en la distancia", "Y a Raúl por las conversaciones y una profunda aceptación"]},
+  "dedicatoria": {
+    "titulo": "Dedicatoria",
+    "lineas": [
+      "A mamá y papá, aquí y en el cielo",
+      "A la Educación Pública que me formó",
+      "Para Ana, por su inspiración aún en la distancia",
+      "Y a Raúl por las conversaciones y una profunda aceptación"
+    ]
+  },
   "resumenTitulo": "Resumen",
   "resumen": "En este trabajo pregunto qué relación con los sistemas técnicos digitales necesita un Estado democrático para ejercer sobre ellos una autoridad legítima. Los enfoques dominantes sobre soberanía digital, representados por Roberts (2024) y Fratini et al. (2024), dan forma a la soberanía sin formar primero esa relación: tratan la norma como forma y el sistema técnico como materia. A partir de la crítica de Gilbert Simondon al esquema hilemórfico, sostengo que los instrumentos jurisdiccionales, adquisitivos y de implementación forman parte del medio asociado de los sistemas que pretenden gobernar, y que se reajustan a ellos cuando el Estado solo condiciona lo que otro anticipó. Propongo el criterio de alta tecnicidad: un Estado ejerce soberanía digital cuando participa en la individuación de esos sistemas con cultura técnica y conserva capacidad de reindividuarse con ellos. Con Philip Pettit, vinculo ese criterio con la legitimidad: el Estado es legítimo cuando no domina ni deja dominar a la comunidad que habita el medio asociado del sistema. Ilustro el marco con el caso del centro de datos de Google en Cerrillos.",
   "clavesTitulo": "Palabras clave",
-  "claves": ["Soberanía", "Tecnologías digitales", "Ética", "Cultura técnica", "Republicanismo"],
-  "nota": "Este trabajo se realiza bajo la guía de Gabriela Arriagada Bruneau. Soy tesista del proyecto FONDECYT Regular N°1261259 «Saber, poder y subjetivación en la era de las tecnologías algorítmicas de gobierno».",
+  "claves": [
+    "Soberanía",
+    "Tecnologías digitales",
+    "Ética",
+    "Cultura técnica",
+    "Republicanismo"
+  ],
   "enlaces": {
     "orcid": "Mi ORCID",
-    "pdf": "Descargar PDF",
-    "pdfNota": "Archivo de prueba: aún no publico el texto, que está en revisión."
+    "pdf": "Descargar PDF"
   },
   "proyectos": {
     "titulo": "Lo que se construye alrededor",
-    "intro": "La tesis trata de un Estado. Mientras la escribía fui levantando otros proyectos, unos en consonancia directa con ella y otros más periféricos, que hacen la misma pregunta desde la comunidad y la práctica: qué significa participar en la individuación de los sistemas que nos gobiernan.",
-    "anillos": ["En consonancia", "Periféricos"],
+    "intro": "La tesis no es el centro de estos proyectos: es un nodo más de una red anisomorfa, donde cada pieza tiene su propia forma y se conecta con las otras por razones distintas. Mientras la escribía fui levantando otros proyectos, unos en consonancia directa con ella y otros más periféricos, que hacen la misma pregunta desde la comunidad y la práctica: qué significa participar en la individuación de los sistemas que nos gobiernan.",
+    "anillos": [
+      "En consonancia",
+      "Periféricos"
+    ],
     "centro": "Tesis",
     "ir": "Ver proyecto",
     "pronto": "Próximamente",
@@ -66,6 +97,29 @@
         "concepto": "cultura técnica encarnada",
         "bajada": "Sael: ficción especulativa sobre un técnico digital en una sociedad organizada en redes mesh después de una crisis."
       }
+    },
+    "red": {
+      "nodos": {
+        "tesis": "La tesis",
+        "cooperativa": "Cooperativa",
+        "software": "Software",
+        "arquitecturas": "Arquitecturas",
+        "estetica": "Estética",
+        "audioteca": "Audioteca",
+        "cuentos": "Cuentos"
+      },
+      "aristas": {
+        "tesis|cooperativa": "cultura técnica distribuida",
+        "tesis|arquitecturas": "anticipación del medio",
+        "tesis|audioteca": "podcast de la tesis",
+        "cooperativa|software": "espacio",
+        "software|arquitecturas": "datos en pods",
+        "cooperativa|arquitecturas": "Solid",
+        "audioteca|estetica": "Simondon",
+        "estetica|cuentos": "devenir",
+        "cuentos|arquitecturas": "redes mesh"
+      },
+      "aria": "Red de proyectos conectados entre sí; la tesis es uno de los nodos"
     }
   },
   "criterios": {
@@ -87,12 +141,30 @@
       "nota": "Los valores son una lectura mía, para pensar con ellos. No son una medición."
     },
     "ejes": [
-      { "corto": "Capacidades locales", "pregunta": "¿Construye el sistema capacidades locales?" },
-      { "corto": "Incidencia en el diseño", "pregunta": "¿Modifica el medio local alguna decisión de diseño del sistema?" },
-      { "corto": "Quién se reajusta", "pregunta": "Ante un cambio del medio, ¿se reajusta el sistema o se reajusta el medio?" },
-      { "corto": "Reversibilidad", "pregunta": "¿Es reversible la operación sin colapso del servicio?" },
-      { "corto": "Lectura del sistema", "pregunta": "¿Puede el Estado leer el sistema, o solo sancionarlo?" },
-      { "corto": "Voz de la comunidad", "pregunta": "¿Quiénes, dentro de la comunidad del medio asociado, tuvieron voz? ¿Quiénes quedaron excluidos?" }
+      {
+        "corto": "Capacidades locales",
+        "pregunta": "¿Construye el sistema capacidades locales?"
+      },
+      {
+        "corto": "Incidencia en el diseño",
+        "pregunta": "¿Modifica el medio local alguna decisión de diseño del sistema?"
+      },
+      {
+        "corto": "Quién se reajusta",
+        "pregunta": "Ante un cambio del medio, ¿se reajusta el sistema o se reajusta el medio?"
+      },
+      {
+        "corto": "Reversibilidad",
+        "pregunta": "¿Es reversible la operación sin colapso del servicio?"
+      },
+      {
+        "corto": "Lectura del sistema",
+        "pregunta": "¿Puede el Estado leer el sistema, o solo sancionarlo?"
+      },
+      {
+        "corto": "Voz de la comunidad",
+        "pregunta": "¿Quiénes, dentro de la comunidad del medio asociado, tuvieron voz? ¿Quiénes quedaron excluidos?"
+      }
     ],
     "casos": {
       "cerrillos": {
@@ -125,5 +197,48 @@
     "texto": "Sitio estático, sin rastreadores. Contenido bajo licencia",
     "licencia": "CC BY-SA 4.0",
     "traduccion": "Las versiones en inglés y ruso son traducciones mías en borrador."
+  },
+  "abordar": {
+    "titulo": "Cómo abordar la tesis",
+    "intro": "No hay una sola puerta. Según desde dónde vengas, esta tesis se puede leer, escuchar o explorar. Elige un punto de entrada.",
+    "etiquetas": {
+      "explorar": "Explorar",
+      "escuchar": "Escuchar",
+      "leer": "Leer"
+    },
+    "pronto": "Próximamente",
+    "items": {
+      "caso": {
+        "titulo": "Empieza por Cerrillos",
+        "bajada": "Un centro de datos, un acuífero en megasequía y un colectivo que impugnó el proyecto: el caso que abre la tesis. Ahí mismo puedes aplicar los seis criterios.",
+        "accion": "Ver el caso"
+      },
+      "simondon": {
+        "titulo": "Simondon es la clave",
+        "bajada": "La tesis se apoya en tres ideas suyas: la individuación, el medio asociado y la crítica al esquema hilemórfico. Preparo un podcast sobre La individuación para entrarle sin ser filósofo.",
+        "accion": "Escuchar en la audioteca"
+      },
+      "audio": {
+        "titulo": "Escucha la tesis",
+        "bajada": "Un podcast con un guion en cuatro capítulos que despliega el argumento sobre soberanía digital.",
+        "accion": "Escuchar en la audioteca"
+      },
+      "texto": {
+        "titulo": "Lee el texto completo",
+        "bajada": "Un ensayo de unas 6.000 palabras, en revisión hasta el 30 de noviembre de 2026. Hoy el archivo es de prueba.",
+        "accion": "Descargar PDF"
+      },
+      "proyectos": {
+        "titulo": "Mira lo que se construye alrededor",
+        "bajada": "La cooperativa, el software y las arquitecturas ponen en práctica la misma pregunta, desde la comunidad.",
+        "accion": "Ver los proyectos"
+      }
+    }
+  },
+  "presentado": "Trabajo presentado como entrega final para optar al grado de Magister en Éticas Aplicadas por la Pontificia Universidad Católica de Chile",
+  "fondecyt": "Este proyecto se enmarca en el FONDECYT Regular N°1261259 “Saber, poder y subjetivación en la era de las tecnologías algorítmicas de gobierno”",
+  "guia": {
+    "etiqueta": "Profesor guía",
+    "nombre": "Gabriela Arriagada Bruneau"
   }
 }

@@ -1,0 +1,47 @@
+---
+layout: layouts/base.html
+title: "Investigación"
+description: "Tesis sobre soberanía digital, ensayos, seminarios y apuntes de Alejandro Bustos Núñez en ética de la tecnología."
+navActiva: investigacion
+---
+{%- assign tesis = soberania | first -%}
+
+{% include "components/cabecera.html", num: "02", titulo: "Investigación", bajada: "Ética de la tecnología desde la estética y la filosofía de la técnica: la tesis, los ensayos del magíster y lo que voy pensando en el camino." %}
+
+<section class="bloque" aria-labelledby="tesis">
+  <span class="rotulo" id="tesis">Tesis de magíster · en curso</span>
+  <a class="recuadro" href="/soberania-digital/">
+    <div>
+      <h2 class="recuadro-titulo">{{ tesis.titulo }}</h2>
+    </div>
+    <div>
+      <p class="recuadro-texto">Magíster en Éticas Aplicadas, Pontificia Universidad Católica de Chile. Autoridad y legitimidad en la soberanía digital, y los proyectos que la acompañan.</p>
+      <span class="leer-mas">Ir a la tesis →</span>
+    </div>
+  </a>
+</section>
+
+<section class="bloque" aria-labelledby="escritos">
+  <h2 class="bloque-titulo" id="escritos">Escritos</h2>
+  <p class="bloque-bajada">Ensayos, exposiciones en seminarios y apuntes de trabajo.</p>
+
+  {%- assign tipos = collections.investigacion | tiposUsados -%}
+  {% if tipos.size > 1 %}
+  <div class="filtros" role="group" aria-label="Filtrar por tipo" data-filtros="indice-investigacion" hidden>
+    <button type="button" class="filtro" data-tipo="" aria-pressed="true">Todo</button>
+    {%- for tipo in tipos %}
+    <button type="button" class="filtro" data-tipo="{{ tipo }}" aria-pressed="false">{{ tipo | nombreTipo }}</button>
+    {%- endfor %}
+  </div>
+  {% endif %}
+
+  {% if collections.investigacion.size > 0 %}
+  <div id="indice-investigacion">
+    {% include "components/indice.html", items: collections.investigacion %}
+  </div>
+  {% else %}
+  <p class="indice-vacio">Todavía no hay escritos publicados.</p>
+  {% endif %}
+</section>
+
+<script src="/static/js/filtros.js" defer></script>

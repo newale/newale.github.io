@@ -1,9 +1,14 @@
-<nav class="nav-barra">
-  <div class="nav contenedor {% if anchoLectura %}contenedor-lectura{% endif %}">
-    <a class="nav-brand" href="/">AEBN</a>
-    <a href="/bitacora/"{% if navActiva == "bitacora" %} aria-current="page"{% endif %}>Bitácora</a>
-    <a href="/musica/"{% if navActiva == "musica" %} aria-current="page"{% endif %}>Música</a>
-    <a href="/aplicaciones/"{% if navActiva == "aplicaciones" %} aria-current="page"{% endif %}>Aplicaciones</a>
-    <a href="/sobre-mi/"{% if navActiva == "sobre-mi" %} aria-current="page"{% endif %}>Sobre mí</a>
+{%- comment -%}
+  Mancheta del sitio. También la incluye feed.xsl.liquid, así que tiene que
+  ser XML válido: atributos con comillas y etiquetas cerradas.
+{%- endcomment -%}
+<header class="mancheta">
+  <div class="mancheta-fila contenedor">
+    <a class="mancheta-marca" href="/">AEBN</a>
+    <nav class="mancheta-nav" aria-label="Secciones">
+      {%- for item in navegacion %}
+      <a href="{{ item.url }}"{% if navActiva == item.id %} aria-current="page"{% endif %}><span class="mancheta-num" aria-hidden="true">{{ forloop.index0 | dosDigitos }}</span>{{ item.nombre }}</a>
+      {%- endfor %}
+    </nav>
   </div>
-</nav>
+</header>

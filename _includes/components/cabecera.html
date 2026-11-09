@@ -1,0 +1,6 @@
+{%- comment -%} Cabecera de sección: número, titular grande y bajada. {%- endcomment -%}
+<header class="cabecera">
+  <p class="cabecera-num" aria-hidden="true">{{ num }}</p>
+  <h1 class="cabecera-titulo">{{ titulo }}</h1>
+  {% if bajada %}<p class="cabecera-bajada">{{ bajada }}</p>{% endif %}
+</header>

@@ -1,0 +1,21 @@
+---
+items:
+  - registro: "Diagnóstico político"
+    autor: "Benjamin Bratton, The Stack (2015)"
+    funcion: "La soberanía se produce «by infrastructural lines»; el Stack asume el registro del Estado."
+  - registro: "Mecanismo"
+    autor: "Gilbert Simondon (2007, 2009)"
+    funcion: "Individuación, medio asociado, crítica del hilemorfismo, cultura técnica, hipertelia."
+  - registro: "Criterio normativo"
+    autor: "Philip Pettit, Republicanism"
+    funcion: "Libertad como no-dominación; contestabilidad; dominium e imperium."
+  - registro: "Mediación artefacto-política"
+    autor: "Langdon Winner (1980), Bruno Latour (2005), Yuk Hui (2016)"
+    funcion: "Los artefactos tienen política; Hui critica la simetría de Latour y extiende a Simondon al objeto digital."
+  - registro: "Rivales críticos"
+    autor: "Huw Roberts (2024), Fratini et al. (2024)"
+    funcion: "Dan forma a la soberanía sin formar primero la relación."
+  - registro: "Escala material"
+    autor: "Kate Crawford, Atlas of AI (2021)"
+    funcion: "Minerales, agua, energía: la capa Tierra del Stack."
+---

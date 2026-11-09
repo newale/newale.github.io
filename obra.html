@@ -1,0 +1,37 @@
+---
+layout: layouts/base.html
+title: "Obra"
+description: "Música de Alejandro Bustos Núñez (siniestra, male) y, pronto, cuentos."
+navActiva: obra
+---
+
+{% include "components/cabecera.html", num: "04", titulo: "Obra", bajada: "Lo que hago sin que sea trabajo: música, y pronto los cuentos." %}
+
+<section class="bloque" id="musica" aria-labelledby="titulo-musica">
+  <h2 class="bloque-titulo" id="titulo-musica">Música</h2>
+  <p class="bloque-bajada">Dos proyectos, dos registros. La música se escucha en <a href="https://musica.aebn.cl" target="_blank" rel="noopener">Música</a>, el reproductor de la cooperativa, donde cada artista publica desde su propio Pod.</p>
+
+  <div class="discos">
+    {%- for disco in obra.musica %}
+    <article class="disco" id="{{ disco.slug }}">
+      <img class="disco-portada" src="{{ disco.portada }}" alt="Portada de {{ disco.obra }}, de {{ disco.nombre }}">
+      <span class="rotulo">{{ disco.formato }} · {{ disco.genero }} · {{ disco.anio }}</span>
+      <h3 class="disco-nombre">{{ disco.nombre }}</h3>
+      <p class="disco-obra">{{ disco.obra }}</p>
+      <p class="disco-desc">{{ disco.descripcion }}</p>
+      <p class="disco-enlaces">
+        {%- for enlace in disco.enlaces %}
+        <a class="btn {% if enlace.principal %}btn-primary{% else %}btn-secondary{% endif %}" href="{{ enlace.url }}" target="_blank" rel="noopener">{{ enlace.nombre }}</a>
+        {%- endfor %}
+      </p>
+    </article>
+    {%- endfor %}
+  </div>
+</section>
+
+{% if collections.cuentos.size > 0 %}
+<section class="bloque" id="cuentos" aria-labelledby="titulo-cuentos">
+  <h2 class="bloque-titulo" id="titulo-cuentos">Cuentos</h2>
+  {% include "components/indice.html", items: collections.cuentos %}
+</section>
+{% endif %}

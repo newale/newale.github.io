@@ -5,7 +5,9 @@ module.exports = {
   titulo: "AEBN",
   nombre: "Alejandro E. Bustos Núñez",
   descripcion:
-    "Archivo personal de Alejandro Bustos: bitácora de ética de la tecnología, música y aplicaciones.",
+    "Alejandro Bustos Núñez: investigación en ética de la tecnología, proyectos de software libre y cooperativo, y obra musical y literaria.",
+  // Correo de contacto público. Vacío = no se muestra en el pie ni en Trayectoria.
+  correo: "",
   idioma: "es-CL",
   locale: "es_CL",
   imagenSocial: "/static/imagenes/og-default.png",
