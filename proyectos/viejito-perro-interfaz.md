@@ -2,13 +2,14 @@
 title: "Viejito-Perro: cómo hacer sensible un dato doméstico"
 date: 2026-11-09
 resumen: "Raúl Zuleta convirtió un notebook heredado en una estación ambiental para su casa. Mi parte fue pensar la interfaz: cómo devolverle a una persona, como algo que se siente, lo que los sensores convierten en números."
-tipo: ensayo
+tipo: proyecto
+orden: 5
 tags:
   - electrónica
   - interfaces
 ---
 
-Mi amigo Raúl Zuleta tiene en su casa un computador viejo que se llama Viejito-Perro. Era un notebook querido que le heredaron, y en vez de dejarlo morir lo convirtió en servidor doméstico. Después le fue agregando placas y sensores: temperatura, humedad, presión, luz, algo de actividad acústica. Hoy dos nodos, uno en la sala y otro en el dormitorio, registran cómo varía la vivienda y lo guardan dentro de la casa. Raúl lo documenta en su sitio como un proyecto de [ecología audiovisual](https://razc.cl/proyecto.html?id=ecologia-audiovisual), y lo que sigue no reemplaza esa página: es lo que vi desde mi lado.
+Mi amigo [Raúl Zuleta](https://razc.cl) tiene en su casa un computador viejo que se llama Viejito-Perro. Era un notebook querido que le heredaron, y en vez de dejarlo morir lo convirtió en servidor doméstico. Después le fue agregando placas y sensores: temperatura, humedad, presión, luz, algo de actividad acústica. Hoy dos nodos, uno en la sala y otro en el dormitorio, registran cómo varía la vivienda y lo guardan dentro de la casa. Raúl lo documenta en su sitio como un proyecto de [ecología audiovisual](https://razc.cl/proyecto.html?id=ecologia-audiovisual), y lo que sigue no reemplaza esa página: es lo que vi desde mi lado.
 
 La pregunta de Raúl es de antropólogo: **¿cómo conocer un ambiente sin dejar de habitarlo?** Los sensores producen datos, los datos se promedian, los promedios se grafican, y en algún punto del camino la casa desaparece. Uno sabe que la humedad del dormitorio subió un 12 % a las ocho de la mañana, pero ya no siente la ducha. La pregunta que me quedó a mí fue más de ingeniero: **si el dato ya existe, ¿cómo se lo devolvemos al cuerpo?**
 

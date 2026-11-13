@@ -1,28 +1,27 @@
 ---
 layout: layouts/base.html
 title: "Apuntes de estética"
-description: "Serie de apuntes de Alejandro Bustos Núñez sobre el curso de Estética del Magíster en Éticas Aplicadas: autores, discusiones y preguntas, clase a clase."
+description: "Colección de textos de Alejandro Bustos Núñez sobre estética y tecnoestética."
 navActiva: investigacion
 permalink: /investigacion/apuntes-de-estetica/
 ---
-{%- assign datosSerie = series.estetica -%}
-{%- assign entradas = collections.investigacion | deSerie: "estetica" -%}
+{%- assign datosColeccion = colecciones.estetica -%}
+{%- assign entradas = collections.investigacion | deColeccion: "estetica" -%}
 
-{% include "components/cabecera.html", titulo: datosSerie.nombre, bajada: datosSerie.bajada %}
+{% include "components/cabecera.html", titulo: datosColeccion.nombre, bajada: datosColeccion.bajada %}
 
-<section class="bloque" aria-labelledby="serie-entradas">
-  <span class="rotulo">{{ datosSerie.curso }}</span>
-  <h2 class="bloque-titulo" id="serie-entradas">Clase a clase</h2>
-  <p class="bloque-bajada">En orden, de la primera a la última. Algunas entradas tienen versión narrada para escuchar.</p>
+<section class="bloque" aria-labelledby="coleccion-entradas">
+  <h2 class="bloque-titulo" id="coleccion-entradas">Textos</h2>
+  <p class="bloque-bajada">Los textos de la colección, del más antiguo al más reciente.</p>
 
   {% if entradas.size > 0 %}
   {% include "components/indice.html", items: entradas %}
   {% else %}
-  <p class="indice-vacio">Todavía no hay apuntes publicados.</p>
+  <p class="indice-vacio">Todavía no hay textos publicados.</p>
   {% endif %}
 </section>
 
-<section class="bloque" aria-labelledby="serie-audioteca">
-  <h2 class="bloque-titulo" id="serie-audioteca">En la audioteca</h2>
-  <p class="bloque-bajada">Estos apuntes también se van a poder escuchar, narrados con voces abiertas, junto al podcast sobre <em>La individuación</em> de Simondon. Están ligados a la <a href="/soberania-digital/">tesis</a>: ahí la estética quedó fuera del texto por extensión, y aquí tiene su lugar.</p>
+<section class="bloque" aria-labelledby="coleccion-audioteca">
+  <h2 class="bloque-titulo" id="coleccion-audioteca">En la audioteca</h2>
+  <p class="bloque-bajada">Estos textos también se van a poder escuchar, narrados con voces abiertas, junto al podcast sobre <em>La individuación</em> de Simondon. Están ligados a la <a href="/soberania-digital/">tesis</a>: ahí la estética quedó fuera del texto por extensión, y aquí tiene su lugar.</p>
 </section>

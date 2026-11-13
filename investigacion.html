@@ -21,14 +21,14 @@ navActiva: investigacion
   </a>
 </section>
 
-<section class="bloque" aria-labelledby="series">
-  <h2 class="bloque-titulo" id="series">Series</h2>
-  <p class="bloque-bajada">Textos que se leen en orden, uno tras otro.</p>
+<section class="bloque" aria-labelledby="colecciones">
+  <h2 class="bloque-titulo" id="colecciones">Colecciones</h2>
+  <p class="bloque-bajada">Textos agrupados por tema, que se van ampliando.</p>
   <div class="grid-tarjetas grid-dos">
-    <a class="card" href="{{ series.estetica.url }}">
-      <span class="card-kicker">Serie · {{ series.estetica.curso }}</span>
-      <span class="card-title">{{ series.estetica.nombre }}</span>
-      <p class="card-body">{{ series.estetica.bajada }}</p>
+    <a class="card" href="{{ colecciones.estetica.url }}">
+      <span class="card-kicker">Colección</span>
+      <span class="card-title">{{ colecciones.estetica.nombre }}</span>
+      <p class="card-body">{{ colecciones.estetica.bajada }}</p>
     </a>
   </div>
 </section>
@@ -52,11 +52,15 @@ navActiva: investigacion
   <h2 class="bloque-titulo" id="podcast">Podcast</h2>
   <p class="bloque-bajada">Audio que lleva parte de mi investigación a la actualidad del país.</p>
   <div class="grid-tarjetas grid-dos">
-    <a class="card" href="/investigacion/panorama-digital-en-chile/">
+    <div class="card">
       <span class="card-kicker">Podcast · audioteca</span>
-      <span class="card-title">Panorama digital en Chile</span>
+      <a class="card-title" href="/investigacion/panorama-digital-en-chile/">Panorama digital en Chile</a>
       <p class="card-body">Protección de datos, inteligencia artificial, infraestructura y datacenters.</p>
-    </a>
+      <p class="card-enlaces">
+        <a class="btn btn-secondary" href="/investigacion/panorama-digital-en-chile/">Ver los episodios</a>
+        <a class="btn btn-primary" href="https://audioteca.aebn.cl/usuario-aebn/panorama-digital-en-chile" target="_blank" rel="noopener">Escuchar en la audioteca</a>
+      </p>
+    </div>
   </div>
 </section>
 
@@ -65,7 +69,7 @@ navActiva: investigacion
   <p class="bloque-bajada">Textos que desarrollan una idea de principio a fin, y apuntes de trabajo que se publican por sí solos.</p>
   <div class="grid-tarjetas grid-dos">
     {%- for e in collections.investigacion %}
-      {%- if e.data.tipo == "ensayo" or e.data.tipo == "apunte" and e.data.serie == nil %}
+      {%- if e.data.tipo == "ensayo" or e.data.tipo == "exploracion" or e.data.tipo == "apunte" and e.data.coleccion == nil %}
     <a class="card" href="{{ e.url }}">
       <span class="card-kicker">{{ e.data.tipo | nombreTipo }} · <time datetime="{{ e.date | isoDate }}">{{ e.date | formattedDateCorta }}</time></span>
       <span class="card-title">{{ e.data.title }}</span>

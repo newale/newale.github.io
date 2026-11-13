@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.html
 title: "Inicio"
-description: "Alejandro Bustos Núñez: investigación en ética de la tecnología, la cooperativa Tecnocoop, música y cuentos."
+description: "Alejandro Bustos Núñez: investigación en ética de la tecnología, la Tecnocooperativa, música y cuentos."
 navActiva: inicio
 ---
 {%- assign tesis = soberania | first -%}
@@ -52,12 +52,28 @@ navActiva: inicio
     <h2 class="franja-titulo" id="franja-proyectos"><a href="/proyectos/">Proyectos</a></h2>
     <a class="franja-ver" href="/proyectos/">Ver todo →</a>
   </div>
+  {%- assign principal = collections.fichas | first %}
+  <a class="recuadro" href="{{ principal.url }}">
+    <div>
+      <span class="rotulo">Proyecto principal</span>
+      <h3 class="recuadro-titulo">{{ principal.data.title }}</h3>
+    </div>
+    <div>
+      <p class="recuadro-texto">{{ principal.data.resumen }}</p>
+      <span class="leer-mas">Ver el proyecto →</span>
+    </div>
+  </a>
+  <p class="recuadro-acciones"><a class="btn btn-secondary" href="{{ principal.data.sitio }}" target="_blank" rel="noopener">Ir al sitio web</a></p>
   <div class="grid-tarjetas grid-tres">
-    {%- for e in collections.fichas %}
-    <a class="card" href="{{ e.url }}">
-      <span class="card-title">{{ e.data.title }}</span>
+    {%- for e in collections.fichas offset: 1 %}
+    <div class="card">
+      <a class="card-title" href="{{ e.url }}">{{ e.data.title }}</a>
       {% if e.data.resumen %}<p class="card-body">{{ e.data.resumen }}</p>{% endif %}
-    </a>
+      <p class="card-enlaces">
+        <a class="btn btn-secondary" href="{{ e.url }}">Ver el proyecto</a>
+        {% if e.data.sitio %}<a class="btn btn-primary" href="{{ e.data.sitio }}" target="_blank" rel="noopener">Ir al sitio web</a>{% endif %}
+      </p>
+    </div>
     {%- endfor %}
   </div>
 </section>
@@ -67,6 +83,7 @@ navActiva: inicio
     <h2 class="franja-titulo" id="franja-obra"><a href="/obra/">Obras</a></h2>
     <a class="franja-ver" href="/obra/">Ver todo →</a>
   </div>
+  <h3 class="franja-subtitulo franja-subtitulo-primero">Música</h3>
   <div class="discos">
     {%- for disco in obra.musica %}
     <a class="disco" href="/obra/#{{ disco.slug }}">
@@ -75,6 +92,19 @@ navActiva: inicio
       <span class="disco-nombre">{{ disco.nombre }}</span>
       <span class="disco-obra">{{ disco.obra }}</span>
     </a>
+    {%- endfor %}
+  </div>
+  <h3 class="franja-subtitulo">Audios</h3>
+  <div class="grid-tarjetas grid-dos">
+    {%- for audio in obra.audios %}
+    <div class="card">
+      <span class="card-kicker">Audioteca</span>
+      <span class="card-title">{{ audio.nombre }}</span>
+      <p class="card-body">{{ audio.descripcion }}</p>
+      <p class="card-enlaces">
+        <a class="btn btn-primary" href="{{ audio.url }}" target="_blank" rel="noopener">Escuchar en la audioteca</a>
+      </p>
+    </div>
     {%- endfor %}
   </div>
   <h3 class="franja-subtitulo">Cuentos</h3>

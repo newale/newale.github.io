@@ -1,16 +1,21 @@
 ---
-title: "El transistor y las compuertas lógicas: kit de sensibilización a la programación"
+title: "Programación tangible: del transistor a la compuerta lógica"
 date: 2026-10-14
-resumen: "Antes de programar, tocar el interruptor que lo hace posible. Un transistor, un botón y un LED en una protoboard, y después dos transistores en serie que forman una compuerta AND."
+resumen: "¿Y si aprender a programar empezara por tocar el interruptor que lo hace posible? Una exploración con un transistor, un botón y un LED en una protoboard, y después dos transistores en serie que forman una compuerta AND."
 draft: false
 imagen: "/static/imagenes/kit-AND-001.png"
-tipo: apunte
+tipo: proyecto
+orden: 4
+sitio: https://academia.tecnocooperativa.cl
+sitioTexto: Ir a la academia
 tags:
   - electrónica
   - educación
 ---
 
-Este es parte del **kit de sensibilización a la programación y la tecnología digital**. <!-- completar: para quién es el kit, dónde se usa (taller, colegio, curso) y qué otras piezas tiene --> La idea es partir por abajo: antes de escribir una línea de código, ver con las propias manos de qué está hecho lo digital.
+Programar se enseña casi siempre desde arriba: un lenguaje, un editor, una pantalla. Todo lo que hay debajo —el procesador, los chips, la electricidad— queda como una caja negra que simplemente funciona. Esta es una exploración en la dirección contraria, a la que he ido llamando **programación tangible**: partir por abajo, con las manos, y ver de qué está hecho lo digital antes de escribir una sola línea de código.
+
+El material de la exploración es un **kit** muy sencillo: una protoboard, transistores, compuertas lógicas y LEDs. <!-- completar: para quién lo imagino (taller, colegio, curso) y qué otras piezas tiene -->
 
 Y lo digital, en el fondo, está hecho de interruptores. Millones de ellos, apagándose y encendiéndose. Ese interruptor es el **transistor**.
 
@@ -44,3 +49,9 @@ Eso es una compuerta lógica **AND** (Y): la salida es verdadera solo si ambas e
   <video src="/static/imagenes/kit-AND-003.mp4" poster="/static/imagenes/kit-AND-003-poster.jpg" controls muted loop playsinline preload="none" aria-label="Se aprieta un pulsador y el LED sigue apagado; al apretar los dos a la vez, el LED azul se enciende."></video>
   <figcaption>La compuerta AND: dos pulsadores, dos transistores en serie. El LED solo se enciende con ambos apretados.</figcaption>
 </figure>
+
+## Hacia dónde sigue
+
+Dos transistores y dos botones ya alcanzan para ver una operación lógica. Con unas pocas compuertas más se puede armar una suma, y de ahí se entiende mejor qué quiere decir que un computador «suma»: esa pregunta la sigo en [¿Los computadores suman?](/investigacion/los-computadores-suman/).
+
+Este proyecto es también el punto de partida de un curso, **Programación tangible**, que estoy preparando para la [academia de la Tecnocooperativa](https://academia.tecnocooperativa.cl). Parte con este mismo kit para entender con las manos la base sobre la que funciona hoy la computación. Todavía está en preparación.

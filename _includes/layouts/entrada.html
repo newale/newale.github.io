@@ -39,13 +39,17 @@ eleventyComputed:
       {%- if draft %}<span class="tag-borrador">borrador</span>{% endif %}
     </p>
 
-    {%- if serie and series[serie] %}
-    {%- assign datosSerie = series[serie] -%}
-    {%- assign enSerie = collections.investigacion | posicionEnSerie: serie, page.url -%}
-    <p class="serie-marca">
-      <span class="rotulo">Serie</span>
-      <a href="{{ datosSerie.url }}">{{ datosSerie.nombre }}</a>
-      {%- if enSerie %} <span class="serie-pos">{{ enSerie.numero }} de {{ enSerie.total }}</span>{% endif %}
+    {%- if sitio %}
+    <p class="entrada-acciones"><a class="btn btn-primary" href="{{ sitio }}" target="_blank" rel="noopener">{{ sitioTexto | default: "Ir al sitio web" }}</a></p>
+    {%- endif %}
+
+    {%- if coleccion and colecciones[coleccion] %}
+    {%- assign datosColeccion = colecciones[coleccion] -%}
+    {%- assign enColeccion = collections.investigacion | posicionEnColeccion: coleccion, page.url -%}
+    <p class="coleccion-marca">
+      <span class="rotulo">Colección</span>
+      <a href="{{ datosColeccion.url }}">{{ datosColeccion.nombre }}</a>
+      {%- if enColeccion and enColeccion.total > 1 %} <span class="coleccion-pos">{{ enColeccion.numero }} de {{ enColeccion.total }}</span>{% endif %}
     </p>
     {%- endif %}
 
@@ -61,13 +65,13 @@ eleventyComputed:
     {{ content }}
   </div>
 
-  {%- if enSerie and enSerie.total > 1 %}
-  <nav class="serie-nav" aria-label="{{ datosSerie.nombre }}">
-    {%- if enSerie.anterior %}
-    <a class="serie-nav-anterior" href="{{ enSerie.anterior.url }}"><span class="rotulo">← Anterior</span>{{ enSerie.anterior.data.title }}</a>
+  {%- if enColeccion and enColeccion.total > 1 %}
+  <nav class="coleccion-nav" aria-label="{{ datosColeccion.nombre }}">
+    {%- if enColeccion.anterior %}
+    <a class="coleccion-nav-anterior" href="{{ enColeccion.anterior.url }}"><span class="rotulo">← Anterior</span>{{ enColeccion.anterior.data.title }}</a>
     {%- else %}<span></span>{% endif %}
-    {%- if enSerie.siguiente %}
-    <a class="serie-nav-siguiente" href="{{ enSerie.siguiente.url }}"><span class="rotulo">Siguiente →</span>{{ enSerie.siguiente.data.title }}</a>
+    {%- if enColeccion.siguiente %}
+    <a class="coleccion-nav-siguiente" href="{{ enColeccion.siguiente.url }}"><span class="rotulo">Siguiente →</span>{{ enColeccion.siguiente.data.title }}</a>
     {%- endif %}
   </nav>
   {%- endif %}

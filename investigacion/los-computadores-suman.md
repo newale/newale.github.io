@@ -13,7 +13,7 @@ tags:
 
 Escribo `2 + 2` en una calculadora y aparece un `4`. Nadie dudaría en decir que el computador sumó. Lo decimos con la misma naturalidad con que decimos que el reloj *marca* la hora o que el termómetro *sabe* cuánta fiebre tenemos. Pero basta bajar un par de niveles —sacar la carcasa, mirar el chip, poner un transistor en una protoboard— para que la frase empiece a incomodar. Ahí abajo no hay números. Hay corriente que pasa o no pasa, voltajes altos y bajos, calor. La pregunta de este texto es aparentemente ingenua: **¿los computadores suman?** No pretendo responderla. Me interesa más recorrer cómo ocurre, materialmente, una suma tan simple como 2 + 2 dentro de un procesador, y ver en qué punto de ese recorrido la pregunta se vuelve difícil.
 
-Este texto nace de los [kits de sensibilización a la programación](/investigacion/kit-transistor-compuertas-logicas/), donde un transistor, un botón y un LED bastan para armar una compuerta lógica. La compuerta AND de ese kit, como veremos, es la mitad de una suma.
+Este texto nace de los [exploración de programación tangible](/proyectos/programacion-tangible/), donde un transistor, un botón y un LED bastan para armar una compuerta lógica. La compuerta AND de ese kit, como veremos, es la mitad de una suma.
 
 ## Del número al voltaje
 

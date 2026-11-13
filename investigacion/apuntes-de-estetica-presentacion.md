@@ -3,7 +3,8 @@ title: "Apuntes de estética: por qué una serie"
 date: 2026-03-15
 resumen: "Antes de la primera clase: qué esperaba de un curso de estética en un magíster de ética, y por qué decidí ir dejando registro de lo que se discutía."
 tipo: apunte
-serie: estetica
+coleccion: estetica
+draft: true
 tags:
   - estética
 ---
@@ -26,6 +27,7 @@ Cada entrada corresponde a una clase o a un tema. Se pueden leer en orden, desde
   title: "Clase NN: <tema>"
   date: <fecha de la clase>
   tipo: apunte
-  serie: estetica
+  coleccion: estetica
+draft: true
   audio: /static/audios/estetica/NN.mp3   (opcional, cuando exista la versión narrada)
 -->

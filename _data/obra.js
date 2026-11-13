@@ -1,6 +1,14 @@
 // Proyectos musicales. La música ya no se reproduce ni se vende acá: vive en
 // musica.aebn.cl (la app de la cooperativa) y en las plataformas de streaming.
 module.exports = {
+  // Audios publicados en la audioteca de la cooperativa.
+  audios: [
+    {
+      nombre: "Audios de Santiago",
+      descripcion: "Audios de Santiago publicados en la audioteca de la cooperativa. El primero: «20 de octubre al medio día».",
+      url: "https://audioteca.aebn.cl/usuario-aebn/audios-santiago",
+    },
+  ],
   // Cuentos. Sin `url` se muestran como "Próximamente"; cuando el texto esté
   // listo, se crea la entrada en obra/cuentos/ y se pone su url acá.
   cuentos: [

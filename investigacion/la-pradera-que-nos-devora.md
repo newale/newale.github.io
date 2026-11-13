@@ -5,7 +5,7 @@ resumen: "The Veldt de Bradbury como horror cósmico producido: una tecnología 
 draft: false
 imagen: "/static/imagenes/ensayo-pradera/uros-totora.jpg"
 tipo: ensayo
-serie: estetica
+coleccion: estetica
 ---
 
 **Contexto**

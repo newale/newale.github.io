@@ -5,8 +5,8 @@ corto: "Cooperativa"
 concepto: "cultura técnica distribuida"
 conecta: "Cultura técnica · criterio 4 (reversibilidad)"
 enlaces:
-  - { texto: "Tecnocoop", url: "https://tecnocoop.aebn.cl" }
-  - { texto: "Proyectos: Tecnocoop", url: "/proyectos/tecnocoop/" }
+  - { texto: "Tecnocooperativa", url: "https://tecnocoop.aebn.cl" }
+  - { texto: "Proyectos: Tecnocooperativa", url: "/proyectos/tecnocoop/" }
 ---
 Cofundé con Raúl y Tomi la Cooperativa Espacio Público Digital. Los propios miembros alojan la infraestructura y cada miembro recibe un pod Solid con WebID y 10 GB. El primer nodo es un Community Solid Server en una Raspberry Pi 3 con Ubuntu Server, expuesta por Cloudflare Tunnel.
 

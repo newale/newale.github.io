@@ -64,22 +64,22 @@ module.exports = function (eleventyConfig) {
   );
 
   eleventyConfig.addFilter("nombreTipo", (tipo) =>
-    ({ ensayo: "Ensayo", seminario: "Seminario", apunte: "Apunte", proyecto: "Proyecto", cuento: "Cuento", nota: "Nota de construcción", podcast: "Podcast" })[tipo] || tipo
+    ({ ensayo: "Ensayo", seminario: "Seminario", apunte: "Apunte", proyecto: "Proyecto", cuento: "Cuento", exploracion: "Exploración", nota: "Nota de construcción", podcast: "Podcast" })[tipo] || tipo
   );
 
   eleventyConfig.addFilter("dosDigitos", (n) => String(n).padStart(2, "0"));
 
-  // Series (p. ej. los apuntes de estética): las entradas con `serie: <id>`
+  // Colecciones (p. ej. los apuntes de estética): las entradas con `coleccion: <id>`
   // se leen en orden cronológico, de la primera clase a la última.
-  const deSerie = (items, serie) =>
+  const deColeccion = (items, coleccion) =>
     (items || [])
-      .filter((item) => item.data.serie === serie)
+      .filter((item) => item.data.coleccion === coleccion)
       .sort((a, b) => new Date(a.date) - new Date(b.date));
-  eleventyConfig.addFilter("deSerie", deSerie);
+  eleventyConfig.addFilter("deColeccion", deColeccion);
 
-  // Posición de una entrada dentro de su serie, con la anterior y la siguiente.
-  eleventyConfig.addFilter("posicionEnSerie", (items, serie, url) => {
-    const lista = deSerie(items, serie);
+  // Posición de una entrada dentro de su colección, con la anterior y la siguiente.
+  eleventyConfig.addFilter("posicionEnColeccion", (items, coleccion, url) => {
+    const lista = deColeccion(items, coleccion);
     const i = lista.findIndex((item) => item.url === url);
     if (i === -1) return null;
     return {

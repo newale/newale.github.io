@@ -372,6 +372,7 @@ html { scroll-behavior: smooth; overflow-x: hidden; scroll-padding-top: 5rem; } 
 }
 .franja-ver:hover { text-decoration: underline; }
 .franja-subtitulo { margin: var(--space-8) 0 var(--space-4); font-size: var(--text-xl); }
+.franja-subtitulo-primero { margin-top: 0; }
 
 .columnas {
   display: grid; gap: var(--space-6);
@@ -471,6 +472,7 @@ html { scroll-behavior: smooth; overflow-x: hidden; scroll-padding-top: 5rem; } 
   font-size: var(--text-2xl); line-height: 1.04; letter-spacing: var(--tracking-tight); margin: 0;
 }
 .recuadro-texto { margin: 0; font-size: var(--text-base); line-height: 1.55; color: color-mix(in srgb, var(--color-bg) 82%, transparent); }
+.recuadro-acciones { margin: var(--space-3) 0 var(--space-6); }
 .recuadro .leer-mas { color: var(--color-accent-400); display: inline-block; margin-top: var(--space-3); }
 a.recuadro:hover .recuadro-titulo { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
 
@@ -721,7 +723,9 @@ a.disco:hover .disco-nombre { color: var(--color-accent); }
   font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--text-xl); letter-spacing: var(--tracking-tight);
 }
 .franja .perfil-intro { margin: 0; max-width: 52ch; }
-a.card { color: inherit; text-decoration: none; }
+a.card, a.card-title { color: inherit; text-decoration: none; }
+a.card-title:hover { color: var(--color-accent); }
+.entrada-acciones { margin: var(--space-4) 0 0; }
 .discos { grid-template-columns: repeat(auto-fill, minmax(240px, 340px)); }
 .contenedor-lectura .entrada-cuerpo figure figcaption { padding-inline: var(--pad-contenedor); }
 @media (min-width: 761px) { .contenedor-lectura .entrada-cuerpo figure figcaption { padding-inline: 0; } }
@@ -799,21 +803,21 @@ a.card { color: inherit; text-decoration: none; }
 .pill-badge__dot { background: var(--amarillo); }
 .aviso-feed { border-left-color: var(--amarillo); }
 
-/* Series y audio en las entradas ------------------------------------------- */
-.serie-marca {
+/* Colecciones y audio en las entradas ------------------------------------------- */
+.coleccion-marca {
   display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px;
   margin: var(--space-4) 0 0; padding-top: var(--space-3); border-top: var(--filete-fino);
 }
-.serie-marca a { font-weight: var(--weight-strong); }
-.serie-pos { font-family: var(--font-text); font-size: var(--text-sm); letter-spacing: var(--tracking-label); text-transform: uppercase; }
+.coleccion-marca a { font-weight: var(--weight-strong); }
+.coleccion-pos { font-family: var(--font-text); font-size: var(--text-sm); letter-spacing: var(--tracking-label); text-transform: uppercase; }
 .entrada-audio { margin: var(--space-4) 0 0; }
 .entrada-audio figcaption { display: block; margin-bottom: var(--space-2); }
 .entrada-audio audio { width: 100%; }
-.serie-nav {
+.coleccion-nav {
   display: grid; grid-template-columns: 1fr; gap: var(--space-4);
   margin-top: var(--space-8); padding-top: var(--space-4); border-top: 4px solid var(--amarillo);
 }
-@media (min-width: 640px) { .serie-nav { grid-template-columns: 1fr 1fr; } }
-.serie-nav a { display: flex; flex-direction: column; gap: 4px; color: inherit; text-decoration: none; font-family: var(--font-display); font-weight: var(--weight-strong); font-size: var(--text-md); line-height: 1.3; }
-.serie-nav a:hover { color: var(--azul); }
-.serie-nav-siguiente { text-align: right; grid-column: -2; }
+@media (min-width: 640px) { .coleccion-nav { grid-template-columns: 1fr 1fr; } }
+.coleccion-nav a { display: flex; flex-direction: column; gap: 4px; color: inherit; text-decoration: none; font-family: var(--font-display); font-weight: var(--weight-strong); font-size: var(--text-md); line-height: 1.3; }
+.coleccion-nav a:hover { color: var(--azul); }
+.coleccion-nav-siguiente { text-align: right; grid-column: -2; }

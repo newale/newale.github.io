@@ -1,11 +1,11 @@
 ---
 layout: layouts/base.html
 title: "Obras"
-description: "Música de Alejandro Bustos Núñez (siniestra, male) y, pronto, cuentos."
+description: "Música de Alejandro Bustos Núñez (siniestra, male), audios y, pronto, cuentos."
 navActiva: obra
 ---
 
-{% include "components/cabecera.html", titulo: "Obras", bajada: "Lo que hago sin que sea trabajo: música, y pronto los cuentos." %}
+{% include "components/cabecera.html", titulo: "Obras", bajada: "Lo que hago sin que sea trabajo: música, audios y pronto los cuentos." %}
 
 <section class="bloque" id="musica" aria-labelledby="titulo-musica">
   <h2 class="bloque-titulo" id="titulo-musica">Música</h2>
@@ -25,6 +25,23 @@ navActiva: obra
         {%- endfor %}
       </p>
     </article>
+    {%- endfor %}
+  </div>
+</section>
+
+<section class="bloque" id="audios" aria-labelledby="titulo-audios">
+  <h2 class="bloque-titulo" id="titulo-audios">Audios</h2>
+  <p class="bloque-bajada">Audios que publico en la <a href="https://audioteca.aebn.cl/usuario-aebn" target="_blank" rel="noopener">audioteca</a> de la cooperativa.</p>
+  <div class="grid-tarjetas grid-dos">
+    {%- for audio in obra.audios %}
+    <div class="card">
+      <span class="card-kicker">Audioteca</span>
+      <span class="card-title">{{ audio.nombre }}</span>
+      <p class="card-body">{{ audio.descripcion }}</p>
+      <p class="card-enlaces">
+        <a class="btn btn-primary" href="{{ audio.url }}" target="_blank" rel="noopener">Escuchar en la audioteca</a>
+      </p>
+    </div>
     {%- endfor %}
   </div>
 </section>

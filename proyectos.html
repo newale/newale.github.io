@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.html
 title: "Proyectos"
-description: "Tecnocoop, la cooperativa de tecnología, y proyectos de electrónica de Alejandro Bustos Núñez."
+description: "Tecnocooperativa, la cooperativa de tecnología, y proyectos de electrónica de Alejandro Bustos Núñez."
 navActiva: proyectos
 ---
 
@@ -10,13 +10,28 @@ navActiva: proyectos
 <section class="bloque" aria-labelledby="titulo-fichas">
   <h2 class="bloque-titulo" id="titulo-fichas">Lo que estoy construyendo</h2>
   <p class="bloque-bajada">Cada proyecto es un proceso que sigue en marcha, no una publicación con fecha.</p>
-  <div class="grid-tarjetas grid-tres">
-    {%- for e in collections.fichas %}
-    <a class="card" href="{{ e.url }}">
-      <span class="card-title">{{ e.data.title }}</span>
-      {% if e.data.resumen %}<p class="card-body">{{ e.data.resumen }}</p>{% endif %}
+  {%- assign principal = collections.fichas | first %}
+  <a class="recuadro" href="{{ principal.url }}">
+    <div>
+      <span class="rotulo">Proyecto principal</span>
+      <h3 class="recuadro-titulo">{{ principal.data.title }}</h3>
+    </div>
+    <div>
+      <p class="recuadro-texto">{{ principal.data.resumen }}</p>
       <span class="leer-mas">Ver el proyecto →</span>
-    </a>
+    </div>
+  </a>
+  <p class="recuadro-acciones"><a class="btn btn-secondary" href="{{ principal.data.sitio }}" target="_blank" rel="noopener">Ir al sitio web</a></p>
+  <div class="grid-tarjetas grid-tres">
+    {%- for e in collections.fichas offset: 1 %}
+    <div class="card">
+      <a class="card-title" href="{{ e.url }}">{{ e.data.title }}</a>
+      {% if e.data.resumen %}<p class="card-body">{{ e.data.resumen }}</p>{% endif %}
+      <p class="card-enlaces">
+        <a class="btn btn-secondary" href="{{ e.url }}">Ver el proyecto</a>
+        {% if e.data.sitio %}<a class="btn btn-primary" href="{{ e.data.sitio }}" target="_blank" rel="noopener">Ir al sitio web</a>{% endif %}
+      </p>
+    </div>
     {%- endfor %}
   </div>
 </section>

@@ -3,6 +3,8 @@ title: "Panorama digital en Chile"
 date: 2026-11-13
 resumen: "Un programa de podcast sobre lo que está pasando con lo digital en Chile: las leyes de protección de datos y de inteligencia artificial, la infraestructura y la conectividad, y los datacenters."
 tipo: podcast
+sitio: https://audioteca.aebn.cl/usuario-aebn/panorama-digital-en-chile
+sitioTexto: Escuchar en la audioteca
 tags:
   - soberanía digital
 ---
