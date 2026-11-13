@@ -4,7 +4,7 @@ date: 2026-10-14
 resumen: "Antes de programar, tocar el interruptor que lo hace posible. Un transistor, un botón y un LED en una protoboard, y después dos transistores en serie que forman una compuerta AND."
 draft: false
 imagen: "/static/imagenes/kit-AND-001.png"
-tipo: proyecto
+tipo: apunte
 tags:
   - electrónica
   - educación

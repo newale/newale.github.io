@@ -42,6 +42,14 @@ module.exports = function (eleventyConfig) {
   Object.entries(carpetas).forEach(([nombre, glob]) => {
     eleventyConfig.addCollection(nombre, (collectionApi) => deCarpeta(collectionApi, glob));
   });
+  // Los proyectos no se ordenan por fecha: son procesos en curso. Se muestran
+  // como fichas en el orden de `orden`.
+  eleventyConfig.addCollection("fichas", (collectionApi) =>
+    collectionApi
+      .getFilteredByGlob(carpetas.proyectos)
+      .filter((item) => esPublicado(item) && item.data.tipo === "proyecto")
+      .sort((a, b) => (a.data.orden || 99) - (b.data.orden || 99))
+  );
   eleventyConfig.addCollection("todo", (collectionApi) =>
     Object.values(carpetas).flatMap((glob) => deCarpeta(collectionApi, glob)).sort(porFecha)
   );
@@ -52,14 +60,35 @@ module.exports = function (eleventyConfig) {
   );
 
   eleventyConfig.addFilter("nombreSeccion", (seccion) =>
-    ({ investigacion: "Investigación", proyectos: "Proyectos", obra: "Obra" })[seccion] || ""
+    ({ investigacion: "Investigación", proyectos: "Proyectos", obra: "Obras" })[seccion] || ""
   );
 
   eleventyConfig.addFilter("nombreTipo", (tipo) =>
-    ({ ensayo: "Ensayo", seminario: "Seminario", apunte: "Apunte", proyecto: "Proyecto", cuento: "Cuento" })[tipo] || tipo
+    ({ ensayo: "Ensayo", seminario: "Seminario", apunte: "Apunte", proyecto: "Proyecto", cuento: "Cuento", nota: "Nota de construcción", podcast: "Podcast" })[tipo] || tipo
   );
 
   eleventyConfig.addFilter("dosDigitos", (n) => String(n).padStart(2, "0"));
+
+  // Series (p. ej. los apuntes de estética): las entradas con `serie: <id>`
+  // se leen en orden cronológico, de la primera clase a la última.
+  const deSerie = (items, serie) =>
+    (items || [])
+      .filter((item) => item.data.serie === serie)
+      .sort((a, b) => new Date(a.date) - new Date(b.date));
+  eleventyConfig.addFilter("deSerie", deSerie);
+
+  // Posición de una entrada dentro de su serie, con la anterior y la siguiente.
+  eleventyConfig.addFilter("posicionEnSerie", (items, serie, url) => {
+    const lista = deSerie(items, serie);
+    const i = lista.findIndex((item) => item.url === url);
+    if (i === -1) return null;
+    return {
+      numero: i + 1,
+      total: lista.length,
+      anterior: lista[i - 1] || null,
+      siguiente: lista[i + 1] || null,
+    };
+  });
 
   eleventyConfig.addFilter("formattedDateCorta", function (date) {
     return new Date(date).toLocaleDateString("es-CL", { month: "short", year: "numeric", timeZone: "UTC" });

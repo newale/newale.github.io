@@ -6,13 +6,12 @@ permalink: /404.html
 eleventyExcludeFromCollections: true
 ---
 
-{% include "components/cabecera.html", num: "404", titulo: "No está acá", bajada: "Esta dirección no existe, o dejó de existir. El sitio se reorganizó en noviembre de 2026: puede que la página se haya movido de sección." %}
+{% include "components/cabecera.html", titulo: "No está acá", bajada: "Esta dirección no existe, o dejó de existir. El sitio se reorganizó en noviembre de 2026: puede que la página se haya movido de sección." %}
 
 <section class="bloque">
   <div class="grid-tarjetas">
     {%- for item in navegacion %}
     <a href="{{ item.url }}" class="card">
-      <span class="card-kicker">{{ forloop.index0 | dosDigitos }}</span>
       <span class="card-title">{{ item.nombre }}</span>
       {% if item.bajada %}<p class="card-body">{{ item.bajada }}</p>{% endif %}
     </a>

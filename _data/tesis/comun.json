@@ -25,7 +25,7 @@
       "id": "estetica",
       "anillo": 2,
       "angulo": -30,
-      "url": null
+      "url": "/investigacion/apuntes-de-estetica/"
     },
     {
       "id": "audioteca",
@@ -118,7 +118,7 @@
     {
       "id": "caso",
       "tipo": "explorar",
-      "url": "#criterios"
+      "url": "/investigacion/cerrillos-el-caso-de-la-tesis/"
     },
     {
       "id": "simondon",

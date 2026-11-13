@@ -4,7 +4,8 @@ date: 2026-10-14
 resumen: "Cuatro pulsadores, un ESP32 y una caja de cartón piedra: una pedalera que habla MIDI por bluetooth para prender y apagar efectos en Logic Pro sin soltar la guitarra."
 draft: false
 imagen: "/static/imagenes/pedalera-007.png"
-tipo: proyecto
+tipo: nota
+proyecto: pedales
 tags:
   - música
   - electrónica

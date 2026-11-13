@@ -1,11 +1,11 @@
 ---
 layout: layouts/base.html
-title: "Obra"
+title: "Obras"
 description: "Música de Alejandro Bustos Núñez (siniestra, male) y, pronto, cuentos."
 navActiva: obra
 ---
 
-{% include "components/cabecera.html", num: "04", titulo: "Obra", bajada: "Lo que hago sin que sea trabajo: música, y pronto los cuentos." %}
+{% include "components/cabecera.html", titulo: "Obras", bajada: "Lo que hago sin que sea trabajo: música, y pronto los cuentos." %}
 
 <section class="bloque" id="musica" aria-labelledby="titulo-musica">
   <h2 class="bloque-titulo" id="titulo-musica">Música</h2>
@@ -29,9 +29,21 @@ navActiva: obra
   </div>
 </section>
 
-{% if collections.cuentos.size > 0 %}
 <section class="bloque" id="cuentos" aria-labelledby="titulo-cuentos">
   <h2 class="bloque-titulo" id="titulo-cuentos">Cuentos</h2>
-  {% include "components/indice.html", items: collections.cuentos %}
+  <p class="bloque-bajada">Narrativa breve. Por ahora son dos, y se irán publicando acá.</p>
+  <div class="grid-tarjetas grid-dos">
+    {%- for cuento in obra.cuentos %}
+    {%- if cuento.url != "" %}
+    <a class="card" href="{{ cuento.url }}">
+      <span class="card-title">{{ cuento.titulo }}</span>
+    </a>
+    {%- else %}
+    <div class="card">
+      <span class="card-kicker">Próximamente</span>
+      <span class="card-title">{{ cuento.titulo }}</span>
+    </div>
+    {%- endif %}
+    {%- endfor %}
+  </div>
 </section>
-{% endif %}

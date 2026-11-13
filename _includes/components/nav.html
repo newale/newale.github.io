@@ -7,7 +7,7 @@
     <a class="mancheta-marca" href="/">AEBN</a>
     <nav class="mancheta-nav" aria-label="Secciones">
       {%- for item in navegacion %}
-      <a href="{{ item.url }}"{% if navActiva == item.id %} aria-current="page"{% endif %}><span class="mancheta-num" aria-hidden="true">{{ forloop.index0 | dosDigitos }}</span>{{ item.nombre }}</a>
+      <a href="{{ item.url }}"{% if navActiva == item.id %} aria-current="page"{% endif %}>{{ item.nombre }}</a>
       {%- endfor %}
     </nav>
   </div>

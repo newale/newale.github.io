@@ -8,7 +8,9 @@ module.exports = [
   { desde: "/bitacora/seminarios/ia-libertad-puc/", hacia: "/investigacion/ia-libertad-puc/" },
   { desde: "/bitacora/apuntes/arquitecturas-soberanas-solid/", hacia: "/investigacion/arquitecturas-soberanas-solid/" },
   { desde: "/bitacora/proyecto/tecnocoop/", hacia: "/proyectos/tecnocoop/" },
-  { desde: "/bitacora/proyecto/kit-transistor-compuertas-logicas/", hacia: "/proyectos/kit-transistor-compuertas-logicas/" },
+  { desde: "/bitacora/proyecto/kit-transistor-compuertas-logicas/", hacia: "/investigacion/kit-transistor-compuertas-logicas/" },
+  { desde: "/proyectos/kit-transistor-compuertas-logicas/", hacia: "/investigacion/kit-transistor-compuertas-logicas/" },
+  { desde: "/proyectos/viejito-perro-interfaz/", hacia: "/investigacion/viejito-perro-interfaz/" },
   { desde: "/bitacora/proyecto/pedalera-bluetooth/", hacia: "/proyectos/pedalera-bluetooth/" },
 
   // Portada y listados por tag de la Bitácora
@@ -25,7 +27,7 @@ module.exports = [
 
   // Páginas sueltas
   { desde: "/sobre-mi/", hacia: "/trayectoria/" },
-  { desde: "/aplicaciones/", hacia: "/proyectos/#aplicaciones" },
+  { desde: "/aplicaciones/", hacia: "/proyectos/tecnocoop/" },
   { desde: "/musica/", hacia: "/obra/#musica" },
   { desde: "/musica-gracias/", hacia: "/obra/#musica" },
   { desde: "/musica/agradecimiento-suscripcion/", hacia: "/obra/#musica" },

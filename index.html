@@ -1,15 +1,10 @@
 ---
 layout: layouts/base.html
 title: "Inicio"
-description: "Alejandro Bustos Núñez: investigación en ética de la tecnología, la cooperativa Tecnocoop, aplicaciones de código abierto, música y cuentos."
+description: "Alejandro Bustos Núñez: investigación en ética de la tecnología, la cooperativa Tecnocoop, música y cuentos."
 navActiva: inicio
 ---
 {%- assign tesis = soberania | first -%}
-{%- comment -%} La pieza destacada es la última con imagen. {%- endcomment -%}
-{%- assign destacada = nil -%}
-{%- for e in collections.todo -%}
-  {%- if e.data.imagen and destacada == nil -%}{%- assign destacada = e -%}{%- endif -%}
-{%- endfor -%}
 
 <script type="application/ld+json">
 {
@@ -25,50 +20,18 @@ navActiva: inicio
 <section class="portada">
   <div class="portada-grilla">
     <div>
-      <h1 class="portada-nombre">
-        <span class="planchas">
-          <span>Alejandro<br>Bustos<br>Núñez</span>
-          <span aria-hidden="true" class="hero-plate-c">Alejandro<br>Bustos<br>Núñez</span>
-          <span aria-hidden="true" class="hero-plate-m">Alejandro<br>Bustos<br>Núñez</span>
-        </span>
-      </h1>
-      <p class="portada-bajada">Ingeniero que investiga la ética de la técnica, construye en cooperativa y hace música.</p>
+      <h1 class="portada-nombre">Alejandro Bustos Núñez</h1>
+      <p class="portada-bajada">Ingeniero en informática y estudiante de Éticas Aplicadas. Me interesa la ética de la tecnología, la filosofía de la técnica y la estética.</p>
+      <p class="portada-texto">Hoy tengo varios proyectos en marcha y este sitio los junta. Hay investigación: la tesis sobre soberanía digital, ensayos y apuntes de seminario. Hay ingeniería: una cooperativa de tecnología donde construimos software e infraestructura soberana, también para IA, y circuitos para aprender y tocar. Y hay obra: música y, pronto, cuentos.</p>
+      <p class="portada-texto">No es un sitio profesional en sentido estricto, pero todo lo que está acá tiene que ver con la ingeniería o con pensar sus consecuencias.</p>
+      <p class="portada-texto">Ingeniero en informática con más de nueve años en productos digitales —aerolíneas, legaltech, servicios sociales—, sistemas de diseño y accesibilidad. Hoy estudio el Magíster en Éticas Aplicadas en la UC.</p>
+      <p class="portada-acciones"><a class="btn btn-primary" href="/trayectoria/">Ver trayectoria profesional</a></p>
     </div>
-
-    <nav aria-labelledby="ultimas">
-      <span class="rotulo sumario-titulo" id="ultimas">Últimas publicaciones</span>
-      <ol class="sumario">
-        {%- for e in collections.todo limit: 5 %}
-        <li>
-          <a href="{{ e.url }}">
-            <span class="sumario-num" aria-hidden="true">{{ forloop.index | dosDigitos }}</span>
-            <span class="sumario-meta">{{ e.data.seccion | nombreSeccion }}{% unless e.data.tipo == "proyecto" %} · {{ e.data.tipo | nombreTipo }}{% endunless %}</span>
-            <span class="sumario-titulo-entrada">{{ e.data.title }}</span>
-          </a>
-        </li>
-        {%- endfor %}
-      </ol>
-    </nav>
   </div>
-
-  {% if destacada %}
-  <a class="destacado" href="{{ destacada.url }}">
-    <figure class="destacado-imagen">
-      <img src="{{ destacada.data.imagen }}" alt="">
-    </figure>
-    <div>
-      <span class="rotulo">{{ destacada.data.seccion | nombreSeccion }} · <span class="rotulo-acento">{{ destacada.data.tipo | nombreTipo }}</span></span>
-      <h2 class="destacado-titulo">{{ destacada.data.title }}</h2>
-      {% if destacada.data.resumen %}<p class="destacado-dek">{{ destacada.data.resumen }}</p>{% endif %}
-      <span class="leer-mas">Leer →</span>
-    </div>
-  </a>
-  {% endif %}
 </section>
 
 <section class="franja" aria-labelledby="franja-investigacion">
   <div class="franja-cabecera">
-    <span class="franja-num" aria-hidden="true">02</span>
     <h2 class="franja-titulo" id="franja-investigacion"><a href="/investigacion/">Investigación</a></h2>
     <a class="franja-ver" href="/investigacion/">Ver todo →</a>
   </div>
@@ -86,14 +49,12 @@ navActiva: inicio
 
 <section class="franja" aria-labelledby="franja-proyectos">
   <div class="franja-cabecera">
-    <span class="franja-num" aria-hidden="true">03</span>
     <h2 class="franja-titulo" id="franja-proyectos"><a href="/proyectos/">Proyectos</a></h2>
     <a class="franja-ver" href="/proyectos/">Ver todo →</a>
   </div>
   <div class="grid-tarjetas grid-tres">
-    {%- for e in collections.proyectos limit: 3 %}
+    {%- for e in collections.fichas %}
     <a class="card" href="{{ e.url }}">
-      <span class="card-kicker">{{ e.date | formattedDateCorta }}</span>
       <span class="card-title">{{ e.data.title }}</span>
       {% if e.data.resumen %}<p class="card-body">{{ e.data.resumen }}</p>{% endif %}
     </a>
@@ -103,8 +64,7 @@ navActiva: inicio
 
 <section class="franja" aria-labelledby="franja-obra">
   <div class="franja-cabecera">
-    <span class="franja-num" aria-hidden="true">04</span>
-    <h2 class="franja-titulo" id="franja-obra"><a href="/obra/">Obra</a></h2>
+    <h2 class="franja-titulo" id="franja-obra"><a href="/obra/">Obras</a></h2>
     <a class="franja-ver" href="/obra/">Ver todo →</a>
   </div>
   <div class="discos">
@@ -117,13 +77,19 @@ navActiva: inicio
     </a>
     {%- endfor %}
   </div>
-</section>
-
-<section class="franja" aria-labelledby="franja-trayectoria">
-  <div class="franja-cabecera">
-    <span class="franja-num" aria-hidden="true">01</span>
-    <h2 class="franja-titulo" id="franja-trayectoria"><a href="/trayectoria/">Trayectoria</a></h2>
-    <a class="franja-ver" href="/trayectoria/">Ver todo →</a>
+  <h3 class="franja-subtitulo">Cuentos</h3>
+  <div class="grid-tarjetas grid-dos">
+    {%- for cuento in obra.cuentos %}
+    {%- if cuento.url != "" %}
+    <a class="card" href="{{ cuento.url }}">
+      <span class="card-title">{{ cuento.titulo }}</span>
+    </a>
+    {%- else %}
+    <div class="card">
+      <span class="card-kicker">Próximamente</span>
+      <span class="card-title">{{ cuento.titulo }}</span>
+    </div>
+    {%- endif %}
+    {%- endfor %}
   </div>
-  <p class="perfil-intro">Ingeniero en informática con más de nueve años en productos digitales —aerolíneas, legaltech, servicios sociales—, sistemas de diseño y accesibilidad. Hoy estudio el Magíster en Éticas Aplicadas en la UC.</p>
 </section>

@@ -1,6 +1,6 @@
 ---
 layout: layouts/base.html
-title: "Trayectoria"
+title: "Trayectoria profesional"
 description: "Alejandro E. Bustos Núñez: ingeniero en informática con más de 9 años de experiencia y estudiante del Magíster en Éticas Aplicadas de la Pontificia Universidad Católica de Chile."
 navActiva: trayectoria
 ---
@@ -31,7 +31,7 @@ navActiva: trayectoria
 }
 </script>
 
-{% include "components/cabecera.html", num: "01", titulo: "Trayectoria", bajada: "Ingeniero en Informática · Magíster en Éticas Aplicadas (en curso) · Santiago de Chile" %}
+{% include "components/cabecera.html", titulo: "Trayectoria profesional", bajada: "Ingeniero en Informática · Magíster en Éticas Aplicadas (en curso) · Santiago de Chile" %}
 
 <div class="perfil">
 <div class="perfil-principal">
@@ -111,6 +111,48 @@ navActiva: trayectoria
         <li>Desarrollar la iniciativa de tarjetas co-branded con Banco Santander sobre el flujo legacy de la compañía.</li>
       </ul>
     </div>
+
+    <div class="puesto">
+      <p class="puesto-cuando">mar. 2016 – dic. 2016</p>
+      <h3>DevOps / Desarrollador Fullstack</h3>
+      <p class="puesto-donde">Master Tool, Santiago</p>
+      <ul>
+        <li>Desarrollar un sistema web (API y frontend) y una app móvil (Cordova) para controlar el consumo de agua de un condominio privado.</li>
+        <li>Desarrollar un sistema web (API y frontend) para visualizar y calcular el Formulario 29 del SII.</li>
+        <li>Implementar la integración continua de ambas aplicaciones: entorno de pruebas (unitarias y E2E) con GitLab, GitLab CI y Docker, y scripts de despliegue en Bash sobre EC2 de AWS.</li>
+        <li>Desarrollar una API (Loopback y MSSQL) que consume indicadores económicos (UF, IPC, sueldo mínimo, etc.) mediante scraping, para una aplicación legada en Visual Basic 6.</li>
+      </ul>
+    </div>
+
+    <div class="puesto">
+      <p class="puesto-cuando">ene. 2012 – mar. 2016</p>
+      <h3>Freelance</h3>
+      <p class="puesto-donde">Coquimbo</p>
+      <ul>
+        <li>Desarrollar aplicaciones y sitios web con distintas tecnologías, lo que amplió mi stack con PHP, MySQL y Linux.</li>
+      </ul>
+    </div>
+
+    <div class="puesto">
+      <p class="puesto-cuando">may. 2008 – may. 2009</p>
+      <h3>Operador IBM 4690 / SAD400</h3>
+      <p class="puesto-donde">Rendic Hnos SA, Coquimbo</p>
+      <ul>
+        <li>Mantener operativa toda la infraestructura informática de un supermercado: cajas (POS), PC y servidores IBM 4690, con asistencia remota a otras sucursales cuando hacía falta.</li>
+        <li>Mantener al día precios, productos y ofertas, estadísticas de ventas y compras, y el cierre diario del sistema.</li>
+        <li>Apoyar la toma de inventario y su digitación.</li>
+      </ul>
+    </div>
+
+    <div class="puesto">
+      <p class="puesto-cuando">may. 2007 – may. 2008</p>
+      <h3>Betatester</h3>
+      <p class="puesto-donde">Rendic Hnos SA, Coquimbo</p>
+      <ul>
+        <li>Revisar y digitar incidencias de un sistema de remuneraciones en desarrollo: reportes de errores y de cálculo, y comparación de la información con el sistema vigente.</li>
+        <li>Reportar directamente al jefe de proyecto, quien distribuía la carga de trabajo al equipo de desarrollo.</li>
+      </ul>
+    </div>
   </section>
 
 </div>
@@ -146,7 +188,7 @@ navActiva: trayectoria
     <p>
       Sobre esto escribo en <a href="/investigacion/">Investigación</a>. Y hay cosas sin las
       que uno no puede vivir: la música también ha sido parte importante de la mía, de forma
-      apreciativa y expresiva — algo de eso está en <a href="/obra/">Obra</a>.
+      apreciativa y expresiva — algo de eso está en <a href="/obra/">Obras</a>.
     </p>
   </section>
 
@@ -155,7 +197,7 @@ navActiva: trayectoria
     <div class="enlaces-perfil">
       <a class="btn btn-secondary" href="{{ site.github }}" target="_blank" rel="noopener">GitHub</a>
       <a class="btn btn-secondary" href="{{ site.orcid }}" target="_blank" rel="noopener">ORCID</a>
-      {% if site.correo %}<a class="btn btn-secondary" href="mailto:{{ site.correo }}">Correo</a>{% endif %}
+      {% if site.correo != "" %}<a class="btn btn-secondary" href="mailto:{{ site.correo }}">Correo</a>{% endif %}
     </div>
   </section>
 </aside>

@@ -4,6 +4,7 @@ date: 2026-10-14
 resumen: "Estamos organizando una cooperativa de software y hardware. La primera pieza ya funciona: Pods Solid, WebID y espacio, un escritorio donde las aplicaciones guardan tus datos donde tú decides."
 draft: false
 tipo: proyecto
+orden: 1
 tags:
   - cooperativa
 ---
@@ -34,7 +35,7 @@ La cooperativa todavía no está constituida legalmente, pero la tecnología ya 
 
 espacio es la pieza que lo junta todo. Inicias sesión con tu WebID, se conecta a tu pod, y desde ahí abres aplicaciones que leen y guardan en tu pod, no en los servidores de cada aplicación. Cada una solo puede tocar su propia carpeta. Si mañana dejas de usar una aplicación, tus datos siguen ahí.
 
-Trae aplicaciones propias —Archivos, escribir, Estudio para publicar música— y un catálogo de aplicaciones web que se abren adentro: [Notas](https://notas.aebn.cl), [Archivador](https://archivador.aebn.cl), [Música](https://musica.aebn.cl) y [Por hacer](https://por-hacer.aebn.cl). Están todas en [Proyectos](/proyectos/#aplicaciones).
+Trae aplicaciones propias —Archivos, escribir, Estudio para publicar música— y un catálogo de aplicaciones web que se abren adentro: [Notas](https://notas.aebn.cl), [Archivador](https://archivador.aebn.cl), [Música](https://musica.aebn.cl) y [Por hacer](https://por-hacer.aebn.cl). Están todas en la [organización de Tecnocoop en GitHub](https://github.com/tecnocoopcl).
 
 ## En qué etapa estamos
 

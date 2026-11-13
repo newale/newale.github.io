@@ -1,6 +1,12 @@
 // Proyectos musicales. La música ya no se reproduce ni se vende acá: vive en
 // musica.aebn.cl (la app de la cooperativa) y en las plataformas de streaming.
 module.exports = {
+  // Cuentos. Sin `url` se muestran como "Próximamente"; cuando el texto esté
+  // listo, se crea la entrada en obra/cuentos/ y se pone su url acá.
+  cuentos: [
+    { titulo: "Dormitorio 14 SJ", url: "" },
+    { titulo: "Carta para el progreso", url: "" },
+  ],
   musica: [
     {
       slug: "siniestra",

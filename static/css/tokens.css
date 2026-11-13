@@ -1,0 +1,45 @@
+/* Tokens de diseño — tipografía.
+   Fuente de verdad de las fuentes y los tamaños del sitio. Los componentes
+   en sitio.css solo usan estas variables: nunca un font-family, un font-size
+   ni un font-weight suelto. Si algo se ve mal, se ajusta acá.
+
+   Reglas:
+   - Máximo dos familias: --font-display (titulares) y --font-text (todo lo demás).
+   - Ocho tamaños, de --text-sm a --text-display. Nada bajo 14px.
+   - Las MAYÚSCULAS se hacen solo con CSS (text-transform: uppercase en los
+     rótulos). El contenido se escribe siempre en mayúscula y minúscula normal.
+   Las fuentes se cargan con un <link> en layouts/base.html. */
+
+:root {
+  /* Familias */
+  --font-display: "Fraunces", "Source Serif 4", Georgia, serif;
+  --font-text: "Source Serif 4", Georgia, "Times New Roman", serif;
+  /* `code` y `pre` usan la monoespaciada del sistema; no se descarga fuente. */
+  --font-code: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  /* Pesos (solo los que se cargan) */
+  --weight-regular: 400;
+  --weight-strong: 600;
+  --weight-display: 700;
+
+  /* Escala de tamaños */
+  --text-sm: 0.875rem;                                   /* 14px  rótulos, metadatos, pie */
+  --text-base: 1rem;                                     /* 16px  texto de interfaz y resúmenes */
+  --text-md: 1.125rem;                                   /* 18px  texto de lectura */
+  --text-lg: 1.375rem;                                   /* 22px  bajadas, títulos de tarjeta */
+  --text-xl: 1.75rem;                                    /* 28px  subtítulos */
+  --text-2xl: clamp(1.875rem, 1.2rem + 2.2vw, 2.75rem);  /* 30–44px  títulos de sección */
+  --text-3xl: clamp(2.25rem, 1.4rem + 3.6vw, 3.75rem);   /* 36–60px  título de entrada */
+  --text-display: clamp(3rem, 1.5rem + 7vw, 8rem);       /* 48–128px  nombre y cabeceras de página */
+
+  /* Interlineado */
+  --leading-tight: 1.1;
+  --leading-snug: 1.3;
+  --leading-normal: 1.55;
+  --leading-relaxed: 1.7;
+
+  /* Espaciado entre letras */
+  --tracking-display: -0.03em;
+  --tracking-tight: -0.015em;
+  --tracking-label: 0.08em; /* para rótulos en mayúsculas */
+}

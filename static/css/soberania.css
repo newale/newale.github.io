@@ -103,7 +103,11 @@ main { max-width: 1040px; margin: 0 auto; padding: 0 16px 40px; }
 .dedicatoria[open] .ded-lineas span { animation: emerge .9s ease both; animation-delay: calc(var(--i) * 260ms); }
 @keyframes emerge { from { opacity: 0; transform: translateY(6px); filter: blur(3px); } }
 
-.hero-resumen { grid-column: 2; grid-row: 2; align-self: end; margin-top: 28px; }
+/* el resumen arranca a la altura del h1: padding-top del bloque + 2 líneas de institución (14px/1.6 + gap) + su margen inferior */
+.hero-resumen {
+  grid-column: 2; grid-row: 2; align-self: start;
+  margin-top: calc(clamp(28px, 7svh, 80px) + 2 * 14px * 1.6 + 2px + clamp(18px, 3.4svh, 36px));
+}
 .abstract { background: var(--panel); backdrop-filter: blur(7px); -webkit-backdrop-filter: blur(7px); border: 1px solid var(--linea); padding: 22px 24px 18px; }
 .abstract h2 { font: 700 14px/1 var(--mono); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 14px; color: var(--tinta-2); }
 .abstract p { font-size: 15.5px; line-height: 1.55; text-align: justify; hyphens: auto; margin-bottom: .7em; }
@@ -221,6 +225,7 @@ input[type=range] { width: 100%; accent-color: var(--cian); margin: 0; }
   .hero { min-height: 0; grid-template-columns: 1fr; grid-template-rows: none; row-gap: 8px; padding-top: 18px; }
   .hero-top, .hero-titulo, .hero-resumen { grid-column: 1; grid-row: auto; }
   .hero-titulo { padding-top: 36px; }
+  .hero-resumen { margin-top: 28px; }
   .hero h1 { font-size: clamp(26px, 6vw, 40px); }
 }
 @media (max-width: 1100px) {
