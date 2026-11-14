@@ -1,4 +1,4 @@
-## 2.0.0 (2026-11-13)
+## 2.0.0 (2026-11-14)
 
 * feat: add CC ([044bc75](https://github.com/newale/newale.github.io/commit/044bc75))
 * feat: add description to naguara and fix footer ([6f4acf0](https://github.com/newale/newale.github.io/commit/6f4acf0))
@@ -93,7 +93,8 @@
 * feat: updates to light theme ([6055d9e](https://github.com/newale/newale.github.io/commit/6055d9e))
 * feat: upload naguara ([3605deb](https://github.com/newale/newale.github.io/commit/3605deb))
 * feat(main-site): added dashboard app ([64afc1b](https://github.com/newale/newale.github.io/commit/64afc1b))
-* feat(main-site): colecciones, proyecto principal y nuevas entradas ([07d2ae4](https://github.com/newale/newale.github.io/commit/07d2ae4))
+* feat(main-site): agregar Gölden Acapulco, querryqueen y nueva portada de siniestra ([46670e7](https://github.com/newale/newale.github.io/commit/46670e7))
+* feat(main-site): colecciones, proyecto principal y nuevas entradas ([9bec0c4](https://github.com/newale/newale.github.io/commit/9bec0c4))
 * feat(main-site): rediseño de portada, tokens tipográficos y secciones ([a4ca924](https://github.com/newale/newale.github.io/commit/a4ca924))
 * add analytics ([33a523f](https://github.com/newale/newale.github.io/commit/33a523f))
 * Add theme and first post ([da18102](https://github.com/newale/newale.github.io/commit/da18102))

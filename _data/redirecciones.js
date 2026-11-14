@@ -1,6 +1,6 @@
 // URLs que dejaron de existir con el rediseño de noviembre de 2026 (la
 // Bitácora se repartió en Investigación y Proyectos; la música se fue a
-// musica.aebn.cl). GitHub Pages es estático, así que cada una se publica como
+// musica.tecnocooperativa.cl). GitHub Pages es estático, así que cada una se publica como
 // una página mínima que redirige; ver redirecciones.liquid.
 module.exports = [
   // Entradas publicadas de la Bitácora

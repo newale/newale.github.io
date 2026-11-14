@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.html
 title: "Obras"
-description: "Música de Alejandro Bustos Núñez (siniestra, male), audios y, pronto, cuentos."
+description: "Música de Alejandro Bustos Núñez (siniestra, male, Gölden Acapulco, querryqueen), audios y, pronto, cuentos."
 navActiva: obra
 ---
 
@@ -9,13 +9,13 @@ navActiva: obra
 
 <section class="bloque" id="musica" aria-labelledby="titulo-musica">
   <h2 class="bloque-titulo" id="titulo-musica">Música</h2>
-  <p class="bloque-bajada">Dos proyectos, dos registros. La música se escucha en <a href="https://musica.aebn.cl" target="_blank" rel="noopener">Música</a>, el reproductor de la cooperativa, donde cada artista publica desde su propio Pod.</p>
+  <p class="bloque-bajada">Cuatro proyectos, cuatro registros. La música se escucha en <a href="https://musica.tecnocooperativa.cl" target="_blank" rel="noopener">Música</a>, el reproductor de la cooperativa, donde cada artista publica desde su propio Pod.</p>
 
   <div class="discos">
     {%- for disco in obra.musica %}
     <article class="disco" id="{{ disco.slug }}">
       <img class="disco-portada" src="{{ disco.portada }}" alt="Portada de {{ disco.obra }}, de {{ disco.nombre }}">
-      <span class="rotulo">{{ disco.formato }} · {{ disco.genero }} · {{ disco.anio }}</span>
+      <span class="rotulo">{{ disco.formato }}{% if disco.anio %} · {{ disco.anio }}{% endif %}</span>
       <h3 class="disco-nombre">{{ disco.nombre }}</h3>
       <p class="disco-obra">{{ disco.obra }}</p>
       <p class="disco-desc">{{ disco.descripcion }}</p>

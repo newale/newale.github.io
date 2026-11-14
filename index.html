@@ -88,7 +88,7 @@ navActiva: inicio
     {%- for disco in obra.musica %}
     <a class="disco" href="/obra/#{{ disco.slug }}">
       <img class="disco-portada" src="{{ disco.portada }}" alt="" loading="lazy">
-      <span class="rotulo">{{ disco.formato }} · {{ disco.anio }}</span>
+      <span class="rotulo">{{ disco.formato }}{% if disco.anio %} · {{ disco.anio }}{% endif %}</span>
       <span class="disco-nombre">{{ disco.nombre }}</span>
       <span class="disco-obra">{{ disco.obra }}</span>
     </a>

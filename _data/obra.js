@@ -1,5 +1,5 @@
 // Proyectos musicales. La música ya no se reproduce ni se vende acá: vive en
-// musica.aebn.cl (la app de la cooperativa) y en las plataformas de streaming.
+// musica.tecnocooperativa.cl (la app de la cooperativa) y en las plataformas de streaming.
 module.exports = {
   // Audios publicados en la audioteca de la cooperativa.
   audios: [
@@ -20,13 +20,13 @@ module.exports = {
       slug: "siniestra",
       nombre: "siniestra",
       obra: "Exploraciones ambientales",
-      formato: "EP",
+      formato: "Álbum",
       genero: "Ambient",
       anio: 2026,
       descripcion: "Música ambiental electrónica: texturas largas, ruido y paisaje.",
       portada: "/static/imagenes/musica/siniestra-cover.jpg",
       enlaces: [
-        { nombre: "Escuchar en Música", url: "https://musica.aebn.cl", principal: true },
+        { nombre: "Escuchar en Música", url: "https://musica.tecnocooperativa.cl", principal: true },
         { nombre: "Apple Music", url: "https://music.apple.com/us/album/exploraciones-ambientales-ep/6795013701" },
         { nombre: "YouTube", url: "https://www.youtube.com/@msiniestra" },
       ],
@@ -41,7 +41,33 @@ module.exports = {
       descripcion: "Canciones con guitarra de palo.",
       portada: "/static/imagenes/musica/male-cover.jpg",
       enlaces: [
-        { nombre: "Escuchar en Música", url: "https://musica.aebn.cl", principal: true },
+        { nombre: "Escuchar en Música", url: "https://musica.tecnocooperativa.cl", principal: true },
+      ],
+    },
+    {
+      slug: "querryqueen",
+      nombre: "querryqueen",
+      obra: "Hola a nadie el mundo",
+      formato: "Álbum",
+      anio: 2017,
+      descripcion: "Canciones de querryqueen.",
+      portada: "/static/imagenes/musica/querryqueen-cover.jpg",
+      enlaces: [
+        { nombre: "Escuchar en Música", url: "https://musica.tecnocooperativa.cl", principal: true },
+        { nombre: "YouTube", url: "https://www.youtube.com/@querryqueen2511" },
+      ],
+    },
+    {
+      slug: "golden-acapulco",
+      nombre: "Gölden Acapulco",
+      obra: "El gran viaje",
+      formato: "Sencillo",
+      anio: 2016,
+      descripcion: "Canciones de Gölden Acapulco.",
+      portada: "/static/imagenes/musica/golden-acapulco-cover.jpg",
+      enlaces: [
+        { nombre: "Escuchar en Música", url: "https://musica.tecnocooperativa.cl", principal: true },
+        { nombre: "SoundCloud", url: "https://soundcloud.com/dimensionacapulco" },
       ],
     },
   ],
