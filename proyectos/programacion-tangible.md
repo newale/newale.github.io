@@ -6,7 +6,7 @@ draft: false
 imagen: "/static/imagenes/kit-AND-001.png"
 tipo: proyecto
 orden: 4
-sitio: https://academia.tecnocooperativa.cl
+sitio: https://academia.tecnocooperativa.cl/catalogo/programacion-tangible
 sitioTexto: Ir a la academia
 tags:
   - electrónica

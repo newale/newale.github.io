@@ -4,7 +4,7 @@ date: 2026-11-13
 resumen: "Un curso de la academia de la Tecnocooperativa: de la arquitectura de un sintetizador a su versión modular en VCV Rack, cable por cable."
 tipo: proyecto
 orden: 3
-sitio: https://academia.tecnocooperativa.cl/cursos/sintesis-basica/
+sitio: https://academia.tecnocooperativa.cl/catalogo/sintesis-basica
 tags:
   - música
   - educación
