@@ -4,7 +4,7 @@
   "locale": "es_CL",
   "meta": {
     "titulo": "¿Dónde se juega la soberanía digital?",
-    "descripcion": "Tesis de Magíster en Éticas Aplicadas (UC) de Alejandro Bustos Núñez sobre autoridad y legitimidad en la soberanía digital, y los proyectos que la acompañan."
+    "descripcion": "Tesis de Magíster en Éticas Aplicadas (UC) de Alejandro Bustos Núñez sobre la condición técnica de la autoridad y la legitimidad en la soberanía digital, y los proyectos que la acompañan."
   },
   "ui": {
     "saltar": "Saltar al contenido",
@@ -31,7 +31,7 @@
       }
     ]
   ],
-  "titulo": "¿Dónde se juega la soberanía digital? Analizando la autoridad y la legitimidad desde una perspectiva tecnoética",
+  "titulo": "¿Dónde se juega la soberanía digital? Analizando la condición técnica de la autoridad y la legitimidad para los Estados democráticos",
   "autor": "Alejandro Esteban Bustos Núñez",
   "dedicatoria": {
     "titulo": "Dedicatoria",
@@ -43,7 +43,7 @@
     ]
   },
   "resumenTitulo": "Resumen",
-  "resumen": "En este trabajo pregunto qué relación con los sistemas técnicos digitales necesita un Estado democrático para ejercer sobre ellos una autoridad legítima. Los enfoques dominantes sobre soberanía digital, representados por Roberts (2024) y Fratini et al. (2024), dan forma a la soberanía sin formar primero esa relación: tratan la norma como forma y el sistema técnico como materia. A partir de la crítica de Gilbert Simondon al esquema hilemórfico, sostengo que los instrumentos jurisdiccionales, adquisitivos y de implementación forman parte del medio asociado de los sistemas que pretenden gobernar, y que se reajustan a ellos cuando el Estado solo condiciona lo que otro anticipó. Propongo el criterio de alta tecnicidad: un Estado ejerce soberanía digital cuando participa en la individuación de esos sistemas con cultura técnica y conserva capacidad de reindividuarse con ellos. Con Philip Pettit, vinculo ese criterio con la legitimidad: el Estado es legítimo cuando no domina ni deja dominar a la comunidad que habita el medio asociado del sistema. Ilustro el marco con el caso del centro de datos de Google en Cerrillos.",
+  "resumen": "La literatura sobre soberanía digital evalúa la legitimidad en los extremos de la relación entre el Estado y la tecnología, en el procedimiento que autoriza una norma y en los resultados que esta produce. Este artículo sostiene que la legitimidad de la soberanía digital depende también de una condición técnica, y que por eso la evaluación procedimental resulta insuficiente por principio. La ética exige que un sistema conserve la capacidad de transformar sus propias normas, y por eso debe co-individuarse con él. Los sistemas digitales operan, sin embargo, de forma recursiva, absorbiendo las normas externas como parámetros que optimizan en sus propios términos. El artículo llama captura recursiva a este fenómeno. Una norma técnica que opera como norma social y que los afectados no pueden transformar constituye dominación, aunque provenga de un procedimiento democrático. De ahí se sigue un criterio que distingue la autoridad legítima sobre un sistema técnico de la jurisdicción sobre su territorio.",
   "clavesTitulo": "Palabras clave",
   "claves": [
     "Soberanía",
@@ -58,7 +58,7 @@
   },
   "proyectos": {
     "titulo": "Lo que se construye alrededor",
-    "intro": "La tesis no es el centro de estos proyectos: es un nodo más de una red anisomorfa, donde cada pieza tiene su propia forma y se conecta con las otras por razones distintas. Mientras la escribía fui levantando otros proyectos, unos en consonancia directa con ella y otros más periféricos, que hacen la misma pregunta desde la comunidad y la práctica: qué significa participar en la individuación de los sistemas que nos gobiernan.",
+    "intro": "La tesis no es el centro de estos proyectos: es un nodo más de una red anisomorfa, donde cada pieza tiene su propia forma y se conecta con las otras por razones distintas. Mientras la escribía fui levantando otros proyectos, unos en consonancia directa con ella y otros más periféricos, que hacen la misma pregunta desde la comunidad y la práctica: qué significa conservar la capacidad de transformar las normas de los sistemas que nos gobiernan.",
     "anillos": [
       "En consonancia",
       "Periféricos"
@@ -74,7 +74,7 @@
       },
       "software": {
         "nombre": "Software y aplicaciones",
-        "concepto": "reversibilidad",
+        "concepto": "transformabilidad",
         "bajada": "espacio y un conjunto de apps pequeñas que separan los datos de la aplicación, para que cualquiera pueda sustituirla o abandonarla sin perder lo suyo."
       },
       "arquitecturas": {
@@ -123,8 +123,8 @@
     }
   },
   "criterios": {
-    "titulo": "Mide la alta tecnicidad",
-    "intro": "Seis preguntas que propongo en la tesis para saber si un Estado, o una comunidad, participa en la génesis de un sistema técnico o solo se reajusta a él. Elige un caso, mueve los valores y compara las formas. Cerrillos es el caso real de la tesis; los demás son hipotéticos y a pequeña escala.",
+    "titulo": "Mide la autoridad sobre un sistema",
+    "intro": "Tres condiciones que propongo en la tesis para juzgar si un Estado democrático, o una comunidad, ejerce autoridad legítima sobre un sistema técnico o solo jurisdicción sobre su territorio. El criterio es gradual: admite grados de autoridad. Elige un caso, mueve los valores y compara las formas. Cerrillos es el caso real de la tesis; los demás son hipotéticos y a pequeña escala.",
     "ui": {
       "caso": "Caso",
       "comparar": "Comparar con",
@@ -137,39 +137,27 @@
       "fuerte": "Eslabón más fuerte",
       "reiniciar": "Volver al caso",
       "editado": "Valores editados",
-      "radar": "Gráfico de araña con los seis criterios de alta tecnicidad",
+      "radar": "Gráfico radial con las tres condiciones de autoridad legítima",
       "nota": "Los valores son una lectura mía, para pensar con ellos. No son una medición."
     },
     "ejes": [
       {
-        "corto": "Capacidades locales",
-        "pregunta": "¿Construye el sistema capacidades locales?"
+        "corto": "Transformabilidad",
+        "pregunta": "¿Conserva la relación la capacidad de transformar las normas del sistema, más allá de su adaptación recursiva?"
       },
       {
-        "corto": "Incidencia en el diseño",
-        "pregunta": "¿Modifica el medio local alguna decisión de diseño del sistema?"
+        "corto": "Intérprete y coordinador",
+        "pregunta": "¿Participa la institución como intérprete y coordinadora de la relación, y no solo como fuente de normas al autorizar o sancionar?"
       },
       {
-        "corto": "Quién se reajusta",
-        "pregunta": "Ante un cambio del medio, ¿se reajusta el sistema o se reajusta el medio?"
-      },
-      {
-        "corto": "Reversibilidad",
-        "pregunta": "¿Es reversible la operación sin colapso del servicio?"
-      },
-      {
-        "corto": "Lectura del sistema",
-        "pregunta": "¿Puede el Estado leer el sistema, o solo sancionarlo?"
-      },
-      {
-        "corto": "Voz de la comunidad",
-        "pregunta": "¿Quiénes, dentro de la comunidad del medio asociado, tuvieron voz? ¿Quiénes quedaron excluidos?"
+        "corto": "Impugnación ciudadana",
+        "pregunta": "¿Permanece esa participación abierta a la impugnación ciudadana, en términos de no-dominación?"
       }
     ],
     "casos": {
       "cerrillos": {
         "nombre": "Centro de datos de Google en Cerrillos",
-        "resumen": "La alta tecnicidad apareció dispersa y por la vía del conflicto. El colectivo aprendió a leer el sistema y forzó el paso a refrigeración por aire, pero Google definió el modo del reajuste y los canales formales excluyeron al colectivo."
+        "resumen": "El sistema absorbió la exigencia del tribunal como parámetro de diseño: Google pasó al enfriamiento por aire y el proyecto salió del alcance de la evaluación. El Estado solo autorizó y sancionó. La reclamación de una vecina fue el único canal de impugnación. El resultado: jurisdicción sin autoridad."
       },
       "mesh": {
         "nombre": "Red mesh vecinal",
@@ -210,12 +198,12 @@
     "items": {
       "caso": {
         "titulo": "Empieza por Cerrillos",
-        "bajada": "Un centro de datos, un acuífero en megasequía y un colectivo que impugnó el proyecto: el caso que abre la tesis. Una nota breve te lleva a la audioteca y a los seis criterios.",
+        "bajada": "Un centro de datos, un acuífero bajo estrés hídrico y una vecina que llevó el proyecto a tribunales: el caso que abre la tesis. Una nota breve te lleva a la audioteca y a las tres condiciones.",
         "accion": "Ver el caso"
       },
       "simondon": {
         "titulo": "Simondon es la clave",
-        "bajada": "La tesis se apoya en tres ideas suyas: la individuación, el medio asociado y la crítica al esquema hilemórfico. Preparo un podcast sobre La individuación para entrarle sin ser filósofo.",
+        "bajada": "La tesis se apoya en su crítica al esquema hilemórfico y en su distinción entre normas y valores, que Yuk Hui extiende a la recursividad de los sistemas digitales. Preparo un podcast sobre La individuación para entrarle sin ser filósofo.",
         "accion": "Escuchar en la audioteca"
       },
       "audio": {
@@ -225,7 +213,7 @@
       },
       "texto": {
         "titulo": "Lee el texto completo",
-        "bajada": "Un ensayo de unas 6.000 palabras, en revisión hasta el 30 de noviembre de 2026. Hoy el archivo es de prueba.",
+        "bajada": "Un artículo de unas 5.200 palabras, en revisión hasta el 30 de noviembre de 2026. Hoy el archivo es de prueba.",
         "accion": "Descargar PDF"
       },
       "proyectos": {
@@ -238,7 +226,7 @@
   "presentado": "Trabajo presentado como entrega final para optar al grado de Magister en Éticas Aplicadas por la Pontificia Universidad Católica de Chile",
   "fondecyt": "Este proyecto se enmarca en el FONDECYT Regular N°1261259 “Saber, poder y subjetivación en la era de las tecnologías algorítmicas de gobierno”",
   "guia": {
-    "etiqueta": "Profesor guía",
+    "etiqueta": "Profesora guía",
     "nombre": "Gabriela Arriagada Bruneau"
   }
 }

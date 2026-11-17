@@ -4,7 +4,7 @@
   "locale": "en_US",
   "meta": {
     "titulo": "Where Is Digital Sovereignty at Stake?",
-    "descripcion": "Master's thesis in Applied Ethics (UC) by Alejandro Bustos Núñez on authority and legitimacy in digital sovereignty, and the projects built around it."
+    "descripcion": "Master's thesis in Applied Ethics (UC) by Alejandro Bustos Núñez on the technical condition of authority and legitimacy in digital sovereignty, and the projects built around it."
   },
   "ui": {
     "saltar": "Skip to content",
@@ -31,7 +31,7 @@
       }
     ]
   ],
-  "titulo": "Where Is Digital Sovereignty at Stake? Analyzing Authority and Legitimacy from a Technoethical Perspective",
+  "titulo": "Where Is Digital Sovereignty at Stake? Analyzing the Technical Condition of Authority and Legitimacy for Democratic States",
   "autor": "Alejandro Esteban Bustos Núñez",
   "dedicatoria": {
     "titulo": "Dedication",
@@ -43,7 +43,7 @@
     ]
   },
   "resumenTitulo": "Abstract",
-  "resumen": "In this paper I ask what relationship with digital technical systems a democratic State needs in order to exercise legitimate authority over them. The dominant approaches to digital sovereignty, represented by Roberts (2024) and Fratini et al. (2024), give sovereignty a form without first shaping that relationship: they treat the norm as form and the technical system as matter. Drawing on Gilbert Simondon's critique of the hylomorphic scheme, I argue that jurisdictional, acquisition and implementation instruments are part of the associated milieu of the systems they aim to govern, and that they readjust to those systems when the State merely conditions what someone else anticipated. I propose the criterion of high technicity: a State exercises digital sovereignty when it takes part in the individuation of those systems with technical culture and retains the capacity to re-individuate with them. With Philip Pettit, I link that criterion to legitimacy: the State is legitimate when it neither dominates nor allows domination of the community that inhabits the system's associated milieu. I illustrate the framework with the case of Google's data center in Cerrillos.",
+  "resumen": "The literature on digital sovereignty assesses legitimacy at the ends of the relationship between the State and technology: in the procedure that authorizes a norm and in the outcomes it produces. This article argues that the legitimacy of digital sovereignty also depends on a technical condition, and that procedural assessment is therefore insufficient in principle. Ethics requires that a system retain the capacity to transform its own norms, and so it must co-individuate with the system. Digital systems, however, operate recursively, absorbing external norms as parameters they optimize on their own terms. The article calls this phenomenon recursive capture. A technical norm that operates as a social norm and that those affected cannot transform amounts to domination, even when it comes from a democratic procedure. From this follows a criterion that distinguishes legitimate authority over a technical system from jurisdiction over its territory.",
   "clavesTitulo": "Keywords",
   "claves": [
     "Sovereignty",
@@ -58,7 +58,7 @@
   },
   "proyectos": {
     "titulo": "What is being built around it",
-    "intro": "The thesis is not the center of these projects: it is one more node in an anisomorphic network, where each piece has its own form and connects to the others for different reasons. While writing it I kept starting other projects, some in direct consonance with it and others more peripheral, that ask the same question from the community and from practice: what does it mean to take part in the individuation of the systems that govern us?",
+    "intro": "The thesis is not the center of these projects: it is one more node in an anisomorphic network, where each piece has its own form and connects to the others for different reasons. While writing it I kept starting other projects, some in direct consonance with it and others more peripheral, that ask the same question from the community and from practice: what does it mean to keep the capacity to transform the norms of the systems that govern us?",
     "anillos": [
       "In consonance",
       "Peripheral"
@@ -74,7 +74,7 @@
       },
       "software": {
         "nombre": "Software and apps",
-        "concepto": "reversibility",
+        "concepto": "transformability",
         "bajada": "espacio and a set of small apps that separate data from the application, so anyone can replace or abandon an app without losing what is theirs."
       },
       "arquitecturas": {
@@ -123,8 +123,8 @@
     }
   },
   "criterios": {
-    "titulo": "Measure high technicity",
-    "intro": "Six questions I propose in the thesis to tell whether a State, or a community, takes part in the genesis of a technical system or only readjusts to it. Pick a case, move the values and compare the shapes. Cerrillos is the thesis case; the others are hypothetical and small-scale.",
+    "titulo": "Measure authority over a system",
+    "intro": "Three conditions I propose in the thesis to judge whether a democratic State, or a community, exercises legitimate authority over a technical system or only jurisdiction over its territory. The criterion is gradual: it admits degrees of authority. Pick a case, move the values and compare the shapes. Cerrillos is the thesis case; the others are hypothetical and small-scale.",
     "ui": {
       "caso": "Case",
       "comparar": "Compare with",
@@ -137,39 +137,27 @@
       "fuerte": "Strongest link",
       "reiniciar": "Back to the case",
       "editado": "Edited values",
-      "radar": "Radar chart of the six criteria of high technicity",
+      "radar": "Radar chart of the three conditions of legitimate authority",
       "nota": "The values are my own reading, meant for thinking with. They are not a measurement."
     },
     "ejes": [
       {
-        "corto": "Local capacities",
-        "pregunta": "Does the system build local capacities?"
+        "corto": "Transformability",
+        "pregunta": "Does the relationship preserve the capacity to transform the system's norms, beyond its recursive adaptation?"
       },
       {
-        "corto": "Design influence",
-        "pregunta": "Does the local milieu change any design decision of the system?"
+        "corto": "Interpreter and coordinator",
+        "pregunta": "Does the institution take part as interpreter and coordinator of the relationship, and not only as a source of norms when authorizing or sanctioning?"
       },
       {
-        "corto": "Who readjusts",
-        "pregunta": "When the milieu changes, does the system readjust or does the milieu?"
-      },
-      {
-        "corto": "Reversibility",
-        "pregunta": "Can the operation be reversed without the service collapsing?"
-      },
-      {
-        "corto": "Legibility",
-        "pregunta": "Can the State read the system, or only sanction it?"
-      },
-      {
-        "corto": "Community voice",
-        "pregunta": "Who in the community of the associated milieu had a voice? Who was excluded?"
+        "corto": "Citizen contestation",
+        "pregunta": "Does that participation remain open to citizen contestation, in terms of non-domination?"
       }
     ],
     "casos": {
       "cerrillos": {
         "nombre": "Google data center in Cerrillos",
-        "resumen": "High technicity appeared scattered and through conflict. The collective learned to read the system and forced the shift to air cooling, but Google defined how the readjustment happened and the formal channels excluded the collective."
+        "resumen": "The system absorbed the court's requirement as a design parameter: Google switched to air cooling and the project left the scope of the assessment. The State only authorized and sanctioned. One resident's legal challenge was the only channel of contestation. The result: jurisdiction without authority."
       },
       "mesh": {
         "nombre": "Neighborhood mesh network",
@@ -210,12 +198,12 @@
     "items": {
       "caso": {
         "titulo": "Start with Cerrillos",
-        "bajada": "A data center, an aquifer in a mega-drought and a collective that challenged the project: the case that opens the thesis. A short note points you to the audio library and the six criteria.",
+        "bajada": "A data center, an aquifer under water stress and a resident who took the project to court: the case that opens the thesis. A short note points you to the audio library and the three conditions.",
         "accion": "See the case"
       },
       "simondon": {
         "titulo": "Simondon is the key",
-        "bajada": "The thesis rests on three of his ideas: individuation, the associated milieu and the critique of the hylomorphic scheme. I am preparing a podcast on Individuation so you can enter it without being a philosopher.",
+        "bajada": "The thesis rests on his critique of the hylomorphic scheme and his distinction between norms and values, which Yuk Hui extends to the recursivity of digital systems. I am preparing a podcast on Individuation so you can enter it without being a philosopher.",
         "accion": "Listen in the audio library"
       },
       "audio": {
@@ -225,7 +213,7 @@
       },
       "texto": {
         "titulo": "Read the full text",
-        "bajada": "An essay of about 6,000 words, under review until November 30, 2026. For now the file is a test.",
+        "bajada": "An article of about 5,200 words, under review until November 30, 2026. For now the file is a test.",
         "accion": "Download PDF"
       },
       "proyectos": {
