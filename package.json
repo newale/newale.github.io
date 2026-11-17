@@ -6,6 +6,7 @@
   "license": "ISC",
   "scripts": {
     "dev": "npx @11ty/eleventy --serve",
+    "editar": "EDITAR=1 npx @11ty/eleventy --serve --port=8090",
     "build": "eleventy",
     "changelog": "conventional-changelog -p conventionalcommits -i CHANGELOG.md -s -r 0",
     "commit": "cz",
@@ -13,7 +14,8 @@
   },
   "dependencies": {
     "@11ty/eleventy": "^3.1.2",
-    "jszip": "^3.10.1"  
+    "eleventy-plugin-editar": "file:paquetes/eleventy-plugin-editar",
+    "jszip": "^3.10.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",

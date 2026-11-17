@@ -5,11 +5,11 @@ description: "Música de Alejandro Bustos Núñez (siniestra, male, Gölden Acap
 navActiva: obra
 ---
 
-{% include "components/cabecera.html", titulo: "Obras", bajada: "Lo que hago sin que sea trabajo: música, audios y pronto los cuentos." %}
+{% include "components/cabecera.html", titulo: paginas.obra.titulo, bajada: paginas.obra.bajada, archivo: "paginas", ruta: "obra" %}
 
 <section class="bloque" id="musica" aria-labelledby="titulo-musica">
-  <h2 class="bloque-titulo" id="titulo-musica">Música</h2>
-  <p class="bloque-bajada">Cuatro proyectos, cuatro registros. La música se escucha en <a href="https://musica.tecnocooperativa.cl" target="_blank" rel="noopener">Música</a>, el reproductor de la cooperativa, donde cada artista publica desde su propio Pod.</p>
+  <h2 class="bloque-titulo" id="titulo-musica">{{ paginas.obra.musica.titulo | editable: "paginas", "obra.musica.titulo" }}</h2>
+  <p class="bloque-bajada">{{ paginas.obra.musica.bajada | editableMd: "paginas", "obra.musica.bajada" }}</p>
 
   <div class="discos">
     {%- for disco in obra.musica %}
@@ -30,8 +30,8 @@ navActiva: obra
 </section>
 
 <section class="bloque" id="audios" aria-labelledby="titulo-audios">
-  <h2 class="bloque-titulo" id="titulo-audios">Audios</h2>
-  <p class="bloque-bajada">Audios que publico en la <a href="https://audioteca.aebn.cl/usuario-aebn" target="_blank" rel="noopener">audioteca</a> de la cooperativa.</p>
+  <h2 class="bloque-titulo" id="titulo-audios">{{ paginas.obra.audios.titulo | editable: "paginas", "obra.audios.titulo" }}</h2>
+  <p class="bloque-bajada">{{ paginas.obra.audios.bajada | editableMd: "paginas", "obra.audios.bajada" }}</p>
   <div class="grid-tarjetas grid-dos">
     {%- for audio in obra.audios %}
     <div class="card">
@@ -47,8 +47,8 @@ navActiva: obra
 </section>
 
 <section class="bloque" id="cuentos" aria-labelledby="titulo-cuentos">
-  <h2 class="bloque-titulo" id="titulo-cuentos">Cuentos</h2>
-  <p class="bloque-bajada">Narrativa breve. Por ahora son dos, y se irán publicando acá.</p>
+  <h2 class="bloque-titulo" id="titulo-cuentos">{{ paginas.obra.cuentos.titulo | editable: "paginas", "obra.cuentos.titulo" }}</h2>
+  <p class="bloque-bajada">{{ paginas.obra.cuentos.bajada | editable: "paginas", "obra.cuentos.bajada" }}</p>
   <div class="grid-tarjetas grid-dos">
     {%- for cuento in obra.cuentos %}
     {%- if cuento.url != "" %}

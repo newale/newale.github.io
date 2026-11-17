@@ -6,24 +6,24 @@ navActiva: investigacion
 ---
 {%- assign tesis = soberania | first -%}
 
-{% include "components/cabecera.html", titulo: "Investigación", bajada: "Ética de la tecnología desde la estética y la filosofía de la técnica: la tesis, los ensayos del magíster y lo que voy pensando en el camino." %}
+{% include "components/cabecera.html", titulo: paginas.investigacion.titulo, bajada: paginas.investigacion.bajada, archivo: "paginas", ruta: "investigacion" %}
 
 <section class="bloque" aria-labelledby="tesis">
-  <span class="rotulo" id="tesis">Tesis de magíster · en curso</span>
+  <span class="rotulo" id="tesis">{{ paginas.investigacion.tesis.rotulo | editable: "paginas", "investigacion.tesis.rotulo" }}</span>
   <a class="recuadro" href="/soberania-digital/">
     <div>
-      <h2 class="recuadro-titulo">{{ tesis.titulo }}</h2>
+      <h2 class="recuadro-titulo">{{ tesis.titulo | editable: "tesis/es", "titulo" }}</h2>
     </div>
     <div>
-      <p class="recuadro-texto">Magíster en Éticas Aplicadas, Pontificia Universidad Católica de Chile. Autoridad y legitimidad en la soberanía digital, y los proyectos que la acompañan.</p>
-      <span class="leer-mas">Ir a la tesis →</span>
+      <p class="recuadro-texto">{{ paginas.investigacion.tesis.texto | editable: "paginas", "investigacion.tesis.texto" }}</p>
+      <span class="leer-mas">{{ paginas.investigacion.tesis.accion | editable: "paginas", "investigacion.tesis.accion" }}</span>
     </div>
   </a>
 </section>
 
 <section class="bloque" aria-labelledby="colecciones">
-  <h2 class="bloque-titulo" id="colecciones">Colecciones</h2>
-  <p class="bloque-bajada">Textos agrupados por tema, que se van ampliando.</p>
+  <h2 class="bloque-titulo" id="colecciones">{{ paginas.investigacion.colecciones.titulo | editable: "paginas", "investigacion.colecciones.titulo" }}</h2>
+  <p class="bloque-bajada">{{ paginas.investigacion.colecciones.bajada | editable: "paginas", "investigacion.colecciones.bajada" }}</p>
   <div class="grid-tarjetas grid-dos">
     <a class="card" href="{{ colecciones.estetica.url }}">
       <span class="card-kicker">Colección</span>
@@ -34,46 +34,46 @@ navActiva: investigacion
 </section>
 
 <section class="bloque" aria-labelledby="seminarios">
-  <h2 class="bloque-titulo" id="seminarios">Seminarios y charlas</h2>
-  <p class="bloque-bajada">Exposiciones que he dado en seminarios y encuentros, con sus materiales.</p>
+  <h2 class="bloque-titulo" id="seminarios">{{ paginas.investigacion.seminarios.titulo | editable: "paginas", "investigacion.seminarios.titulo" }}</h2>
+  <p class="bloque-bajada">{{ paginas.investigacion.seminarios.bajada | editable: "paginas", "investigacion.seminarios.bajada" }}</p>
   <div class="grid-tarjetas grid-dos">
     {%- assign seminarios = collections.investigacion | where: "data.tipo", "seminario" %}
     {%- for e in seminarios %}
     <a class="card" href="{{ e.url }}">
       <span class="card-kicker">{{ e.data.tipo | nombreTipo }} · <time datetime="{{ e.date | isoDate }}">{{ e.date | formattedDateCorta }}</time></span>
-      <span class="card-title">{{ e.data.title }}</span>
-      {% if e.data.resumen %}<p class="card-body">{{ e.data.resumen }}</p>{% endif %}
+      <span class="card-title">{{ e.data.title | editableFm: e.inputPath, "title" }}</span>
+      {% if e.data.resumen %}<p class="card-body">{{ e.data.resumen | editableFm: e.inputPath, "resumen" }}</p>{% endif %}
     </a>
     {%- endfor %}
   </div>
 </section>
 
 <section class="bloque" aria-labelledby="podcast">
-  <h2 class="bloque-titulo" id="podcast">Podcast</h2>
-  <p class="bloque-bajada">Audio que lleva parte de mi investigación a la actualidad del país.</p>
+  <h2 class="bloque-titulo" id="podcast">{{ paginas.investigacion.podcast.titulo | editable: "paginas", "investigacion.podcast.titulo" }}</h2>
+  <p class="bloque-bajada">{{ paginas.investigacion.podcast.bajada | editable: "paginas", "investigacion.podcast.bajada" }}</p>
   <div class="grid-tarjetas grid-dos">
     <div class="card">
       <span class="card-kicker">Podcast · audioteca</span>
-      <a class="card-title" href="/investigacion/panorama-digital-en-chile/">Panorama digital en Chile</a>
-      <p class="card-body">Protección de datos, inteligencia artificial, infraestructura y datacenters.</p>
+      <a class="card-title" href="/investigacion/panorama-digital-en-chile/">{{ paginas.investigacion.podcast.nombre | editable: "paginas", "investigacion.podcast.nombre" }}</a>
+      <p class="card-body">{{ paginas.investigacion.podcast.texto | editable: "paginas", "investigacion.podcast.texto" }}</p>
       <p class="card-enlaces">
         <a class="btn btn-secondary" href="/investigacion/panorama-digital-en-chile/">Ver los episodios</a>
-        <a class="btn btn-primary" href="https://audioteca.aebn.cl/usuario-aebn/panorama-digital-en-chile" target="_blank" rel="noopener">Escuchar en la audioteca</a>
+        <a class="btn btn-primary" href="https://audioteca.tecnocooperativa.cl/usuario-aebn/panorama-digital-en-chile" target="_blank" rel="noopener">Escuchar en la audioteca</a>
       </p>
     </div>
   </div>
 </section>
 
 <section class="bloque" aria-labelledby="ensayos">
-  <h2 class="bloque-titulo" id="ensayos">Ensayos</h2>
-  <p class="bloque-bajada">Textos que desarrollan una idea de principio a fin, y apuntes de trabajo que se publican por sí solos.</p>
+  <h2 class="bloque-titulo" id="ensayos">{{ paginas.investigacion.ensayos.titulo | editable: "paginas", "investigacion.ensayos.titulo" }}</h2>
+  <p class="bloque-bajada">{{ paginas.investigacion.ensayos.bajada | editable: "paginas", "investigacion.ensayos.bajada" }}</p>
   <div class="grid-tarjetas grid-dos">
     {%- for e in collections.investigacion %}
       {%- if e.data.tipo == "ensayo" or e.data.tipo == "exploracion" or e.data.tipo == "apunte" and e.data.coleccion == nil %}
     <a class="card" href="{{ e.url }}">
       <span class="card-kicker">{{ e.data.tipo | nombreTipo }} · <time datetime="{{ e.date | isoDate }}">{{ e.date | formattedDateCorta }}</time></span>
-      <span class="card-title">{{ e.data.title }}</span>
-      {% if e.data.resumen %}<p class="card-body">{{ e.data.resumen }}</p>{% endif %}
+      <span class="card-title">{{ e.data.title | editableFm: e.inputPath, "title" }}</span>
+      {% if e.data.resumen %}<p class="card-body">{{ e.data.resumen | editableFm: e.inputPath, "resumen" }}</p>{% endif %}
     </a>
       {%- endif %}
     {%- endfor %}

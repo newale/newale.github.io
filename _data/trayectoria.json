@@ -1,0 +1,132 @@
+{
+  "titulo": "Trayectoria profesional",
+  "bajada": "Ingeniero en Informática · Magíster en Éticas Aplicadas (en curso) · Santiago de Chile",
+  "nombre": "Alejandro E. Bustos Núñez",
+  "intro": [
+    "Ingeniero en informática con más de 15 años desarrollando productos y servicios de alta complejidad en aerolíneas, legaltech y servicios sociales. He liderado equipos multi y transdisciplinares en proyectos de impacto transversal, empujando la sofisticación del proceso de diseño y desarrollo desde prácticas como la experiencia de usuario y la accesibilidad digital.",
+    "En los últimos años me dediqué a comprender mi quehacer profesional desde la filosofía y la ética. Estoy llevando un magíster en éticas aplicadas por dos razones: reconectar con la filosofía, que me interesó mucho en la adolescencia y a la que no le dediqué tiempo, y porque en las éticas aplicadas reside un balance muy necesario para la tecnología. Mi interés es navegar el espacio liminal entre ética y técnica, en los problemas emergentes de la tecnología digital de hoy."
+  ],
+  "trabajo": {
+    "titulo": "Trabajo",
+    "puestos": [
+      {
+        "cuando": "oct. 2023 – feb. 2025",
+        "cargo": "Ingeniero Asociado / Profesional",
+        "donde": "[Garage Labs](https://garagelabs.cl)",
+        "tareas": [
+          "Asesorar proyectos de software en diversas etapas, desde la concepción hasta la implementación, definiendo arquitecturas y stacks tecnológicos.",
+          "Promover prácticas de excelencia en el desarrollo para asegurar la calidad y la alineación estratégica de productos y servicios digitales."
+        ]
+      },
+      {
+        "cuando": "oct. 2023 – feb. 2025",
+        "cargo": "Líder Técnico",
+        "donde": "[Garage Labs](https://garagelabs.cl) para [Caja Los Andes](https://www.cajalosandes.cl)",
+        "tareas": [
+          "Liderar el equipo de Sistemas de Diseño en la Gerencia de Transformación y Sostenibilidad.",
+          "Liderar la iniciativa de Accesibilidad Digital.",
+          "Participar en las primeras iniciativas de IA para apoyar decisiones de diseño de contenido.",
+          "Colaborar en un equipo multidisciplinar con diseñadores de interfaz, de experiencia y de contenido."
+        ]
+      },
+      {
+        "cuando": "abr. 2023 – nov. 2023",
+        "cargo": "Engineer Manager",
+        "donde": "[Webdox CLM](https://www.webdoxclm.com)",
+        "tareas": [
+          "Liderar una célula de desarrollo enfocada en la innovación de producto y el crecimiento de la startup.",
+          "Colaborar con Diseño de Producto, Marketing y otras áreas clave de la compañía.",
+          "Colaborar con la comunidad de desarrollo en mejores estándares para el diseño de interfaces."
+        ]
+      },
+      {
+        "cuando": "jun. 2022 – ene. 2023",
+        "cargo": "Instructor",
+        "donde": "[Boolean Academia](https://boolean.cl)",
+        "tareas": [
+          "Dictar, para el Oficio de Programación de la Fundación [Soy Más](https://soymas.cl), el curso «Introducción al desarrollo ágil de software, mención Programación Web»: Linux, Git y GitHub, HTML, CSS, JavaScript y React.",
+          "Dictar el curso online «Introducción al desarrollo ágil»: línea de comandos, flujos de trabajo con Git, frameworks y open source, cloud, Python, orientación a objetos, programación funcional, bases de datos y SQL en PostgreSQL."
+        ]
+      },
+      {
+        "cuando": "dic. 2016 – may. 2022",
+        "cargo": "Web UI Developer",
+        "donde": "[Globant](https://www.globant.com) Chile para [LATAM Airlines](https://www.latamairlines.com)",
+        "tareas": [
+          "Liderar técnicamente el equipo del Sistema de Diseño de la compañía, creando las herramientas de diseño y desarrollo de interfaces para más de 60 artefactos frontend y 160 profesionales.",
+          "Desarrollar la caja de compra, primer punto de entrada a la experiencia de compra y artefacto crucial para el negocio.",
+          "Mantener el servicio de traducción de toda la experiencia digital.",
+          "Desarrollar la iniciativa de tarjetas co-branded con Banco Santander sobre el flujo legacy de la compañía."
+        ]
+      },
+      {
+        "cuando": "mar. 2016 – dic. 2016",
+        "cargo": "DevOps / Desarrollador Fullstack",
+        "donde": "Brunetti y Asociados, Santiago",
+        "tareas": [
+          "Desarrollar un sistema web (API y frontend) y una app móvil (Cordova) para controlar el consumo de agua de un condominio privado.",
+          "Desarrollar un sistema web (API y frontend) para visualizar y calcular el Formulario 29 del SII.",
+          "Implementar la integración continua de ambas aplicaciones: entorno de pruebas (unitarias y E2E) con GitLab, GitLab CI y Docker, y scripts de despliegue en Bash sobre EC2 de AWS.",
+          "Desarrollar una API (Loopback y MSSQL) que consume indicadores económicos (UF, IPC, sueldo mínimo, etc.) mediante scraping, para una aplicación legada en Visual Basic 6."
+        ]
+      },
+      {
+        "cuando": "ene. 2012 – mar. 2016",
+        "cargo": "Freelance",
+        "donde": "Coquimbo",
+        "tareas": [
+          "Desarrollar aplicaciones y sitios web con distintas tecnologías, lo que amplió mi stack con PHP, MySQL y Linux."
+        ]
+      },
+      {
+        "cuando": "may. 2008 – may. 2009",
+        "cargo": "Operador IBM 4690 / SAD400",
+        "donde": "Rendic Hnos SA, Coquimbo",
+        "tareas": [
+          "Mantener operativa toda la infraestructura informática de un supermercado: cajas (POS), PC y servidores IBM 4690, con asistencia remota a otras sucursales cuando hacía falta.",
+          "Mantener al día precios, productos y ofertas, estadísticas de ventas y compras, y el cierre diario del sistema.",
+          "Apoyar la toma de inventario y su digitación."
+        ]
+      },
+      {
+        "cuando": "may. 2007 – may. 2008",
+        "cargo": "Betatester",
+        "donde": "Rendic Hnos SA, Coquimbo",
+        "tareas": [
+          "Revisar y digitar incidencias de un sistema de remuneraciones en desarrollo: reportes de errores y de cálculo, y comparación de la información con el sistema vigente.",
+          "Reportar directamente al jefe de proyecto, quien distribuía la carga de trabajo al equipo de desarrollo."
+        ]
+      }
+    ]
+  },
+  "formacion": {
+    "titulo": "Formación",
+    "items": [
+      "**Magíster en Éticas Aplicadas**, 2025 (en curso) — [Pontificia Universidad Católica de Chile](https://www.uc.cl)",
+      "**Diploma en Inteligencia Artificial**, 2024 — [Pontificia Universidad Católica de Chile](https://www.uc.cl)",
+      "**Diploma en Filosofía y Ciencias**, 2023 — [Universidad Alberto Hurtado](https://www.uahurtado.cl)",
+      "**Ingeniero en Informática**, 2011 — [INACAP](https://www.inacap.cl)"
+    ]
+  },
+  "certificaciones": {
+    "titulo": "Certificaciones",
+    "items": [
+      "Introduction to Web Accessibility — [W3C](https://www.w3.org), [edX](https://www.edx.org), 2024",
+      "Exercising Leadership: Foundational Principles — [HarvardX](https://www.edx.org/school/harvardx), [edX](https://www.edx.org), 2023",
+      "Dirección de Personas en la Era Digital — [Universidad Adolfo Ibáñez](https://www.uai.cl), 2022"
+    ]
+  },
+  "intereses": {
+    "titulo": "Intereses",
+    "items": [
+      "**Ética de la tecnología, las TIC y la inteligencia artificial**, por ser mi área de formación y mi pasión.",
+      "**Filosofía moral**, parte esencial de las éticas aplicadas.",
+      "**Métodos filosóficos**, en tanto sirven para abordar problemas complejos.",
+      "**Soberanía digital**, repensar la relación política sobre la tecnología."
+    ],
+    "nota": "Sobre esto escribo en [Investigación](/investigacion/). Y hay cosas sin las que uno no puede vivir: la música también ha sido parte importante de la mía, de forma apreciativa y expresiva — algo de eso está en [Obras](/obra/)."
+  },
+  "contacto": {
+    "titulo": "Contacto"
+  }
+}

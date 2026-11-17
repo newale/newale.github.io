@@ -1,0 +1,33 @@
+{
+  "nombre": "Alejandro Bustos Núñez",
+  "bajada": "Ingeniero en informática y estudiante de Éticas Aplicadas. Me interesa la ética de la tecnología, la filosofía de la técnica y la estética.",
+  "parrafos": [
+    "Hoy tengo varios proyectos en marcha y este sitio los junta. Hay investigación: la tesis sobre soberanía digital, ensayos y apuntes de seminario. Hay ingeniería: una cooperativa de tecnología donde construimos software e infraestructura soberana, también para IA, y circuitos para aprender y tocar. Y hay obra: música y, pronto, cuentos.",
+    "No es un sitio profesional en sentido estricto, pero todo lo que está acá tiene que ver con la ingeniería o con pensar sus consecuencias.",
+    "Ingeniero en informática con más de 15 años en productos digitales —aerolíneas, legaltech, servicios sociales—, sistemas de diseño y accesibilidad. Hoy estudio el Magíster en Éticas Aplicadas en la UC."
+  ],
+  "trayectoria": "Ver trayectoria profesional",
+  "verTodo": "Ver todo →",
+  "investigacion": {
+    "titulo": "Investigación",
+    "rotulo": "Tesis de magíster · en curso",
+    "texto": "La condición técnica de la autoridad y la legitimidad en la soberanía digital. Magíster en Éticas Aplicadas, UC.",
+    "accion": "Ir a la tesis →"
+  },
+  "proyectos": {
+    "titulo": "Proyectos",
+    "rotulo": "Proyecto principal",
+    "accion": "Ver el proyecto →",
+    "verProyecto": "Ver el proyecto",
+    "irSitio": "Ir al sitio web",
+    "sitioPrincipal": "Construyendo espacio público digital"
+  },
+  "obra": {
+    "titulo": "Obras",
+    "musica": "Música",
+    "audios": "Registros sonoros",
+    "escuchar": "Escuchar en la audioteca",
+    "cuentos": "Cuentos",
+    "pronto": "Próximamente"
+  }
+}

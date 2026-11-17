@@ -1,0 +1,54 @@
+{
+  "investigacion": {
+    "titulo": "Investigación",
+    "bajada": "Ética de la tecnología desde la estética y la filosofía de la técnica: la tesis, los ensayos del magíster y lo que voy pensando en el camino.",
+    "tesis": {
+      "rotulo": "Tesis de magíster · en curso",
+      "texto": "Magíster en Éticas Aplicadas, Pontificia Universidad Católica de Chile. La condición técnica de la autoridad y la legitimidad en la soberanía digital, y los proyectos que la acompañan.",
+      "accion": "Ir a la tesis →"
+    },
+    "colecciones": {
+      "titulo": "Colecciones",
+      "bajada": "Textos agrupados por tema, que se van ampliando."
+    },
+    "seminarios": {
+      "titulo": "Seminarios y charlas",
+      "bajada": "Exposiciones que he dado en seminarios y encuentros, con sus materiales."
+    },
+    "podcast": {
+      "titulo": "Podcast",
+      "bajada": "Audio que lleva parte de mi investigación a la actualidad del país.",
+      "nombre": "Panorama digital en Chile",
+      "texto": "Protección de datos, inteligencia artificial, infraestructura y datacenters."
+    },
+    "ensayos": {
+      "titulo": "Ensayos",
+      "bajada": "Textos que desarrollan una idea de principio a fin, y apuntes de trabajo que se publican por sí solos."
+    }
+  },
+  "proyectos": {
+    "titulo": "Proyectos",
+    "bajada": "Cosas que construyo: una cooperativa de tecnología, con software e infraestructura soberana, y circuitos para aprender y tocar.",
+    "fichas": {
+      "titulo": "Lo que estoy construyendo",
+      "bajada": "Cada proyecto es un proceso que sigue en marcha, no una publicación con fecha.",
+      "rotulo": "Proyecto principal"
+    }
+  },
+  "obra": {
+    "titulo": "Obras",
+    "bajada": "Lo que hago sin que sea trabajo: música, audios y pronto los cuentos.",
+    "musica": {
+      "titulo": "Música",
+      "bajada": "Cuatro proyectos, cuatro registros. La música se escucha en [Música](https://musica.tecnocooperativa.cl), el reproductor de la cooperativa, donde cada artista publica desde su propio Pod."
+    },
+    "audios": {
+      "titulo": "Audios",
+      "bajada": "Audios que publico en la [audioteca](https://audioteca.tecnocooperativa.cl/usuario-aebn) de la cooperativa."
+    },
+    "cuentos": {
+      "titulo": "Cuentos",
+      "bajada": "Narrativa breve. Por ahora son dos, y se irán publicando acá."
+    }
+  }
+}

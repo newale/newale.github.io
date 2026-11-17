@@ -1,0 +1,33 @@
+{
+  "name": "eleventy-plugin-editar",
+  "version": "0.2.0",
+  "description": "Edita los textos de un sitio Eleventy directamente en el navegador, durante el desarrollo: textos de _data/*.json, campos del frontmatter y archivos Markdown completos.",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "lib/",
+    "cliente/"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [
+    "eleventy",
+    "eleventy-plugin",
+    "11ty",
+    "cms",
+    "edición en sitio",
+    "i18n",
+    "markdown"
+  ],
+  "license": "GPL-3.0-or-later",
+  "peerDependencies": {
+    "@11ty/eleventy": ">=3.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "markdown-it": "^14.1.0"
+  }
+}

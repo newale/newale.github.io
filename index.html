@@ -20,58 +20,60 @@ navActiva: inicio
 <section class="portada">
   <div class="portada-grilla">
     <div>
-      <h1 class="portada-nombre">Alejandro Bustos Núñez</h1>
-      <p class="portada-bajada">Ingeniero en informática y estudiante de Éticas Aplicadas. Me interesa la ética de la tecnología, la filosofía de la técnica y la estética.</p>
-      <p class="portada-texto">Hoy tengo varios proyectos en marcha y este sitio los junta. Hay investigación: la tesis sobre soberanía digital, ensayos y apuntes de seminario. Hay ingeniería: una cooperativa de tecnología donde construimos software e infraestructura soberana, también para IA, y circuitos para aprender y tocar. Y hay obra: música y, pronto, cuentos.</p>
-      <p class="portada-texto">No es un sitio profesional en sentido estricto, pero todo lo que está acá tiene que ver con la ingeniería o con pensar sus consecuencias.</p>
-      <p class="portada-texto">Ingeniero en informática con más de nueve años en productos digitales —aerolíneas, legaltech, servicios sociales—, sistemas de diseño y accesibilidad. Hoy estudio el Magíster en Éticas Aplicadas en la UC.</p>
-      <p class="portada-acciones"><a class="btn btn-primary" href="/trayectoria/">Ver trayectoria profesional</a></p>
+      <h1 class="portada-nombre">{{ portada.nombre | editable: "portada", "nombre" }}</h1>
+      <p class="portada-bajada">{{ portada.bajada | editable: "portada", "bajada" }}</p>
+      <p class="portada-texto">{{ portada.parrafos[0] | editable: "portada", "parrafos.0" }}</p>
+      <p class="portada-texto">{{ portada.parrafos[1] | editable: "portada", "parrafos.1" }}</p>
+      <p class="portada-texto">{{ portada.parrafos[2] | editable: "portada", "parrafos.2" }}</p>
+      <p class="portada-acciones"><a class="btn btn-primary" href="/trayectoria/">{{ portada.trayectoria | editable: "portada", "trayectoria" }}</a></p>
     </div>
   </div>
 </section>
 
 <section class="franja" aria-labelledby="franja-investigacion">
   <div class="franja-cabecera">
-    <h2 class="franja-titulo" id="franja-investigacion"><a href="/investigacion/">Investigación</a></h2>
-    <a class="franja-ver" href="/investigacion/">Ver todo →</a>
+    <h2 class="franja-titulo" id="franja-investigacion"><a href="/investigacion/">{{ portada.investigacion.titulo | editable: "portada", "investigacion.titulo" }}</a></h2>
+    <a class="franja-ver" href="/investigacion/">{{ portada.verTodo | editable: "portada", "verTodo" }}</a>
   </div>
   <a class="recuadro" href="/soberania-digital/">
     <div>
-      <span class="rotulo">Tesis de magíster · en curso</span>
-      <h3 class="recuadro-titulo">{{ tesis.titulo }}</h3>
+      <span class="rotulo">{{ portada.investigacion.rotulo | editable: "portada", "investigacion.rotulo" }}</span>
+      <h3 class="recuadro-titulo">{{ tesis.titulo | editable: "tesis/es", "titulo" }}</h3>
     </div>
     <div>
-      <p class="recuadro-texto">Autoridad y legitimidad en la soberanía digital, desde una perspectiva tecnoética. Magíster en Éticas Aplicadas, UC.</p>
-      <span class="leer-mas">Ir a la tesis →</span>
+      <p class="recuadro-texto">{{ portada.investigacion.texto | editable: "portada", "investigacion.texto" }}</p>
+      <span class="leer-mas">{{ portada.investigacion.accion | editable: "portada", "investigacion.accion" }}</span>
     </div>
   </a>
 </section>
 
 <section class="franja" aria-labelledby="franja-proyectos">
   <div class="franja-cabecera">
-    <h2 class="franja-titulo" id="franja-proyectos"><a href="/proyectos/">Proyectos</a></h2>
-    <a class="franja-ver" href="/proyectos/">Ver todo →</a>
+    <h2 class="franja-titulo" id="franja-proyectos"><a href="/proyectos/">{{ portada.proyectos.titulo | editable: "portada", "proyectos.titulo" }}</a></h2>
+    <a class="franja-ver" href="/proyectos/">{{ portada.verTodo | editable: "portada", "verTodo" }}</a>
   </div>
   {%- assign principal = collections.fichas | first %}
-  <a class="recuadro" href="{{ principal.url }}">
+  <div class="recuadro recuadro-enlazado">
     <div>
-      <span class="rotulo">Proyecto principal</span>
-      <h3 class="recuadro-titulo">{{ principal.data.title }}</h3>
+      <span class="rotulo">{{ portada.proyectos.rotulo | editable: "portada", "proyectos.rotulo" }}</span>
+      <h3 class="recuadro-titulo"><a class="recuadro-enlace" href="{{ principal.url }}">{{ principal.data.title | editableFm: principal.inputPath, "title" }}</a></h3>
     </div>
     <div>
-      <p class="recuadro-texto">{{ principal.data.resumen }}</p>
-      <span class="leer-mas">Ver el proyecto →</span>
+      <p class="recuadro-texto">{{ principal.data.resumen | editableFm: principal.inputPath, "resumen" }}</p>
+      <span class="leer-mas">{{ portada.proyectos.accion | editable: "portada", "proyectos.accion" }}</span>
+      {%- if principal.data.sitio %}
+      <p class="recuadro-acciones"><a class="btn" href="{{ principal.data.sitio }}" target="_blank" rel="noopener">{{ portada.proyectos.sitioPrincipal | editable: "portada", "proyectos.sitioPrincipal" }}</a></p>
+      {%- endif %}
     </div>
-  </a>
-  <p class="recuadro-acciones"><a class="btn btn-secondary" href="{{ principal.data.sitio }}" target="_blank" rel="noopener">Ir al sitio web</a></p>
+  </div>
   <div class="grid-tarjetas grid-tres">
     {%- for e in collections.fichas offset: 1 %}
     <div class="card">
-      <a class="card-title" href="{{ e.url }}">{{ e.data.title }}</a>
-      {% if e.data.resumen %}<p class="card-body">{{ e.data.resumen }}</p>{% endif %}
+      <a class="card-title" href="{{ e.url }}">{{ e.data.title | editableFm: e.inputPath, "title" }}</a>
+      {% if e.data.resumen %}<p class="card-body">{{ e.data.resumen | editableFm: e.inputPath, "resumen" }}</p>{% endif %}
       <p class="card-enlaces">
-        <a class="btn btn-secondary" href="{{ e.url }}">Ver el proyecto</a>
-        {% if e.data.sitio %}<a class="btn btn-primary" href="{{ e.data.sitio }}" target="_blank" rel="noopener">Ir al sitio web</a>{% endif %}
+        <a class="btn btn-secondary" href="{{ e.url }}">{{ portada.proyectos.verProyecto | editable: "portada", "proyectos.verProyecto" }}</a>
+        {% if e.data.sitio %}<a class="btn btn-primary" href="{{ e.data.sitio }}" target="_blank" rel="noopener">{{ portada.proyectos.irSitio | editable: "portada", "proyectos.irSitio" }}</a>{% endif %}
       </p>
     </div>
     {%- endfor %}
@@ -80,10 +82,10 @@ navActiva: inicio
 
 <section class="franja" aria-labelledby="franja-obra">
   <div class="franja-cabecera">
-    <h2 class="franja-titulo" id="franja-obra"><a href="/obra/">Obras</a></h2>
-    <a class="franja-ver" href="/obra/">Ver todo →</a>
+    <h2 class="franja-titulo" id="franja-obra"><a href="/obra/">{{ portada.obra.titulo | editable: "portada", "obra.titulo" }}</a></h2>
+    <a class="franja-ver" href="/obra/">{{ portada.verTodo | editable: "portada", "verTodo" }}</a>
   </div>
-  <h3 class="franja-subtitulo franja-subtitulo-primero">Música</h3>
+  <h3 class="franja-subtitulo franja-subtitulo-primero">{{ portada.obra.musica | editable: "portada", "obra.musica" }}</h3>
   <div class="discos">
     {%- for disco in obra.musica %}
     <a class="disco" href="/obra/#{{ disco.slug }}">
@@ -94,20 +96,19 @@ navActiva: inicio
     </a>
     {%- endfor %}
   </div>
-  <h3 class="franja-subtitulo">Audios</h3>
+  <h3 class="franja-subtitulo">{{ portada.obra.audios | editable: "portada", "obra.audios" }}</h3>
   <div class="grid-tarjetas grid-dos">
     {%- for audio in obra.audios %}
     <div class="card">
-      <span class="card-kicker">Audioteca</span>
       <span class="card-title">{{ audio.nombre }}</span>
       <p class="card-body">{{ audio.descripcion }}</p>
       <p class="card-enlaces">
-        <a class="btn btn-primary" href="{{ audio.url }}" target="_blank" rel="noopener">Escuchar en la audioteca</a>
+        <a class="btn btn-primary" href="{{ audio.url }}" target="_blank" rel="noopener">{{ portada.obra.escuchar | editable: "portada", "obra.escuchar" }}</a>
       </p>
     </div>
     {%- endfor %}
   </div>
-  <h3 class="franja-subtitulo">Cuentos</h3>
+  <h3 class="franja-subtitulo">{{ portada.obra.cuentos | editable: "portada", "obra.cuentos" }}</h3>
   <div class="grid-tarjetas grid-dos">
     {%- for cuento in obra.cuentos %}
     {%- if cuento.url != "" %}
@@ -116,7 +117,7 @@ navActiva: inicio
     </a>
     {%- else %}
     <div class="card">
-      <span class="card-kicker">Próximamente</span>
+      <span class="card-kicker">{{ portada.obra.pronto | editable: "portada", "obra.pronto" }}</span>
       <span class="card-title">{{ cuento.titulo }}</span>
     </div>
     {%- endif %}

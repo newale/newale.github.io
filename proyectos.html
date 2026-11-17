@@ -5,19 +5,19 @@ description: "Tecnocooperativa, la cooperativa de tecnología, y proyectos de el
 navActiva: proyectos
 ---
 
-{% include "components/cabecera.html", titulo: "Proyectos", bajada: "Cosas que construyo: una cooperativa de tecnología, con software e infraestructura soberana, y circuitos para aprender y tocar." %}
+{% include "components/cabecera.html", titulo: paginas.proyectos.titulo, bajada: paginas.proyectos.bajada, archivo: "paginas", ruta: "proyectos" %}
 
 <section class="bloque" aria-labelledby="titulo-fichas">
-  <h2 class="bloque-titulo" id="titulo-fichas">Lo que estoy construyendo</h2>
-  <p class="bloque-bajada">Cada proyecto es un proceso que sigue en marcha, no una publicación con fecha.</p>
+  <h2 class="bloque-titulo" id="titulo-fichas">{{ paginas.proyectos.fichas.titulo | editable: "paginas", "proyectos.fichas.titulo" }}</h2>
+  <p class="bloque-bajada">{{ paginas.proyectos.fichas.bajada | editable: "paginas", "proyectos.fichas.bajada" }}</p>
   {%- assign principal = collections.fichas | first %}
   <a class="recuadro" href="{{ principal.url }}">
     <div>
-      <span class="rotulo">Proyecto principal</span>
-      <h3 class="recuadro-titulo">{{ principal.data.title }}</h3>
+      <span class="rotulo">{{ paginas.proyectos.fichas.rotulo | editable: "paginas", "proyectos.fichas.rotulo" }}</span>
+      <h3 class="recuadro-titulo">{{ principal.data.title | editableFm: principal.inputPath, "title" }}</h3>
     </div>
     <div>
-      <p class="recuadro-texto">{{ principal.data.resumen }}</p>
+      <p class="recuadro-texto">{{ principal.data.resumen | editableFm: principal.inputPath, "resumen" }}</p>
       <span class="leer-mas">Ver el proyecto →</span>
     </div>
   </a>
@@ -25,8 +25,8 @@ navActiva: proyectos
   <div class="grid-tarjetas grid-tres">
     {%- for e in collections.fichas offset: 1 %}
     <div class="card">
-      <a class="card-title" href="{{ e.url }}">{{ e.data.title }}</a>
-      {% if e.data.resumen %}<p class="card-body">{{ e.data.resumen }}</p>{% endif %}
+      <a class="card-title" href="{{ e.url }}">{{ e.data.title | editableFm: e.inputPath, "title" }}</a>
+      {% if e.data.resumen %}<p class="card-body">{{ e.data.resumen | editableFm: e.inputPath, "resumen" }}</p>{% endif %}
       <p class="card-enlaces">
         <a class="btn btn-secondary" href="{{ e.url }}">Ver el proyecto</a>
         {% if e.data.sitio %}<a class="btn btn-primary" href="{{ e.data.sitio }}" target="_blank" rel="noopener">Ir al sitio web</a>{% endif %}

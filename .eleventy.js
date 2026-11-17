@@ -1,3 +1,5 @@
+const editar = require("eleventy-plugin-editar");
+
 const esPublicado = (item) => item.data.draft !== true;
 
 // El frontmatter trae `tags` como string suelto, como lista o ausente.
@@ -11,7 +13,11 @@ const aLista = (tags) => {
 
 module.exports = function (eleventyConfig) {
   // Archivos del repo que no son páginas del sitio.
-  ["README.md", "CHANGELOG.md"].forEach((f) => eleventyConfig.ignores.add(f));
+  ["README.md", "CHANGELOG.md", "paquetes/**"].forEach((f) => eleventyConfig.ignores.add(f));
+
+  // `npm run editar`: los textos marcados con `| editable` se editan en el
+  // navegador y se guardan en _data. En el build no deja rastro.
+  eleventyConfig.addPlugin(editar, { activo: process.env.EDITAR === "1" });
 
   eleventyConfig.addPassthroughCopy("static/css");
   eleventyConfig.addPassthroughCopy("static/images");

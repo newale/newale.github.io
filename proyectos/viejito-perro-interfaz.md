@@ -1,7 +1,7 @@
 ---
-title: "Viejito-Perro: cómo hacer sensible un dato doméstico"
+title: "Ecología audiovisual: cómo hacer sensible un dato doméstico"
 date: 2026-11-09
-resumen: "Raúl Zuleta convirtió un notebook heredado en una estación ambiental para su casa. Mi parte fue pensar la interfaz: cómo devolverle a una persona, como algo que se siente, lo que los sensores convierten en números."
+resumen: "Exploración colaborativa con Raúl Zuleta, en curso desde septiembre de 2026: una exploración visual y sonora que transforma los históricos ambientales de Viejito-Perro en un medio de cultivo donde las relaciones entre espacios domésticos pueden producir formas. Mi parte es pensar la interfaz."
 tipo: proyecto
 orden: 5
 tags:

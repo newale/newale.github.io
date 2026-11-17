@@ -4,8 +4,21 @@
     {
       "name": "sitio",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["@11ty/eleventy", "--serve", "--port=8080"],
+      "runtimeArgs": [
+        "@11ty/eleventy",
+        "--serve",
+        "--port=8080"
+      ],
       "port": 8080
+    },
+    {
+      "name": "editar",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "editar"
+      ],
+      "port": 8090
     }
   ]
 }

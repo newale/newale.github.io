@@ -21,16 +21,16 @@ eleventyComputed:
 }
 </script>
 
-<article class="entrada">
+<article class="entrada"{{ page.inputPath | editarMarkdown }}>
   <header class="entrada-cabecera">
     <p class="rotulo">
       <a href="{{ urlSeccion }}">{{ seccion | nombreSeccion }}</a>
       {%- if tipo and tipo != "proyecto" %} · <span class="rotulo-acento">{{ tipo | nombreTipo }}</span>{% endif %}
     </p>
 
-    <h1>{{ title }}</h1>
+    <h1>{{ title | editableFm: page.inputPath, "title" }}</h1>
 
-    {% if resumen %}<p class="entrada-dek">{{ resumen }}</p>{% endif %}
+    {% if resumen %}<p class="entrada-dek">{{ resumen | editableFm: page.inputPath, "resumen" }}</p>{% endif %}
 
     <p class="entrada-meta">
       {%- unless tipo == "proyecto" %}<time datetime="{{ date | isoDate }}">{{ date | formattedDate }}</time>{% endunless %}

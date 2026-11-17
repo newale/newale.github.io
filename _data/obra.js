@@ -6,7 +6,7 @@ module.exports = {
     {
       nombre: "Audios de Santiago",
       descripcion: "Audios de Santiago publicados en la audioteca de la cooperativa. El primero: «20 de octubre al medio día».",
-      url: "https://audioteca.aebn.cl/usuario-aebn/audios-santiago",
+      url: "https://audioteca.tecnocooperativa.cl/usuario-aebn/audios-santiago",
     },
   ],
   // Cuentos. Sin `url` se muestran como "Próximamente"; cuando el texto esté

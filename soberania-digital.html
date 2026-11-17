@@ -7,6 +7,7 @@ pagination:
 permalink: "{% if t.codigo == 'es' %}/soberania-digital/{% else %}/soberania-digital/{{ t.codigo }}/{% endif %}"
 eleventyExcludeFromCollections: true
 ---
+{%- assign archivoT = "tesis/" | append: t.codigo -%}
 <a class="saltar" href="#proyectos">{{ t.ui.saltar }}</a>
 
 <header class="hero">
@@ -30,47 +31,47 @@ eleventyExcludeFromCollections: true
       <span>{% for i in fila %}<a href="{{ i.url }}" target="_blank" rel="noopener">{{ i.texto }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}</span>
       {%- endfor %}
     </p>
-    <h1>{{ t.titulo }}</h1>
-    <p class="hero-autor">{{ t.autor }}</p>
+    <h1>{{ t.titulo | editable: archivoT, "titulo" }}</h1>
+    <p class="hero-autor">{{ t.autor | editable: archivoT, "autor" }}</p>
     <p class="hero-enlaces">
       <a class="enlace" href="{{ t.pdf }}" target="_blank" rel="noopener">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg>
-        {{ t.enlaces.pdf }}
+        {{ t.enlaces.pdf | editable: archivoT, "enlaces.pdf" }}
       </a>
     </p>
-    <p class="nota nota-guia">{{ t.guia.etiqueta }}: {{ t.guia.nombre }}</p>
-    <p class="nota nota-pdf">{{ t.presentado }}</p>
-    <p class="nota nota-pdf">{{ t.fondecyt }}</p>
+    <p class="nota nota-guia">{{ t.guia.etiqueta | editable: archivoT, "guia.etiqueta" }}: {{ t.guia.nombre | editable: archivoT, "guia.nombre" }}</p>
+    <p class="nota nota-pdf">{{ t.presentado | editable: archivoT, "presentado" }}</p>
+    <p class="nota nota-pdf">{{ t.fondecyt | editable: archivoT, "fondecyt" }}</p>
     {%- if t.mostrarDedicatoria %}
     <details class="dedicatoria">
       <summary aria-label="{{ t.dedicatoria.titulo }}"><i></i><i></i><i></i></summary>
-      <p class="ded-lineas">{% for l in t.dedicatoria.lineas %}<span style="--i: {{ forloop.index0 }}">{{ l }}</span>{% endfor %}</p>
+      <p class="ded-lineas">{% for l in t.dedicatoria.lineas %}<span style="--i: {{ forloop.index0 }}">{{ l | editable: archivoT, "dedicatoria.lineas", forloop.index0 }}</span>{% endfor %}</p>
     </details>
     {%- endif %}
   </div>
 
   <section class="hero-resumen abstract" aria-labelledby="abs">
-    <h2 id="abs">{{ t.resumenTitulo }}</h2>
-    <p>{{ t.resumen }}</p>
-    <p class="claves"><strong>{{ t.clavesTitulo }}:</strong> {{ t.claves | join: " · " }}</p>
+    <h2 id="abs">{{ t.resumenTitulo | editable: archivoT, "resumenTitulo" }}</h2>
+    <p>{{ t.resumen | editable: archivoT, "resumen" }}</p>
+    <p class="claves"><strong>{{ t.clavesTitulo | editable: archivoT, "clavesTitulo" }}:</strong> {{ t.claves | join: " · " }}</p>
   </section>
 </header>
 
 <main>
 <!-- ── Cómo abordar ── -->
 <section class="bloque" id="abordar" aria-labelledby="h-abordar">
-  <h2 id="h-abordar">{{ t.abordar.titulo }}</h2>
-  <p class="bloque-intro">{{ t.abordar.intro }}</p>
+  <h2 id="h-abordar">{{ t.abordar.titulo | editable: archivoT, "abordar.titulo" }}</h2>
+  <p class="bloque-intro">{{ t.abordar.intro | editable: archivoT, "abordar.intro" }}</p>
   <ul class="proyectos abordar">
     {%- for i in t.abordar.items %}
     <li class="proyecto" data-tipo="{{ i.tipo }}">
-      <p class="rotulo">{{ i.etiqueta }}</p>
-      <h3>{{ i.titulo }}</h3>
-      <p>{{ i.bajada }}</p>
+      <p class="rotulo">{{ i.etiqueta | editable: archivoT, "abordar.etiquetas", i.tipo }}</p>
+      <h3>{{ i.titulo | editable: archivoT, "abordar.items", i.id, "titulo" }}</h3>
+      <p>{{ i.bajada | editable: archivoT, "abordar.items", i.id, "bajada" }}</p>
       {%- if i.url == "pdf" %}
-      <a class="enlace" href="{{ t.pdf }}" target="_blank" rel="noopener">{{ i.accion }} <span aria-hidden="true">↓</span></a>
+      <a class="enlace" href="{{ t.pdf }}" target="_blank" rel="noopener">{{ i.accion | editable: archivoT, "abordar.items", i.id, "accion" }} <span aria-hidden="true">↓</span></a>
       {%- elsif i.url %}
-      <a class="enlace" href="{{ i.url }}">{{ i.accion }} <span aria-hidden="true">→</span></a>
+      <a class="enlace" href="{{ i.url }}">{{ i.accion | editable: archivoT, "abordar.items", i.id, "accion" }} <span aria-hidden="true">→</span></a>
       {%- else %}
       <span class="enlace enlace-off" title="{{ t.abordar.pronto }}">{{ t.abordar.pronto }} · {{ i.accion }}</span>
       {%- endif %}
@@ -81,8 +82,8 @@ eleventyExcludeFromCollections: true
 
 <!-- ── Proyectos ── -->
 <section class="bloque" id="proyectos" aria-labelledby="h-proy">
-  <h2 id="h-proy">{{ t.proyectos.titulo }}</h2>
-  <p class="bloque-intro">{{ t.proyectos.intro }}</p>
+  <h2 id="h-proy">{{ t.proyectos.titulo | editable: archivoT, "proyectos.titulo" }}</h2>
+  <p class="bloque-intro">{{ t.proyectos.intro | editable: archivoT, "proyectos.intro" }}</p>
 
   <figure class="red" aria-hidden="true">
     <svg id="red" viewBox="0 0 1000 760"></svg>
@@ -98,8 +99,8 @@ eleventyExcludeFromCollections: true
     {%- assign ia = p.anillo | minus: 1 %}
     <li class="proyecto" data-id="{{ p.id }}" data-anillo="{{ p.anillo }}" data-angulo="{{ p.angulo }}" data-concepto="{{ p.concepto | escape }}" data-nombre="{{ p.nombre | escape }}" data-anillo-nombre="{{ t.proyectos.anillos[ia] | escape }}">
       <p class="rotulo">{{ t.proyectos.anillos[ia] }} · {{ p.concepto }}</p>
-      <h3>{{ p.nombre }}</h3>
-      <p>{{ p.bajada }}</p>
+      <h3>{{ p.nombre | editable: archivoT, "proyectos.items", p.id, "nombre" }}</h3>
+      <p>{{ p.bajada | editable: archivoT, "proyectos.items", p.id, "bajada" }}</p>
       {%- if p.url %}
       <a class="enlace" href="{{ p.url }}"{% if p.url contains 'http' %} target="_blank" rel="noopener"{% endif %}>{{ t.proyectos.ir }} <span aria-hidden="true">{% if p.url contains 'http' %}↗{% else %}→{% endif %}</span></a>
       {%- else %}
@@ -115,8 +116,8 @@ eleventyExcludeFromCollections: true
 <!-- ── Criterios ── -->
 <section class="bloque bloque-ancho" id="criterios" aria-labelledby="h-crit">
   <div class="columna">
-    <h2 id="h-crit">{{ t.criterios.titulo }}</h2>
-    <p class="bloque-intro">{{ t.criterios.intro }}</p>
+    <h2 id="h-crit">{{ t.criterios.titulo | editable: archivoT, "criterios.titulo" }}</h2>
+    <p class="bloque-intro">{{ t.criterios.intro | editable: archivoT, "criterios.intro" }}</p>
   </div>
 
   <div class="app" id="app-criterios">
@@ -133,5 +134,5 @@ eleventyExcludeFromCollections: true
 
 
 <footer class="pie">
-  <p>{{ t.pie.texto }} <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">{{ t.pie.licencia }}</a>. {{ t.pie.traduccion }}</p>
+  <p>{{ t.pie.texto | editable: archivoT, "pie.texto" }} <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">{{ t.pie.licencia | editable: archivoT, "pie.licencia" }}</a>. {{ t.pie.traduccion | editable: archivoT, "pie.traduccion" }}</p>
 </footer>

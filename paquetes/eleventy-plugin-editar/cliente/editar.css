@@ -1,0 +1,184 @@
+/* eleventy-plugin-editar: estilos propios, sin depender de los del sitio. */
+:root {
+  --editar-fondo: #ffffff;
+  --editar-texto: #1a1a1a;
+  --editar-borde: #c9c9c9;
+  --editar-acento: #1f6feb;
+  --editar-cambio: #b8860b;
+  --editar-error: #c62828;
+  --editar-ok: #2e7d32;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --editar-fondo: #1e2227;
+    --editar-texto: #eceff3;
+    --editar-borde: #444b55;
+    --editar-acento: #6ea8fe;
+    --editar-cambio: #f2c14e;
+    --editar-error: #ff8a80;
+    --editar-ok: #81c784;
+  }
+}
+
+.editar-barra {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 2147483000;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  max-width: calc(100vw - 32px);
+  padding: 8px;
+  border: 1px solid var(--editar-borde);
+  border-radius: 10px;
+  background: var(--editar-fondo);
+  color: var(--editar-texto);
+  font: 14px/1.3 system-ui, -apple-system, sans-serif;
+  box-shadow: 0 6px 24px rgb(0 0 0 / 0.18);
+}
+.editar-barra button {
+  font: inherit;
+  padding: 6px 12px;
+  border: 1px solid var(--editar-borde);
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+.editar-barra button:focus-visible { outline: 2px solid var(--editar-acento); outline-offset: 2px; }
+.editar-barra .editar-modo[aria-pressed="true"],
+.editar-barra .editar-guardar {
+  background: var(--editar-acento);
+  border-color: var(--editar-acento);
+  color: var(--editar-fondo);
+}
+.editar-barra kbd { font: 11px ui-monospace, monospace; opacity: 0.8; margin-left: 4px; }
+.editar-estado:empty { display: none; }
+.editar-estado { padding: 0 4px; }
+.editar-estado[data-tipo="error"] { color: var(--editar-error); }
+.editar-estado[data-tipo="ok"] { color: var(--editar-ok); }
+
+.editar-activo [data-editar] {
+  outline: 1px dashed color-mix(in srgb, var(--editar-acento) 60%, transparent);
+  outline-offset: 2px;
+  border-radius: 2px;
+  cursor: text;
+}
+.editar-activo [data-editar]:hover { outline-style: solid; }
+.editar-activo [data-editar]:focus {
+  outline: 2px solid var(--editar-acento);
+  background: color-mix(in srgb, var(--editar-acento) 8%, transparent);
+}
+.editar-activo [data-editar].editar-cambiado { outline: 2px solid var(--editar-cambio); }
+.editar-activo [data-editar][data-editar-html] { outline-color: var(--editar-borde); cursor: not-allowed; }
+
+/* ── Markdown en línea: la fuente se ve en monoespaciado mientras se edita ── */
+.editar-activo [data-editar][data-editar-viendo-fuente] {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+}
+
+/* ── Editor de Markdown ── */
+.editar-md {
+  position: fixed;
+  inset: 0 0 0 auto;
+  z-index: 2147483001;
+  width: min(1100px, 100vw);
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  background: var(--editar-fondo);
+  color: var(--editar-texto);
+  border-left: 1px solid var(--editar-borde);
+  box-shadow: -12px 0 40px rgb(0 0 0 / 0.25);
+  font: 14px/1.4 system-ui, -apple-system, sans-serif;
+}
+.editar-md[hidden] { display: none; }
+.editar-md-abierto .editar-barra { display: none; }
+.editar-md-abierto body { overflow: hidden; }
+
+.editar-md-cabecera,
+.editar-md-pie,
+.editar-md-herramientas {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--editar-borde);
+  flex-wrap: wrap;
+}
+.editar-md-pie { border-bottom: 0; border-top: 1px solid var(--editar-borde); }
+.editar-md-cabecera code {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font: 12px ui-monospace, monospace;
+  opacity: 0.75;
+}
+.editar-md-estado { flex: 1; }
+.editar-md-estado[data-tipo="error"] { color: var(--editar-error); }
+.editar-md-estado[data-tipo="ok"] { color: var(--editar-ok); }
+.editar-md-conteo { opacity: 0.7; font-variant-numeric: tabular-nums; }
+
+.editar-md button {
+  font: inherit;
+  padding: 5px 10px;
+  border: 1px solid var(--editar-borde);
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+.editar-md button:focus-visible { outline: 2px solid var(--editar-acento); outline-offset: 2px; }
+.editar-md button[aria-pressed="true"],
+.editar-md .editar-guardar {
+  background: var(--editar-acento);
+  border-color: var(--editar-acento);
+  color: var(--editar-fondo);
+}
+.editar-md kbd { font: 11px ui-monospace, monospace; opacity: 0.8; margin-left: 4px; }
+.editar-md-herramientas button { min-width: 36px; font-weight: 600; }
+
+.editar-md-cuerpo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 0;
+}
+.editar-md-texto {
+  resize: none;
+  border: 0;
+  border-right: 1px solid var(--editar-borde);
+  padding: 16px;
+  background: transparent;
+  color: inherit;
+  font: 14px/1.6 ui-monospace, SFMono-Regular, Menlo, monospace;
+  tab-size: 2;
+  min-height: 0;
+}
+.editar-md-texto:focus { outline: none; box-shadow: inset 0 0 0 2px var(--editar-acento); }
+.editar-md-vista {
+  overflow: auto;
+  padding: 16px 24px;
+  min-height: 0;
+  line-height: 1.6;
+}
+.editar-md-vista img { max-width: 100%; height: auto; }
+.editar-md-vista table { border-collapse: collapse; }
+.editar-md-vista th, .editar-md-vista td { border: 1px solid var(--editar-borde); padding: 4px 8px; }
+.editar-md-vista pre { overflow: auto; }
+
+.editar-md.editar-md-solo-vista .editar-md-cuerpo { grid-template-columns: 1fr; }
+.editar-md.editar-md-solo-vista .editar-md-texto { display: none; }
+
+@media (max-width: 860px) {
+  .editar-md-cuerpo { grid-template-columns: 1fr; }
+  .editar-md-vista { display: none; }
+  .editar-md.editar-md-solo-vista .editar-md-vista { display: block; }
+  .editar-md-texto { border-right: 0; }
+}
+@media (min-width: 861px) {
+  .editar-md-alternar { display: none; }
+}

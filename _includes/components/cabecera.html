@@ -1,5 +1,8 @@
-{%- comment -%} Cabecera de sección: titular grande y bajada. {%- endcomment -%}
+{%- comment -%}
+  Cabecera de sección: titular grande y bajada. Con `archivo` (y `ruta`, si los
+  textos no están en la raíz del JSON) se pueden editar en `npm run editar`.
+{%- endcomment -%}
 <header class="cabecera">
-  <h1 class="cabecera-titulo">{{ titulo }}</h1>
-  {% if bajada %}<p class="cabecera-bajada">{{ bajada }}</p>{% endif %}
+  <h1 class="cabecera-titulo">{{ titulo | editable: archivo, ruta, "titulo" }}</h1>
+  {% if bajada %}<p class="cabecera-bajada">{{ bajada | editable: archivo, ruta, "bajada" }}</p>{% endif %}
 </header>
